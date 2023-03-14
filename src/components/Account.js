@@ -55,7 +55,7 @@ export default function Account({ session }) {
 
       let { error } = await supabase.from('profiles').upsert(updates)
       if (error) throw error
-      alert('Profile updated!')
+      alert('Profile completed!')
     } catch (error) {
       alert('Error updating the data!')
       console.log(error)
@@ -67,14 +67,14 @@ export default function Account({ session }) {
   return (
     <div className="form-widget">
         <Avatar
-        uid={user.id}
-        url={avatar_url}
-        size={150}
-        onUpload={(url) => {
-          setAvatarUrl(url)
-          updateProfile({ username, website, avatar_url: url })
-        }}
-      />
+          uid={user.id}
+          url={avatar_url}
+          size={150}
+          onUpload={(url) => {
+            setAvatarUrl(url)
+            updateProfile({ username, website, avatar_url: url })
+          }}
+        />
       <div>
         <label htmlFor="email">Email</label>
         <input id="email" type="text" value={session.user.email} disabled />
@@ -104,7 +104,7 @@ export default function Account({ session }) {
           onClick={() => updateProfile({ username, website, avatar_url })}
           disabled={loading}
         >
-          {loading ? 'Loading ...' : 'Update'}
+          {loading ? 'Loading ...' : 'Complete your Registration'}
         </button>
       </div>
 
