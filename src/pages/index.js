@@ -13,7 +13,16 @@ const Home = () => {
       <div className='flex items-center justify-center'>
         <div className="w-[80%] lg:w-1/4 m-auto border-2 shadow-xl p-5">
           {!session ? (
-            <Auth providers={{}} supabaseClient={supabase} appearance={{ theme: ThemeSupa, variables: { default: { colors: { brand: '#007FFF', brandAccent: '#00308F', }, }, }, }} />
+            <Auth providers={{}} supabaseClient={supabase} 
+              appearance={{ 
+                theme: ThemeSupa, 
+                variables: { default: 
+                  { colors: 
+                    { brand: '#007FFF', brandAccent: '#00308F', },
+                  }, 
+                }, 
+              }} 
+            />
           ) : (
             <Account session={session} />
           )}
