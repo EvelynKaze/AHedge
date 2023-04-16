@@ -43,6 +43,9 @@
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 text-left">
+            <p className="mt-6 text-lg leading-8 text-gray-300">
+                Increase Your Assets
+            </p>
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Investment For The Future And To The Moon</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -53,7 +56,7 @@
                 <a href='#' className="bg-blue-600 p-2 w-40 text-center">
                   Get Started 
                 </a>
-                <a href='#'>
+                <a href='#' className="p-1">
                   Learn More <span aria-hidden="true">&rarr;</span>
                 </a>
             </div>
