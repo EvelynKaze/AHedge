@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar'
 import Header from '@/components/Header'
 import Info from '@/components/Info'
 import Hero from '@/components/Hero'
+import Stats from '@/components/Stats'
 
 const Home = () => {
   const session = useSession()
@@ -17,6 +18,7 @@ const Home = () => {
     <Header />
     <Info />
     <Hero />
+    <Stats />
     {/* <h1 className='text-3xl font-bold text-center mt-14'>Welcome to WalletHedge</h1>
       <div className='flex items-center justify-center'>
         <div className="w-[80%] lg:w-1/4 m-auto border-2 shadow-xl p-5">
