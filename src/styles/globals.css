@@ -15,6 +15,9 @@ body {
   font-family: var(--custom-font-family);
   background-color: var(--custom-bg-color);
 }
+.ReactCollapse--collapse{
+  transition: height 500ms;
+}
 
 * {
   color: var(--custom-color);

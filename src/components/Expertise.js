@@ -98,7 +98,7 @@ const Blog = () => {
                     opacity:0,
                 }}
                 transition={{ duration: 1.1 }}
-                whileInView={{ opacity: 1, y:-60 }}
+                whileInView={{ opacity: 1, y:-70 }}
                 className="p-4 md:w-96">
                 <div className="h-full border-2 border-gray-200 border-opacity-60 overflow-hidden bg-blue-500">
                     <img 
@@ -126,8 +126,7 @@ const Blog = () => {
                 </div>
             </motion.div>
         </div>
-        
-        <div className="w-full px-4 pt-16">
+        {/* <div className="w-full px-4 pt-16">
             <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-2">
                 <Disclosure>
                 {({ open }) => (
@@ -165,7 +164,7 @@ const Blog = () => {
                 )}
                 </Disclosure>
             </div>
-        </div>
+        </div> */}
     </>
     
   )
