@@ -13,6 +13,7 @@ import Parallax from '@/components/Parallax'
 import Team from '@/components/Team'
 import Testimonials from '@/components/Testimonials'
 import Footer from '@/components/Footer'
+import Blog from '@/components/Blog'
 
 
 const Home = () => {
@@ -31,6 +32,7 @@ const Home = () => {
     <Parallax />
     <Team />
     <Testimonials />
+    <Blog />
     <Footer />
     {/* <h1 className='text-3xl font-bold text-center mt-14'>Welcome to WalletHedge</h1>
       <div className='flex items-center justify-center'>

@@ -12,7 +12,7 @@ const Footer = () => {
                         <p className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                             <div className="text-3xl text-blue-500 font-bold">
                                 <img
-                                    className="hidden h-8 w-60 lg:block ml-2 cursor-pointer"
+                                    className="h-8 w-60 ml-2 cursor-pointer"
                                     src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/wallethedge-logo-white.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3dhbGxldGhlZGdlLWxvZ28td2hpdGUud2VicCIsImlhdCI6MTY4MTM5NjI5OCwiZXhwIjoxNzEyOTMyMjk4fQ.H90LyZnkd3t6cqK01gEErYxASTtPNa3eILPebCQ_xOY&t=2023-04-13T14%3A31%3A37.624Z"
                                     alt="Your Company"
                                 />
