@@ -6,6 +6,21 @@ import { motion } from 'framer-motion';
 const Blog = () => {
     return (
       <>
+      {/* <div className="p-5 mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-1">
+        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <div className="lg:pr-4">
+                <div className="lg:max-w-lg">
+                    <p className="text-base font-semibold leading-7 text-indigo-600 capitalize">Our Expertise</p>
+                    <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Invest With Wallethedge ?</h1>
+                </div>
+            </div>
+        </div>
+        <div className="-ml-12 lg:-mt-1 -mt-12 p-10 lg:sticky lg:top-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+            <a href='#' className="bg-blue-600 uppercase p-4 w-44 text-center text-white lg:ml-[28rem]">
+                View all blog 
+            </a>
+        </div>
+        </div> */}
         <section className="">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-wrap -m-4">

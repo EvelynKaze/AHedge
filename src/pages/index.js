@@ -12,8 +12,8 @@ import Accordion from '@/components/Accordion'
 import Parallax from '@/components/Parallax'
 import Team from '@/components/Team'
 import Testimonials from '@/components/Testimonials'
-import Footer from '@/components/Footer'
 import Blog from '@/components/Blog'
+import Footer from '@/components/footer'
 
 
 const Home = () => {
