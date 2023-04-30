@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/contact-us.js"  ],
+, "src/pages/contact-us.js", "src/pages/about.js"  ],
   "exclude": [
     "node_modules"
   ]
