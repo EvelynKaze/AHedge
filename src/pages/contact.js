@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '@/components/Navbar'
-import Header from '@/components/contactHeader'
-import Hero from '@/components/contactHero'
-import Footer from '@/components/footer'
+import Navbar from '../components/Navbar'
+import Header from '../components/contactHeader'
+import Hero from '../components/contactHero'
+import Footer from '../components/footer'
 
 
 
