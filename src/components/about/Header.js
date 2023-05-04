@@ -43,9 +43,6 @@
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-5xl lg:mx-0 text-left">
-            {/* <p className="mt-6 text-lg leading-8 text-gray-300">
-                Increase Your Assets
-            </p> */}
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-4xl">OUR MISSION IS TO PROVIDE THE MOST INNOVATIVE TRADING EXPERIENCE</h2>
             <p className="mt-6 text-base leading-8 text-gray-300">
               Wallethedge, We are one of the world’s leading Asset Management firms with approximately $500 billion in Assets under management that creates lasting impact for our investors, teams, businesses and the communities in which we live.
