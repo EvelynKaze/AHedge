@@ -11,7 +11,7 @@
   
   export default function Example() {
     return (
-      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 cursor-pointer hover:brightness-75">
+      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 cursor-pointer hover:brightness-75 ">
         <img
           src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/map.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL21hcC5qcGciLCJpYXQiOjE2ODI4NjAwMTIsImV4cCI6MTcxNDM5NjAxMn0.NmtemoVffFDcUh_K4LBwI6S7IJikzFc4lRD--2ZK8zM&t=2023-04-30T13%3A06%3A52.350Z"
           alt=""

@@ -1,13 +1,13 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 const navigation = [
   { name: 'About', href: '/about', current: false },
   // { name: 'Team', href: '#', current: false },
   // { name: 'Projects', href: '#', current: false },
-  { name: 'Contact Us', href: '/contact-us', current: false },
+  { name: 'Contact Us', href: '/contact', current: false },
 ]
 
 function classNames(...classes) {
@@ -24,7 +24,6 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
               {/* Nav Logo*/}
                 <div className="flex flex-shrink-0 items-center bg-blue-600 w-64">
-
                   <img
                       className="lg:hidden sm:block h-8 w-64 cursor-pointer bg-white"
                       src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/wallethedge-logo-mobile-blue.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3dhbGxldGhlZGdlLWxvZ28tbW9iaWxlLWJsdWUud2VicCIsImlhdCI6MTY4MTM5NjI0MywiZXhwIjoxNzEyOTMyMjQzfQ.Bh4ylJ6QuHIVzw72bggZkdLKo8M_v5T0m53cwM9SFew&t=2023-04-13T14%3A30%3A42.585Z"
@@ -35,7 +34,6 @@ export default function Example() {
                       src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/wallethedge-logo-white.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3dhbGxldGhlZGdlLWxvZ28td2hpdGUud2VicCIsImlhdCI6MTY4MTM5NjI5OCwiZXhwIjoxNzEyOTMyMjk4fQ.H90LyZnkd3t6cqK01gEErYxASTtPNa3eILPebCQ_xOY&t=2023-04-13T14%3A31%3A37.624Z"
                       alt="Your Company"
                     />
-                  
                 </div>
 
               {/* Nav Items*/}

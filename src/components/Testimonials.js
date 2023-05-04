@@ -58,7 +58,7 @@ const Testimonials = () => {
   return (
     <>
         <div className="bg-sea3 brightness-50 h-96 bg-fixed bg-no-repeat bg-cover">
-            {/* <h2 class="font-bold text-4xl">Sample Section</h2> */}
+            {/* <h2 className="font-bold text-4xl">Sample Section</h2> */}
         </div>
         <div className="relative bottom-80 lg:bottom-0 mx-auto pt-8 -mb-36 grid max-w-2xl grid-cols-1 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className='grid place-items-center'>
