@@ -13,7 +13,7 @@ import Parallax from '../components/Parallax'
 import Team from '../components/Team'
 import Testimonials from '../components/Testimonials'
 import Blog from '../components/Blog'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 
 
 const Home = () => {

@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import CHeader from '../components/contactHeader'
 import CHero from '../components/contactHero'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 
 
 
