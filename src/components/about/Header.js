@@ -44,11 +44,11 @@
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-5xl lg:mx-0 text-left">
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-4xl">OUR MISSION IS TO PROVIDE THE MOST INNOVATIVE TRADING EXPERIENCE</h2>
-            <p className="mt-6 text-base leading-8 text-gray-300">
+            <p className="mt-6 text-sm lg:text-base leading-8 text-gray-300">
               Wallethedge, We are one of the world’s leading Asset Management firms with approximately $500 billion in Assets under management that creates lasting impact for our investors, teams, businesses and the communities in which we live.
             </p>
             <br />
-            <p className="text-base leading-8 text-gray-300">
+            <p className="text-sm lg:text-base leading-8 text-gray-300">
               Wallethedge was Found in the year 2015, we pioneered a consulting-based approach to private Asset investing, partnering closely with management teams to offer the insights that challenge conventional thinking, build great businesses and improve operations.
               Over time, we have organically expanded this approach across asset classes to build one of the strongest alternative asset platforms in the world. This has empowered us to deliver an enduring impact to a diverse group of investors including other individuals.
             </p>
