@@ -37,39 +37,32 @@ const features = [
 
 export default function Example() {
   return (
-    <div className="overflow-hidden bg-white py-24 sm:py-24">
+    <div className="overflow-hidden bg-blue-100 py-24 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="lg:pr-8 lg:pt-4">
-            <div className="lg:max-w-lg">
-              {/* <h2 className="text-base font-semibold leading-7 text-indigo-600 capitalize">Welcome To Wallethedge</h2> */}
+          <div className="lg:w-[45rem]">
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl capitalize">More about us.</p>
               <p className="mt-6 text-base leading-8 text-gray-600">
                 We power success across the financial world for individuals and institutions through unique insights, thinking and actions. Our investment professionals are well positioned to search for differentiated investment ideas, to uncover the story within the story, the hidden risks and the potential rewards:
               </p>
-              {/* <dl className="grid max-w-xl grid-cols-2 gap-x-6 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-5 mt-4">
-                {features.map((feature) => (
-                <div key={feature.name} className="relative pl-8">
-                    <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-1 top-1 flex">
-                        <feature.icon className="h-6 w-6 text-indigo-600" aria-hidden="true" />
-                    </div>
-                    {feature.name}
-                    </dt>
-                    <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
-                </div>
-                ))}
-              </dl> */}
-            </div>
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
-            alt="Product screenshot"
-            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-            width={2432}
-            height={1442}
-          />
-        </div>
+
+          <div className="lg:ml-auto bg-white lg:pr-2 lg:pt-4 lg:w-[65%] rounded-xl border shadow-xl p-5">
+            {/* <div className="lg:max-w-lg bg-black"> */}
+              <img 
+                className="w-72 h-48 m-auto relative bottom-[96px]" 
+                src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/why-icon.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3doeS1pY29uLnBuZyIsImlhdCI6MTY4MzQzNzY1MSwiZXhwIjoxNzE0OTczNjUxfQ.XXW_s9drILypjp8fEa0iHRq4nN2hlFw0W8JLMukobAo&t=2023-05-07T05%3A34%3A11.961Z"
+              />
+              <p className="-mt-24 text-base leading-8 text-gray-600">
+                Most importantly, the glue that holds all of this together is our culture.
+                We believe it is the sustainable competitive advantage of our firm, helping us to attract, retain, develop, and motivate great people.
+                The shared values of our culture include integrity, collegiality, learning, humility, a sense of humor, respect for diversity of thought, and an unyielding focus on our clients.
+              </p>
+              
+            {/* </div> */}
+          </div>
+
+        </div>  
       </div>
     </div>
   )
