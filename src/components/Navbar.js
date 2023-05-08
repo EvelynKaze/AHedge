@@ -38,7 +38,7 @@ export default function Example() {
 
               {/* Nav Items*/}
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-5 mt-5">
+                  <div className="flex gap-x-12 mt-5 ml-4">
                     {navigation.map((item) => (
                       <a
                         key={item.name}

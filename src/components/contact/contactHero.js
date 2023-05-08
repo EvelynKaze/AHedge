@@ -34,7 +34,7 @@ export default function Example() {
     <div className="overflow-hidden bg-white py-24 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        <motion.div
+          <motion.div
               initial={{
                 y:-100,
                 opacity:0,
@@ -61,6 +61,7 @@ export default function Example() {
             </div>
             <button className="text-white align-left text-center w-28 text-xl bg-blue-500 border-0 py-2 px-4 focus:outline-none hover:bg-gray-100 hover:border-2 hover:border-blue-500 hover:text-blue-500 rounded-3xl">Submit</button>
           </motion.div>
+          
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-xl">
               <h2 className="text-base font-semibold leading-7 text-indigo-600 capitalize">Get In Touch</h2>
