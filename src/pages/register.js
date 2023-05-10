@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import CHero from '../components/contact/contactHero'
 import { motion } from 'framer-motion';
 
 

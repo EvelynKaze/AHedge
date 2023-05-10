@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const stats = [
     { name: 'Offices worldwide', value: '12' },
     { name: 'Full-time colleagues', value: '300+' },
@@ -49,9 +51,9 @@ const stats = [
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-2 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-                <a href='/register' className="bg-blue-600 p-2 w-40 text-center">
+                <Link href='/register' className="bg-blue-600 p-2 w-40 text-center">
                   Get Started 
-                </a>
+                </Link>
                 <a href='#' className="p-1">
                   Learn More <span aria-hidden="true">&rarr;</span>
                 </a>
