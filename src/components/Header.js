@@ -1,11 +1,4 @@
 import Link from "next/link"
-
-const stats = [
-    { name: 'Offices worldwide', value: '12' },
-    { name: 'Full-time colleagues', value: '300+' },
-    { name: 'Hours per week', value: '40' },
-    { name: 'Paid time off', value: 'Unlimited' },
-  ]
   
   export default function Example() {
     return (

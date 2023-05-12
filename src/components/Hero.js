@@ -1,37 +1,37 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { GoPrimitiveDot } from 'react-icons/go'
 
 const features = [
   {
     name: 'Professional team.',
-    icon: CloudArrowUpIcon,
+    icon: GoPrimitiveDot,
   },
   {
     name: 'Trustworthy',
-    icon: LockClosedIcon,
+    icon: GoPrimitiveDot,
   },
   {
     name: 'High integrity',
-    icon: ServerIcon,
+    icon: GoPrimitiveDot,
   },
   {
     name: 'Have been certified',
-    icon: ServerIcon,
+    icon: GoPrimitiveDot,
   },
   {
     name: 'Quality of our research',
-    icon: ServerIcon,
+    icon: GoPrimitiveDot,
   },
   {
     name: 'Providing The best service',
-    icon: ServerIcon,
+    icon: GoPrimitiveDot,
   },
   {
     name: 'Breadth of our capabilities',
-    icon: ServerIcon,
+    icon: GoPrimitiveDot,
   },
   {
     name: 'Global reach of our business',
-    icon: ServerIcon,
+    icon: GoPrimitiveDot,
   },
 ]
 
@@ -57,7 +57,6 @@ export default function Example() {
                     </div>
                     {feature.name}
                     </dt>
-                    {/* <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd> */}
                 </div>
                 ))}
               </dl>

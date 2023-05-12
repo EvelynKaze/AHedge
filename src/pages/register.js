@@ -24,14 +24,8 @@ const register = () => {
                     viewport={{ once:true }}
                     className="shadow-xl rounded w-full"
                     >
-                    {/* <h2 className="text-center font-bold text-xl md:text-2xl lg:text-3xl font-heading">Register</h2> */}
                     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                        {/* <img
-                          className="mx-auto h-10 w-auto"
-                          src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/wallethedge-logo-mobile-blue.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3dhbGxldGhlZGdlLWxvZ28tbW9iaWxlLWJsdWUud2VicCIsImlhdCI6MTY4MTM5NjI0MywiZXhwIjoxNzEyOTMyMjQzfQ.Bh4ylJ6QuHIVzw72bggZkdLKo8M_v5T0m53cwM9SFew&t=2023-04-13T14%3A30%3A42.585Z"
-                          alt="Your Company"
-                        /> */}
                         <h2 className="text-left mt-10 text-2xl font-semibold leading-9 tracking-tight text-gray-900">
                           Create an Account
                         </h2>
