@@ -10,22 +10,14 @@ import Link from "next/link"
 export default function Example() {
     return (
       <>
-      <Navbar />
-        {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full bg-white">
-          <body class="h-full">
-          ```
-        */}
+      {/* <Navbar /> */}
         <motion.div 
             initial={{
-                y:-120,
+                y:-100,
                 opacity:0,
             }}
             transition={{ duration: 1.0 }}
-            whileInView={{ opacity: 1, y:-70 }}
+            whileInView={{ opacity: 1, y:-50 }}
             className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"
             >
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">

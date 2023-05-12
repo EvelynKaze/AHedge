@@ -33,6 +33,14 @@ const Home = () => {
     <Team />
     <Testimonials />
     <Blog />
+    <a
+        href="https://wa.me/2348100000000"
+        className="whatsapp_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fa fa-whatsapp whatsapp-icon"></i>
+      </a>
     <Footer />
     {/* <h1 className='text-3xl font-bold text-center mt-14'>Welcome to WalletHedge</h1>
       <div className='flex items-center justify-center'>
