@@ -88,7 +88,7 @@ export default function Account({ session }) {
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
-      <div>
+      {/* <div>
         <label htmlFor="website">Website</label>
         <input
           id="website"
@@ -96,7 +96,7 @@ export default function Account({ session }) {
           value={website || ''}
           onChange={(e) => setWebsite(e.target.value)}
         />
-      </div>
+      </div> */}
 
       <div>
         <button

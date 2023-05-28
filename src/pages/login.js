@@ -2,15 +2,19 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { motion } from 'framer-motion';
 import Link from "next/link"
-
+import { Auth } from '@supabase/auth-ui-react'
+import { ThemeSupa } from '@supabase/auth-ui-shared'
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
+import Account from '../components/Account'
 
 
 
 
 export default function Example() {
+    const session = useSession()
+    const supabase = useSupabaseClient()
     return (
       <>
-      {/* <Navbar /> */}
         <motion.div 
             initial={{
                 y:-100,
@@ -91,7 +95,26 @@ export default function Example() {
         </div>
         </motion.div>
 
-        
+        <h1 className='text-3xl font-bold text-center mt-14'>Welcome to WalletHedge</h1>
+      <div className='flex items-center justify-center'>
+        <div className="w-[80%] lg:w-1/4 m-auto border-2 shadow-xl p-5 bg-green-500">
+          {!session ? (
+            // ['google', 'facebook', 'github']
+            <Auth providers={{}} supabaseClient={supabase} 
+              appearance={{ 
+                theme: ThemeSupa, 
+                variables: { default: 
+                  { colors: 
+                    { brand: '#007FFF', brandAccent: '#00308F', },
+                  }, 
+                }, 
+              }} 
+            />
+          ) : (
+            <Account session={session} />
+          )}
+        </div>
+      </div>
       </>
     )
   }
