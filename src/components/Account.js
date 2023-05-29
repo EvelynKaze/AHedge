@@ -6,8 +6,7 @@ export default function Account({ session }) {
   const supabase = useSupabaseClient()
   const user = useUser()
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
+  const [full_name, setFullName] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
 
   useEffect(() => {
@@ -20,7 +19,7 @@ export default function Account({ session }) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select(`full_name, avatar_url`)
         .eq('id', user.id)
         .single()
 
@@ -29,8 +28,7 @@ export default function Account({ session }) {
       }
 
       if (data) {
-        setUsername(data.username)
-        setWebsite(data.website)
+        setFullName(data.full_name)
         setAvatarUrl(data.avatar_url)
       }
     } catch (error) {
@@ -41,14 +39,13 @@ export default function Account({ session }) {
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ full_name, avatar_url }) {
     try {
       setLoading(true)
 
       const updates = {
         id: user.id,
-        username,
-        website,
+        full_name,
         avatar_url,
         updated_at: new Date().toISOString(),
       }
@@ -69,23 +66,24 @@ export default function Account({ session }) {
         <Avatar
           uid={user.id}
           url={avatar_url}
+          className="rounded-full"
           size={150}
           onUpload={(url) => {
             setAvatarUrl(url)
-            updateProfile({ username, website, avatar_url: url })
+            updateProfile({ full_name, avatar_url: url })
           }}
         />
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email" className='font-bold'>Email</label>
         <input id="email" type="text" value={session.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Full Name</label>
         <input
           id="username"
           type="text"
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
+          value={full_name || ''}
+          onChange={(e) => setFullName(e.target.value)}
         />
       </div>
       {/* <div>
@@ -101,7 +99,7 @@ export default function Account({ session }) {
       <div>
         <button
           className="button primary block"
-          onClick={() => updateProfile({ username, website, avatar_url })}
+          onClick={() => updateProfile({ full_name, avatar_url })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Complete your Registration'}
