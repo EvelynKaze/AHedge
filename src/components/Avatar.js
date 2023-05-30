@@ -37,7 +37,7 @@ export default function Avatar({ uid, url, size, onUpload }) {
       const filePath = `${fileName}`
 
       let { error: uploadError } = await supabase.storage
-        .from('emboier')
+        .from('embodier')
         .upload(filePath, file, { upsert: true })
 
       if (uploadError) {
@@ -59,14 +59,14 @@ export default function Avatar({ uid, url, size, onUpload }) {
         <img
           src={avatarUrl}
           alt="Avatar"
-          className="rounded-full w-"
-          // style={{ height: size, width: size }}
+          className="rounded-full avatar image my-2"
+          style={{ height: size, width: size }}
         />
       ) : (
-        <div className="" style={{ height: size, width: size }} />
+        <div className="avatar no-image rounded-full my-2" style={{ height: size, width: size }} />
       )}
       <div style={{ width: size }}>
-        <label className="button primary block" htmlFor="single">
+        <label className="uppercase text-sm text-center cursor-pointer rounded-md button bg-blue-500 text-white p-3 block m-auto" htmlFor="single">
           {uploading ? 'Uploading ...' : 'Upload'}
         </label>
         <input
