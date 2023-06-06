@@ -61,7 +61,7 @@ export default function Account({ session }) {
       let { error } = await supabase.from('profiles').upsert(updates)
       if (error) throw error
       alert('Profile completed!')
-      // router.push('/dashboard');
+      router.push('/dashboard');
     } catch (error) {
       alert('Error updating the data!')
       console.log(error)
@@ -75,7 +75,6 @@ export default function Account({ session }) {
         <Avatar
           uid={user.id}
           url={avatar_url}
-          // className="rounded-full"
           size={150}
           onUpload={(url) => {
             setAvatarUrl(url)
