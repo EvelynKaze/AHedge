@@ -44,7 +44,7 @@ const Blog = () => {
                         <h1 className="text-2xl p-2 font-bold text-white">Trusted by Investor</h1>
                         {/* <p className="mb-3 text-xs">{item.date}</p> */}
                         <p className="leading-relaxed mb-6 p-2 text-gray-200">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Wallethedge is well trusted in the financial market. Our Clients around the globe are rest-assured that their funds are safe.
                         </p>
                         <div className="flex items-center flex-wrap ">
                             <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-500">learn More
@@ -77,7 +77,7 @@ const Blog = () => {
                         <h1 className="text-2xl p-2 font-bold text-white">Invest With Confidance</h1>
                         {/* <p className="mb-3 text-xs">{item.date}</p> */}
                         <p className="leading-relaxed mb-6 p-2 text-gray-200">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            With our trading plans, your investment is safe. Wallethedge assures you that you can invest your money with confidence and expect good returns.
                         </p>
                         <div className="flex items-center flex-wrap ">
                             <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-300">learn More
@@ -110,7 +110,7 @@ const Blog = () => {
                         <h1 className="text-2xl p-2 font-bold text-white">Secure Platform</h1>
                         {/* <p className="mb-3 text-xs">{item.date}</p> */}
                         <p className="leading-relaxed mb-6 p-2 text-gray-200">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Wallethedge is very much secure. With our team of top developers, be rest assured that your money is safe and secure.
                         </p>
                         <div className="flex items-center flex-wrap ">
                             <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-300">learn More

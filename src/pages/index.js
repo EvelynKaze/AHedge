@@ -29,8 +29,8 @@ const Home = () => {
     <Stats />
     <Expertise />
     <Accordion />
-    <Parallax />
-    <Team />
+    {/* <Parallax /> */}
+    {/* <Team /> */}
     <Testimonials />
     <Blog />
     <a

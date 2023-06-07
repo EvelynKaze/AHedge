@@ -10,21 +10,21 @@ const Testimonials = () => {
           name: "Fernando Rodriges",
           role: 'Client',
           star: <FaStar className="text-blue-500" />,
-          info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          info: "I'm really glade i came across Wallethedge. Now i can store my crypto coins and copy trade from the best!",
           url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',
         },
         {
           name: "Wright Philip",
           role: 'Client',
           star: <FaStar className="text-blue-500" />,
-          info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          info: "Very good user interface, so easy to navigate. I can't wait to make my next withdrawal soon.",
           url: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
         },
         {
           name: "Ryan Shmicell",
           role: 'Client',
           star: <FaStar className="text-blue-500" />,
-          info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          info: "Top investment plans. Can't believe i started trading less than two months ago and I'm making good profits. lovely team!",
           url: 'https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
         },
     
@@ -32,7 +32,7 @@ const Testimonials = () => {
           name: "Keyla Dunn",
           role: 'Client',
           star: <FaStar className="text-blue-500" />,
-          info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          info: "I'm just soo excited i started copy trading with Wallethedge, best ever.",
           url: 'https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80',
         },
       ];
