@@ -7,15 +7,15 @@ import AccordionItems from "./AccordionItems";
 const accordionData = [
   {
     title: 'First-class investment solutions',
-    desc: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque.",
+    desc: "Wallethedge provides a diversified portfolio management that spreads investment across different assets class. This helps to minimize risk and maximize returns over the long term.",
   },
   {
     title: 'Building the idea of future',
-    desc: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque.",
+    desc: "Wallethedge considers key factors and trends that shape the current investment landscape. Investment in the blockchain sectors is a driving force in shaping the future.",
   },
   {
     title: 'Investment-plan consulting',
-    desc: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa cum sociis natoque.",
+    desc: "Wallethedge assesses your financial goals and starts by determining your financial objectives. We assess your risk tolerance by evaluating your ability to handle market fluctuations.",
   },
 ]
 
@@ -53,14 +53,14 @@ export default function Example() {
             <div className="lg:max-w-lg">
               <h2 className="text-base font-semibold leading-7 text-indigo-600 capitalize">How We Work</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl capitalize">Leading The Best Invest manager Team</p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {/* <p className="mt-6 text-lg leading-8 text-gray-600">
+                Leading The Best Copy-Trading Investment Team.
               </p>
               <dl className="grid max-w-xl grid-cols-2 gap-x-6 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-5 mt-4">
                 <a href='#' className="bg-blue-600 uppercase p-4 w-44 text-center text-white">
                   Learn More 
                 </a>
-              </dl>
+              </dl> */}
             </div>
           </div>
         </div>

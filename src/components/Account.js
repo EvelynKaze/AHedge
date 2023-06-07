@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
 import Avatar from './Avatar'
+import { useRouter } from 'next/router';
+
 
 export default function Account({ session }) {
   const supabase = useSupabaseClient()
   const user = useUser()
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
+  const [full_name, setFullName] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
+  const router = useRouter();
 
   useEffect(() => {
     getProfile()
@@ -20,7 +22,7 @@ export default function Account({ session }) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select(`full_name, avatar_url`)
         .eq('id', user.id)
         .single()
 
@@ -28,27 +30,30 @@ export default function Account({ session }) {
         throw error
       }
 
-      if (data) {
-        setUsername(data.username)
-        setWebsite(data.website)
+      if (data && data.full_name) {
+        setFullName(data.full_name)
         setAvatarUrl(data.avatar_url)
+
+        if (data.full_name) {
+          // Redirect the user to a new page
+          router.push('/dashboard');
+        }
       }
     } catch (error) {
-      alert('Error loading user data!')
+      console.log('Error loading user data!'),
       console.log(error)
     } finally {
       setLoading(false)
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ full_name, avatar_url }) {
     try {
       setLoading(true)
 
       const updates = {
         id: user.id,
-        username,
-        website,
+        full_name,
         avatar_url,
         updated_at: new Date().toISOString(),
       }
@@ -56,6 +61,7 @@ export default function Account({ session }) {
       let { error } = await supabase.from('profiles').upsert(updates)
       if (error) throw error
       alert('Profile completed!')
+      router.push('/dashboard');
     } catch (error) {
       alert('Error updating the data!')
       console.log(error)
@@ -65,43 +71,38 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="form-widget">
+    <div className="form-widgetw-96 h-fit p-5 m-auto">
         <Avatar
           uid={user.id}
           url={avatar_url}
           size={150}
           onUpload={(url) => {
             setAvatarUrl(url)
-            updateProfile({ username, website, avatar_url: url })
+            updateProfile({ full_name, avatar_url: url })
           }}
         />
-      <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session.user.email} disabled />
-      </div>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="website"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-      </div>
+        <div className='space-y-5'>
+          <div>
+            <label htmlFor="email" className='font-bold'>Email</label>
+            <input id="email" className='rounded-md' type="text" value={session.user.email} disabled />
+          </div>
+          <div>
+            <label htmlFor="username" className='font-bold'>Full Name</label>
+            <input
+              id="username"
+              type="text"
+              className='rounded-md'
+              value={full_name || ''}
+              onChange={(e) => setFullName(e.target.value)}
+            />
+          </div>
+        </div>
+      
 
       <div>
         <button
-          className="button primary block"
-          onClick={() => updateProfile({ username, website, avatar_url })}
+          className="button primary block mt-5 text-white"
+          onClick={() => updateProfile({ full_name, avatar_url })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Complete your Registration'}
@@ -109,7 +110,7 @@ export default function Account({ session }) {
       </div>
 
       <div>
-        <button className="button block" onClick={() => supabase.auth.signOut()}>
+        <button className="button block mt-5 outline outline-1 text-blue-500" onClick={() => supabase.auth.signOut()}>
           Sign Out
         </button>
       </div>

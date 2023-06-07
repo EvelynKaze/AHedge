@@ -34,22 +34,22 @@ import Link from "next/link"
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 text-left">
-            <p className="mt-6 text-lg leading-8 text-gray-300">
+            {/* <p className="mt-6 text-lg leading-8 text-gray-300">
                 Increase Your Assets
-            </p>
+            </p> */}
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Investment For The Future And To The Moon</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Begin your journey to financial freedom. Wallethedge is a safe vault for your cryptocurrencies and offers top-notch trading services. Grow your crypto assets today!.
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-2 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-                <Link href='/register' className="bg-blue-600 p-2 w-40 text-center">
+                <Link href='/login' className="bg-blue-600 p-2 w-40 text-center">
                   Get Started 
                 </Link>
-                <a href='#' className="p-1">
+                {/* <a href='#' className="p-1">
                   Learn More <span aria-hidden="true">&rarr;</span>
-                </a>
+                </a> */}
             </div>
           </div>
         </div>
