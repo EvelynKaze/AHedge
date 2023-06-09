@@ -79,6 +79,7 @@ export default function Avatar({ uid, url, size, onUpload }) {
           accept="image/*"
           onChange={uploadAvatar}
           disabled={uploading}
+          required
         />
       </div>
     </div>

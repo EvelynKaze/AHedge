@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { Disclosure } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
-
+import Link from 'next/link';
 
 const Blog = () => {
   return (
@@ -12,32 +12,32 @@ const Blog = () => {
             <div className="lg:pr-4">
                 <div className="lg:max-w-lg">
                 <p className="text-base font-semibold leading-7 text-indigo-600 capitalize">Our Expertise</p>
-                <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Invest With Wallethedge ?</h1>
-                <p className="mt-6 text-xl leading-8 text-gray-700">
+                <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-5">Why Invest With Wallethedge ?</h1>
+                {/* <p className="mt-6 text-xl leading-8 text-gray-700">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                </p> */}
                 </div>
             </div>
             </div>
             <div className="-ml-12 lg:-mt-1 -mt-12 p-10 lg:sticky lg:top-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-                <a href='#' className="bg-blue-600 uppercase p-4 w-44 text-center text-white lg:ml-[28rem]">
+                <Link href='/contact' className="bg-blue-600 uppercase p-4 w-44 text-center text-white lg:ml-[28rem]">
                   Contact us 
-                </a>
+                </Link>
             </div>
         </div>
         <div className="justify-center lg:flex flex-row">
             <motion.div
                 initial={{
-                    y:80,
+                    y:-80,
                     opacity:0,
                 }}
                 transition={{ duration: 1.1 }}
-                whileInView={{ opacity: 1, y:0 }}
+                whileInView={{ opacity: 1, y:30 }}
                 className="p-4 md:w-96">
                 <div className="h-[31rem] border-2 border-gray-200 border-opacity-60 overflow-hidden bg-blue-800">
                     <img 
                         className="lg:h-60 md:h-36 w-full object-cover object-center"
-                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/expertise1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V4cGVydGlzZTEuanBnIiwiaWF0IjoxNjg2MzMzNzI3LCJleHAiOjE3MTc4Njk3Mjd9.ikNgYRPfYWnXgbFp3yxBnYIBx-EVfxHS2HZsukHHod4&t=2023-06-09T18%3A02%3A06.722Z"
                         alt="blog image"
                     />
                     <div className="p-4">
@@ -47,8 +47,8 @@ const Blog = () => {
                             Wallethedge is well trusted in the financial market. Our Clients around the globe are rest-assured that their funds are safe.
                         </p>
                         <div className="flex items-center flex-wrap ">
-                            <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-500">learn More
-                            </p>
+                            {/* <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-500">learn More
+                            </p> */}
                             {/* <span className="mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                 <FaThumbsUp className="w-4 h-4 mr-1" />{item.likes}
                             </span>
@@ -65,12 +65,12 @@ const Blog = () => {
                     opacity:0,
                 }}
                 transition={{ duration: 1.1 }}
-                whileInView={{ opacity: 1, y:-30 }}
+                whileInView={{ opacity: 1, y:-10 }}
                 className="p-4 md:w-96">
                 <div className="h-full border-2 border-gray-200 border-opacity-60 overflow-hidden bg-blue-500">
                     <img 
                         className="lg:h-60 md:h-36 w-full object-cover object-center"
-                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/expertise2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V4cGVydGlzZTIuanBnIiwiaWF0IjoxNjg2MzMzNzg2LCJleHAiOjE3MTc4Njk3ODZ9.nI90GgAmxccMWbGSN1kxaNuDjFhdBsVZnBClAFt867s&t=2023-06-09T18%3A03%3A06.362Z"
                         alt="blog image"
                     />
                     <div className="p-4">
@@ -80,8 +80,8 @@ const Blog = () => {
                             With our trading plans, your investment is safe. Wallethedge assures you that you can invest your money with confidence and expect good returns.
                         </p>
                         <div className="flex items-center flex-wrap ">
-                            <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-300">learn More
-                            </p>
+                            {/* <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-300">learn More
+                            </p> */}
                             {/* <span className="mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                 <FaThumbsUp className="w-4 h-4 mr-1" />{item.likes}
                             </span>
@@ -98,12 +98,12 @@ const Blog = () => {
                     opacity:0,
                 }}
                 transition={{ duration: 1.1 }}
-                whileInView={{ opacity: 1, y:-70 }}
+                whileInView={{ opacity: 1, y:-50 }}
                 className="p-4 md:w-96">
                 <div className="h-full border-2 border-gray-200 border-opacity-60 overflow-hidden bg-blue-500">
                     <img 
                         className="lg:h-60 md:h-36 w-full object-cover object-center"
-                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/expertise3.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V4cGVydGlzZTMuanBnIiwiaWF0IjoxNjg2MzMzODMyLCJleHAiOjE3MTc4Njk4MzJ9.3WnLMnhDlnutghXSvqFVV2uHugtkNZLTrjisB0bazo0&t=2023-06-09T18%3A03%3A52.459Z"
                         alt="blog image"
                     />
                     <div className="p-4">
@@ -113,8 +113,8 @@ const Blog = () => {
                             Wallethedge is very much secure. With our team of top developers, be rest assured that your money is safe and secure.
                         </p>
                         <div className="flex items-center flex-wrap ">
-                            <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-300">learn More
-                            </p>
+                            {/* <p className="inline-flex items-center md:mb-2 lg:mb-0 capitalize text-blue-300">learn More
+                            </p> */}
                             {/* <span className="mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                 <FaThumbsUp className="w-4 h-4 mr-1" />{item.likes}
                             </span>

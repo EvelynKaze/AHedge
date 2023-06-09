@@ -67,7 +67,7 @@ const Testimonials = () => {
                     <h2 className="text-lg leading-7 text-white lg:text-blue-500 capitalize font-semibold">Clients Feedback</h2>
                     <p className="mt-2 text-4xl font-bold tracking-tight text-white lg:text-blue-900 sm:text-4xl capitalize">Clients Feedback</p>
                     <p className="mt-6 text-lg leading-8 text-gray-200 lg:text-gray-600 font-light">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                      Check out some feedbacks from our lovely clients around the globe.
                     </p>
                 </div>
             </div>

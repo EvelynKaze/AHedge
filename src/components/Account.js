@@ -60,7 +60,7 @@ export default function Account({ session }) {
 
       let { error } = await supabase.from('profiles').upsert(updates)
       if (error) throw error
-      alert('Profile completed!')
+      // alert('Profile completed!')/
       router.push('/dashboard');
     } catch (error) {
       alert('Error updating the data!')
@@ -71,7 +71,7 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="form-widgetw-96 h-fit p-5 m-auto">
+    <div className="form-widget w-96 h-fit p-5 m-auto">
         <Avatar
           uid={user.id}
           url={avatar_url}
@@ -94,6 +94,7 @@ export default function Account({ session }) {
               className='rounded-md'
               value={full_name || ''}
               onChange={(e) => setFullName(e.target.value)}
+              required
             />
           </div>
         </div>

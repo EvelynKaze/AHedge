@@ -34,7 +34,7 @@ const Home = () => {
     <Testimonials />
     <Blog />
     <a
-        href="https://wa.me/2348100000000"
+        href="https://wa.me/+1 (202) 270-4178"
         className="whatsapp_float"
         target="_blank"
         rel="noopener noreferrer"

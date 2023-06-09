@@ -1,6 +1,6 @@
 import React from 'react';
-// import { FaGithub, FaLink } from "react-icons/fa";
 import { motion } from 'framer-motion';
+import Link from 'next/link'
 
 
 export default function Footer(){
@@ -29,21 +29,16 @@ export default function Footer(){
                         className="lg:w-1/4 md:w-1/2 w-full px-4">
                         <h2 className="font-semibold text-lg mb-3">Quick Links</h2>
                         <nav className="list-none mb-10">
-                            <li className="mb-2 cursor-pointer">
+                            <Link href="/" className="mb-2 cursor-pointer">
                                 Home
-                            </li>
-                            <li className="mb-2 cursor-pointer">
-                                Our Mission
-                            </li>
-                            <li className="mb-2 cursor-pointer">
-                                Careers
-                            </li>
-                            <li className="mb-2 cursor-pointer">
-                                Terms and Conditions
-                            </li>
+                            </Link>
                             <li className="mb-2 cursor-pointer">
                                 Privacy Policy
                             </li>
+                            <Link href="/terms" className="mb-2 cursor-pointer">
+                                Terms and Conditions
+                            </Link>
+                            
                         </nav>
                     </motion.div>
 
@@ -57,21 +52,21 @@ export default function Footer(){
                         className="lg:w-1/4 md:w-1/2 w-full px-4">
                         <h2 className="font-semibold text-lg mb-3">Support</h2>
                         <nav className="list-none mb-10">
-                            <li className="mb-2 cursor-pointer">
+                            {/* <li className="mb-2 cursor-pointer">
                                 How it works
-                            </li>
-                            <li className="mb-2 cursor-pointer">
+                            </li> */}
+                            {/* <li className="mb-2 cursor-pointer">
                                 Pricing Plan
-                            </li>
-                            <li className="mb-2 cursor-pointer">
+                            </li> */}
+                            <Link href="/login" className="mb-2 cursor-pointer">
                                 Register
-                            </li>
-                            <li className="mb-2 cursor-pointer">
+                            </Link>
+                            {/* <li className="mb-2 cursor-pointer">
                                 FAQs
-                            </li>
-                            <li className="mb-2 cursor-pointer">
+                            </li> */}
+                            {/* <li className="mb-2 cursor-pointer">
                                 Terms of use
-                            </li>
+                            </li> */}
                         </nav>
                     </motion.div>
 
@@ -86,18 +81,18 @@ export default function Footer(){
                         <h2 className="font-semibold text-lg mb-3">Contact Us</h2>
                         <nav className="list-none mb-10">
                             <li className="mb-2 cursor-pointer">
-                            +123456789
+                                +1 (202) 270-4178
                             </li>
                             <li className="mb-2 cursor-pointer">
                                 support@wallethedge.org
                             </li>
                             <li className="mb-2 cursor-pointer">
-                                24, Martins Street, Winchester.
+                                225 Central Park West, New York, NY 10024
                             </li>
                         </nav>
                     </motion.div>
 
-                    <motion.div
+                    {/* <motion.div
                         initial={{
                             y:80,
                             opacity:0,
@@ -120,12 +115,12 @@ export default function Footer(){
                                 Fourth Link
                             </li>
                         </nav>
-                    </motion.div>
+                    </motion.div> */}
                 </div>
             </div>
             <div className="">
                 <div className="container mx-auto py-6 px-5 align-center text-center">
-                    <p className="text-base text-center">Copyright © WalletHedge 2023</p>
+                    <p className="text-base text-center">Copyright © WalletHedge 2021</p>
                 </div>
             </div>
         </footer>
