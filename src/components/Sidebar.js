@@ -68,10 +68,10 @@ const Sidebar = ({ session }) => {
         setFullName(data.full_name)
         setAvatarUrl(data.avatar_url)
 
-        if (data.full_name) {
+        // if (data.full_name) {
           // Redirect the user to a new page
-          router.push('/dashboard');
-        }
+          // router.push('/dashboard');
+        // }
       }
     } catch (error) {
       console.log('Error loading user data!'),
@@ -93,13 +93,17 @@ const Sidebar = ({ session }) => {
     }
   };
 
+  const handleDeposit = async () =>{
+    router.push('/dashboard/deposit')
+  }
+
   return (
     <div className="relative">
       <button className="btn" onClick={toggleSidebarcollapse}>
         {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
       </button>
       <aside className="w-64 h-full p-4 sidebar" data-collapse={isCollapsed}>
-        <div className="w-max flex items-center pb-4 mb-4 border-b-2 border-[#e5e7eb]">
+        <div className="w-max flex items-center gap-[0.7rem] pb-2 mb-4 border-b-2 border-[#e5e7eb]">
           <img
             width={80}
             height={80}
@@ -115,7 +119,7 @@ const Sidebar = ({ session }) => {
             <p className="text-black">8.0124 BTC</p>
             <p className="text-black">$2,215</p>
             <div className="flex gap-5">
-              <button className="p-2 bg-green-500">Deposit</button>
+              <button onClick={handleDeposit} className="p-2 bg-green-500">Deposit</button>
               <button className="p-2 bg-red-500">Withdraw</button>
             </div>
           </div>

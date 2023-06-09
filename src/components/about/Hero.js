@@ -45,6 +45,11 @@ export default function Example() {
               <p className="mt-6 text-base leading-8 text-gray-600">
                 We power success across the financial world for individuals and institutions through unique insights, thinking and actions. Our investment professionals are well positioned to search for differentiated investment ideas, to uncover the story within the story, the hidden risks and the potential rewards:
               </p>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl capitalize">Documents</p>
+              <p className="mt-6 text-base leading-8 text-gray-600">
+                Wallethedge is a registered and regulated company.{" "}
+                <a className="underline text-blue-500" href="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/wallethedge.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3dhbGxldGhlZGdlLnBkZiIsImlhdCI6MTY4NjMwNjMyNiwiZXhwIjoxNzE3ODQyMzI2fQ.oTtTEQwoI6P4-sp9aNAC8knbY2HQSarkYNTXoOA_EXQ&t=2023-06-09T10%3A25%3A25.412Z" target='_blank'>View Certificate of incorporation</a>
+              </p>
           </div>
 
           <div className="lg:ml-auto bg-white lg:pr-2 lg:pt-4 lg:w-[65%] rounded-xl border shadow-xl p-5">

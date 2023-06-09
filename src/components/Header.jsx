@@ -40,7 +40,7 @@ const Header = ({ session }) => {
 
   return (
     <div className='flex justify-between px-4 pt-4'>
-        <h2>Dashboard</h2>
+        <h2></h2>
         <h2>Welcome Back, {full_name}</h2>
     </div>
   )

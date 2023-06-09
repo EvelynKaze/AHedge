@@ -62,7 +62,7 @@ export default function Example() {
             </div>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+            src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/Hero.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL0hlcm8uanBnIiwiaWF0IjoxNjg2MzMzNjQ5LCJleHAiOjE3MTc4Njk2NDl9.XDO_sNqB3ttmsDDvtD2OqTAak7Lejd3hkqxo7PWAuZY&t=2023-06-09T18%3A00%3A49.402Z"
             alt="Product screenshot"
             className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
             width={2432}
