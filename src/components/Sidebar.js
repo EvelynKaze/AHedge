@@ -19,17 +19,17 @@ const sidebarItems = [
   },
   {
     name: "Wallet Overview",
-    href: "/dashboard/mails",
+    href: "/dashboard/",
     icon: SlWallet,
   },
   {
     name: "Recent Transactions",
-    href: "/dashboard/contact",
+    href: "/dashboard/",
     icon: MdOutlineCurrencyExchange,
   },
   {
     name: "My Profile",
-    href: "/dashboard/contact",
+    href: "/dashboard/",
     icon: CgProfile,
   },
 ];
