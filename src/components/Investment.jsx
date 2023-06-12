@@ -71,7 +71,7 @@ const Investment = () => {
               <h6 className="text-xs">BEP20</h6>
             </div>
             <div>
-              <input type="text" className="rounded-lg text-light" value="0xFC8D2A05260b03a3Eea9e458Ca88dc11A894Cb03" disabled/>
+              <input type="text" className="rounded-lg text-light" value="0x11f38b2Ca413457Ce7f964ad1633Bd6aFe11B213" disabled/>
             </div>
             <div>
             <button className="h-10 p-2 text-white bg-red-500">Deposit</button>
