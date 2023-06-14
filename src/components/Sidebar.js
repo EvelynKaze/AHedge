@@ -49,6 +49,8 @@ const Sidebar = ({ session }) => {
   const [loading, setLoading] = useState(true)
   const [full_name, setFullName] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
+  const [btc_balance, setBtcBalance] = useState(null)
+  const [usdt_balance, setUsdtBalance] = useState(null)
 
   async function getProfile() {
     try {
@@ -56,7 +58,7 @@ const Sidebar = ({ session }) => {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`full_name, avatar_url`)
+        .select(`full_name, avatar_url, btc_balance, usdt_balance`)
         .eq('id', user.id)
         .single()
 
@@ -67,6 +69,8 @@ const Sidebar = ({ session }) => {
       if (data && data.full_name) {
         setFullName(data.full_name)
         setAvatarUrl(data.avatar_url)
+        setBtcBalance(data.btc_balance)
+        setUsdtBalance(data.usdt_balance)
 
         // if (data.full_name) {
           // Redirect the user to a new page
@@ -97,6 +101,10 @@ const Sidebar = ({ session }) => {
     router.push('/dashboard/deposit')
   }
 
+  const handleWithdrawal = async () =>{
+    router.push('/dashboard/withdrawal')
+  }
+
   return (
     <div className="relative">
       <button className="btn" onClick={toggleSidebarcollapse}>
@@ -116,11 +124,11 @@ const Sidebar = ({ session }) => {
         <ul className="list-none">
           <div className="sidebar__link sidebar__name space-y-1 decoration-none flex-row mb-4 rounded-xl text-white">
             <p className="font-bold text-black">Available Balance</p>
-            <p className="text-black">8.0124 BTC</p>
-            <p className="text-black">$2,215</p>
+            <p className="text-black">{btc_balance} BTC</p>
+            <p className="text-black">${usdt_balance}</p>
             <div className="flex gap-5">
               <button onClick={handleDeposit} className="p-2 bg-green-500">Deposit</button>
-              <button className="p-2 bg-red-500">Withdraw</button>
+              <button onClick={handleWithdrawal} className="p-2 bg-red-500">Withdraw</button>
             </div>
           </div>
           {sidebarItems.map(({ name, href, icon: Icon }) => {
