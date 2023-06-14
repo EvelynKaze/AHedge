@@ -4,11 +4,11 @@ import { FaShoppingBag } from 'react-icons/fa';
 
 const RecentOrders = () => {
   return (
-    <div className="flex-row">
+    <div className="flex-row hidden">
       <div className="cursor-pointer bg-blue-500 rounded-lg p-4 mb-3 animate-pulse hidden">
         <p className="uppercase text-white text-center font-bold">Begin Copytrading Now</p>
       </div>
-      <div className='w-full col-span-1 relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-scroll'>
+      <div className='w-full relative lg:h-[70vh] h-[50vh] m-auto p-4 border rounded-lg bg-white overflow-scroll'>
         <h1>Recent Transactions</h1>
         <ul>
           {data.map((order, id) => (
