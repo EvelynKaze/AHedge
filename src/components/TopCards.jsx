@@ -51,7 +51,7 @@ const TopCards = ({ session }) => {
                 <p className='text-gray-600'>Total Investment</p>
             </div>
             <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
-                <span className='text-green-700 text-lg'>+18%</span>
+                <span className='text-green-700 text-lg'>{roi}%</span>
             </p>
         </div>
         <div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
@@ -60,7 +60,7 @@ const TopCards = ({ session }) => {
                 <p className='text-gray-600'>Current Value</p>
             </div>
             <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
-                <span className='text-green-700 text-lg'>+11%</span>
+                <span className='text-green-700 text-lg'>{roi}%</span>
             </p>
         </div>
         <div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
