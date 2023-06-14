@@ -175,6 +175,10 @@ export default function Deposit({ session }){
       }
     }
 
+    const handleDeposit = async () =>{
+      router.push('/dashboard/deposit')
+    }
+
   return (
     <div className="bg-gray-100 h-screen">
       <BaseLayout>
@@ -258,7 +262,7 @@ export default function Deposit({ session }){
                     >
                       Send Bitcoin
                     </Dialog.Title>
-                    <form className="mt-2" onSubmit={() => router.push('/dashboard/deposit')}>
+                    <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Bitcoin Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
@@ -269,6 +273,7 @@ export default function Deposit({ session }){
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
+                            onClick={handleDeposit}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -336,7 +341,7 @@ export default function Deposit({ session }){
                     >
                       Send ETH
                     </Dialog.Title>
-                    <form className="mt-2" onSubmit={() => router.push('/dashboard/deposit')}>
+                    <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">ETH Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
@@ -347,6 +352,7 @@ export default function Deposit({ session }){
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
+                            onClick={handleDeposit}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -412,7 +418,7 @@ export default function Deposit({ session }){
                     >
                       Send USDT
                     </Dialog.Title>
-                    <form className="mt-2" onSubmit={() => router.push('/dashboard/deposit')}>
+                    <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">USDT Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
@@ -423,6 +429,7 @@ export default function Deposit({ session }){
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
+                            onClick={handleDeposit}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >

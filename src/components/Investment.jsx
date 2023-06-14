@@ -1,6 +1,14 @@
-import React from 'react'
+import { useRouter } from "next/router";
 
 const Investment = () => {
+  const router = useRouter();
+
+  const handleDeposit = async () =>{
+    router.push('/dashboard/deposit')
+  }
+  const handleWithdrawal = async () =>{
+    router.push('/dashboard/withdrawal')
+  }
   return (
     <div>
         <div className="w-full mt-5 md:col-span-2 relative lg:h-fit h-[20vh] p-4 border rounded-lg bg-white">
@@ -18,7 +26,7 @@ const Investment = () => {
               <h5 className="font-bold">Risk</h5>
               <h5>Low</h5>
             </div>
-            <button className="h-10 p-2 bg-green-500 text-white">Invest Now</button>
+            <button onClick={handleDeposit} className="h-10 p-2 bg-green-500 text-white">Invest Now</button>
           </div>
           <div className="w-full h-20 rounded-lg flex justify-between p-4 px-7 my-2">
             <div>
@@ -33,7 +41,7 @@ const Investment = () => {
               <h5 className="font-bold">Risk</h5>
               <h5>Min</h5>
             </div>
-            <button className="h-10 p-2 bg-green-500 text-white">Invest Now</button>
+            <button onClick={handleDeposit} className="h-10 p-2 bg-green-500 text-white">Invest Now</button>
           </div>
           <div className="w-full h-20 rounded-lg flex justify-between p-4 px-7 my-2">
             <div>
@@ -48,7 +56,7 @@ const Investment = () => {
               <h5 className="font-bold">Risk</h5>
               <h5>Min</h5>
             </div>
-            <button className="h-10 p-2 bg-green-500 text-white">Invest Now</button>
+            <button onClick={handleDeposit} className="h-10 p-2 bg-green-500 text-white">Invest Now</button>
           </div>
         </div>
         <div className="w-full mt-5 md:col-span-2 relative lg:h-fit h-[20vh] p-4 border rounded-lg bg-white">
@@ -61,9 +69,9 @@ const Investment = () => {
               <input type="text" className="rounded-lg text-light" value="bc1qkk9tf9c72kv7hlaf6cjazq2an9sstvnsawst33" disabled/>
             </div>
             <div>
-            <button className="h-10 p-2 text-white bg-red-500">Deposit</button>
+            <button onClick={handleDeposit} className="h-10 p-2 text-white bg-red-500">Deposit</button>
             </div>
-            <button className="h-10 p-2 text-white bg-green-500">Send</button>
+            <button onClick={handleWithdrawal} className="h-10 p-2 text-white bg-green-500">Send</button>
           </div>
           <div className="w-full h-20 rounded-lg flex justify-between p-4 px-7 my-2">
             <div>
@@ -74,9 +82,9 @@ const Investment = () => {
               <input type="text" className="rounded-lg text-light" value="0x11f38b2Ca413457Ce7f964ad1633Bd6aFe11B213" disabled/>
             </div>
             <div>
-            <button className="h-10 p-2 text-white bg-red-500">Deposit</button>
+            <button onClick={handleDeposit} className="h-10 p-2 text-white bg-red-500">Deposit</button>
             </div>
-            <button className="h-10 p-2 text-white bg-green-500">Send</button>
+            <button onClick={handleWithdrawal} className="h-10 p-2 text-white bg-green-500">Send</button>
           </div>
           <div className="w-full h-20 rounded-lg flex justify-between p-4 px-7 my-2">
             <div>
@@ -87,9 +95,9 @@ const Investment = () => {
               <input type="text" className="rounded-lg text-light" value="0xFC8D2A05260b03a3Eea9e458Ca88dc11A894Cb03" disabled/>
             </div>
             <div>
-            <button className="h-10 p-2 text-white bg-red-500">Deposit</button>
+            <button onClick={handleDeposit} className="h-10 p-2 text-white bg-red-500">Deposit</button>
             </div>
-            <button className="h-10 p-2 text-white bg-green-500">Send</button>
+            <button onClick={handleWithdrawal} className="h-10 p-2 text-white bg-green-500">Send</button>
           </div>
         </div>
     </div>

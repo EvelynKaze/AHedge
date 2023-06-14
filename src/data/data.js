@@ -2,8 +2,8 @@ export const data = [
   {
     id: 1,
     name: {
-      first: 'John',
-      last: 'Smith',
+      first: 'Jo******@gmail.com',
+      // last: 'Smith',
     },
     total: 2795.95,
     status: 'On Hold',
@@ -13,19 +13,19 @@ export const data = [
   {
     id: 2,
     name: {
-      first: 'Chris',
-      last: 'Adams',
+      first: 'Chr******@mail.com',
+      // last: 'Adams',
     },
     total: 1195.95,
     status: 'Processing',
     method: 'PayPal',
-    date: '23 Minutes ago',
+    date: '43 Minutes ago',
   },
   {
     id: 3,
     name: {
-      first: 'Sarah',
-      last: 'Smith',
+      first: 'Sa******@gmail.com',
+      // last: 'Smith',
     },
     total: 495.85,
     status: 'Completed',
@@ -35,8 +35,8 @@ export const data = [
   {
     id: 4,
     name: {
-      first: 'Joseph',
-      last: 'Choo',
+      first: 'Jose******@gmail.com',
+      // last: 'Choo',
     },
     total: 150.45,
     status: 'Processing',
@@ -46,8 +46,8 @@ export const data = [
   {
     id: 5,
     name: {
-      first: 'Steve',
-      last: 'Harding',
+      first: 'Ste******@me.com',
+      // last: 'Harding',
     },
     total: 175.25,
     status: 'On Hold',
@@ -57,8 +57,8 @@ export const data = [
   {
     id: 6,
     name: {
-      first: 'Laura',
-      last: 'Croft',
+      first: 'Laur******@mac.com',
+      // last: 'Croft',
     },
     total: 1295.75,
     status: 'Completed',
@@ -68,8 +68,8 @@ export const data = [
   {
     id: 7,
     name: {
-      first: 'Michael',
-      last: 'Jones',
+      first: 'Micha******@icloud.com',
+      // last: 'Jones',
     },
     total: 89.95,
     status: 'Completed',
@@ -79,8 +79,8 @@ export const data = [
   {
     id: 8,
     name: {
-      first: 'James',
-      last: 'Bond',
+      first: 'James******@outlook.com',
+      // last: 'Bond',
     },
     total: 689.45,
     status: 'Completed',
@@ -90,8 +90,8 @@ export const data = [
   {
     id: 9,
     name: {
-      first: 'Haley',
-      last: 'Whiting',
+      first: 'Hale******@gmail.com',
+      // last: 'Whiting',
     },
     total: 14.99,
     status: 'Completed',
@@ -101,8 +101,8 @@ export const data = [
   {
     id: 10,
     name: {
-      first: 'Tim',
-      last: 'Thomas',
+      first: 'Tim******@mail.com',
+      // last: 'Thomas',
     },
     total: 218.99,
     status: 'Completed',
