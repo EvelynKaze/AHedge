@@ -13,7 +13,7 @@ const contactUs = () => {
       <CHeader />
       <CHero />
       <a
-        href="https://wa.me/+1 (202) 270-4178"
+        href="https://wa.me/+12048697934"
         className="whatsapp_float"
         target="_blank"
         rel="noopener noreferrer"
