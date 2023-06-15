@@ -53,7 +53,7 @@ export default function Dashboard({ session }){
       <BaseLayout>
         <Header />
         <TopCards />
-        <div className='p-4 grid md:grid-cols-3 gap-4 bg-red-400'>
+        <div className='p-4 grid md:grid-cols-3 gap-4'>
           <div className="md:col-span-3 bg-gray-100">
             <BarChart />
             <Investment />
