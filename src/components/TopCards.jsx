@@ -44,8 +44,8 @@ const TopCards = ({ session }) => {
   }
 
   return (
-    <div className='grid lg:grid-cols-5 gap-4 p-4'>
-        <div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
+    <div className='grid lg:grid-cols-5 gap-4 p-4 w-[22rem] md:w-full'>
+        <div className='shadow-xl lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
             <div className='flex flex-col w-full pb-4'>
                 <p className='text-2xl font-bold'>${total_investment}</p>
                 <p className='text-gray-600'>Total Investment</p>
@@ -54,7 +54,7 @@ const TopCards = ({ session }) => {
                 <span className='text-green-700 text-lg'>{roi}%</span>
             </p>
         </div>
-        <div className='lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
+        <div className='shadow-xl lg:col-span-2 col-span-1 bg-white flex justify-between w-full border p-4 rounded-lg'>
             <div className='flex flex-col w-full pb-4'>
                 <p className='text-2xl font-bold'>${current_value}</p>
                 <p className='text-gray-600'>Current Value</p>
@@ -63,7 +63,7 @@ const TopCards = ({ session }) => {
                 <span className='text-green-700 text-lg'>{roi}%</span>
             </p>
         </div>
-        <div className='bg-white flex justify-between w-full border p-4 rounded-lg'>
+        <div className='shadow-xl bg-white flex justify-between w-full border p-4 rounded-lg'>
             <div className='flex flex-col w-full pb-4'>
                 <p className='text-2xl font-bold'>{roi}%</p>
                 <p className='text-gray-600'>ROI</p>

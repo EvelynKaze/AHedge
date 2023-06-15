@@ -49,12 +49,12 @@ export default function Dashboard({ session }){
     }
 
   return (
-    <div className="bg-gray-100 h-screen">
+    <div className="bg-gray-100">
       <BaseLayout>
         <Header />
         <TopCards />
         <div className='p-4 grid md:grid-cols-3 gap-4'>
-          <div className="md:col-span-3 bg-gray-100">
+          <div className="md:col-span-3 -ml-4">
             <BarChart />
             <Investment />
           </div>

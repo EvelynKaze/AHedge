@@ -39,8 +39,7 @@ const Header = ({ session }) => {
   }
 
   return (
-    <div className='flex justify-between px-4 pt-4'>
-        <h2></h2>
+    <div className='text-right px-4 pt-4 w-[22rem] lg:w-full'>
         <h2>Welcome Back, {full_name}</h2>
     </div>
   )

@@ -71,12 +71,10 @@ const BarChart = () => {
 
   return (
     <>
-      <div className='w-full relative lg:h-[40vh] h-[20vh] px-5 border rounded-lg bg-white'>
+      <div className='w-[22rem] md:w-full relative lg:h-[40vh] h-[20vh] px-5 border rounded-lg bg-white'>
         {/* <Bar data={chartData} options={chartOptions} /> */}
-        {/* <div className="bg-yellow-200"> */}
           <Line data={chartData} options={chartOptions} />
-        {/* </div> */}
-        {/* <div className="w-72 h-72 bg-blue-200 hidden">
+        {/* <div className="w-72 h-72 bg-blue-200 ">
           <Doughnut data={data} options={chartOptions} />
         </div> */}
       </div>
