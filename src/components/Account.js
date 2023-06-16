@@ -78,7 +78,7 @@ export default function Account({ session }) {
           size={150}
           onUpload={(url) => {
             setAvatarUrl(url)
-            updateProfile({ full_name, avatar_url: url })
+            // updateProfile({ full_name, avatar_url: url })
           }}
         />
         <div className='space-y-5'>
@@ -103,7 +103,10 @@ export default function Account({ session }) {
       <div>
         <button
           className="button primary block mt-5 text-white"
-          onClick={() => updateProfile({ full_name, avatar_url })}
+          onClick={() => 
+            // setAvatarUrl(url)
+            updateProfile({ full_name, avatar_url})
+          }
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Complete your Registration'}
