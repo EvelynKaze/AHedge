@@ -22,16 +22,16 @@ const sidebarItems = [
     href: "/dashboard/",
     icon: SlWallet,
   },
-  {
-    name: "Recent Transactions",
-    href: "/dashboard/",
-    icon: MdOutlineCurrencyExchange,
-  },
-  {
-    name: "My Profile",
-    href: "/dashboard/",
-    icon: CgProfile,
-  },
+  // {
+  //   name: "Recent Transactions",
+  //   href: "/dashboard/",
+  //   icon: MdOutlineCurrencyExchange,
+  // },
+  // {
+  //   name: "My Profile",
+  //   href: "/dashboard/",
+  //   icon: CgProfile,
+  // },
 ];
 
 

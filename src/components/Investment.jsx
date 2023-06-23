@@ -23,7 +23,7 @@ const Investment = () => {
             cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
               <div>
                 <p className=" font-medium ">Bronze Plan</p>
-                <div className="font-light flex flex-row space-x-1">$500-$5000{" "}
+                <div className="font-light flex flex-row space-x-1">$100-$5000{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{""}
                   <p className="hidden">+20%</p>{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{" "}
