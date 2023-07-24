@@ -25,14 +25,14 @@ const Investment = () => {
                 <p className=" font-medium ">Bronze Plan</p>
                 <div className="font-light flex flex-row space-x-1">$100-$5000{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{""}
-                  <p className="hidden">+20%</p>{" "}
+                  <p className="hidden">5% - 10%</p>{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{" "}
                   <p className="hidden">Low</p>{" "}
                 </div>
               </div>
               <div>
                 <p className=" font-medium ">Daily ROI</p>
-                <p className="font-light">+20%</p>
+                <p className="font-light">5% - 10%</p>
               </div>
               <div>
                 <p className=" font-medium">Risk</p>
@@ -48,14 +48,14 @@ const Investment = () => {
                 <p className=" font-medium ">Silver Plan</p>
                 <div className="font-light flex flex-row space-x-1">$5000-$10,000{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{""}
-                  <p className="hidden">+35%</p>{" "}
+                  <p className="hidden">15% - 20%</p>{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{" "}
                   <p className="hidden">Min</p>{" "}
                 </div>
               </div>
               <div>
                 <p className=" font-medium ">Daily ROI</p>
-                <p className="font-light">+35%</p>
+                <p className="font-light">15% - 20%</p>
               </div>
               <div>
                 <p className=" font-medium">Risk</p>
@@ -71,14 +71,14 @@ const Investment = () => {
                 <p className=" font-medium ">Gold Plan</p>
                 <div className="font-light flex flex-row space-x-1">$10,000-Max{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{""}
-                  <p className="hidden">+50%</p>{" "}
+                  <p className="hidden">25% - 35%</p>{" "}
                   <span aria-hidden="true" className="font-bold hidden">&middot;</span>{" "}
                   <p className="hidden">Min</p>{" "}
                 </div>
               </div>
               <div>
                 <p className=" font-medium ">Daily ROI</p>
-                <p className="font-light">+50%</p>
+                <p className="font-light">25% - 35%</p>
               </div>
               <div>
                 <p className=" font-medium">Risk</p>
