@@ -277,19 +277,19 @@ export default function Deposit({ session }){
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
-                            {loading ? 'Loading ...' : 'Pay Bitcoin fees'}
+                            {loading ? 'Loading ...' : 'Submit'}
                         </button>
                         <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeBTCModal}
                         >
-                            Pay Later
+                            Close
                         </button>
                         </div>
 
                         {/* INFO */}
-                        <div className="mt-3">
+                        {/* <div className="mt-3">
                         <div className="text-red-600 font-semibold flex space-x-2">
                             <AiOutlineInfoCircle className="animate-bounce" />
                             <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
@@ -298,7 +298,7 @@ export default function Deposit({ session }){
                             <AiOutlineInfoCircle />
                             <p className='text-xs'>Account will be credited once we received your payment.</p>
                         </div>
-                        </div>
+                        </div> */}
                     </form>
 
                     
@@ -356,19 +356,19 @@ export default function Deposit({ session }){
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
-                            {loading ? 'Loading ...' : 'Pay ETH fees'}
+                            {loading ? 'Loading ...' : 'Submit'}
                         </button>
                         <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeBTCModal}
                         >
-                            Pay Later
+                            Close
                         </button>
                         </div>
 
                         {/* INFO */}
-                        <div className="mt-3">
+                        {/* <div className="mt-3">
                         <div className="text-red-600 font-semibold flex space-x-2">
                             <AiOutlineInfoCircle className="animate-bounce" />
                             <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
@@ -377,7 +377,7 @@ export default function Deposit({ session }){
                             <AiOutlineInfoCircle />
                             <p className='text-xs'>Account will be credited once we received your payment.</p>
                         </div>
-                        </div>
+                        </div> */}
                     </form>
                   </Dialog.Panel>
                 </Transition.Child>
@@ -433,28 +433,28 @@ export default function Deposit({ session }){
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
-                            {loading ? 'Loading ...' : 'Pay USDT fees'}
+                            {loading ? 'Loading ...' : 'Submit'}
                         </button>
                         <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeBTCModal}
                         >
-                            Pay Later
+                            Close
                         </button>
                         </div>
 
                         {/* INFO */}
-                        <div className="mt-3">
-                        <div className="text-red-600 font-semibold flex space-x-2">
-                            <AiOutlineInfoCircle className="animate-bounce" />
-                            <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
-                        </div>
-                        <div className="flex space-x-2 text-gray-500">
-                            <AiOutlineInfoCircle />
-                            <p className='text-xs'>Account will be credited once we received your payment.</p>
-                        </div>
-                        </div>
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
                     </form>
                   </Dialog.Panel>
                 </Transition.Child>
