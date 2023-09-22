@@ -74,7 +74,7 @@ const Blog = () => {
                         alt="blog image"
                     />
                     <div className="p-4">
-                        <h1 className="text-2xl p-2 font-bold text-white">Invest With Confidance</h1>
+                        <h1 className="text-2xl p-2 font-bold text-white">Invest With Confidence</h1>
                         {/* <p className="mb-3 text-xs">{item.date}</p> */}
                         <p className="leading-relaxed mb-6 p-2 text-gray-200">
                             With our trading plans, your investment is safe. Wallethedge assures you that you can invest your money with confidence and expect good returns.
