@@ -24,6 +24,14 @@ const about = () => {
         >
           <i className="fa fa-whatsapp whatsapp-icon"></i>
         </a>
+        <a
+        href="https://wa.me/17063151689"
+        className="whatsapp_float mb-20"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fa fa-whatsapp whatsapp-icon"></i>
+      </a>
         <Footer />
     </>
   )

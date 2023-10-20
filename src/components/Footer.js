@@ -81,7 +81,7 @@ export default function Footer(){
                         <h2 className="font-semibold text-lg mb-3">Contact Us</h2>
                         <nav className="list-none mb-10">
                             <li className="mb-2 cursor-pointer">
-                                +1 (202) 270-4178
+                                +1(706)315-1689
                             </li>
                             <li className="mb-2 cursor-pointer">
                                 support@wallethedge.org

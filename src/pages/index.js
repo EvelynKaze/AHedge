@@ -43,7 +43,7 @@ const Home = () => {
       </a>
     <a
         href="https://wa.me/17063151689"
-        className="whatsapp_float"
+        className="whatsapp_float mb-20"
         target="_blank"
         rel="noopener noreferrer"
       >
