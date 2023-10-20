@@ -41,6 +41,14 @@ const Home = () => {
       >
         <i className="fa fa-whatsapp whatsapp-icon"></i>
       </a>
+    <a
+        href="https://wa.me/17063151689"
+        className="whatsapp_float"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fa fa-whatsapp whatsapp-icon"></i>
+      </a>
     <Footer />
     </>
   )
