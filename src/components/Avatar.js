@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
+import Image from "next/image"
 
 export default function Avatar({ uid, url, size, onUpload }) {
   const supabase = useSupabaseClient()
@@ -54,9 +55,9 @@ export default function Avatar({ uid, url, size, onUpload }) {
   }
 
   return (
-    <div>
+    <div className="text-white">
       {avatarUrl ? (
-        <img
+        <Image
           src={avatarUrl}
           alt="Avatar"
           className="rounded-full avatar image my-2"
@@ -66,7 +67,7 @@ export default function Avatar({ uid, url, size, onUpload }) {
         <div className="avatar no-image rounded-full my-2" style={{ height: size, width: size }} />
       )}
       <div style={{ width: size }}>
-        <label className="uppercase text-sm text-center cursor-pointer rounded-md button bg-blue-500 text-white p-3 block m-auto" htmlFor="single">
+        <label className="uppercase text-sm text-center cursor-pointer rounded bg-indigo-500 text-white p-3 block m-auto" htmlFor="single">
           {uploading ? 'Uploading ...' : 'Upload'}
         </label>
         <input

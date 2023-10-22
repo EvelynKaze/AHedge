@@ -81,17 +81,17 @@ export default function Account({ session }) {
             // updateProfile({ full_name, avatar_url: url })
           }}
         />
-        <div className='space-y-5'>
-          <div>
+        <div className='space-y-5 text-white mt-5'>
+          <div className="space-x-16">
             <label htmlFor="email" className='font-bold'>Email</label>
-            <input id="email" className='rounded-md' type="text" value={session.user.email} disabled />
+            <input id="email" className='p-2 text-black rounded w-f outline outline-white' type="text" value={session.user.email} disabled />
           </div>
-          <div>
+          <div className="space-x-7">
             <label htmlFor="username" className='font-bold'>Full Name</label>
             <input
               id="username"
               type="text"
-              className='rounded-md'
+              className='text-black p-2 rounded w-fit outline outline-white'
               value={full_name || ''}
               onChange={(e) => setFullName(e.target.value)}
               required
@@ -102,7 +102,7 @@ export default function Account({ session }) {
 
       <div>
         <button
-          className="button primary block mt-5 text-white"
+          className="bg-purple-900 p-3 rounded block mt-5 text-white mx-auto"
           onClick={() => 
             // setAvatarUrl(url)
             updateProfile({ full_name, avatar_url})
@@ -114,7 +114,7 @@ export default function Account({ session }) {
       </div>
 
       <div>
-        <button className="button block mt-5 outline outline-1 text-blue-500" onClick={() => supabase.auth.signOut()}>
+        <button className="ml-auto block mt-10 outline outline-1 rounded p-2 text-purple-500" onClick={() => supabase.auth.signOut()}>
           Sign Out
         </button>
       </div>
