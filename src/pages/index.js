@@ -243,7 +243,13 @@ const Home = () => {
               </div>
               
             </div>
-            
+              <Image
+                src="/moon-bird.png"
+                className="absolute w-80 right-20 h-"
+                alt=""
+                width={2342}
+                height={1442}
+              />
             <div className='center z-10' />
             <p className="font-extrabold text-white text-3xl mb-9">FAQs</p>
             <Accordion type="single" collapsible className='text-white'>
