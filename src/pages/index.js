@@ -319,7 +319,7 @@ const Home = () => {
             </Accordion>
           </div>
         </div>
-      </main>
+    </main>
       <a
         href="https://wa.me/15084963395"
         className="whatsapp_float"

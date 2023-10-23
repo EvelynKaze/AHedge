@@ -1,6 +1,6 @@
 import { useState, useEffect, Fragment } from "react";
 import SideBar from "./Sidebar";
-// import TopBar from "./TopBar";
+import TopBar from "./TopBar";
 import { Transition } from "@headlessui/react";
 
 export default function Layout({ children }){
@@ -29,7 +29,7 @@ export default function Layout({ children }){
 
   return (
     <>
-    {/* <TopBar showNav={showNav} setShowNav={setShowNav} /> */}
+    <TopBar showNav={showNav} setShowNav={setShowNav} />
     <Transition
       as={Fragment}
       show={showNav}
@@ -43,7 +43,7 @@ export default function Layout({ children }){
       <SideBar showNav={showNav} />
     </Transition>
     <main
-      className={`pt-1 transition-all duration-[400ms] ${
+      className={`pt-16 transition-all duration-[400ms] ${
         showNav && !isMobile ? "pl-56" : ""
       }`}
     >

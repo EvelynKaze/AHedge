@@ -48,7 +48,7 @@ const TopCards = ({ session }) => {
     <div className="rounded-xl bg-white h-40 shadow-2xl flex justify-between w-full border p-4">
       <div className='flex flex-col w-full pb-4'>
             <p className='text-2xl font-bold'>${total_investment}</p>
-            <p className='text-gray-600'>Total Staking Value</p>
+            <p className='text-gray-600'>Total Staked Value</p>
         </div>
         <p className='bg-green-200 flex justify-center items-center p-2 rounded-xl'>
             <span className='text-green-700 text-lg'>{roi}%</span>

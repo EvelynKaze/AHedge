@@ -586,7 +586,7 @@ export default function Deposit({ session }){
     }
 
   return (
-    <div className="bg-gray-100 h-screen">
+    <div className="bg-gray-100 overflow-hidden">
       <Layout>
         <Header />
         <div className="w-full px-4 py-16">

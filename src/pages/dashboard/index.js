@@ -50,7 +50,7 @@ export default function Dashboard({ session }){
     }
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 overflow-hidden">
       <Layout>
         <Header />
         <TopCards />

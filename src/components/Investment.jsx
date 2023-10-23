@@ -13,7 +13,7 @@ const plans = [
       roi: "5% daily",
       duration: "30 days",
       icon: GiSilverBullet,
-      iconClass: "text-gray-100 mx-2 text-xl",
+      iconClass: "text-gray-100 mx-2 text-5xl lg:text-xl",
       href: '/dashboard/stake',
   },
   {
@@ -22,7 +22,7 @@ const plans = [
       roi: "10% daily",
       duration: "30 days",
       icon: GiGoldBar,
-      iconClass: "text-yellow-500 mx-2 text-xl",
+      iconClass: "text-yellow-500 mx-2 text-5xl lg:text-xl",
       href: '/dashboard/stake',
   },
   {
@@ -31,7 +31,7 @@ const plans = [
       roi: "15% daily",
       duration: "30 days",
       icon: IoDiamondOutline,
-      iconClass: "text-white mx-1 text-xl",
+      iconClass: "text-white mx-1 text-5xl lg:text-xl",
       href: '/dashboard/stake',
   },
   {
@@ -40,7 +40,7 @@ const plans = [
       roi: "20% daily",
       duration: "60 days",
       icon: GiMetalPlate,
-      iconClass: "text-neutral-800 mx-1 text-xl",
+      iconClass: "text-neutral-800 mx-1 text-5xl lg:text-xl",
       href: '/dashboard/stake',
   },
 ]
@@ -60,10 +60,10 @@ const Investment = () => {
   return (
         <div className="w-[28rem] lg:w-full py-5 p-2">
           <h1 className="font-bold text-2xl py-2">Staking Plans</h1>
-          <div className="grid col-1 bg- h- shadow-sm rounded">
-        <div className=" w-full h-96 space-y-7">
+          <div className="grid pr-28 lg:px-0 grid-cols-1 shadow-sm rounded">
+        <div className="mx-auto w-full h-fit space-y-7">
             {plans.map((plan) => (
-                <div key={plan.package} className="bg-gray-500 text-gray-200 card-2 p-3 rounded-xl grid gap-x- grid-cols-5">
+                <div key={plan.package} className="hidden lg:grid gap-x-2 bg-gray-500 text-gray-200 card-2 p-3 rounded-xl grid-cols-5">
                     <div className="flex justify-center items-center">
                         <plan.icon className={plan.iconClass} />
                         <span className="capitalize">{plan.package}</span>
@@ -83,6 +83,29 @@ const Investment = () => {
                     <Link href={plan.href} className='bg-white rounded w-28 h-12 text-black hover:text-white hover:bg-transparent outline outline-white flex justify-center items-center'>Invest</Link>
                 </div>
             ))}
+
+            {/* Mobile view */}
+            {plans.map((plan) => (
+                              <div key={plan.package} className="grid text-white bg-gray-500 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
+                                  <div className="">
+                                      <plan.icon className={plan.iconClass} />
+                                      <span className="capitalize text-xl font-semibold">{plan.package}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Price</span>
+                                      <span className="bg-black p-2 rounded">{plan.price}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>ROI</span>
+                                      <span>{plan.roi}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Duration</span>
+                                      <span>{plan.duration}</span>
+                                  </div>
+                                  <Link href={plan.href} className='bg-white rounded mx-auto w-28 h-12 text-black text-center py-3 hover:text-white'>Invest</Link>
+                              </div>
+                          ))}
         </div>
       </div>
         </div>
