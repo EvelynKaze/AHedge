@@ -130,41 +130,96 @@ const Home = () => {
   const session = useSession()
   const supabase = useSupabaseClient()
 
+  
+
   return (
     <>
     <Navbar />
     <main className="overflow-hidden">
         {/* Hero */}
-        <div className="overflow-hidden h-[30rem]">
+        <div className="overflow-hidden h-[30rem] hidden lg:block">
           <div className="relative w-full background-div">
             <div className="absolute -z-10 w-full h-full">
-              <Image
+              <img
                 src="/ledger-banner.webp"
                 alt="Product screenshot"
-                className="w-[48rem] max-w-none shadow-xl ring-1 ring-gray-400/10 sm:w-screen sm:h- md:-ml-4 lg:-ml-0"
-                width={2432}
-                height={1442}
+                className="w-[48rem] max-w- shadow-xl ring-1 ring-gray-400/10 sm:w-screen sm:h-full md:-ml-4 lg:-ml-0"
               />
             </div>
-            <div className="mx-auto max-w-7xl">
+            <div className="mx-auto md:max-w-7xl max-w-lg">
               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                 <div className="lg:pr-8 mt-16">
                   <div className="lg:max-w-lg">
-                    <h2 className="text-base font-semibold leading-7 text-[#9D00FF] uppercase">ENTERPRISE-GRADE WEB 3.0 INFRASTRUCTURE & SERVICES</h2>
-                    <p className="mt-2 font-clash text-3xl font-bold tracking-wide text-white sm:text-6xl capitalize">
+                    <h2 className="text-xs lg:text-base font-semibold leading-7 text-[#9D00FF] uppercase">ENTERPRISE-GRADE WEB 3.0 INFRASTRUCTURE & SERVICES</h2>
+                    <h2 className="text-4xl font-clash font-bold tracking-tight text-white sm:text-6xl">
                       Powering the 
                       <br /> 
                       future of web3
+                    </h2>
+                   <p className="mt-2 font-clash text-3xl font-bold tracking-wide text-white sm:text-6xl capitalize">
+                     
                     </p>
-                    <p className="mt-6 text-xl font-light leading-8 text-white">
+                    <p className="mt-6 text-lg leading-8 text-gray-300">
                       Secure and performant non-custodial staking services for individuals and institutional investors.
                     </p>
                     <div className="flex space-x-3 my-5">
-                      <Link href="/about"><Button variant="outline" className='text-white rounded w-28 h-12 hover:bg-white hover:text-black'>About Us</Button></Link>
+                      <Link href="/about"><Button variant="outline" className='text-white rounded w-24 text-sm md:text-base lg:w-28 h-12 hover:bg-white hover:text-black'>About Us</Button></Link>
                       <Link href="/login"><Button variant="outline" className='bg-white rounded w-28 h-12 hover:text-white'>Get Started</Button></Link>
                     </div>
                   </div>
                 </div>  
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 lg:hidden">
+          <div className="">
+             <img
+                src="/ledger-banner.webp"
+                alt=""
+                className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center opacity-25"
+              />
+              <div
+                className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+                aria-hidden="true"
+              >
+                <div
+                  className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                  style={{
+                    clipPath:
+                      'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                  }}
+                />
+              </div>
+              <div
+                className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+                aria-hidden="true"
+              >
+                <div
+                  className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                  style={{
+                    clipPath:
+                      'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                  }}
+                />
+              </div>
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:mx-0 text-left">
+              <h2 className="text-xs lg:text-base font-semibold leading-7 text-[#9D00FF] uppercase">ENTERPRISE-GRADE WEB 3.0 INFRASTRUCTURE & SERVICES</h2>
+              <h2 className="text-4xl font-clash font-bold tracking-tight text-white sm:text-6xl">
+                Powering the 
+                <br /> 
+                future of web3
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-gray-300">
+                Secure and performant non-custodial staking services for individuals and institutional investors.
+              </p>
+            </div>
+              <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+                <div className="flex space-x-3 my-5">
+                  <Link href="/about"><Button variant="outline" className='text-white rounded w-24 text-sm md:text-base lg:w-28 h-12 hover:bg-white hover:text-black'>About Us</Button></Link>
+                  <Link href="/login"><Button variant="outline" className='bg-white rounded w-28 h-12 hover:text-white'>Get Started</Button></Link>
+                </div>
               </div>
             </div>
           </div>
@@ -181,10 +236,10 @@ const Home = () => {
           />
         </div>
         {/* what we do */}
-        <div className="bg-black w-full py-10 px-44">
-          <div className='px-36'>
-            <p className="capitalize font-bold text-white text-3xl mb-9">What We do</p>
-            <div className="flex space-x-12">
+        <div className="bg-black w-full py-10 lg:px-44 px-0">
+          <div className='lg:px-24 px-0 mx-auto'>
+            <p className="capitalize font-bold text-center text-white text-3xl mb-9">What We do</p>
+            <div className="grid lg:grid-cols-3 gap-x-12 gap-y-8 lg:gap-y-0 w-fit mx-auto">
               {features.map((feature) => (
                 <div key={feature.title} className='border-2 border-[#9D00FF] w-64 p-3 text-center rounded-xl card'>
                   <Image
@@ -206,7 +261,7 @@ const Home = () => {
             <div className='center-2 z-10' />
 
             <p className="capitalize font-bold text-white text-3xl my-9 mt-16">Why Stake?</p>
-            <div className='flex justify-between'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 mx-10 gap-x-24 gap-y-5 lg:gap-y-0 w-fit'>
               {reasons.map((reason) => (
                 <div key={reason.text} className='flex w-20'>
                   <Image
@@ -222,7 +277,7 @@ const Home = () => {
               
             </div>
 
-            <div className="my-12 space-y-5">
+            <div className="my-12 space-y-5 px-3 lg:px-0">
               <h1 className="text-white font-bold text-3xl">Supported blockchain networks and projects</h1>
               <p className="text-gray-400 text-md">
                 Token holders of these networks, both, retail and intstitutional can help secure the networks by staking their tokens in a non-custodial fashion via our validators. For doing so, they earn rewards in the form of the respective networks&#39; native token.
@@ -231,7 +286,7 @@ const Home = () => {
 
             <div className="mb-20">
               <p className="capitalize font-bold text-white text-3xl mb-9">What we promise</p>
-              <div className="grid grid-cols-2 max-w-2xl mx-auto gap-x-40 gap-y-12">
+              <div className="grid lg:grid-cols-2 max-w-2xl mx-auto gap-x-40 gap-y-12">
                 {promises.map((promise) => (
                   <div key={promise.title} className="w-96 text-center border-2 border-[#9D00FF] p-3 space-y-4 card rounded-xl">
                     <h2 className="text-white capitalize">{promise.title}</h2>
@@ -245,14 +300,14 @@ const Home = () => {
             </div>
               <Image
                 src="/moon-bird.png"
-                className="absolute w-80 right-20 h-"
+                className="absolute w-56 lg:w-80 right-20"
                 alt=""
                 width={2342}
                 height={1442}
               />
             <div className='center z-10' />
-            <p className="font-extrabold text-white text-3xl mb-9">FAQs</p>
-            <Accordion type="single" collapsible className='text-white'>
+            <p className="font-extrabold text-white text-3xl mt-20 lg:mb-9">FAQs</p>
+            <Accordion type="single" collapsible className='text-white p-3 lg:p-0'>
               {accordions.map((accordion) => (
                 <AccordionItem key="" value={accordion.value}>
                   <AccordionTrigger>{accordion.question}</AccordionTrigger>
@@ -265,7 +320,7 @@ const Home = () => {
           </div>
         </div>
       </main>
-    <a
+      <a
         href="https://wa.me/15084963395"
         className="whatsapp_float"
         target="_blank"
