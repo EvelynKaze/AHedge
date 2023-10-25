@@ -1,7 +1,6 @@
-// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-// import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
-// import Account from '../components/Account'
 import Navbar from '../components/Navbar'
 import {
   Accordion,
@@ -13,7 +12,7 @@ import { Button } from "../components/ui/button"
 import Footer from '../components/Footer'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 
 
@@ -128,7 +127,8 @@ const accordions = [
 ]
 
 const Home = () => {
-  const { locale, locales, push } = useRouter()
+  // const { locale, locales, push } = useRouter()
+  const { t } = useTranslation()
   const handleClick = l => () => {}
   const session = useSession()
   const supabase = useSupabaseClient()
@@ -210,17 +210,10 @@ const Home = () => {
             <div className="mx-auto max-w-2xl lg:mx-0 text-left">
               <h2 className="text-xs lg:text-base font-semibold leading-7 text-[#9D00FF] uppercase">ENTERPRISE-GRADE WEB 3.0 INFRASTRUCTURE & SERVICES</h2>
               <h2 className="text-4xl font-clash font-bold tracking-tight text-white sm:text-6xl">
-                Powering the 
-                <br /> 
-                future of web3
-                <span className="text-4xl">{locale}</span>
+                {t("Powering_Web3")}
               </h2>
-              <div>
-                {locales.map(l => (
-                  <button key={l} onClick={handleClick(l)}>
-                    {l}
-                  </button>
-                ))}
+            <div>
+                
               </div>
               <p className="mt-6 text-lg leading-8 text-gray-300">
                 Secure and performant non-custodial staking services for individuals and institutional investors.
@@ -345,3 +338,15 @@ const Home = () => {
 }
 
 export default Home
+
+export async function getStaticProps(context) {
+  // extract the locale identifier from the URL
+  const { locale } = context
+
+  return {
+    props: {
+      // pass the translation props to the page component
+      ...(await serverSideTranslations(locale)),
+    },
+  }
+}
