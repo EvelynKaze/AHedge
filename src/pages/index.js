@@ -1,5 +1,5 @@
-import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+// import { useTranslation } from 'next-i18next'
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 // import Account from '../components/Account'
 import Navbar from '../components/Navbar'
@@ -13,6 +13,7 @@ import { Button } from "../components/ui/button"
 import Footer from '../components/Footer'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 
 
@@ -127,6 +128,8 @@ const accordions = [
 ]
 
 const Home = () => {
+  const { locale, locales, push } = useRouter()
+  const handleClick = l => () => {}
   const session = useSession()
   const supabase = useSupabaseClient()
 
@@ -210,7 +213,15 @@ const Home = () => {
                 Powering the 
                 <br /> 
                 future of web3
+                <span className="text-4xl">{locale}</span>
               </h2>
+              <div>
+                {locales.map(l => (
+                  <button key={l} onClick={handleClick(l)}>
+                    {l}
+                  </button>
+                ))}
+              </div>
               <p className="mt-6 text-lg leading-8 text-gray-300">
                 Secure and performant non-custodial staking services for individuals and institutional investors.
               </p>

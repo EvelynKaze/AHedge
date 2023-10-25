@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import {
   AiTwotoneHome,
 } from  "react-icons/ai";
-import { BiCoinStack } from "react-icons/bi"
+import { BiCoinStack, BiMoneyWithdraw } from "react-icons/bi"
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
 
 
@@ -106,17 +106,34 @@ const SideBar = forwardRef(({ showNav }, ref) => {
             </div>
           </div>
         </Link>
+        <Link href="/dashboard/withdraw">
           <div
-            className="pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors text-gray-400 hover:bg-purple-100 hover:text-purple-500"
-            onClick={handleLogout}
+            className={`pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors ${
+              router.pathname == "/dashboard/withdraw"
+                ? "bg-[#9D00FF]"
+              : "text-gray-400 hover:bg-purple-100 hover:text-purple-500"
+            }`}
           >
             <div className="mr-2">
-              <CgLogOut className="h-5 w-5" />
+              <BiMoneyWithdraw className="h-5 w-5" />
             </div>
             <div>
-              <p>Logout</p>
+              <p>Withdraw</p>
             </div>
           </div>
+        </Link>
+        {/* Logout button */}
+        <div
+          className="pl-6 py-3 mx-5 rounded text-center cursor-pointer mb-3 flex items-center transition-colors text-gray-400 hover:bg-purple-100 hover:text-purple-500"
+          onClick={handleLogout}
+        >
+          <div className="mr-2">
+            <CgLogOut className="h-5 w-5" />
+          </div>
+          <div>
+            <p>Logout</p>
+          </div>
+        </div>
       </div>
     </div>
   );
