@@ -128,7 +128,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION1")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
                               <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
                                   <div className="flex justify-center items-center">
@@ -147,7 +147,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION2")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
                               <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
                                   <div className="flex justify-center items-center">
@@ -166,7 +166,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION3")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
                               <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
                                   <div className="flex justify-center items-center">
@@ -185,7 +185,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION4")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
 
                           {/* Mobile view */}
@@ -207,7 +207,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION1")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
                               <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
                                   <div className="">
@@ -226,7 +226,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION2")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
                               <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
                                   <div className="">
@@ -245,7 +245,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION3")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
                               <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
                                   <div className="">
@@ -264,7 +264,7 @@ const About = () => {
                                       <span>Duration</span>
                                       <span>{t("ETSP_DURATION4")}</span>
                                   </div>
-                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>Invest</Button>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
                               </div>
 
 
