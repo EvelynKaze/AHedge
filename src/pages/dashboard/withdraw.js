@@ -21,11 +21,11 @@ export default function Deposit({ session }){
     const [inputValue, setInputValue] = useState('');
     const router = useRouter();
 ///////////////////////////////////////////////////////////
-    const [deposit_btc, setDepositBtc] = useState(null)
+    const [withdraw_btc, setWithdrawBtc] = useState(null)
 
     const handleChangeBTC = (event) => {
       const value = event.target.value;
-      setDepositBtc(value);
+      setWithdrawBtc(value);
       setInputValue(value);
     };
 
@@ -43,13 +43,13 @@ export default function Deposit({ session }){
       toast.info("Copied to Clipboard");
     };
 
-    async function depositBTC({ deposit_btc }) {
+    async function withdrawBTC({ withdraw_btc }) {
       try {
         setLoading(true)
   
         const updates = {
           id: user.id,
-          deposit_btc,
+          withdraw_btc,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -64,7 +64,7 @@ export default function Deposit({ session }){
         }
     };
     ///////////////////////////////////////////////////////
-    const [deposit_eth, setDepositEth] = useState(null)
+    const [withdraw_eth, setWithdrawEth] = useState(null)
     const eth = "0xFC8D2A05260b03a3Eea9e458Ca88dc11A894Cb03"
     const clipboardETH = () => {
       navigator.clipboard.writeText(eth)
@@ -72,7 +72,7 @@ export default function Deposit({ session }){
     };
     const handleChangeETH = (event) => {
       const value = event.target.value;
-      setDepositEth(value);
+      setWithdrawEth(value);
       setInputValue(value);
     };
     let [openETH, setOpenETH] = useState(false)
@@ -82,13 +82,13 @@ export default function Deposit({ session }){
     function closeETHModal(){
       setOpenETH(false)
     }
-    async function depositETH({ deposit_eth }) {
+    async function withdrawETH({ withdraw_eth }) {
       try {
         setLoading(true)
   
         const updates = {
           id: user.id,
-          deposit_eth,
+          withdraw_eth,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -104,14 +104,14 @@ export default function Deposit({ session }){
     };
 ///////////////////////////////////////////////////////////
     const usdt = "0x11f38b2Ca413457Ce7f964ad1633Bd6aFe11B213"
-    const [deposit_usdt, setDepositUsdt] = useState(null)
+    const [withdraw_usdt, setWithdrawUsdt] = useState(null)
     const clipboardUSDT = () => {
       navigator.clipboard.writeText(usdt)
       toast.info("Copied to Clipboard");
     };
     const handleChangeUSDT = (event) => {
       const value = event.target.value;
-      setDepositUsdt(value);
+      setWithdrawUsdt(value);
       setInputValue(value);
     };
     let [openUSDT, setOpenUSDT] = useState(false)
@@ -122,13 +122,13 @@ export default function Deposit({ session }){
       setOpenUSDT(false)
     }
 
-    async function depositUSDT({ deposit_usdt }) {
+    async function withdrawUSDT({ withdraw_usdt }) {
       try {
         setLoading(true)
   
         const updates = {
           id: user.id,
-          deposit_usdt,
+          withdraw_usdt,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -145,14 +145,14 @@ export default function Deposit({ session }){
 ////////////////////////////////////////////////////////////////////
 ////////////////////////// XRP /////////////////////////////////
 const xrp = "rG3cdRNzZ1k83uFrzxMmpekkifKBYcv1dv"
-const [deposit_xrp, setDepositXRP] = useState(null)
+const [withdraw_xrp, setWithdrawXRP] = useState(null)
 const clipboardXRP = () => {
   navigator.clipboard.writeText(xrp)
   toast.info("Copied to Clipboard");
 };
 const handleChangeXRP = (event) => {
   const value = event.target.value;
-  setDepositXrp(value);
+  setWithdrawXrp(value);
   setInputValue(value);
 };
 let [openXRP, setOpenXRP] = useState(false)
@@ -163,13 +163,13 @@ function closeXRPModal(){
   setOpenXRP(false)
 }
 
-async function depositXRP({ deposit_xrp }) {
+async function withdrawXRP({ withdraw_xrp }) {
   try {
     setLoading(true)
 
     const updates = {
       id: user.id,
-      deposit_xrp,
+      withdraw_xrp,
       updated_at: new Date().toISOString(),
     }
     let { error } = await supabase.from('profiles').upsert(updates)
@@ -185,14 +185,14 @@ async function depositXRP({ deposit_xrp }) {
 };
 ///////////////////////// ADA //////////////////////////////////
   const ada = "addr1q98ae09zhyjda27zjkv0mf7mxszkpygxqgl7m5ceyxtrqr8ky7rryg9x5dduzrc9g700hmtl8yw6p60xqgqnhdzhd8psz9tnjn"
-  const [deposit_ada, setDepositADA] = useState(null)
+  const [withdraw_ada, setWithdrawADA] = useState(null)
   const clipboardADA = () => {
     navigator.clipboard.writeText(ada)
     toast.info("Copied to Clipboard");
   };
   const handleChangeADA = (event) => {
     const value = event.target.value;
-    setDepositADA(value);
+    setWithdrawADA(value);
     setInputValue(value);
   };
   let [openADA, setOpenADA] = useState(false)
@@ -203,13 +203,13 @@ async function depositXRP({ deposit_xrp }) {
     setOpenADA(false)
   }
 
-  async function depositADA({ deposit_ada }) {
+  async function withdrawADA({ withdraw_ada }) {
     try {
       setLoading(true)
 
       const updates = {
         id: user.id,
-        deposit_ada,
+        withdraw_ada,
         updated_at: new Date().toISOString(),
       }
       let { error } = await supabase.from('profiles').upsert(updates)
@@ -226,14 +226,14 @@ async function depositXRP({ deposit_xrp }) {
 
 ////////////////////////// XLM /////////////////////////////////
     const xlm = "GAAZHEFRKMW6EIU2DB6XZ5Q4GNXPPEIGBQ44HBPJJTJNCRRAZSR5BRHJ"
-    const [deposit_xlm, setDepositXLM] = useState(null)
+    const [withdraw_xlm, setWithdrawXLM] = useState(null)
     const clipboardXLM = () => {
       navigator.clipboard.writeText(xlm)
       toast.info("Copied to Clipboard");
     };
     const handleChangeXLM = (event) => {
       const value = event.target.value;
-      setDepositXLM(value);
+      setWithdrawXLM(value);
       setInputValue(value);
     };
     let [openXLM, setOpenXLM] = useState(false)
@@ -244,13 +244,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenXLM(false)
     }
 
-    async function depositXLM({ deposit_xlm }) {
+    async function withdrawXLM({ withdraw_xlm }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_xlm,
+          withdraw_xlm,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -267,14 +267,14 @@ async function depositXRP({ deposit_xrp }) {
 
 ///////////////////////// HEX //////////////////////////////////
     const hex = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
-    const [deposit_hex, setDepositHEX] = useState(null)
+    const [withdraw_hex, setWithdrawHEX] = useState(null)
     const clipboardHEX = () => {
       navigator.clipboard.writeText(xlm)
       toast.info("Copied to Clipboard");
     };
     const handleChangeHEX = (event) => {
       const value = event.target.value;
-      setDepositHEX(value);
+      setWithdrawHEX(value);
       setInputValue(value);
     };
     let [openHEX, setOpenHEX] = useState(false)
@@ -285,13 +285,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenHEX(false)
     }
 
-    async function depositHEX({ deposit_hex }) {
+    async function withdrawHEX({ withdraw_hex }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_hex,
+          withdraw_hex,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -308,14 +308,14 @@ async function depositXRP({ deposit_xrp }) {
 
 ///////////////////////// BNB //////////////////////////////////
     const bnb = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
-    const [deposit_bnb, setDepositBNB] = useState(null)
+    const [withdraw_bnb, setWithdrawBNB] = useState(null)
     const clipboardBNB = () => {
       navigator.clipboard.writeText(bnb)
       toast.info("Copied to Clipboard");
     };
     const handleChangeBNB = (event) => {
       const value = event.target.value;
-      setDepositBNB(value);
+      setWithdrawBNB(value);
       setInputValue(value);
     };
     let [openBNB, setOpenBNB] = useState(false)
@@ -326,13 +326,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenBNB(false)
     }
 
-    async function depositBNB({ deposit_bnb }) {
+    async function withdrawBNB({ withdraw_bnb }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_bnb,
+          withdraw_bnb,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -349,14 +349,14 @@ async function depositXRP({ deposit_xrp }) {
 
 ////////////////////// SOL /////////////////////////////////////
     const sol = "7rk2qUYSbgHhRCdqEFw7LmAWiPyW1Ws4fYfvYJXDkw6n"
-    const [deposit_sol, setDepositSOL] = useState(null)
+    const [withdraw_sol, setWithdrawSOL] = useState(null)
     const clipboardSOL = () => {
       navigator.clipboard.writeText(sol)
       toast.info("Copied to Clipboard");
     };
     const handleChangeSOL = (event) => {
       const value = event.target.value;
-      setDepositSOL(value);
+      setWithdrawSOL(value);
       setInputValue(value);
     };
     let [openSOL, setOpenSOL] = useState(false)
@@ -367,13 +367,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenSOL(false)
     }
 
-    async function depositSOL({ deposit_sol }) {
+    async function withdrawSOL({ withdraw_sol }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_sol,
+          withdraw_sol,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -390,14 +390,14 @@ async function depositXRP({ deposit_xrp }) {
 
 ////////////////////////// TRX /////////////////////////////////
     const trx = "TNW1zeNt9hMvXPfT6JEBeAhfGAsbqgCNWX"
-    const [deposit_trx, setDepositTRX] = useState(null)
+    const [withdraw_trx, setWithdrawTRX] = useState(null)
     const clipboardTRX = () => {
       navigator.clipboard.writeText(trx)
       toast.info("Copied to Clipboard");
     };
     const handleChangeTRX = (event) => {
       const value = event.target.value;
-      setDepositTRX(value);
+      setWithdrawTRX(value);
       setInputValue(value);
     };
     let [openTRX, setOpenTRX] = useState(false)
@@ -408,13 +408,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenTRX(false)
     }
 
-    async function depositTRX({ deposit_trx }) {
+    async function withdrawTRX({ withdraw_trx }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_trx,
+          withdraw_trx,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -431,14 +431,14 @@ async function depositXRP({ deposit_xrp }) {
 
 ////////////////////////// USDC /////////////////////////////////
     const usdc = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
-    const [deposit_usdc, setDepositUSDC] = useState(null)
+    const [withdraw_usdc, setWithdrawUSDC] = useState(null)
     const clipboardUSDC = () => {
       navigator.clipboard.writeText(usdc)
       toast.info("Copied to Clipboard");
     };
     const handleChangeUSDC = (event) => {
       const value = event.target.value;
-      setDepositUSDC(value);
+      setWithdrawUSDC(value);
       setInputValue(value);
     };
     let [openUSDC, setOpenUSDC] = useState(false)
@@ -449,13 +449,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenUSDC(false)
     }
 
-    async function depositUSDC({ deposit_usdc }) {
+    async function withdrawUSDC({ withdraw_usdc }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_usdc,
+          withdraw_usdc,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -472,14 +472,14 @@ async function depositXRP({ deposit_xrp }) {
 
 //////////////////////////// INJ ///////////////////////////////
     const inj = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
-    const [deposit_inj, setDepositINJ] = useState(null)
+    const [withdraw_inj, setWithdrawINJ] = useState(null)
     const clipboardINJ = () => {
       navigator.clipboard.writeText(inj)
       toast.info("Copied to Clipboard");
     };
     const handleChangeINJ = (event) => {
       const value = event.target.value;
-      setDepositINJ(value);
+      setWithdrawINJ(value);
       setInputValue(value);
     };
     let [openINJ, setOpenINJ] = useState(false)
@@ -490,13 +490,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenINJ(false)
     }
 
-    async function depositINJ({ deposit_inj }) {
+    async function withdrawINJ({ withdraw_inj }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_inj,
+          withdraw_inj,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -513,14 +513,14 @@ async function depositXRP({ deposit_xrp }) {
 
 //////////////////////////// SHIB ///////////////////////////////
     const shib = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
-    const [deposit_shib, setDepositSHIB] = useState(null)
+    const [withdraw_shib, setWithdrawSHIB] = useState(null)
     const clipboardSHIB = () => {
       navigator.clipboard.writeText(shib)
       toast.info("Copied to Clipboard");
     };
     const handleChangeSHIB = (event) => {
       const value = event.target.value;
-      setDepositSHIB(value);
+      setWithdrawSHIB(value);
       setInputValue(value);
     };
     let [openSHIB, setOpenSHIB] = useState(false)
@@ -531,13 +531,13 @@ async function depositXRP({ deposit_xrp }) {
       setOpenSHIB(false)
     }
 
-    async function depositSHIB({ deposit_shib }) {
+    async function withdrawSHIB({ withdraw_shib }) {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
-          deposit_shib,
+          withdraw_shib,
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -748,15 +748,28 @@ async function depositXRP({ deposit_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Bitcoin Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" 
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_btc || inputValue}
+                        onChange={handleChangeBTC}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawBTC({ withdraw_btc })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -829,13 +842,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">ETH Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_eth || inputValue}
+                        onChange={handleChangeETH}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawETH({ withdraw_eth })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -906,13 +928,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">USDT Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_usdt || inputValue}
+                        onChange={handleChangeUSDT}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawUSDT({ withdraw_usdt })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -983,13 +1014,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">XRP Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_xrp || inputValue}
+                        onChange={handleChangeXRP}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawXRP({ withdraw_xrp })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1060,13 +1100,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">ADA Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_ada || inputValue}
+                        onChange={handleChangeADA}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawADA({ withdraw_ada })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1137,13 +1186,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">XLM Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_xlm || inputValue}
+                        onChange={handleChangeXLM}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawXLM({ withdraw_xlm })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1214,13 +1272,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">HEX Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_hex || inputValue}
+                        onChange={handleChangeHEX}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawHEX({ withdraw_hex })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1291,13 +1358,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">BNB Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_bnb || inputValue}
+                        onChange={handleChangeBNB}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawBNB({ withdraw_bnb })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1368,13 +1444,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">SOL Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_sol || inputValue}
+                        onChange={handleChangeSOL}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawSOL({ withdraw_sol })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1445,13 +1530,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">TRX Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_trx || inputValue}
+                        onChange={handleChangeTRX}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawTRX({ withdraw_trx })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1522,13 +1616,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">USDC Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_usdc || inputValue}
+                        onChange={handleChangeUSDC}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawUSDC({ withdraw_usdc })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1599,13 +1702,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">INJ Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_inj || inputValue}
+                        onChange={handleChangeINJ}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawINJ({ withdraw_inj })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1676,13 +1788,22 @@ async function depositXRP({ deposit_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">SHIB Address <span className="text-rose-500">*</span></label>
                       <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
-                      <input type="number" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_shib || inputValue}
+                        onChange={handleChangeSHIB}
+                        required
+                      />
 
                       {/* BUTTONS */}
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={handleDeposit}
+                            onClick={() => withdrawSHIB({ withdraw_shib })}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >

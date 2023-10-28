@@ -26,5 +26,30 @@
   "WWP_TITLE3": "Sustainability",
   "WWP_TEXT3": "We work to make Web 3.0 a reality. Based in Munich, Germany, we are committing ourselves to running this new generation of infrastructure as sustainable as possible.",
   "WWP_TITLE4": "Bare Metal Infrastucture",
-  "WWP_TEXT4": "Our dedicated infrastructure guarantees low latency and superior routing. By harnessing MEV-optimized nodes and emphasizing bare metal deployments, we amplify resilience and fortify network security, ensuring a distinct edge for staking."
+  "WWP_TEXT4": "Our dedicated infrastructure guarantees low latency and superior routing. By harnessing MEV-optimized nodes and emphasizing bare metal deployments, we amplify resilience and fortify network security, ensuring a distinct edge for staking.",
+  "STAKING": "Staking Plans",
+  "STAKING_MAIN": "Secure and performant non-custodial staking services for individuals and institutional investors.",
+  "STAKING_TITLE1": "Global Staking Market Cap",
+  "STAKING_TEXT1": "$94.6b",
+  "STAKING_TITLE2": "Net Staking Flow 7d",
+  "STAKING_TEXT2": "+$1.01b",
+  "STAKING_TITLE3": "Global Rewards Per Year",
+  "STAKING_TEXT3": "$4.87b",
+  "STAKING_TITLE4": "Benchmark Reward Rate",
+  "STAKING_TEXT4": "5.55%",
+  "ETSP": "Explore Top Staking Plans",
+  "ETSP_PACKAGE1": "silver package",
+  "ETSP_ROI1": "5% daily",
+  "ETSP_DURATION1": "30 days",
+  "ETSP_PACKAGE2": "golden package",
+  "ETSP_ROI2": "10% daily",
+  "ETSP_DURATION2": "30 days",
+  "ETSP_PACKAGE3": "diamond package",
+  "ETSP_ROI3": "15% daily",
+  "ETSP_DURATION3": "30 days",
+  "ETSP_PACKAGE4": "Platinum package",
+  "ETSP_ROI4": "20% daily",
+  "ETSP_DURATION4": "60 days"
+
+
 }
