@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { SidebarProvider } from "../context/SidebarContext";
 import { appWithTranslation } from 'next-i18next'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   const [supabase] = useState(() => createBrowserSupabaseClient())
 
   return (
