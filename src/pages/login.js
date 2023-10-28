@@ -34,7 +34,7 @@ export default function Example() {
             <Auth providers={{}} supabaseClient={supabase} 
               appearance={{ 
                 theme: ThemeSupa,
-                // Localization,
+                Localization,
                 extend: false,
                 className: {
                     container: 'space-y-5',

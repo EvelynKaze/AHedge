@@ -1,5 +1,5 @@
 import Link from "next/link"
-import NavDropdown from "./NavDropdown"
+import NavDropdown from "../NavDropdown"
 
 const navigation = [
   // { name: 'Home', href: '/', current: true },

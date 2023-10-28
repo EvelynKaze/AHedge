@@ -16,44 +16,6 @@ import Link from 'next/link'
 
 
 
-
-const features = [
-  {
-    src: '/pvi.svg',
-    title: 'public validation infrastructure',
-    desc: 'We offer robust, open-access validation services for Proof-of-Stake blockchains, bolstering network integrity and efficiency. Our bare-metal infrastructure fosters a dependable ecosystem, enhanced by tailored client support.'
-  },
-  {
-    src: '/es.svg',
-    title: 'enterprise solutions',
-    desc: 'Experience superior staking at reduced costs and gain control over marketing, fee structures, and reward distribution. Our service ensures your staking activities remain effectively concealed, providing an option for anonymity.'
-  },
-  {
-    src: '/ecw.svg',
-    title: 'ecosystem & community work',
-    desc: 'Actively engaged in the blockchain community, we foster growth and knowledge for Proof-of-Stake blockchains. We invest in and support young projects, protocols, and digital public goods. We catalyst usage, demand, and ecosystem evolution.'
-  },
-]
-
-const reasons = [
-  {
-    icon: "/gya.svg",
-    text: "Grow your Assets"
-  },
-  {
-    icon: "/epi.svg",
-    text: "Earn Passive Income"
-  },
-  {
-    icon: "/ens.svg",
-    text: "Enhance Network Security"
-  },
-  {
-    icon: "/sbe.svg",
-    text: "Support Blockchain Ecosystem"
-  },
-]
-
 const promises = [
   {
     title: "high security",
@@ -127,9 +89,7 @@ const accordions = [
 ]
 
 const Home = () => {
-  // const { locale, locales, push } = useRouter()
   const { t } = useTranslation()
-  const handleClick = l => () => {}
   const session = useSession()
   const supabase = useSupabaseClient()
 
@@ -153,21 +113,20 @@ const Home = () => {
               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                 <div className="lg:pr-8 mt-16">
                   <div className="lg:max-w-lg">
-                    <h2 className="text-xs lg:text-base font-semibold leading-7 text-[#9D00FF] uppercase">ENTERPRISE-GRADE WEB 3.0 INFRASTRUCTURE & SERVICES</h2>
+                    <h2 className="text-xs lg:text-base font-semibold leading-7 text-[#9D00FF] uppercase">{t("HEADER_TITLE")}</h2>
                     <h2 className="text-4xl font-clash font-bold tracking-tight text-white sm:text-6xl">
-                      Powering the 
-                      <br /> 
-                      future of web3
+                      {t("HELLO_WORLD")}
                     </h2>
-                   <p className="mt-2 font-clash text-3xl font-bold tracking-wide text-white sm:text-6xl capitalize">
-                     
-                    </p>
+
+                   {/* <div className="mt-2 font-clash text-lg font-bold tracking-wide text-white capitalize">
+                      
+                    </div> */}
                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                      Secure and performant non-custodial staking services for individuals and institutional investors.
+                      {t("HEADER_DESC")}
                     </p>
                     <div className="flex space-x-3 my-5">
-                      <Link href="/about"><Button variant="outline" className='text-white rounded w-24 text-sm md:text-base lg:w-28 h-12 hover:bg-white hover:text-black'>About Us</Button></Link>
-                      <Link href="/login"><Button variant="outline" className='bg-white rounded w-28 h-12 hover:text-white'>Get Started</Button></Link>
+                      <Link href="/about"><Button variant="outline" className='text-white rounded w-24 text-sm md:text-base lg:w-28 h-12 hover:bg-white hover:text-black'>{t("HEADER_BUTTON1")}</Button></Link>
+                      <Link href="/login"><Button variant="outline" className='bg-white rounded w-28 h-12 hover:text-white'>{t("HEADER_BUTTON2")}</Button></Link>
                     </div>
                   </div>
                 </div>  
@@ -175,6 +134,7 @@ const Home = () => {
             </div>
           </div>
         </div> 
+        {/* Mobile view */}
         <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 lg:hidden">
           <div className="">
              <img
@@ -208,21 +168,21 @@ const Home = () => {
               </div>
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 text-left">
-              <h2 className="text-xs lg:text-base font-semibold leading-7 text-[#9D00FF] uppercase">ENTERPRISE-GRADE WEB 3.0 INFRASTRUCTURE & SERVICES</h2>
+              <h2 className="text-xs lg:text-base font-semibold leading-7 text-[#9D00FF] uppercase">{t("HEADER_TITLE")}</h2>
               <h2 className="text-4xl font-clash font-bold tracking-tight text-white sm:text-6xl">
-                {t("Powering_Web3")}
+              {t("HELLO_WORLD")}
               </h2>
             <div>
                 
               </div>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                Secure and performant non-custodial staking services for individuals and institutional investors.
+                {t("HEADER_DESC")}
               </p>
             </div>
               <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
                 <div className="flex space-x-3 my-5">
-                  <Link href="/about"><Button variant="outline" className='text-white rounded w-24 text-sm md:text-base lg:w-28 h-12 hover:bg-white hover:text-black'>About Us</Button></Link>
-                  <Link href="/login"><Button variant="outline" className='bg-white rounded w-28 h-12 hover:text-white'>Get Started</Button></Link>
+                  <Link href="/about"><Button variant="outline" className='text-white rounded w-24 text-sm md:text-base lg:w-28 h-12 hover:bg-white hover:text-black'>{t("HEADER_BUTTON1")}</Button></Link>
+                  <Link href="/login"><Button variant="outline" className='bg-white rounded w-28 h-12 hover:text-white'>{t("HEADER_BUTTON2")}</Button></Link>
                 </div>
               </div>
             </div>
@@ -242,63 +202,132 @@ const Home = () => {
         {/* what we do */}
         <div className="bg-black w-full py-10 lg:px-44 px-0">
           <div className='lg:px-24 px-0 mx-auto'>
-            <p className="capitalize font-bold text-center text-white text-3xl mb-9">What We do</p>
+            <p className="capitalize font-bold text-center text-white text-3xl mb-9">{t("WWD")}</p>
             <div className="grid lg:grid-cols-3 gap-x-12 gap-y-8 lg:gap-y-0 w-fit mx-auto">
-              {features.map((feature) => (
-                <div key={feature.title} className='border-2 border-[#9D00FF] w-64 p-3 text-center rounded-xl card'>
+                <div className='border-2 border-[#9D00FF] w-64 p-3 text-center rounded-xl card'>
                   <Image
-                    src={feature.src}
+                    src="/pvi.svg"
                     className="w-20 h-20 m-auto"
                     alt=""
                     width={2432}
                     height={1442}
                   />
-                  <h1 className='text-white font-bold capitalize'>{feature.title}</h1>
+                  <h1 className='text-white font-bold capitalize'>{t("WWD_HEADER1")}</h1>
                   <p className='text-gray-300'>
-                    {feature.desc}
+                    {t("WWD_TEXT1")}
                   </p>
                 </div>
-              ))}
+                <div className='border-2 border-[#9D00FF] w-64 p-3 text-center rounded-xl card'>
+                  <Image
+                    src="/es.svg"
+                    className="w-20 h-20 m-auto"
+                    alt=""
+                    width={2432}
+                    height={1442}
+                  />
+                  <h1 className='text-white font-bold capitalize'>{t("WWD_HEADER2")}</h1>
+                  <p className='text-gray-300'>
+                    {t("WWD_TEXT2")}
+                  </p>
+                </div>
+                <div className='border-2 border-[#9D00FF] w-64 p-3 text-center rounded-xl card'>
+                  <Image
+                    src="/ecw.svg"
+                    className="w-20 h-20 m-auto"
+                    alt=""
+                    width={2432}
+                    height={1442}
+                  />
+                  <h1 className='text-white font-bold capitalize'>{t("WWD_HEADER3")}</h1>
+                  <p className='text-gray-300'>
+                    {t("WWD_TEXT3")}
+                  </p>
+                </div>
             </div>
 
             {/* Why Stake */}
             <div className='center-2 z-10' />
 
-            <p className="capitalize font-bold text-white text-3xl my-9 mt-16">Why Stake?</p>
+            <p className="capitalize font-bold text-white text-3xl my-9 mt-16">{t("WS")}</p>
             <div className='grid grid-cols-2 lg:grid-cols-4 mx-10 gap-x-24 gap-y-5 lg:gap-y-0 w-fit'>
-              {reasons.map((reason) => (
-                <div key={reason.text} className='flex w-20'>
+                <div className='flex w-20'>
                   <Image
-                    src={reason.icon}
+                    src="/gya.svg"
                     className="w-20 h-20"
                     alt=""
                     width={2342}
                     height={1442}
                   />
-                  <p className='text-white capitalize'>{reason.text}</p>
+                  <p className='text-white capitalize'>{t("WS_TEXT1")}</p>
                 </div>
-              ))}
-              
+                <div className='flex w-20'>
+                  <Image
+                    src="/epi.svg"
+                    className="w-20 h-20"
+                    alt=""
+                    width={2342}
+                    height={1442}
+                  />
+                  <p className='text-white capitalize'>{t("WS_TEXT2")}</p>
+                </div>
+                <div className='flex w-20'>
+                  <Image
+                    src="/ens.svg"
+                    className="w-20 h-20"
+                    alt=""
+                    width={2342}
+                    height={1442}
+                  />
+                  <p className='text-white capitalize'>{t("WS_TEXT3")}</p>
+                </div>
+                <div className='flex w-20'>
+                  <Image
+                    src="/sbe.svg"
+                    className="w-20 h-20"
+                    alt=""
+                    width={2342}
+                    height={1442}
+                  />
+                  <p className='text-white capitalize'>{t("WS_TEXT4")}</p>
+                </div>
+
             </div>
 
             <div className="my-12 space-y-5 px-3 lg:px-0">
-              <h1 className="text-white font-bold text-3xl">Supported blockchain networks and projects</h1>
+              <h1 className="text-white font-bold text-3xl">{t("SP_CHAIN")}</h1>
               <p className="text-gray-400 text-md">
-                Token holders of these networks, both, retail and intstitutional can help secure the networks by staking their tokens in a non-custodial fashion via our validators. For doing so, they earn rewards in the form of the respective networks&#39; native token.
+                {t("SP_TEXT")}
               </p>
             </div>
 
             <div className="mb-20">
-              <p className="capitalize font-bold text-white text-3xl mb-9">What we promise</p>
+              <p className="capitalize font-bold text-white text-3xl mb-9">{t("WWP")}</p>
               <div className="grid lg:grid-cols-2 max-w-2xl mx-auto gap-x-40 gap-y-12">
-                {promises.map((promise) => (
-                  <div key={promise.title} className="w-96 text-center border-2 border-[#9D00FF] p-3 space-y-4 card rounded-xl">
-                    <h2 className="text-white capitalize">{promise.title}</h2>
+                  <div className="w-96 text-center border-2 border-[#9D00FF] p-3 space-y-4 card rounded-xl">
+                    <h2 className="text-white capitalize">{t("WWP_TITLE1")}</h2>
                     <p className="text-gray-400 text-md">
-                      {promise.desc}
+                    {t("WWP_TEXT1")}
                     </p>
                   </div>
-                ))}
+                  <div className="w-96 text-center border-2 border-[#9D00FF] p-3 space-y-4 card rounded-xl">
+                    <h2 className="text-white capitalize">{t("WWP_TITLE2")}</h2>
+                    <p className="text-gray-400 text-md">
+                      {t("WWP_TEXT2")}
+                    </p>
+                  </div>
+                  <div className="w-96 text-center border-2 border-[#9D00FF] p-3 space-y-4 card rounded-xl">
+                    <h2 className="text-white capitalize">{t("WWP_TITLE3")}</h2>
+                    <p className="text-gray-400 text-md">
+                    {t("WWP_TEXT3")}
+                    </p>
+                  </div>
+                  <div className="w-96 text-center border-2 border-[#9D00FF] p-3 space-y-4 card rounded-xl">
+                    <h2 className="text-white capitalize">{t("WWP_TITLE4")}</h2>
+                    <p className="text-gray-400 text-md">
+                      {t("WWP_TEXT4")}
+                    </p>
+                  </div>
+                  
               </div>
               
             </div>
