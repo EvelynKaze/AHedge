@@ -118,12 +118,9 @@ const Home = () => {
                       {t("HELLO_WORLD")}
                     </h2>
 
-                   <div className="mt-2 font-clash text-lg font-bold tracking-wide text-white capitalize">
-                      <Link href="/en" style={{ marginRight: "15px"}}>English</Link>
-                      <Link href="/de" style={{ marginRight: "15px"}}>German</Link>
-                      <Link href="/tr" style={{ marginRight: "15px"}}>Turkish</Link>
-                      <Link href="/vi" style={{ marginRight: "15px"}}>Vietnamese</Link>
-                    </div>
+                   {/* <div className="mt-2 font-clash text-lg font-bold tracking-wide text-white capitalize">
+                      
+                    </div> */}
                     <p className="mt-6 text-lg leading-8 text-gray-300">
                       {t("HEADER_DESC")}
                     </p>
