@@ -605,7 +605,6 @@ export default function Deposit({ session }){
           <div className="space-y-2 mb-4 text-center">
             <h2 className="font-bold text-2xl">Deposit Funds</h2>
             <h4>via <span className="font-semibold">Crypto Wallet</span></h4>
-            <p className="text-xs font-light">Send your payment directly to our wallet</p>
           </div>
         
       <div className="mx-auto w-full max-w-2xl gap-x-4 gap-y-1 grid grid-cols-2">
