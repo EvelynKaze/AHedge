@@ -552,6 +552,128 @@ async function withdrawXRP({ withdraw_xrp }) {
         }
     };
     
+//////////////////////////// MATIC ///////////////////////////////
+    const matic = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+    const [withdraw_matic, setWithdrawMATIC] = useState(null)
+    const clipboardMATIC = () => {
+      navigator.clipboard.writeText(matic)
+      toast.info("Copied to Clipboard");
+    };
+    const handleChangeMATIC = (event) => {
+      const value = event.target.value;
+      setWithdrawMATIC(value);
+      setInputValue(value);
+    };
+    let [openMATIC, setOpenMATIC] = useState(false)
+    function openMATICModal(){
+      setOpenMATIC(true)
+    }
+    function closeMATICModal(){
+      setOpenMATIC(false)
+    }
+
+    async function withdrawMATIC({ withdraw_matic }) {
+      try {
+        setLoading(true)
+
+        const updates = {
+          id: user.id,
+          withdraw_matic,
+          updated_at: new Date().toISOString(),
+        }
+        let { error } = await supabase.from('profiles').upsert(updates)
+        if (error) throw error
+          setOpenMATIC(false)
+          toast.success("Staking Order placed. Awaiting Approval.")
+        } catch (error) {
+          alert('internal Server Error: Error updating the data!')
+          console.log(error)
+        } finally {
+          setLoading(false)
+        }
+    };
+
+//////////////////////////// BONK ///////////////////////////////
+    const bonk = "7rk2qUYSbgHhRCdqEFw7LmAWiPyW1Ws4fYfvYJXDkw6n"
+    const [withdraw_bonk, setWithdrawBONK] = useState(null)
+    const clipboardBONK = () => {
+      navigator.clipboard.writeText(bonk)
+      toast.info("Copied to Clipboard");
+    };
+    const handleChangeBONK = (event) => {
+      const value = event.target.value;
+      setWithdrawBONK(value);
+      setInputValue(value);
+    };
+    let [openBONK, setOpenBONK] = useState(false)
+    function openBONKModal(){
+      setOpenBONK(true)
+    }
+    function closeBONKModal(){
+      setOpenBONK(false)
+    }
+
+    async function withdrawBONK({ withdraw_bonk }) {
+      try {
+        setLoading(true)
+
+        const updates = {
+          id: user.id,
+          withdraw_bonk,
+          updated_at: new Date().toISOString(),
+        }
+        let { error } = await supabase.from('profiles').upsert(updates)
+        if (error) throw error
+          setOpenBONK(false)
+          toast.success("Staking Order placed. Awaiting Approval.")
+        } catch (error) {
+          alert('internal Server Error: Error updating the data!')
+          console.log(error)
+        } finally {
+          setLoading(false)
+        }
+    };
+
+//////////////////////////// DOGE ///////////////////////////////
+    const doge = "DGmRUnfhrAb4bQY8LPFSNYxgqPaT5SbbaN"
+    const [withdraw_doge, setWithdrawDOGE] = useState(null)
+    const clipboardDOGE = () => {
+      navigator.clipboard.writeText(doge)
+      toast.info("Copied to Clipboard");
+    };
+    const handleChangeDOGE = (event) => {
+      const value = event.target.value;
+      setWithdrawDOGE(value);
+      setInputValue(value);
+    };
+    let [openDOGE, setOpenDOGE] = useState(false)
+    function openDOGEModal(){
+      setOpenDOGE(true)
+    }
+    function closeDOGEModal(){
+      setOpenDOGE(false)
+    }
+
+    async function withdrawDOGE({ withdraw_doge }) {
+      try {
+        setLoading(true)
+
+        const updates = {
+          id: user.id,
+          withdraw_doge,
+          updated_at: new Date().toISOString(),
+        }
+        let { error } = await supabase.from('profiles').upsert(updates)
+        if (error) throw error
+          setOpenDOGE(false)
+          toast.success("Staking Order placed. Awaiting Approval.")
+        } catch (error) {
+          alert('internal Server Error: Error updating the data!')
+          console.log(error)
+        } finally {
+          setLoading(false)
+        }
+    };
 
     
 ////////////////////////////////////////////////////////////////////
@@ -704,6 +826,27 @@ async function withdrawXRP({ withdraw_xrp }) {
           </div>
         </div>
         <div onClick={openSHIBModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">SHIB</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openMATICModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">SHIB</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openBONKModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">SHIB</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openDOGEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className=" font-medium ">SHIB</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
@@ -1813,6 +1956,264 @@ async function withdrawXRP({ withdraw_xrp }) {
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeSHIBModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* MATIC */}
+        <Transition appear show={openMATIC} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeMATICModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send MATIC
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">MATIC Address <span className="text-rose-500">*</span></label>
+                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_matic || inputValue}
+                        onChange={handleChangeMATIC}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawMATIC({ withdraw_matic })}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeMATICModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* BONK */}
+        <Transition appear show={openBONK} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeBONKModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send BONK
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">BONK Address <span className="text-rose-500">*</span></label>
+                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_bonk || inputValue}
+                        onChange={handleChangeBONK}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawBONK({ withdraw_bonk })}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeBONKModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* DOGE */}
+        <Transition appear show={openDOGE} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeDOGEModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send DOGE
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">DOGE Address <span className="text-rose-500">*</span></label>
+                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_doge || inputValue}
+                        onChange={handleChangeDOGE}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawDOGE({ withdraw_doge })}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeDOGEModal}
                         >
                             Close
                         </button>
