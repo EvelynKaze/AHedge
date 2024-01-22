@@ -826,21 +826,21 @@ export default function Deposit({ session }){
         </div>
         <div onClick={openMATICModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">SHIB</p>
+          <p className=" font-medium ">MATIC</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
         </div>
         <div onClick={openBONKModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">SHIB</p>
+          <p className=" font-medium ">BONK</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
         </div>
         <div onClick={openDOGEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">SHIB</p>
+          <p className=" font-medium ">DOGE</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
