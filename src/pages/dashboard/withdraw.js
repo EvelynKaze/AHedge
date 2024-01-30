@@ -794,6 +794,86 @@ async function withdrawXRP({ withdraw_xrp }) {
               setLoading(false)
             }
         };
+        //////////////////////////// JUP ///////////////////////////////
+        const jup = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [withdraw_jup, setWithdrawJUP] = useState(null)
+        const clipboardJUP = () => {
+          navigator.clipboard.writeText(jup)
+          toast.info("Copied to Clipboard");
+        };
+        const handleChangeJUP = (event) => {
+          const value = event.target.value;
+          setWithdrawJUP(value);
+          setInputValue(value);
+        };
+        let [openJUP, setOpenJUP] = useState(false)
+        function openJUPModal(){
+          setOpenJUP(true)
+        }
+        function closeJUPModal(){
+          setOpenJUP(false)
+        }
+
+        async function withdrawJUP({ withdraw_jup }) {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_jup,
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenJUP(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+        //////////////////////////// WEN ///////////////////////////////
+        const wen = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [withdraw_wen, setWithdrawWEN] = useState(null)
+        const clipboardWEN = () => {
+          navigator.clipboard.writeText(wen)
+          toast.info("Copied to Clipboard");
+        };
+        const handleChangeWEN = (event) => {
+          const value = event.target.value;
+          setWithdrawWEN(value);
+          setInputValue(value);
+        };
+        let [openWEN, setOpenWEN] = useState(false)
+        function openWENModal(){
+          setOpenWEN(true)
+        }
+        function closeWENModal(){
+          setOpenWEN(false)
+        }
+
+        async function withdrawWEN({ withdraw_wen }) {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_wen,
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenWEN(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
     
 ////////////////////////////////////////////////////////////////////
 
@@ -989,6 +1069,20 @@ async function withdrawXRP({ withdraw_xrp }) {
         <div onClick={openBRCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className=" font-medium ">BRC20</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openJUPModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">JUP</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openWENModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">WEN</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
@@ -2612,6 +2706,178 @@ async function withdrawXRP({ withdraw_xrp }) {
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeBRCModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* JUP */}
+        <Transition appear show={openJUP} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeJUPModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send JUP
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">JUP Address <span className="text-rose-500">*</span></label>
+                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_jup || inputValue}
+                        onChange={handleChangeJUP}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawJUP({ withdraw_jup })}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeJUPModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* WEN */}
+        <Transition appear show={openWEN} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeWENModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send WEN
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">WEN Address <span className="text-rose-500">*</span></label>
+                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_wen || inputValue}
+                        onChange={handleChangeWEN}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawWEN({ withdraw_wen })}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeWENModal}
                         >
                             Close
                         </button>
