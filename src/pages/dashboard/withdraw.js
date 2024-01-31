@@ -20,7 +20,7 @@ export default function Deposit({ session }){
     const [avatar_url, setAvatarUrl] = useState(null)
     const [inputValue, setInputValue] = useState('');
     const router = useRouter();
-///////////////////////////////////////////////////////////
+//////////////////////////// BTC ///////////////////////////////
     const [withdraw_btc, setWithdrawBtc] = useState(null)
 
     const handleChangeBTC = (event) => {
@@ -152,7 +152,7 @@ const clipboardXRP = () => {
 };
 const handleChangeXRP = (event) => {
   const value = event.target.value;
-  setWithdrawXrp(value);
+  setWithdrawXRP(value);
   setInputValue(value);
 };
 let [openXRP, setOpenXRP] = useState(false)
@@ -1243,7 +1243,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                            onClick={closeBTCModal}
+                            onClick={closeETHModal}
                         >
                             Close
                         </button>
