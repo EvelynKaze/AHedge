@@ -21,60 +21,64 @@ export default function Deposit({ session }){
     const [inputValue, setInputValue] = useState('');
     const router = useRouter();
 //////////////////////////// BTC ///////////////////////////////
-    const [withdraw_btc, setWithdrawBtc] = useState(null)
+const [withdraw_btc, setWithdrawBtc] = useState(null)
+const [btcWalletAddress, setBTCWalletAddress] = useState('');
 
-    const handleChangeBTC = (event) => {
-      const value = event.target.value;
-      setWithdrawBtc(value);
-      setInputValue(value);
-    };
+const handleChangeBTC = (event) => {
+  const value = event.target.value;
+  setWithdrawBtc(value);
+  setInputValue(value);
+};
 
-    let [openBTC, setOpenBTC] = useState(false)
-    function closeBTCModal() {
-      setOpenBTC(false)
-    }
-    function openBTCModal() {
-      setOpenBTC(true)
-    }
-    const bitcoin = "bc1qkk9tf9c72kv7hlaf6cjazq2an9sstvnsawst33"
-    
-    const clipboardBTC = () => {
-      navigator.clipboard.writeText(bitcoin)
-      toast.info("Copied to Clipboard");
-    };
+const handleChangeBTCWalletAddress = (event) => {
+  setBTCWalletAddress(event.target.value);
+};
 
-    async function withdrawBTC({ withdraw_btc }) {
-      try {
-        setLoading(true)
-  
-        const updates = {
-          id: user.id,
-          withdraw_btc,
-          updated_at: new Date().toISOString(),
-        }
-        let { error } = await supabase.from('profiles').upsert(updates)
-        if (error) throw error
-          setOpenBTC(false)
-          toast.success("Transaction Order placed. Awaiting Approval.")
-        } catch (error) {
-          alert('Error updating the data!')
-          console.log(error)
-        } finally {
-          setLoading(false)
-        }
+
+let [openBTC, setOpenBTC] = useState(false)
+function closeBTCModal() {
+  setOpenBTC(false)
+}
+function openBTCModal() {
+  setOpenBTC(true)
+}
+
+async function withdrawBTC() {
+  try {
+    setLoading(true);
+
+    const updates = {
+      id: user.id,
+      withdraw_btc,
+      withdraw_btc_address: btcWalletAddress, // Add the wallet address here
+      updated_at: new Date().toISOString(),
     };
+    let { error } = await supabase.from('profiles').upsert(updates);
+    if (error) throw error;
+    setOpenBTC(false);
+    toast.success("Transaction Order placed. Awaiting Approval.");
+  } catch (error) {
+    alert('Error updating the data!');
+    console.log(error);
+  } finally {
+    setLoading(false);
+  }
+};
     ///////////////////////////////////////////////////////
     const [withdraw_eth, setWithdrawEth] = useState(null)
-    const eth = "0xFC8D2A05260b03a3Eea9e458Ca88dc11A894Cb03"
-    const clipboardETH = () => {
-      navigator.clipboard.writeText(eth)
-      toast.info("Copied to Clipboard");
-    };
+    const [ethWalletAddress, setETHWalletAddress] = useState('');
+
+    
     const handleChangeETH = (event) => {
       const value = event.target.value;
       setWithdrawEth(value);
       setInputValue(value);
     };
+
+    const handleChangeETHWalletAddress = (event) => {
+      setETHWalletAddress(event.target.value);
+    };
+
     let [openETH, setOpenETH] = useState(false)
     function openETHModal(){
       setOpenETH(true)
@@ -82,13 +86,14 @@ export default function Deposit({ session }){
     function closeETHModal(){
       setOpenETH(false)
     }
-    async function withdrawETH({ withdraw_eth }) {
+    async function withdrawETH() {
       try {
         setLoading(true)
   
         const updates = {
           id: user.id,
           withdraw_eth,
+          withdraw_eth_address: ethWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -102,59 +107,66 @@ export default function Deposit({ session }){
           setLoading(false)
         }
     };
-///////////////////////////////////////////////////////////
-    const usdt = "0x11f38b2Ca413457Ce7f964ad1633Bd6aFe11B213"
-    const [withdraw_usdt, setWithdrawUsdt] = useState(null)
-    const clipboardUSDT = () => {
-      navigator.clipboard.writeText(usdt)
-      toast.info("Copied to Clipboard");
-    };
-    const handleChangeUSDT = (event) => {
-      const value = event.target.value;
-      setWithdrawUsdt(value);
-      setInputValue(value);
-    };
-    let [openUSDT, setOpenUSDT] = useState(false)
-    function openUSDTModal(){
-      setOpenUSDT(true)
-    }
-    function closeUSDTModal(){
-      setOpenUSDT(false)
-    }
+////////////////////////// USDT /////////////////////////////////
+const [withdraw_usdt, setWithdrawUsdt] = useState(null)
+const [usdtWalletAddress, setUSDTWalletAddress] = useState('');
 
-    async function withdrawUSDT({ withdraw_usdt }) {
-      try {
-        setLoading(true)
-  
-        const updates = {
-          id: user.id,
-          withdraw_usdt,
-          updated_at: new Date().toISOString(),
-        }
-        let { error } = await supabase.from('profiles').upsert(updates)
-        if (error) throw error
-          setOpenUSDT(false)
-          toast.success("Transaction Order placed. Awaiting Approval.")
-        } catch (error) {
-          alert('Error updating the data!')
-          console.log(error)
-        } finally {
-          setLoading(false)
-        }
-    };
+
+const handleChangeUSDT = (event) => {
+  const value = event.target.value;
+  setWithdrawUsdt(value);
+  setInputValue(value);
+};
+
+const handleChangeUSDTWalletAddress = (event) => {
+  setUSDTWalletAddress(event.target.value);
+};
+
+let [openUSDT, setOpenUSDT] = useState(false)
+function openUSDTModal(){
+  setOpenUSDT(true)
+}
+function closeUSDTModal(){
+  setOpenUSDT(false)
+}
+
+async function withdrawUSDT() {
+  try {
+    setLoading(true)
+
+    const updates = {
+      id: user.id,
+      withdraw_usdt,
+      withdraw_usdt_address: usdtWalletAddress, // Add the wallet address here
+      updated_at: new Date().toISOString(),
+    }
+    let { error } = await supabase.from('profiles').upsert(updates)
+    if (error) throw error
+      setOpenUSDT(false)
+      toast.success("Transaction Order placed. Awaiting Approval.")
+    } catch (error) {
+      alert('Error updating the data!')
+      console.log(error)
+    } finally {
+      setLoading(false)
+    }
+};
 ////////////////////////////////////////////////////////////////////
 ////////////////////////// XRP /////////////////////////////////
-const xrp = "rG3cdRNzZ1k83uFrzxMmpekkifKBYcv1dv"
+const [xrpWalletAddress, setXRPWalletAddress] = useState('');
 const [withdraw_xrp, setWithdrawXRP] = useState(null)
-const clipboardXRP = () => {
-  navigator.clipboard.writeText(xrp)
-  toast.info("Copied to Clipboard");
-};
+
 const handleChangeXRP = (event) => {
   const value = event.target.value;
   setWithdrawXRP(value);
   setInputValue(value);
 };
+
+const handleChangeXRPWalletAddress = (event) => {
+  setXRPWalletAddress(event.target.value);
+};
+
+
 let [openXRP, setOpenXRP] = useState(false)
 function openXRPModal(){
   setOpenXRP(true)
@@ -163,13 +175,14 @@ function closeXRPModal(){
   setOpenXRP(false)
 }
 
-async function withdrawXRP({ withdraw_xrp }) {
+async function withdrawXRP() {
   try {
     setLoading(true)
 
     const updates = {
       id: user.id,
       withdraw_xrp,
+      withdraw_xrp_address: xrpWalletAddress, // Add the wallet address here
       updated_at: new Date().toISOString(),
     }
     let { error } = await supabase.from('profiles').upsert(updates)
@@ -184,17 +197,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     }
 };
 ///////////////////////// ADA //////////////////////////////////
-  const ada = "addr1q98ae09zhyjda27zjkv0mf7mxszkpygxqgl7m5ceyxtrqr8ky7rryg9x5dduzrc9g700hmtl8yw6p60xqgqnhdzhd8psz9tnjn"
+  const [adaWalletAddress, setADAWalletAddress] = useState('');
   const [withdraw_ada, setWithdrawADA] = useState(null)
-  const clipboardADA = () => {
-    navigator.clipboard.writeText(ada)
-    toast.info("Copied to Clipboard");
-  };
+  
   const handleChangeADA = (event) => {
     const value = event.target.value;
     setWithdrawADA(value);
     setInputValue(value);
   };
+
+  const handleChangeADAWalletAddress = (event) => {
+    setADAWalletAddress(event.target.value);
+  };
+
   let [openADA, setOpenADA] = useState(false)
   function openADAModal(){
     setOpenADA(true)
@@ -203,13 +218,14 @@ async function withdrawXRP({ withdraw_xrp }) {
     setOpenADA(false)
   }
 
-  async function withdrawADA({ withdraw_ada }) {
+  async function withdrawADA() {
     try {
       setLoading(true)
 
       const updates = {
         id: user.id,
         withdraw_ada,
+        withdraw_ada_address: adaWalletAddress, // Add the wallet address here
         updated_at: new Date().toISOString(),
       }
       let { error } = await supabase.from('profiles').upsert(updates)
@@ -225,17 +241,19 @@ async function withdrawXRP({ withdraw_xrp }) {
   };
 
 ////////////////////////// XLM /////////////////////////////////
-    const xlm = "GAAZHEFRKMW6EIU2DB6XZ5Q4GNXPPEIGBQ44HBPJJTJNCRRAZSR5BRHJ"
+    const [xlmWalletAddress, setXLMWalletAddress] = useState('');
     const [withdraw_xlm, setWithdrawXLM] = useState(null)
-    const clipboardXLM = () => {
-      navigator.clipboard.writeText(xlm)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeXLM = (event) => {
       const value = event.target.value;
       setWithdrawXLM(value);
       setInputValue(value);
     };
+
+    const handleChangeXLMWalletAddress = (event) => {
+      setXLMWalletAddress(event.target.value);
+    };
+
     let [openXLM, setOpenXLM] = useState(false)
     function openXLMModal(){
       setOpenXLM(true)
@@ -244,13 +262,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenXLM(false)
     }
 
-    async function withdrawXLM({ withdraw_xlm }) {
+    async function withdrawXLM() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_xlm,
+          withdraw_xlm_address: xlmWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -266,17 +285,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 ///////////////////////// HEX //////////////////////////////////
-    const hex = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+    const [hexWalletAddress, setHEXWalletAddress] = useState('');
     const [withdraw_hex, setWithdrawHEX] = useState(null)
-    const clipboardHEX = () => {
-      navigator.clipboard.writeText(xlm)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeHEX = (event) => {
       const value = event.target.value;
       setWithdrawHEX(value);
       setInputValue(value);
     };
+
+    const handleChangeHEXWalletAddress = (event) => {
+      setHEXWalletAddress(event.target.value);
+    };
+
     let [openHEX, setOpenHEX] = useState(false)
     function openHEXModal(){
       setOpenHEX(true)
@@ -285,13 +306,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenHEX(false)
     }
 
-    async function withdrawHEX({ withdraw_hex }) {
+    async function withdrawHEX() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_hex,
+          withdraw_hex_address: hexWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -307,17 +329,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 ///////////////////////// BNB //////////////////////////////////
-    const bnb = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+    const [bnbWalletAddress, setBNBWalletAddress] = useState('');
     const [withdraw_bnb, setWithdrawBNB] = useState(null)
-    const clipboardBNB = () => {
-      navigator.clipboard.writeText(bnb)
-      toast.info("Copied to Clipboard");
-    };
+   
     const handleChangeBNB = (event) => {
       const value = event.target.value;
       setWithdrawBNB(value);
       setInputValue(value);
     };
+
+    const handleChangeBNBWalletAddress = (event) => {
+      setBNBWalletAddress(event.target.value);
+    };
+
     let [openBNB, setOpenBNB] = useState(false)
     function openBNBModal(){
       setOpenBNB(true)
@@ -326,13 +350,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenBNB(false)
     }
 
-    async function withdrawBNB({ withdraw_bnb }) {
+    async function withdrawBNB() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_bnb,
+          withdraw_bnb_address: bnbWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -348,17 +373,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 ////////////////////// SOL /////////////////////////////////////
-    const sol = "7rk2qUYSbgHhRCdqEFw7LmAWiPyW1Ws4fYfvYJXDkw6n"
+    const [solWalletAddress, setSOLWalletAddress] = useState('');
     const [withdraw_sol, setWithdrawSOL] = useState(null)
-    const clipboardSOL = () => {
-      navigator.clipboard.writeText(sol)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeSOL = (event) => {
       const value = event.target.value;
       setWithdrawSOL(value);
       setInputValue(value);
     };
+
+    const handleChangeSOLWalletAddress = (event) => {
+      setSOLWalletAddress(event.target.value);
+    };
+
     let [openSOL, setOpenSOL] = useState(false)
     function openSOLModal(){
       setOpenSOL(true)
@@ -367,13 +394,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenSOL(false)
     }
 
-    async function withdrawSOL({ withdraw_sol }) {
+    async function withdrawSOL() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_sol,
+          withdraw_sol_address: solWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -389,17 +417,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 ////////////////////////// TRX /////////////////////////////////
-    const trx = "TNW1zeNt9hMvXPfT6JEBeAhfGAsbqgCNWX"
+    const [trxWalletAddress, setTRXWalletAddress] = useState('');
     const [withdraw_trx, setWithdrawTRX] = useState(null)
-    const clipboardTRX = () => {
-      navigator.clipboard.writeText(trx)
-      toast.info("Copied to Clipboard");
-    };
+   
     const handleChangeTRX = (event) => {
       const value = event.target.value;
       setWithdrawTRX(value);
       setInputValue(value);
     };
+
+    const handleChangeTRXWalletAddress = (event) => {
+      setTRXWalletAddress(event.target.value);
+    };
+
     let [openTRX, setOpenTRX] = useState(false)
     function openTRXModal(){
       setOpenTRX(true)
@@ -408,13 +438,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenTRX(false)
     }
 
-    async function withdrawTRX({ withdraw_trx }) {
+    async function withdrawTRX() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_trx,
+          withdraw_trx_address: trxWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -430,17 +461,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 ////////////////////////// USDC /////////////////////////////////
-    const usdc = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+    const [usdcWalletAddress, setUSDCWalletAddress] = useState('');
     const [withdraw_usdc, setWithdrawUSDC] = useState(null)
-    const clipboardUSDC = () => {
-      navigator.clipboard.writeText(usdc)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeUSDC = (event) => {
       const value = event.target.value;
       setWithdrawUSDC(value);
       setInputValue(value);
     };
+
+    const handleChangeUSDCWalletAddress = (event) => {
+      setUSDCWalletAddress(event.target.value);
+    };
+
     let [openUSDC, setOpenUSDC] = useState(false)
     function openUSDCModal(){
       setOpenUSDC(true)
@@ -456,6 +489,7 @@ async function withdrawXRP({ withdraw_xrp }) {
         const updates = {
           id: user.id,
           withdraw_usdc,
+          withdraw_usdc_address: usdcWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -471,17 +505,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 //////////////////////////// INJ ///////////////////////////////
-    const inj = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+    const [injWalletAddress, setINJWalletAddress] = useState('');
     const [withdraw_inj, setWithdrawINJ] = useState(null)
-    const clipboardINJ = () => {
-      navigator.clipboard.writeText(inj)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeINJ = (event) => {
       const value = event.target.value;
       setWithdrawINJ(value);
       setInputValue(value);
     };
+
+    const handleChangeINJWalletAddress = (event) => {
+      setINJWalletAddress(event.target.value);
+    };
+
     let [openINJ, setOpenINJ] = useState(false)
     function openINJModal(){
       setOpenINJ(true)
@@ -490,13 +526,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenINJ(false)
     }
 
-    async function withdrawINJ({ withdraw_inj }) {
+    async function withdrawINJ() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_inj,
+          withdraw_inj_address: injWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -512,17 +549,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 //////////////////////////// SHIB ///////////////////////////////
-    const shib = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+    const [shibWalletAddress, setSHIBWalletAddress] = useState('');
     const [withdraw_shib, setWithdrawSHIB] = useState(null)
-    const clipboardSHIB = () => {
-      navigator.clipboard.writeText(shib)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeSHIB = (event) => {
       const value = event.target.value;
       setWithdrawSHIB(value);
       setInputValue(value);
     };
+
+    const handleChangeSHIBWalletAddress = (event) => {
+      setSHIBWalletAddress(event.target.value);
+    };
+
     let [openSHIB, setOpenSHIB] = useState(false)
     function openSHIBModal(){
       setOpenSHIB(true)
@@ -531,13 +570,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenSHIB(false)
     }
 
-    async function withdrawSHIB({ withdraw_shib }) {
+    async function withdrawSHIB() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_shib,
+          withdraw_shib_address: shibWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -553,17 +593,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
     
 //////////////////////////// MATIC ///////////////////////////////
-    const matic = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+    const [maticWalletAddress, setMATICWalletAddress] = useState('');
     const [withdraw_matic, setWithdrawMATIC] = useState(null)
-    const clipboardMATIC = () => {
-      navigator.clipboard.writeText(matic)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeMATIC = (event) => {
       const value = event.target.value;
       setWithdrawMATIC(value);
       setInputValue(value);
     };
+
+    const handleChangeMATICWalletAddress = (event) => {
+      setMATICWalletAddress(event.target.value);
+    };
+
     let [openMATIC, setOpenMATIC] = useState(false)
     function openMATICModal(){
       setOpenMATIC(true)
@@ -572,13 +614,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenMATIC(false)
     }
 
-    async function withdrawMATIC({ withdraw_matic }) {
+    async function withdrawMATIC() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_matic,
+          withdraw_matic_address: maticWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -594,17 +637,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 //////////////////////////// BONK ///////////////////////////////
-    const bonk = "7rk2qUYSbgHhRCdqEFw7LmAWiPyW1Ws4fYfvYJXDkw6n"
+    const [bonkWalletAddress, setBONKWalletAddress] = useState('');
     const [withdraw_bonk, setWithdrawBONK] = useState(null)
-    const clipboardBONK = () => {
-      navigator.clipboard.writeText(bonk)
-      toast.info("Copied to Clipboard");
-    };
+   
     const handleChangeBONK = (event) => {
       const value = event.target.value;
       setWithdrawBONK(value);
       setInputValue(value);
     };
+
+    const handleChangeBONKWalletAddress = (event) => {
+      setBONKWalletAddress(event.target.value);
+    };
+
     let [openBONK, setOpenBONK] = useState(false)
     function openBONKModal(){
       setOpenBONK(true)
@@ -613,13 +658,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenBONK(false)
     }
 
-    async function withdrawBONK({ withdraw_bonk }) {
+    async function withdrawBONK() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_bonk,
+          withdraw_bonk_address: bonkWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -635,17 +681,19 @@ async function withdrawXRP({ withdraw_xrp }) {
     };
 
 //////////////////////////// DOGE ///////////////////////////////
-    const doge = "DGmRUnfhrAb4bQY8LPFSNYxgqPaT5SbbaN"
+    const [dogeWalletAddress, setDOGEWalletAddress] = useState('');
     const [withdraw_doge, setWithdrawDOGE] = useState(null)
-    const clipboardDOGE = () => {
-      navigator.clipboard.writeText(doge)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeDOGE = (event) => {
       const value = event.target.value;
       setWithdrawDOGE(value);
       setInputValue(value);
     };
+
+    const handleChangeDOGEWalletAddress = (event) => {
+      setDOGEWalletAddress(event.target.value);
+    };
+
     let [openDOGE, setOpenDOGE] = useState(false)
     function openDOGEModal(){
       setOpenDOGE(true)
@@ -654,13 +702,14 @@ async function withdrawXRP({ withdraw_xrp }) {
       setOpenDOGE(false)
     }
 
-    async function withdrawDOGE({ withdraw_doge }) {
+    async function withdrawDOGE() {
       try {
         setLoading(true)
 
         const updates = {
           id: user.id,
           withdraw_doge,
+          withdraw_doge_address: dogeWalletAddress, // Add the wallet address here
           updated_at: new Date().toISOString(),
         }
         let { error } = await supabase.from('profiles').upsert(updates)
@@ -675,17 +724,19 @@ async function withdrawXRP({ withdraw_xrp }) {
         }
     };
         //////////////////////////// ARBITRUM ///////////////////////////////
-        const arbitrum = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+        const [arbitrumWalletAddress, setARBITRUMWalletAddress] = useState('');
         const [withdraw_arbitrum, setWithdrawARBITRUM] = useState(null)
-        const clipboardARBITRUM = () => {
-          navigator.clipboard.writeText(arbitrum)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeARBITRUM = (event) => {
           const value = event.target.value;
           setWithdrawARBITRUM(value);
           setInputValue(value);
         };
+
+        const handleChangeARBITRUMWalletAddress = (event) => {
+          setARBITRUMWalletAddress(event.target.value);
+        };
+
         let [openARBITRUM, setOpenARBITRUM] = useState(false)
         function openARBITRUMModal(){
           setOpenARBITRUM(true)
@@ -694,13 +745,14 @@ async function withdrawXRP({ withdraw_xrp }) {
           setOpenARBITRUM(false)
         }
 
-        async function withdrawARBITRUM({ withdraw_arbitrum }) {
+        async function withdrawARBITRUM() {
           try {
             setLoading(true)
 
             const updates = {
               id: user.id,
               withdraw_arbitrum,
+              withdraw_arbitrum_address: arbitrumWalletAddress, // Add the wallet address here
               updated_at: new Date().toISOString(),
             }
             let { error } = await supabase.from('profiles').upsert(updates)
@@ -715,17 +767,19 @@ async function withdrawXRP({ withdraw_xrp }) {
             }
         };
         //////////////////////////// ENJ ///////////////////////////////
-        const enj = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+        const [enjWalletAddress, setENJWalletAddress] = useState('');
         const [withdraw_enj, setWithdrawENJ] = useState(null)
-        const clipboardENJ = () => {
-          navigator.clipboard.writeText(enj)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeENJ = (event) => {
           const value = event.target.value;
           setWithdrawENJ(value);
           setInputValue(value);
         };
+
+        const handleChangeENJWalletAddress = (event) => {
+          setENJWalletAddress(event.target.value);
+        };
+
         let [openENJ, setOpenENJ] = useState(false)
         function openENJModal(){
           setOpenENJ(true)
@@ -734,13 +788,14 @@ async function withdrawXRP({ withdraw_xrp }) {
           setOpenENJ(false)
         }
 
-        async function withdrawENJ({ withdraw_enj }) {
+        async function withdrawENJ() {
           try {
             setLoading(true)
 
             const updates = {
               id: user.id,
               withdraw_enj,
+              withdraw_enj_address: enjWalletAddress,
               updated_at: new Date().toISOString(),
             }
             let { error } = await supabase.from('profiles').upsert(updates)
@@ -755,17 +810,19 @@ async function withdrawXRP({ withdraw_xrp }) {
             }
         };
         //////////////////////////// BRC20 ///////////////////////////////
-        const brc20 = "bc1p2sqyg89zhk8z69854xs56ezkdnlan37tmngs8z89thswj7tpzjksnpsk4x"
+        const [brcWalletAddress, setBRCWalletAddress] = useState('');
         const [withdraw_brc, setWithdrawBRC] = useState(null)
-        const clipboardBRC = () => {
-          navigator.clipboard.writeText(brc20)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeBRC = (event) => {
           const value = event.target.value;
           setWithdrawBRC(value);
           setInputValue(value);
         };
+
+        const handleChangeBRCWalletAddress = (event) => {
+          setBRCWalletAddress(event.target.value);
+        };
+
         let [openBRC, setOpenBRC] = useState(false)
         function openBRCModal(){
           setOpenBRC(true)
@@ -774,13 +831,14 @@ async function withdrawXRP({ withdraw_xrp }) {
           setOpenBRC(false)
         }
 
-        async function withdrawBRC({ withdraw_brc }) {
+        async function withdrawBRC() {
           try {
             setLoading(true)
 
             const updates = {
               id: user.id,
               withdraw_brc,
+              withdraw_brc_address: brcWalletAddress, // Add the wallet address here
               updated_at: new Date().toISOString(),
             }
             let { error } = await supabase.from('profiles').upsert(updates)
@@ -795,17 +853,19 @@ async function withdrawXRP({ withdraw_xrp }) {
             }
         };
         //////////////////////////// JUP ///////////////////////////////
-        const jup = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [jupWalletAddress, setJUPWalletAddress] = useState('');
         const [withdraw_jup, setWithdrawJUP] = useState(null)
-        const clipboardJUP = () => {
-          navigator.clipboard.writeText(jup)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeJUP = (event) => {
           const value = event.target.value;
           setWithdrawJUP(value);
           setInputValue(value);
         };
+
+        const handleChangeJUPWalletAddress = (event) => {
+          setJUPWalletAddress(event.target.value);
+        };
+
         let [openJUP, setOpenJUP] = useState(false)
         function openJUPModal(){
           setOpenJUP(true)
@@ -814,13 +874,14 @@ async function withdrawXRP({ withdraw_xrp }) {
           setOpenJUP(false)
         }
 
-        async function withdrawJUP({ withdraw_jup }) {
+        async function withdrawJUP() {
           try {
             setLoading(true)
 
             const updates = {
               id: user.id,
               withdraw_jup,
+              withdraw_jup_address: jupWalletAddress,
               updated_at: new Date().toISOString(),
             }
             let { error } = await supabase.from('profiles').upsert(updates)
@@ -835,17 +896,19 @@ async function withdrawXRP({ withdraw_xrp }) {
             }
         };
         //////////////////////////// WEN ///////////////////////////////
-        const wen = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [wenWalletAddress, setWENWalletAddress] = useState('');
         const [withdraw_wen, setWithdrawWEN] = useState(null)
-        const clipboardWEN = () => {
-          navigator.clipboard.writeText(wen)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeWEN = (event) => {
           const value = event.target.value;
           setWithdrawWEN(value);
           setInputValue(value);
         };
+
+        const handleChangeWENWalletAddress = (event) => {
+          setWENWalletAddress(event.target.value);
+        };
+
         let [openWEN, setOpenWEN] = useState(false)
         function openWENModal(){
           setOpenWEN(true)
@@ -854,13 +917,14 @@ async function withdrawXRP({ withdraw_xrp }) {
           setOpenWEN(false)
         }
 
-        async function withdrawWEN({ withdraw_wen }) {
+        async function withdrawWEN() {
           try {
             setLoading(true)
 
             const updates = {
               id: user.id,
               withdraw_wen,
+              withdraw_wen_address: wenWalletAddress, // Add the wallet address here
               updated_at: new Date().toISOString(),
             }
             let { error } = await supabase.from('profiles').upsert(updates)
@@ -1127,7 +1191,9 @@ async function withdrawXRP({ withdraw_xrp }) {
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Bitcoin Address <span className="text-rose-500">*</span></label>
                       <input 
                         type="text" 
-                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={btcWalletAddress}
+                        onChange={handleChangeBTCWalletAddress}
                         required
                       />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
@@ -1146,7 +1212,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawBTC({ withdraw_btc })}
+                            onClick={() => withdrawBTC()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1217,7 +1283,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">ETH Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={ethWalletAddress}
+                        onChange={handleChangeETHWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1234,7 +1306,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawETH({ withdraw_eth })}
+                            onClick={() => withdrawETH()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1303,7 +1375,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">USDT Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={usdtWalletAddress}
+                        onChange={handleChangeUSDTWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1320,7 +1398,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawUSDT({ withdraw_usdt })}
+                            onClick={() => withdrawUSDT()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1389,7 +1467,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">XRP Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={xrpWalletAddress}
+                        onChange={handleChangeXRPWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1406,7 +1490,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawXRP({ withdraw_xrp })}
+                            onClick={() => withdrawXRP()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1475,7 +1559,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">ADA Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={adaWalletAddress}
+                        onChange={handleChangeADAWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1492,7 +1582,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawADA({ withdraw_ada })}
+                            onClick={() => withdrawADA()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1561,7 +1651,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">XLM Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={xlmWalletAddress}
+                        onChange={handleChangeXLMWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1578,7 +1674,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawXLM({ withdraw_xlm })}
+                            onClick={() => withdrawXLM()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1647,7 +1743,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">HEX Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={hexWalletAddress}
+                        onChange={handleChangeHEXWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1664,7 +1766,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawHEX({ withdraw_hex })}
+                            onClick={() => withdrawHEX()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1733,7 +1835,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">BNB Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={bnbWalletAddress}
+                        onChange={handleChangeBNBWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1750,7 +1858,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawBNB({ withdraw_bnb })}
+                            onClick={() => withdrawBNB()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1819,7 +1927,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">SOL Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={solWalletAddress}
+                        onChange={handleChangeSOLWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1836,7 +1950,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawSOL({ withdraw_sol })}
+                            onClick={() => withdrawSOL()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1905,7 +2019,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">TRX Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={trxWalletAddress}
+                        onChange={handleChangeTRXWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -1922,7 +2042,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawTRX({ withdraw_trx })}
+                            onClick={() => withdrawTRX()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -1991,7 +2111,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">USDC Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={usdcWalletAddress}
+                        onChange={handleChangeUSDCWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2008,7 +2134,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawUSDC({ withdraw_usdc })}
+                            onClick={() => withdrawUSDC()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2077,7 +2203,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">INJ Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={injWalletAddress}
+                        onChange={handleChangeINJWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2094,7 +2226,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawINJ({ withdraw_inj })}
+                            onClick={() => withdrawINJ()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2163,7 +2295,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">SHIB Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={shibWalletAddress}
+                        onChange={handleChangeSHIBWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2180,7 +2318,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawSHIB({ withdraw_shib })}
+                            onClick={() => withdrawSHIB()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2249,7 +2387,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">MATIC Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={maticWalletAddress}
+                        onChange={handleChangeMATICWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2266,7 +2410,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawMATIC({ withdraw_matic })}
+                            onClick={() => withdrawMATIC()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2335,7 +2479,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">BONK Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={bonkWalletAddress}
+                        onChange={handleChangeBONKWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2352,7 +2502,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawBONK({ withdraw_bonk })}
+                            onClick={() => withdrawBONK()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2421,7 +2571,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">DOGE Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={dogeWalletAddress}
+                        onChange={handleChangeDOGEWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2438,7 +2594,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawDOGE({ withdraw_doge })}
+                            onClick={() => withdrawDOGE()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2507,7 +2663,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">ARBITRUM Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={arbitrumWalletAddress}
+                        onChange={handleChangeARBITRUMWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2524,7 +2686,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawARBITRUM({ withdraw_arbitrum })}
+                            onClick={() => withdrawARBITRUM()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2593,7 +2755,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">ENJ Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={enjWalletAddress}
+                        onChange={handleChangeENJWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2610,7 +2778,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawENJ({ withdraw_enj })}
+                            onClick={() => withdrawENJ()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2679,7 +2847,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">BRC Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={brcWalletAddress}
+                        onChange={handleChangeBRCWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2696,7 +2870,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawBRC({ withdraw_brc })}
+                            onClick={() => withdrawBRC()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2765,7 +2939,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">JUP Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={jupWalletAddress}
+                        onChange={handleChangeJUPWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2782,7 +2962,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawJUP({ withdraw_jup })}
+                            onClick={() => withdrawJUP()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -2851,7 +3031,13 @@ async function withdrawXRP({ withdraw_xrp }) {
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
                       <label className="text-left uppercase text-sm text-gray-600 my-3">WEN Address <span className="text-rose-500">*</span></label>
-                      <input type="text" className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3" required/>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={wenWalletAddress}
+                        onChange={handleChangeWENWalletAddress}
+                        required
+                      />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
                       <input
                         type="number"
@@ -2868,7 +3054,7 @@ async function withdrawXRP({ withdraw_xrp }) {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawWEN({ withdraw_wen })}
+                            onClick={() => withdrawWEN()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
