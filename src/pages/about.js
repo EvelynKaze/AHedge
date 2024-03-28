@@ -111,161 +111,163 @@ const About = () => {
                       <p className="capitalize font-bold text-white text-3xl mb-9">{t("ETSP")}</p>
                       <div className="w-full h-fit space-y-7">
 
-                            <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
-                                <div className="flex justify-center items-center">
-                                    <GiSilverBullet className="text-gray-100 mx-2 text-5xl lg:text-xl" />
-                                    <span className="capitalize">{t("ETSP_PACKAGE1")}</span>
-                                </div>
-                                <div className="flex flex-col text-center">
-                                    <span>Price</span>
-                                    <span>$500</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI1")}</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION1")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
-                            <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
-                                <div className="flex justify-center items-center">
-                                    <GiGoldBar className="text-yellow-500 mx-2 text-5xl lg:text-xl" />
-                                    <span className="capitalize">{t("ETSP_PACKAGE2")}</span>
-                                </div>
-                                <div className="flex flex-col text-center">
-                                    <span>Price</span>
-                                    <span>$2000</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI2")}</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION2")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
-                            <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
-                                <div className="flex justify-center items-center">
-                                    <IoDiamondOutline className="text-white mx-1 text-5xl lg:text-xl" />
-                                    <span className="capitalize">{t("ETSP_PACKAGE3")}</span>
-                                </div>
-                                <div className="flex flex-col text-center">
-                                    <span>Price</span>
-                                    <span>$10000</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI3")}</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION3")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
-                            <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
-                                <div className="flex justify-center items-center">
-                                    <GiMetalPlate className="text-neutral-800 mx-1 text-5xl lg:text-xl" />
-                                    <span className="capitalize">{t("ETSP_PACKAGE4")}</span>
-                                </div>
-                                <div className="flex flex-col text-center">
-                                    <span>Price</span>
-                                    <span>$100000</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI4")}</span>
-                                </div>
-                                <div className="flex flex-col text-center ">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION4")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
+                              <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
+                                  <div className="flex justify-center items-center">
+                                      <GiSilverBullet className="text-gray-100 mx-2 text-5xl lg:text-xl" />
+                                      <span className="capitalize">{t("ETSP_PACKAGE1")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center">
+                                      <span>Price</span>
+                                      <span>$500 - $5000</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI1")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION1")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
+                              <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
+                                  <div className="flex justify-center items-center">
+                                      <GiGoldBar className="text-yellow-500 mx-2 text-5xl lg:text-xl" />
+                                      <span className="capitalize">{t("ETSP_PACKAGE2")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center">
+                                      <span>Price</span>
+                                      <span>$5000 - $50000</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI2")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION2")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
+                              <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
+                                  <div className="flex justify-center items-center">
+                                      <IoDiamondOutline className="text-white mx-1 text-5xl lg:text-xl" />
+                                      <span className="capitalize">{t("ETSP_PACKAGE3")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center">
+                                      <span>Price</span>
+                                      <span>$50000 - $500000</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI3")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION3")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
+                              <div className="hidden bg-gray-700 card-2 p-3 rounded-xl lg:grid gap-x-2 grid-cols-5">
+                                  <div className="flex justify-center items-center">
+                                      <GiMetalPlate className="text-neutral-800 mx-1 text-5xl lg:text-xl" />
+                                      <span className="capitalize">{t("ETSP_PACKAGE4")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center">
+                                      <span>Price</span>
+                                      <span>$500000 - $1000000</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI4")}</span>
+                                  </div>
+                                  <div className="flex flex-col text-center ">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION4")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
 
                           {/* Mobile view */}
 
-                            <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
-                                <div className="">
-                                    <GiSilverBullet className="text-gray-100 mx-2 text-5xl lg:text-xl" />
-                                    <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE1")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Price</span>
-                                    <span className="bg-black p-2 rounded">$500</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI1")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION1")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
-                            <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
-                                <div className="">
-                                <GiGoldBar className="text-yellow-500 mx-2 text-5xl lg:text-xl" />
-                                <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE2")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Price</span>
-                                    <span className="bg-black p-2 rounded">$2000</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI2")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION2")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
-                            <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
-                                <div className="">
-                                <IoDiamondOutline className="text-white mx-1 text-5xl lg:text-xl" />
-                                <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE3")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Price</span>
-                                    <span className="bg-black p-2 rounded">$10000</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI3")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION3")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
-                            <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
-                                <div className="">
-                                <GiMetalPlate className="text-neutral-800 mx-1 text-5xl lg:text-xl" />
-                                <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE4")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Price</span>
-                                    <span className="bg-black p-2 rounded">$100000</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>ROI</span>
-                                    <span>{t("ETSP_ROI4")}</span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <span>Duration</span>
-                                    <span>{t("ETSP_DURATION4")}</span>
-                                </div>
-                                <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
-                            </div>
+                              <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
+                                  <div className="">
+                                      <GiSilverBullet className="text-gray-100 mx-2 text-5xl lg:text-xl" />
+                                      <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE1")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Price</span>
+                                      <span className="bg-black p-2 rounded">$500 - $5000</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI1")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION1")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
+                              <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
+                                  <div className="">
+                                    <GiGoldBar className="text-yellow-500 mx-2 text-5xl lg:text-xl" />
+                                    <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE2")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Price</span>
+                                      <span className="bg-black p-2 rounded">$5000 - $50000</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI2")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION2")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
+                              <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
+                                  <div className="">
+                                    <IoDiamondOutline className="text-white mx-1 text-5xl lg:text-xl" />
+                                    <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE3")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Price</span>
+                                      <span className="bg-black p-2 rounded">$50000 - $500000</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI3")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION3")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
+                              <div className="grid bg-gray-700 card-2 px-5 p-3 rounded-xl lg:hidden gap-x-2 gap-y-2 grid-cols-1">
+                                  <div className="">
+                                    <GiMetalPlate className="text-neutral-800 mx-1 text-5xl lg:text-xl" />
+                                    <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE4")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Price</span>
+                                      <span className="bg-black p-2 rounded">$500000 - $1000000</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>ROI</span>
+                                      <span>{t("ETSP_ROI4")}</span>
+                                  </div>
+                                  <div className="flex items-center justify-between">
+                                      <span>Duration</span>
+                                      <span>{t("ETSP_DURATION4")}</span>
+                                  </div>
+                                  <Button variant="outline" className='bg-white rounded mx-auto w-28 h-12 text-black hover:text-white'>{t("INVEST")}</Button>
+                              </div>
+
+
                       </div>
                   </div>
             </div>
