@@ -116,13 +116,13 @@ const About = () => {
                                       <GiSilverBullet className="text-gray-100 mx-2 text-5xl lg:text-xl" />
                                       <span className="capitalize">{t("ETSP_PACKAGE1")}</span>
                                   </div>
-                                  <div className="flex flex-col text-center">
+                                  {/* <div className="flex flex-col text-center">
                                       <span>Price</span>
                                       <span>$500 - $5000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex flex-col text-center ">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI1")}</span>
+                                      <span>10%</span>
                                   </div>
                                   <div className="flex flex-col text-center ">
                                       <span>Duration</span>
@@ -135,13 +135,13 @@ const About = () => {
                                       <GiGoldBar className="text-yellow-500 mx-2 text-5xl lg:text-xl" />
                                       <span className="capitalize">{t("ETSP_PACKAGE2")}</span>
                                   </div>
-                                  <div className="flex flex-col text-center">
+                                  {/* <div className="flex flex-col text-center">
                                       <span>Price</span>
                                       <span>$5000 - $50000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex flex-col text-center ">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI2")}</span>
+                                      <span>15%</span>
                                   </div>
                                   <div className="flex flex-col text-center ">
                                       <span>Duration</span>
@@ -154,13 +154,13 @@ const About = () => {
                                       <IoDiamondOutline className="text-white mx-1 text-5xl lg:text-xl" />
                                       <span className="capitalize">{t("ETSP_PACKAGE3")}</span>
                                   </div>
-                                  <div className="flex flex-col text-center">
+                                  {/* <div className="flex flex-col text-center">
                                       <span>Price</span>
                                       <span>$50000 - $500000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex flex-col text-center ">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI3")}</span>
+                                      <span>30%</span>
                                   </div>
                                   <div className="flex flex-col text-center ">
                                       <span>Duration</span>
@@ -173,13 +173,13 @@ const About = () => {
                                       <GiMetalPlate className="text-neutral-800 mx-1 text-5xl lg:text-xl" />
                                       <span className="capitalize">{t("ETSP_PACKAGE4")}</span>
                                   </div>
-                                  <div className="flex flex-col text-center">
+                                  {/* <div className="flex flex-col text-center">
                                       <span>Price</span>
                                       <span>$500000 - $1000000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex flex-col text-center ">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI4")}</span>
+                                      <span>50%</span>
                                   </div>
                                   <div className="flex flex-col text-center ">
                                       <span>Duration</span>
@@ -195,13 +195,13 @@ const About = () => {
                                       <GiSilverBullet className="text-gray-100 mx-2 text-5xl lg:text-xl" />
                                       <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE1")}</span>
                                   </div>
-                                  <div className="flex items-center justify-between">
+                                  {/* <div className="flex items-center justify-between">
                                       <span>Price</span>
                                       <span className="bg-black p-2 rounded">$500 - $5000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex items-center justify-between">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI1")}</span>
+                                      <span>10%</span>
                                   </div>
                                   <div className="flex items-center justify-between">
                                       <span>Duration</span>
@@ -214,13 +214,13 @@ const About = () => {
                                     <GiGoldBar className="text-yellow-500 mx-2 text-5xl lg:text-xl" />
                                     <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE2")}</span>
                                   </div>
-                                  <div className="flex items-center justify-between">
+                                  {/* <div className="flex items-center justify-between">
                                       <span>Price</span>
                                       <span className="bg-black p-2 rounded">$5000 - $50000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex items-center justify-between">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI2")}</span>
+                                      <span>15%</span>
                                   </div>
                                   <div className="flex items-center justify-between">
                                       <span>Duration</span>
@@ -233,13 +233,13 @@ const About = () => {
                                     <IoDiamondOutline className="text-white mx-1 text-5xl lg:text-xl" />
                                     <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE3")}</span>
                                   </div>
-                                  <div className="flex items-center justify-between">
+                                  {/* <div className="flex items-center justify-between">
                                       <span>Price</span>
                                       <span className="bg-black p-2 rounded">$50000 - $500000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex items-center justify-between">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI3")}</span>
+                                      <span>30%</span>
                                   </div>
                                   <div className="flex items-center justify-between">
                                       <span>Duration</span>
@@ -252,13 +252,13 @@ const About = () => {
                                     <GiMetalPlate className="text-neutral-800 mx-1 text-5xl lg:text-xl" />
                                     <span className="capitalize text-xl font-semibold">{t("ETSP_PACKAGE4")}</span>
                                   </div>
-                                  <div className="flex items-center justify-between">
+                                  {/* <div className="flex items-center justify-between">
                                       <span>Price</span>
                                       <span className="bg-black p-2 rounded">$500000 - $1000000</span>
-                                  </div>
+                                  </div> */}
                                   <div className="flex items-center justify-between">
                                       <span>ROI</span>
-                                      <span>{t("ETSP_ROI4")}</span>
+                                      <span>50%</span>
                                   </div>
                                   <div className="flex items-center justify-between">
                                       <span>Duration</span>
