@@ -10,7 +10,7 @@ const plans = [
   {
       package: "silver package",
       price: "$500 - $5000",
-      roi: "10% daily",
+      roi: "15% daily",
       duration: "30 days",
       icon: GiSilverBullet,
       iconClass: "text-gray-100 mx-2 text-5xl lg:text-xl",
@@ -19,7 +19,7 @@ const plans = [
   {
       package: "gold package",
       price: "$5000 - $50000",
-      roi: "15% daily",
+      roi: "20% daily",
       duration: "30 days",
       icon: GiGoldBar,
       iconClass: "text-yellow-500 mx-2 text-5xl lg:text-xl",

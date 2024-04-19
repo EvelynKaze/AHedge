@@ -122,7 +122,7 @@ const About = () => {
                                 </div>
                                 <div className="flex flex-col text-center ">
                                     <span>ROI</span>
-                                    <span>10%</span>
+                                    <span>15%</span>
                                 </div>
                                 <div className="flex flex-col text-center ">
                                     <span>Duration</span>
@@ -141,7 +141,7 @@ const About = () => {
                                 </div>
                                 <div className="flex flex-col text-center ">
                                     <span>ROI</span>
-                                    <span>15%</span>
+                                    <span>20%</span>
                                 </div>
                                 <div className="flex flex-col text-center ">
                                     <span>Duration</span>
@@ -201,7 +201,7 @@ const About = () => {
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span>ROI</span>
-                                    <span>10%</span>
+                                    <span>15%</span>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span>Duration</span>
@@ -220,7 +220,7 @@ const About = () => {
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span>ROI</span>
-                                    <span>15%</span>
+                                    <span>20%</span>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span>Duration</span>
