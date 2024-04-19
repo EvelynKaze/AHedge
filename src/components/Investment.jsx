@@ -9,7 +9,7 @@ import Link from 'next/link'
 const plans = [
   {
       package: "silver package",
-  
+      price: "$500 - $5000",
       roi: "10% daily",
       duration: "30 days",
       icon: GiSilverBullet,
@@ -18,7 +18,7 @@ const plans = [
   },
   {
       package: "gold package",
-      
+      price: "$5000 - $50000",
       roi: "15% daily",
       duration: "30 days",
       icon: GiGoldBar,
@@ -27,7 +27,7 @@ const plans = [
   },
   {
       package: "diamond package",
-      
+      price: "$50000 - $500000",
       roi: "30% daily",
       duration: "30 days",
       icon: IoDiamondOutline,
@@ -36,6 +36,7 @@ const plans = [
   },
   {
       package: "Platinum package",
+      price: "$500000 - $1000000",
       roi: "50% daily",
       duration: "60 days",
       icon: GiMetalPlate,
