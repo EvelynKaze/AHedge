@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link'
+import { BsTwitterX } from "react-icons/bs";
+import { FaBitcoin, FaTwitter } from "react-icons/fa"
+
+// import { FaXTwitter } from "react-icons/fa6";
 
 
 
@@ -86,6 +90,23 @@ export default function Footer(){
                             <li className="mb-2 cursor-pointer">
                                 225 Central Park West, New York, NY 10024
                             </li>
+                        </nav>
+                    </motion.div>
+                    <motion.div
+                        initial={{
+                            y:80,
+                            opacity:0,
+                        }}
+                        transition={{ duration: 1.1 }}
+                        whileInView={{ opacity: 1, y:0 }}
+                        className="lg:w-1/4 md:w-1/2 w-full px-4">
+                        <h2 className="font-semibold text-lg mb-3">Social Media</h2>
+                        <nav className="list-none mb-10">
+                            <a href="https://x.com/AssetsHedge" className="hover:text-[#9D00FF]">
+                                <li className="mb-2 cursor-pointer flex items-center space-x-2">
+                                    <FaTwitter className="h-4 w-4" />{" "}<span>Twitter</span>
+                                </li>
+                            </a>
                         </nav>
                     </motion.div>
                 </div>
