@@ -1165,7 +1165,7 @@ export default function Deposit({ session }){
         };
 
         
- //////////////////////////// sharkpopcat ///////////////////////////////
+ //////////////////////////// popcat ///////////////////////////////
  const popcat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
  const [deposit_popcat, setDepositPopcat] = useState(null)
  const clipboardPopcat = () => {
