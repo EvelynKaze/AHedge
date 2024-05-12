@@ -874,7 +874,380 @@ export default function Deposit({ session }){
         };
 
         
+        //////////////////////////// michi ///////////////////////////////
+        const michi = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [deposit_michi, setDepositMichi] = useState(null)
+        const clipboardMichi = () => {
+          navigator.clipboard.writeText(michi)
+          toast.info("Copied to Clipboard");
+        };
+        const handleChangeMichi = (event) => {
+          const value = event.target.value;
+          setDepositMichi(value);
+          setInputValue(value);
+        };
+        let [openMichi, setOpenMichi] = useState(false)
+        function openMichiModal(){
+          setOpenMichi(true)
+        }
+        function closeMichiModal(){
+          setOpenMichi(false)
+        }
 
+        async function depositMichi({ deposit_michi }) {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              deposit_michi,
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenMichi(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+
+        
+        //////////////////////////// wif ///////////////////////////////
+        const wif = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [deposit_wif, setDepositWif] = useState(null)
+        const clipboardWif = () => {
+          navigator.clipboard.writeText(wif)
+          toast.info("Copied to Clipboard");
+        };
+        const handleChangeWif = (event) => {
+          const value = event.target.value;
+          setDepositWif(value);
+          setInputValue(value);
+        };
+        let [openWif, setOpenWif] = useState(false)
+        function openWifModal(){
+          setOpenWif(true)
+        }
+        function closeWifModal(){
+          setOpenWif(false)
+        }
+
+        async function depositWif({ deposit_wif }) {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              deposit_wif,
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenWif(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+
+        
+        //////////////////////////// brett ///////////////////////////////
+        const brett = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [deposit_brett, setDepositBrett] = useState(null)
+        const clipboardBrett = () => {
+          navigator.clipboard.writeText(brett)
+          toast.info("Copied to Clipboard");
+        };
+        const handleChangeBrett = (event) => {
+          const value = event.target.value;
+          setDepositBrett(value);
+          setInputValue(value);
+        };
+        let [openBrett, setOpenBrett] = useState(false)
+        function openBrettModal(){
+          setOpenBrett(true)
+        }
+        function closeBrettModal(){
+          setOpenBrett(false)
+        }
+
+        async function depositBrett({ deposit_brett }) {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              deposit_brett,
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenBrett(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+
+        
+        //////////////////////////// friend ///////////////////////////////
+        const friend = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [deposit_friend, setDepositFriend] = useState(null)
+        const clipboardFriend = () => {
+          navigator.clipboard.writeText(friend)
+          toast.info("Copied to Clipboard");
+        };
+        const handleChangeFriend = (event) => {
+          const value = event.target.value;
+          setDepositFriend(value);
+          setInputValue(value);
+        };
+        let [openFriend, setOpenFriend] = useState(false)
+        function openFriendModal(){
+          setOpenFriend(true)
+        }
+        function closeFriendModal(){
+          setOpenFriend(false)
+        }
+
+        async function depositFriend({ deposit_friend }) {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              deposit_friend,
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenFriend(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+
+         //////////////////////////// tnsr ///////////////////////////////
+         const tnsr = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+         const [deposit_tnsr, setDepositTnsr] = useState(null)
+         const clipboardTnsr = () => {
+           navigator.clipboard.writeText(tnsr)
+           toast.info("Copied to Clipboard");
+         };
+         const handleChangeTnsr = (event) => {
+           const value = event.target.value;
+           setDepositTnsr(value);
+           setInputValue(value);
+         };
+         let [openTnsr, setOpenTnsr] = useState(false)
+         function openTnsrModal(){
+           setOpenTnsr(true)
+         }
+         function closeTnsrModal(){
+           setOpenTnsr(false)
+         }
+ 
+         async function depositTnsr({ deposit_tnsr }) {
+           try {
+             setLoading(true)
+ 
+             const updates = {
+               id: user.id,
+               deposit_tnsr,
+               updated_at: new Date().toISOString(),
+             }
+             let { error } = await supabase.from('profiles').upsert(updates)
+             if (error) throw error
+               setOpenTnsr(false)
+               toast.success("Staking Order placed. Awaiting Approval.")
+             } catch (error) {
+               alert('internal Server Error: Error updating the data!')
+               console.log(error)
+             } finally {
+               setLoading(false)
+             }
+         };
+ 
+  //////////////////////////// hobbes ///////////////////////////////
+  const hobbes = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+  const [deposit_hobbes, setDepositHobbes] = useState(null)
+  const clipboardHobbes = () => {
+    navigator.clipboard.writeText(hobbes)
+    toast.info("Copied to Clipboard");
+  };
+  const handleChangeHobbes = (event) => {
+    const value = event.target.value;
+    setDepositHobbes(value);
+    setInputValue(value);
+  };
+  let [openHobbes, setOpenHobbes] = useState(false)
+  function openHobbesModal(){
+    setOpenHobbes(true)
+  }
+  function closeHobbesModal(){
+    setOpenHobbes(false)
+  }
+
+  async function depositHobbes({ deposit_hobbes }) {
+    try {
+      setLoading(true)
+
+      const updates = {
+        id: user.id,
+        deposit_hobbes,
+        updated_at: new Date().toISOString(),
+      }
+      let { error } = await supabase.from('profiles').upsert(updates)
+      if (error) throw error
+        setOpenHobbes(false)
+        toast.success("Staking Order placed. Awaiting Approval.")
+      } catch (error) {
+        alert('internal Server Error: Error updating the data!')
+        console.log(error)
+      } finally {
+        setLoading(false)
+      }
+  };
+
+           //////////////////////////// mew ///////////////////////////////
+        const mew = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const [deposit_mew, setDepositMew] = useState(null)
+        const clipboardMew = () => {
+          navigator.clipboard.writeText(mew)
+          toast.info("Copied to Clipboard");
+        };
+        const handleChangeMew = (event) => {
+          const value = event.target.value;
+          setDepositMew(value);
+          setInputValue(value);
+        };
+        let [openMew, setOpenMew] = useState(false)
+        function openMewModal(){
+          setOpenMew(true)
+        }
+        function closeMewModal(){
+          setOpenMew(false)
+        }
+
+        async function depositMew({ deposit_mew }) {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              deposit_mew,
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenMew(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+
+        
+ //////////////////////////// popcat ///////////////////////////////
+ const popcat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ const [deposit_popcat, setDepositPopcat] = useState(null)
+ const clipboardPopcat = () => {
+   navigator.clipboard.writeText(popcat)
+   toast.info("Copied to Clipboard");
+ };
+ const handleChangePopcat = (event) => {
+   const value = event.target.value;
+   setDepositPopcat(value);
+   setInputValue(value);
+ };
+ let [openPopcat, setOpenPopcat] = useState(false)
+ function openPopcatModal(){
+   setOpenPopcat(true)
+ }
+ function closePopcatModal(){
+   setOpenPopcat(false)
+ }
+
+ async function depositPopcat({ deposit_popcat }) {
+   try {
+     setLoading(true)
+
+     const updates = {
+       id: user.id,
+       deposit_popcat,
+       updated_at: new Date().toISOString(),
+     }
+     let { error } = await supabase.from('profiles').upsert(updates)
+     if (error) throw error
+       setOpenPopcat(false)
+       toast.success("Staking Order placed. Awaiting Approval.")
+     } catch (error) {
+       alert('internal Server Error: Error updating the data!')
+       console.log(error)
+     } finally {
+       setLoading(false)
+     }
+ };
+
+ //////////////////////////// sharkcat ///////////////////////////////
+ const sharkcat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ const [deposit_sharkcat, setDepositSharkcat] = useState(null)
+ const clipboardSharkcat = () => {
+   navigator.clipboard.writeText(sharkcat)
+   toast.info("Copied to Clipboard");
+ };
+ const handleChangeSharkcat = (event) => {
+   const value = event.target.value;
+   setDepositSharkcat(value);
+   setInputValue(value);
+ };
+ let [openSharkcat, setOpenSharkcat] = useState(false)
+ function openSharkcatModal(){
+   setOpenSharkcat(true)
+ }
+ function closeSharkcatModal(){
+   setOpenSharkcat(false)
+ }
+
+ async function depositSharkcat({ deposit_sharkcat }) {
+   try {
+     setLoading(true)
+
+     const updates = {
+       id: user.id,
+       deposit_sharkcat,
+       updated_at: new Date().toISOString(),
+     }
+     let { error } = await supabase.from('profiles').upsert(updates)
+     if (error) throw error
+       setOpenSharkcat(false)
+       toast.success("Staking Order placed. Awaiting Approval.")
+     } catch (error) {
+       alert('internal Server Error: Error updating the data!')
+       console.log(error)
+     } finally {
+       setLoading(false)
+     }
+ };
+
+  
 
         
 ////////////////////////////////////////////////////////////////////
@@ -1076,6 +1449,69 @@ export default function Deposit({ session }){
         <div onClick={openWENModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className=" font-medium ">WEN</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openMichiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$michi</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openWifModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$wif</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openBrettModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$brett</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openFriendModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$friend</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openTnsrModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$tnsr</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openHobbesModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$hobbes</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openMewModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$mew</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openPopcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$popcat</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openSharkcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className=" font-medium ">$sharkcat</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
@@ -3233,6 +3669,933 @@ export default function Deposit({ session }){
                       <div className="text-rose-500 flex space-x-2">
                         <AiOutlineInfoCircle />
                         <p className='text-xs'>Be aware that this order will be cancelled if you send any other WEN amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Michi */}
+        <Transition appear show={openMichi} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeMichiModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$michi</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$michi Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{michi}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardMichi}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_michi || inputValue}
+                          onChange={handleChangeMichi}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositMichi({ deposit_michi })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $michi'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeMichiModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $michi amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Wif */}
+        <Transition appear show={openWif} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeWifModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$wif</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$wif Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{wif}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardWif}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_wif || inputValue}
+                          onChange={handleChangeWif}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositWif({ deposit_wif })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $wif'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeWifModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $wif amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Brett */}
+        <Transition appear show={openBrett} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeBrettModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$brett</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$brett Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{brett}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardBrett}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_brett || inputValue}
+                          onChange={handleChangeBrett}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositBrett({ deposit_brett })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $brett'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeBrettModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $brett amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* friend */}
+        <Transition appear show={openFriend} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeFriendModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$friend</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$friend Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{friend}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardFriend}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_friend || inputValue}
+                          onChange={handleChangeFriend}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositFriend({ deposit_friend })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $friend'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeFriendModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $friend amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* tnsr */}
+        <Transition appear show={openTnsr} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeTnsrModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$tnsr</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$tnsr Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{tnsr}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardTnsr}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_tnsr || inputValue}
+                          onChange={handleChangeTnsr}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositTnsr({ deposit_tnsr })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $tnsr'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeTnsrModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $tnsr amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Hobbes */}
+        <Transition appear show={openHobbes} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeHobbesModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$hobbes</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$hobbes Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{hobbes}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardHobbes}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_hobbes || inputValue}
+                          onChange={handleChangeHobbes}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositHobbes({ deposit_hobbes })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $hobbes'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeHobbesModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $hobbes amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Mew */}
+        <Transition appear show={openMew} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeMewModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$mew</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$mew Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{mew}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardMew}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_mew || inputValue}
+                          onChange={handleChangeMew}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositMew({ deposit_mew })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $mew'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeMewModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $mew amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Popcat */}
+        <Transition appear show={openPopcat} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closePopcatModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$popcat</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$popcat Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{popcat}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardPopcat}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_popcat || inputValue}
+                          onChange={handleChangePopcat}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositPopcat({ deposit_popcat })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $popcat'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closePopcatModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $popcat amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Sharkcat */}
+        <Transition appear show={openSharkcat} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeSharkcatModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$sharkcat</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$sharkcat Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{sharkcat}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardSharkcat}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_sharkcat || inputValue}
+                          onChange={handleChangeSharkcat}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositSharkcat({ deposit_sharkcat })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $sharkcat'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeSharkcatModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $sharkcat amount.</p>
                       </div>
                       <div className="flex space-x-2 text-gray-500">
                         <AiOutlineInfoCircle />

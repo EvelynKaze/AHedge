@@ -938,6 +938,398 @@ async function withdrawXRP() {
               setLoading(false)
             }
         };
+
+        //////////////////////////// Michi ///////////////////////////////
+        const [michiWalletAddress, setMichiWalletAddress] = useState('');
+        const [withdraw_michi, setWithdrawMichi] = useState(null)
+        
+        const handleChangeMichi = (event) => {
+          const value = event.target.value;
+          setWithdrawMichi(value);
+          setInputValue(value);
+        };
+
+        const handleChangeMichiWalletAddress = (event) => {
+          setMichiWalletAddress(event.target.value);
+        };
+
+        let [openMichi, setOpenMichi] = useState(false)
+        function openMichiModal(){
+          setOpenMichi(true)
+        }
+        function closeMichiModal(){
+          setOpenMichi(false)
+        }
+
+        async function withdrawMichi() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_michi,
+              withdraw_michi_address: michiWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenMichi(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+        //////////////////////////// Wif ///////////////////////////////
+        const [wifWalletAddress, setWifWalletAddress] = useState('');
+        const [withdraw_wif, setWithdrawWif] = useState(null)
+        
+        const handleChangeWif = (event) => {
+          const value = event.target.value;
+          setWithdrawWif(value);
+          setInputValue(value);
+        };
+
+        const handleChangeWifWalletAddress = (event) => {
+          setWifWalletAddress(event.target.value);
+        };
+
+        let [openWif, setOpenWif] = useState(false)
+        function openWifModal(){
+          setOpenWif(true)
+        }
+        function closeWifModal(){
+          setOpenWif(false)
+        }
+
+        async function withdrawWif() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_wif,
+              withdraw_wif_address: wifWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenWif(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+        //////////////////////////// $brett ///////////////////////////////
+        const [brettWalletAddress, setBrettWalletAddress] = useState('');
+        const [withdraw_brett, setWithdrawBrett] = useState(null)
+        
+        const handleChangeBrett = (event) => {
+          const value = event.target.value;
+          setWithdrawBrett(value);
+          setInputValue(value);
+        };
+
+        const handleChangeBrettWalletAddress = (event) => {
+          setBrettWalletAddress(event.target.value);
+        };
+
+        let [openBrett, setOpenBrett] = useState(false)
+        function openBrettModal(){
+          setOpenBrett(true)
+        }
+        function closeBrettModal(){
+          setOpenBrett(false)
+        }
+
+        async function withdrawBrett() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_brett,
+              withdraw_brett_address: brettWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenBrett(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+        //////////////////////////// $friend ///////////////////////////////
+        const [friendWalletAddress, setFriendWalletAddress] = useState('');
+        const [withdraw_friend, setWithdrawFriend] = useState(null)
+        
+        const handleChangeFriend = (event) => {
+          const value = event.target.value;
+          setWithdrawFriend(value);
+          setInputValue(value);
+        };
+
+        const handleChangeFriendWalletAddress = (event) => {
+          setFriendWalletAddress(event.target.value);
+        };
+
+        let [openFriend, setOpenFriend] = useState(false)
+        function openFriendModal(){
+          setOpenFriend(true)
+        }
+        function closeFriendModal(){
+          setOpenFriend(false)
+        }
+
+        async function withdrawFriend() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_friend,
+              withdraw_friend_address: friendWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenFriend(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+        //////////////////////////// $tnsr ///////////////////////////////
+        const [tnsrWalletAddress, setTnsrWalletAddress] = useState('');
+        const [withdraw_tnsr, setWithdrawTnsr] = useState(null)
+        
+        const handleChangeTnsr = (event) => {
+          const value = event.target.value;
+          setWithdrawTnsr(value);
+          setInputValue(value);
+        };
+
+        const handleChangeTnsrWalletAddress = (event) => {
+          setTnsrWalletAddress(event.target.value);
+        };
+
+        let [openTnsr, setOpenTnsr] = useState(false)
+        function openTnsrModal(){
+          setOpenTnsr(true)
+        }
+        function closeTnsrModal(){
+          setOpenTnsr(false)
+        }
+
+        async function withdrawTnsr() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_tnsr,
+              withdraw_tnsr_address: tnsrWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenTnsr(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $hobbes ///////////////////////////////
+        const [hobbesWalletAddress, setHobbesWalletAddress] = useState('');
+        const [withdraw_hobbes, setWithdrawHobbes] = useState(null)
+        
+        const handleChangeHobbes = (event) => {
+          const value = event.target.value;
+          setWithdrawHobbes(value);
+          setInputValue(value);
+        };
+
+        const handleChangeHobbesWalletAddress = (event) => {
+          setHobbesWalletAddress(event.target.value);
+        };
+
+        let [openHobbes, setOpenHobbes] = useState(false)
+        function openHobbesModal(){
+          setOpenHobbes(true)
+        }
+        function closeHobbesModal(){
+          setOpenHobbes(false)
+        }
+
+        async function withdrawHobbes() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_hobbes,
+              withdraw_hobbes_address: hobbesWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenHobbes(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $mew ///////////////////////////////
+        const [mewWalletAddress, setMewWalletAddress] = useState('');
+        const [withdraw_mew, setWithdrawMew] = useState(null)
+        
+        const handleChangeMew = (event) => {
+          const value = event.target.value;
+          setWithdrawMew(value);
+          setInputValue(value);
+        };
+
+        const handleChangeMewWalletAddress = (event) => {
+          setMewWalletAddress(event.target.value);
+        };
+
+        let [openMew, setOpenMew] = useState(false)
+        function openMewModal(){
+          setOpenMew(true)
+        }
+        function closeMewModal(){
+          setOpenMew(false)
+        }
+
+        async function withdrawMew() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_mew,
+              withdraw_mew_address: mewWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenMew(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $popcat ///////////////////////////////
+        const [popcatWalletAddress, setPopcatWalletAddress] = useState('');
+        const [withdraw_popcat, setWithdrawPopcat] = useState(null)
+        
+        const handleChangePopcat = (event) => {
+          const value = event.target.value;
+          setWithdrawPopcat(value);
+          setInputValue(value);
+        };
+
+        const handleChangePopcatWalletAddress = (event) => {
+          setPopcatWalletAddress(event.target.value);
+        };
+
+        let [openPopcat, setOpenPopcat] = useState(false)
+        function openPopcatModal(){
+          setOpenPopcat(true)
+        }
+        function closePopcatModal(){
+          setOpenPopcat(false)
+        }
+
+        async function withdrawPopcat() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_popcat,
+              withdraw_popcat_address: popcatWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenPopcat(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $sharkcat ///////////////////////////////
+        const [sharkcatWalletAddress, setSharkcatWalletAddress] = useState('');
+        const [withdraw_sharkcat, setWithdrawSharkcat] = useState(null)
+        
+        const handleChangeSharkcat = (event) => {
+          const value = event.target.value;
+          setWithdrawSharkcat(value);
+          setInputValue(value);
+        };
+
+        const handleChangeSharkcatWalletAddress = (event) => {
+          setSharkcatWalletAddress(event.target.value);
+        };
+
+        let [openSharkcat, setOpenSharkcat] = useState(false)
+        function openSharkcatModal(){
+          setOpenSharkcat(true)
+        }
+        function closeSharkcatModal(){
+          setOpenSharkcat(false)
+        }
+
+        async function withdrawSharkcat() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_sharkcat,
+              withdraw_sharkcat_address: sharkcatWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenSharkcat(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
     
 ////////////////////////////////////////////////////////////////////
 
@@ -1004,154 +1396,217 @@ async function withdrawXRP() {
           </div>
         
           <div className="mx-auto w-full max-w-2xl gap-x-4 gap-y-1 grid grid-cols-2">
-        <div onClick={openBTCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300
-        cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BTC</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
+            <div onClick={openBTCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300
+            cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">BTC</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openETHModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+            cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">ETH</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openUSDTModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">USDT</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openXRPModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">XRP</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openADAModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">ADA</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openXLMModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">XLM</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openHEXModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">HEX</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openBNBModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">BNB</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openSOLModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">SOL</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openTRXModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">TRX</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openUSDCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">USDC</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openINJModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">INJ</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openSHIBModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">SHIB</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openMATICModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">MATIC</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openBONKModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">BONK</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openDOGEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">DOGE</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openARBITRUMModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">ARBITRUM</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openENJModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">ENJ</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openBRCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">BRC20</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openJUPModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">JUP</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openWENModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">WEN</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openMichiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$michi</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openWifModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$wif</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openBrettModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$brett</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openFriendModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$friend</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openTnsrModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$tnsr</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openHobbesModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$hobbes</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openMewModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$mew</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openPopcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$popcat</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openSharkcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$sharkcat</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
           </div>
-        </div>
-        <div onClick={openETHModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-        cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ETH</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openUSDTModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">USDT</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openXRPModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">XRP</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openADAModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ADA</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openXLMModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">XLM</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openHEXModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">HEX</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBNBModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BNB</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSOLModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">SOL</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openTRXModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">TRX</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openUSDCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">USDC</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openINJModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">INJ</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSHIBModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">SHIB</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openMATICModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">MATIC</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBONKModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BONK</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDOGEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">DOGE</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openARBITRUMModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ARBITRUM</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openENJModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ENJ</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBRCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BRC20</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openJUPModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">JUP</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openWENModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">WEN</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-      </div>
         </div>
         {/* BTC */}
         <Transition appear show={openBTC} as={Fragment}>
@@ -3064,6 +3519,834 @@ async function withdrawXRP() {
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeWENModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Michi */}
+        <Transition appear show={openMichi} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeMichiModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $michi
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$michi Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={michiWalletAddress}
+                        onChange={handleChangeMichiWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_michi || inputValue}
+                        onChange={handleChangeMichi}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawMichi()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeMichiModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* Wif */}
+        <Transition appear show={openWif} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeWifModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $wif
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$wif Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={wifWalletAddress}
+                        onChange={handleChangeWifWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_wif || inputValue}
+                        onChange={handleChangeWif}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawWif()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeWifModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* brett */}
+        <Transition appear show={openBrett} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeBrettModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $brett
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$brett Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={brettWalletAddress}
+                        onChange={handleChangeBrettWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_brett || inputValue}
+                        onChange={handleChangeBrett}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawBrett()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeBrettModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* friend */}
+        <Transition appear show={openFriend} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeFriendModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $friend
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$friend Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={friendWalletAddress}
+                        onChange={handleChangeFriendWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_friend || inputValue}
+                        onChange={handleChangeFriend}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawFriend()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeFriendModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* tnsr */}
+        <Transition appear show={openTnsr} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeTnsrModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $tnsr
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$tnsr Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={tnsrWalletAddress}
+                        onChange={handleChangeTnsrWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_tnsr || inputValue}
+                        onChange={handleChangeTnsr}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawTnsr()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeTnsrModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* hobbes */}
+        <Transition appear show={openHobbes} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeHobbesModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $hobbes
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$hobbes Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={hobbesWalletAddress}
+                        onChange={handleChangeHobbesWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_hobbes || inputValue}
+                        onChange={handleChangeHobbes}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawHobbes()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeHobbesModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* mew */}
+        <Transition appear show={openMew} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeMewModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $mew
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$mew Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={mewWalletAddress}
+                        onChange={handleChangeMewWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_mew || inputValue}
+                        onChange={handleChangeMew}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawMew()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeMewModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* popcat */}
+        <Transition appear show={openPopcat} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closePopcatModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $popcat
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$popcat Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={popcatWalletAddress}
+                        onChange={handleChangePopcatWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_popcat || inputValue}
+                        onChange={handleChangePopcat}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawPopcat()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closePopcatModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* sharkcat */}
+        <Transition appear show={openSharkcat} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeSharkcatModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $sharkcat
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$sharkcat Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={sharkcatWalletAddress}
+                        onChange={handleChangeSharkcatWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_sharkcat || inputValue}
+                        onChange={handleChangeSharkcat}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawSharkcat()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeSharkcatModal}
                         >
                             Close
                         </button>
