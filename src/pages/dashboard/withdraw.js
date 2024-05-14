@@ -1375,6 +1375,182 @@ async function withdrawXRP() {
             }
         };
     
+        //////////////////////////// $bobo ///////////////////////////////
+        const [boboWalletAddress, setBoboWalletAddress] = useState('');
+        const [withdraw_bobo, setWithdrawBobo] = useState(null)
+        
+        const handleChangeBobo = (event) => {
+          const value = event.target.value;
+          setWithdrawBobo(value);
+          setInputValue(value);
+        };
+
+        const handleChangeBoboWalletAddress = (event) => {
+          setBoboWalletAddress(event.target.value);
+        };
+
+        let [openBobo, setOpenBobo] = useState(false)
+        function openBoboModal(){
+          setOpenBobo(true)
+        }
+        function closeBoboModal(){
+          setOpenBobo(false)
+        }
+
+        async function withdrawBobo() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_bobo,
+              withdraw_bobo_address: boboWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenBobo(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $pork ///////////////////////////////
+        const [porkWalletAddress, setPorkWalletAddress] = useState('');
+        const [withdraw_pork, setWithdrawPork] = useState(null)
+        
+        const handleChangePork = (event) => {
+          const value = event.target.value;
+          setWithdrawPork(value);
+          setInputValue(value);
+        };
+
+        const handleChangePorkWalletAddress = (event) => {
+          setPorkWalletAddress(event.target.value);
+        };
+
+        let [openPork, setOpenPork] = useState(false)
+        function openPorkModal(){
+          setOpenPork(true)
+        }
+        function closePorkModal(){
+          setOpenPork(false)
+        }
+
+        async function withdrawPork() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_pork,
+              withdraw_pork_address: porkWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenPork(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $wolf ///////////////////////////////
+        const [wolfWalletAddress, setWolfWalletAddress] = useState('');
+        const [withdraw_wolf, setWithdrawWolf] = useState(null)
+        
+        const handleChangeWolf = (event) => {
+          const value = event.target.value;
+          setWithdrawWolf(value);
+          setInputValue(value);
+        };
+
+        const handleChangeWolfWalletAddress = (event) => {
+          setWolfWalletAddress(event.target.value);
+        };
+
+        let [openWolf, setOpenWolf] = useState(false)
+        function openWolfModal(){
+          setOpenWolf(true)
+        }
+        function closeWolfModal(){
+          setOpenWolf(false)
+        }
+
+        async function withdrawWolf() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_wolf,
+              withdraw_wolf_address: wolfWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenWolf(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $andy ///////////////////////////////
+        const [andyWalletAddress, setAndyWalletAddress] = useState('');
+        const [withdraw_andy, setWithdrawAndy] = useState(null)
+        
+        const handleChangeAndy = (event) => {
+          const value = event.target.value;
+          setWithdrawAndy(value);
+          setInputValue(value);
+        };
+
+        const handleChangeAndyWalletAddress = (event) => {
+          setAndyWalletAddress(event.target.value);
+        };
+
+        let [openAndy, setOpenAndy] = useState(false)
+        function openAndyModal(){
+          setOpenAndy(true)
+        }
+        function closeAndyModal(){
+          setOpenAndy(false)
+        }
+
+        async function withdrawAndy() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_andy,
+              withdraw_andy_address: andyWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenAndy(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
 ////////////////////////////////////////////////////////////////////
 
    
@@ -1653,6 +1829,34 @@ async function withdrawXRP() {
             <div onClick={openCrodieModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
               cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
               <p className=" font-medium ">$crodie</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openBoboModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$bobo</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openPorkModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className=" font-medium ">$pork</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openWolfModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className="font-medium">$wolf</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openAndyModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className="font-medium">$andy</p>
               <div className="shrink-0 bg-[#7439b8] rounded-full">
                 <CheckIcon className="h-6 w-6" />
               </div>
@@ -4490,6 +4694,374 @@ async function withdrawXRP() {
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeCrodieModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* bobo */}
+        <Transition appear show={openBobo} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeBoboModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $bobo
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$bobo Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={boboWalletAddress}
+                        onChange={handleChangeBoboWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_bobo || inputValue}
+                        onChange={handleChangeBobo}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawBobo()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeBoboModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* pork */}
+        <Transition appear show={openPork} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closePorkModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $pork
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$pork Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={porkWalletAddress}
+                        onChange={handleChangePorkWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_pork || inputValue}
+                        onChange={handleChangePork}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawPork()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closePorkModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* wolf */}
+        <Transition appear show={openWolf} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeWolfModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $wolf
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$wolf Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={wolfWalletAddress}
+                        onChange={handleChangeWolfWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_wolf || inputValue}
+                        onChange={handleChangeWolf}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawWolf()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeWolfModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+
+                        {/* INFO */}
+                        {/* <div className="mt-3">
+                          <div className="text-red-600 font-semibold flex space-x-2">
+                              <AiOutlineInfoCircle className="animate-bounce" />
+                              <p className='text-xs'>Be aware that you need to deposit 10% of your current balance to withdraw as gas fees</p>
+                          </div>
+                          <div className="flex space-x-2 text-gray-500">
+                              <AiOutlineInfoCircle />
+                              <p className='text-xs'>Account will be credited once we received your payment.</p>
+                          </div>
+                        </div> */}
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* andy */}
+        <Transition appear show={openAndy} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeAndyModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $andy
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$andy Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={andyWalletAddress}
+                        onChange={handleChangeAndyWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_andy || inputValue}
+                        onChange={handleChangeAndy}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawAndy()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeAndyModal}
                         >
                             Close
                         </button>
