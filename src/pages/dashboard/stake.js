@@ -1288,6 +1288,172 @@ export default function Deposit({ session }){
  };
 
   
+ //////////////////////////// bobo ///////////////////////////////
+ const bobo = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ const [deposit_bobo, setDepositBobo] = useState(null)
+ const clipboardBobo = () => {
+   navigator.clipboard.writeText(bobo)
+   toast.info("Copied to Clipboard");
+ };
+ const handleChangeBobo = (event) => {
+   const value = event.target.value;
+   setDepositBobo(value);
+   setInputValue(value);
+ };
+ let [openBobo, setOpenBobo] = useState(false)
+ function openBoboModal(){
+   setOpenBobo(true)
+ }
+ function closeBoboModal(){
+   setOpenBobo(false)
+ }
+
+ async function depositBobo({ deposit_bobo }) {
+   try {
+     setLoading(true)
+
+     const updates = {
+       id: user.id,
+       deposit_bobo,
+       updated_at: new Date().toISOString(),
+     }
+     let { error } = await supabase.from('profiles').upsert(updates)
+     if (error) throw error
+       setOpenBobo(false)
+       toast.success("Staking Order placed. Awaiting Approval.")
+     } catch (error) {
+       alert('internal Server Error: Error updating the data!')
+       console.log(error)
+     } finally {
+       setLoading(false)
+     }
+ };
+
+ //////////////////////////// pork ///////////////////////////////
+ const pork = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ const [deposit_pork, setDepositPork] = useState(null)
+ const clipboardPork = () => {
+   navigator.clipboard.writeText(pork)
+   toast.info("Copied to Clipboard");
+ };
+ const handleChangePork = (event) => {
+   const value = event.target.value;
+   setDepositPork(value);
+   setInputValue(value);
+ };
+ let [openPork, setOpenPork] = useState(false)
+ function openPorkModal(){
+   setOpenPork(true)
+ }
+ function closePorkModal(){
+   setOpenPork(false)
+ }
+
+ async function depositPork({ deposit_pork }) {
+   try {
+     setLoading(true)
+
+     const updates = {
+       id: user.id,
+       deposit_pork,
+       updated_at: new Date().toISOString(),
+     }
+     let { error } = await supabase.from('profiles').upsert(updates)
+     if (error) throw error
+       setOpenPork(false)
+       toast.success("Staking Order placed. Awaiting Approval.")
+     } catch (error) {
+       alert('internal Server Error: Error updating the data!')
+       console.log(error)
+     } finally {
+       setLoading(false)
+     }
+ };
+
+  
+ //////////////////////////// wolf ///////////////////////////////
+ const wolf = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ const [deposit_wolf, setDepositWolf] = useState(null)
+ const clipboardWolf = () => {
+   navigator.clipboard.writeText(wolf)
+   toast.info("Copied to Clipboard");
+ };
+ const handleChangeWolf = (event) => {
+   const value = event.target.value;
+   setDepositWolf(value);
+   setInputValue(value);
+ };
+ let [openWolf, setOpenWolf] = useState(false)
+ function openWolfModal(){
+   setOpenWolf(true)
+ }
+ function closeWolfModal(){
+   setOpenWolf(false)
+ }
+
+ async function depositWolf({ deposit_wolf }) {
+   try {
+     setLoading(true)
+
+     const updates = {
+       id: user.id,
+       deposit_wolf,
+       updated_at: new Date().toISOString(),
+     }
+     let { error } = await supabase.from('profiles').upsert(updates)
+     if (error) throw error
+       setOpenWolf(false)
+       toast.success("Staking Order placed. Awaiting Approval.")
+     } catch (error) {
+       alert('internal Server Error: Error updating the data!')
+       console.log(error)
+     } finally {
+       setLoading(false)
+     }
+ };
+
+ //////////////////////////// andy ///////////////////////////////
+ const andy = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ const [deposit_andy, setDepositAndy] = useState(null)
+ const clipboardAndy = () => {
+   navigator.clipboard.writeText(andy)
+   toast.info("Copied to Clipboard");
+ };
+ const handleChangeAndy = (event) => {
+   const value = event.target.value;
+   setDepositAndy(value);
+   setInputValue(value);
+ };
+ let [openAndy, setOpenAndy] = useState(false)
+ function openAndyModal(){
+   setOpenAndy(true)
+ }
+ function closeAndyModal(){
+   setOpenAndy(false)
+ }
+
+ async function depositAndy({ deposit_andy }) {
+   try {
+     setLoading(true)
+
+     const updates = {
+       id: user.id,
+       deposit_andy,
+       updated_at: new Date().toISOString(),
+     }
+     let { error } = await supabase.from('profiles').upsert(updates)
+     if (error) throw error
+       setOpenAndy(false)
+       toast.success("Staking Order placed. Awaiting Approval.")
+     } catch (error) {
+       alert('internal Server Error: Error updating the data!')
+       console.log(error)
+     } finally {
+       setLoading(false)
+     }
+ };
+
+  
 
         
 ////////////////////////////////////////////////////////////////////
@@ -1559,6 +1725,27 @@ export default function Deposit({ session }){
         <div onClick={openCrodieModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className=" font-medium ">$crodie</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openBoboModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className="font-medium">$bobo</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openPorkModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className="font-medium">$pork</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openWolfModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className="font-medium">$wolf</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
@@ -4746,6 +4933,418 @@ export default function Deposit({ session }){
                       <div className="text-rose-500 flex space-x-2">
                         <AiOutlineInfoCircle />
                         <p className='text-xs'>Be aware that this order will be cancelled if you send any other $crodie amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+         {/* Bobo */}
+         <Transition appear show={openBobo} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeBoboModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$bobo</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$bobo Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{bobo}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardBobo}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_bobo || inputValue}
+                          onChange={handleChangeBobo}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositBobo({ deposit_bobo })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $bobo'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeCrodieModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $bobo amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+         {/* Pork */}
+         <Transition appear show={openPork} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closePorkModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$pork</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$pork Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{pork}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardPork}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_pork || inputValue}
+                          onChange={handleChangePork}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositPork({ deposit_pork })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $pork'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closePorkModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $pork amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+         {/* Wolf */}
+         <Transition appear show={openWolf} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeWolfModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$wolf</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$wolf Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{crodie}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardWolf}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_wolf || inputValue}
+                          onChange={handleChangeWolf}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositWolf({ deposit_wolf })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $wolf'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeWolfModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $wolf amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+         {/* Andy */}
+         <Transition appear show={openAndy} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeAndyModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
+                    >
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$andy</span> to the address below</p>
+                      <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      />
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$andy Address</p>
+                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{andy}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardAndy}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_andy || inputValue}
+                          onChange={handleChangeAndy}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
+
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositAndy({ deposit_andy })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $andy'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeAndyModal}
+                      >
+                        Pay Later
+                      </button>
+                    </div>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $andy amount.</p>
                       </div>
                       <div className="flex space-x-2 text-gray-500">
                         <AiOutlineInfoCircle />
