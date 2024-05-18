@@ -2123,6 +2123,94 @@ async function withdrawXRP() {
             }
         };
     
+        //////////////////////////// $slerf ///////////////////////////////
+        const [slerfWalletAddress, setSlerfWalletAddress] = useState('');
+        const [withdraw_slerf, setWithdrawSlerf] = useState(null)
+        
+        const handleChangeSlerf = (event) => {
+          const value = event.target.value;
+          setWithdrawSlerf(value);
+          setInputValue(value);
+        };
+
+        const handleChangeSlerfWalletAddress = (event) => {
+          setSlerfWalletAddress(event.target.value);
+        };
+
+        let [openSlerf, setOpenSlerf] = useState(false)
+        function openSlerfModal(){
+          setOpenSlerf(true)
+        }
+        function closeSlerfModal(){
+          setOpenSlerf(false)
+        }
+
+        async function withdrawSlerf() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_slerf,
+              withdraw_slerf_address: slerfWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenSlerf(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $giga ///////////////////////////////
+        const [gigaWalletAddress, setGigaWalletAddress] = useState('');
+        const [withdraw_giga, setWithdrawGiga] = useState(null)
+        
+        const handleChangeGiga = (event) => {
+          const value = event.target.value;
+          setWithdrawGiga(value);
+          setInputValue(value);
+        };
+
+        const handleChangeGigaWalletAddress = (event) => {
+          setGigaWalletAddress(event.target.value);
+        };
+
+        let [openGiga, setOpenGiga] = useState(false)
+        function openGigaModal(){
+          setOpenGiga(true)
+        }
+        function closeGigaModal(){
+          setOpenGiga(false)
+        }
+
+        async function withdrawGiga() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_giga,
+              withdraw_giga_address: gigaWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenGiga(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
 ////////////////////////////////////////////////////////////////////
 
    
@@ -6686,6 +6774,166 @@ async function withdrawXRP() {
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeRecaModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* slerf */}
+        <Transition appear show={openSlerf} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeSlerfModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $slerf
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$slerf Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={slerfWalletAddress}
+                        onChange={handleChangeSlerfWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_slerf || inputValue}
+                        onChange={handleChangeSlerf}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawSlerf()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeSlerfModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* giga */}
+        <Transition appear show={openGiga} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeGigaModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $giga
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$giga Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={gigaWalletAddress}
+                        onChange={handleChangeGigaWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_giga || inputValue}
+                        onChange={handleChangeGiga}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawGiga()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeGigaModal}
                         >
                             Close
                         </button>
