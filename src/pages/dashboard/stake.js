@@ -2464,8 +2464,8 @@ export default function Deposit({ session }){
             theme='light'
           />
           <div className="space-y-2 mb-4 text-center">
-            <h2 className="font-bold text-2xl">Deposit Funds</h2>
-            <h4>via <span className="font-semibold">Crypto Wallet</span></h4>
+            <h2 className="font-bold text-2xl">deposit tokens to cold stake</h2>
+            {/* <h4>via <span className="font-semibold">Crypto Wallet</span></h4> */}
           </div>
         
       <div className="mx-auto w-full max-w-2xl gap-x-4 gap-y-1 grid grid-cols-2">
