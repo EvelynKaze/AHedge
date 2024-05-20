@@ -2211,6 +2211,358 @@ async function withdrawXRP() {
             }
         };
     
+        //////////////////////////// $pepeCoin ///////////////////////////////
+        const [pepecoinWalletAddress, setPepeCoinWalletAddress] = useState('');
+        const [withdraw_pepecoin, setWithdrawPepeCoin] = useState(null)
+        
+        const handleChangePepeCoin = (event) => {
+          const value = event.target.value;
+          setWithdrawPepeCoin(value);
+          setInputValue(value);
+        };
+
+        const handleChangePepeCoinWalletAddress = (event) => {
+          setPepeCoinWalletAddress(event.target.value);
+        };
+
+        let [openPepeCoin, setOpenPepeCoin] = useState(false)
+        function openPepeCoinModal(){
+          setOpenPepeCoin(true)
+        }
+        function closePepeCoinModal(){
+          setOpenPepeCoin(false)
+        }
+
+        async function withdrawPepeCoin() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_pepecoin,
+              withdraw_pepecoin_address: pepecoinWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenPepeCoin(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $duko ///////////////////////////////
+        const [dukoWalletAddress, setDukoWalletAddress] = useState('');
+        const [withdraw_duko, setWithdrawDuko] = useState(null)
+        
+        const handleChangeDuko = (event) => {
+          const value = event.target.value;
+          setWithdrawDuko(value);
+          setInputValue(value);
+        };
+
+        const handleChangeDukoWalletAddress = (event) => {
+          setDukoWalletAddress(event.target.value);
+        };
+
+        let [openDuko, setOpenDuko] = useState(false)
+        function openDukoModal(){
+          setOpenDuko(true)
+        }
+        function closeDukoModal(){
+          setOpenDuko(false)
+        }
+
+        async function withdrawDuko() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_duko,
+              withdraw_duko_address: dukoWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenDuko(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $tobi ///////////////////////////////
+        const [tobiWalletAddress, setTobiWalletAddress] = useState('');
+        const [withdraw_tobi, setWithdrawTobi] = useState(null)
+        
+        const handleChangeTobi = (event) => {
+          const value = event.target.value;
+          setWithdrawTobi(value);
+          setInputValue(value);
+        };
+
+        const handleChangeTobiWalletAddress = (event) => {
+          setTobiWalletAddress(event.target.value);
+        };
+
+        let [openTobi, setOpenTobi] = useState(false)
+        function openTobiModal(){
+          setOpenTobi(true)
+        }
+        function closeTobiModal(){
+          setOpenTobi(false)
+        }
+
+        async function withdrawTobi() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_tobi,
+              withdraw_tobi_address: tobiWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenTobi(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+
+        //////////////////////////// $nigi ///////////////////////////////
+        const [nigiWalletAddress, setNigiWalletAddress] = useState('');
+        const [withdraw_nigi, setWithdrawNigi] = useState(null)
+        
+        const handleChangeNigi = (event) => {
+          const value = event.target.value;
+          setWithdrawNigi(value);
+          setInputValue(value);
+        };
+
+        const handleChangeNigiWalletAddress = (event) => {
+          setNigiWalletAddress(event.target.value);
+        };
+
+        let [openNigi, setOpenNigi] = useState(false)
+        function openNigiModal(){
+          setOpenNigi(true)
+        }
+        function closeNigiModal(){
+          setOpenNigi(false)
+        }
+
+        async function withdrawNigi() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_nigi,
+              withdraw_nigi_address: nigiWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenNigi(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $djcat ///////////////////////////////
+        const [djcatWalletAddress, setDjcatWalletAddress] = useState('');
+        const [withdraw_djcat, setWithdrawDjcat] = useState(null)
+        
+        const handleChangeDjcat = (event) => {
+          const value = event.target.value;
+          setWithdrawDjcat(value);
+          setInputValue(value);
+        };
+
+        const handleChangeDjcatWalletAddress = (event) => {
+          setDjcatWalletAddress(event.target.value);
+        };
+
+        let [openDjcat, setOpenDjcat] = useState(false)
+        function openDjcatModal(){
+          setOpenDjcat(true)
+        }
+        function closeDjcatModal(){
+          setOpenDjcat(false)
+        }
+
+        async function withdrawDjcat() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_djcat,
+              withdraw_djcat_address: djcatWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenDjcat(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $ape ///////////////////////////////
+        const [apeWalletAddress, setApeWalletAddress] = useState('');
+        const [withdraw_ape, setWithdrawApe] = useState(null)
+        
+        const handleChangeApe = (event) => {
+          const value = event.target.value;
+          setWithdrawApe(value);
+          setInputValue(value);
+        };
+
+        const handleChangeApeWalletAddress = (event) => {
+          setApeWalletAddress(event.target.value);
+        };
+
+        let [openApe, setOpenApe] = useState(false)
+        function openApeModal(){
+          setOpenApe(true)
+        }
+        function closeApeModal(){
+          setOpenApe(false)
+        }
+
+        async function withdrawApe() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_ape,
+              withdraw_ape_address: apeWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenApe(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $dixi ///////////////////////////////
+        const [dixiWalletAddress, setDixiWalletAddress] = useState('');
+        const [withdraw_dixi, setWithdrawDixi] = useState(null)
+        
+        const handleChangeDixi = (event) => {
+          const value = event.target.value;
+          setWithdrawDixi(value);
+          setInputValue(value);
+        };
+
+        const handleChangeDixiWalletAddress = (event) => {
+          setDixiWalletAddress(event.target.value);
+        };
+
+        let [openDixi, setOpenDixi] = useState(false)
+        function openDixiModal(){
+          setOpenDixi(true)
+        }
+        function closeDixiModal(){
+          setOpenDixi(false)
+        }
+
+        async function withdrawDixi() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_dixi,
+              withdraw_dixi_address: dixiWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenDixi(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+        //////////////////////////// $1cat ///////////////////////////////
+        const [$1catWalletAddress, set$1catWalletAddress] = useState('');
+        const [withdraw_$1cat, setWithdraw$1cat] = useState(null)
+        
+        const handleChange$1cat = (event) => {
+          const value = event.target.value;
+          setWithdraw$1cat(value);
+          setInputValue(value);
+        };
+
+        const handleChange$1catWalletAddress = (event) => {
+          set$1catWalletAddress(event.target.value);
+        };
+
+        let [open$1cat, setOpen$1cat] = useState(false)
+        function open$1catModal(){
+          setOpen$1cat(true)
+        }
+        function close$1catModal(){
+          setOpen$1cat(false)
+        }
+
+        async function withdraw$1cat() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_$1cat,
+              withdraw_$1cat_address: $1catWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpen$1cat(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
 ////////////////////////////////////////////////////////////////////
 
    
@@ -6865,9 +7217,9 @@ async function withdrawXRP() {
             </div>
           </Dialog>
         </Transition>
-        {/* giga */}
-        <Transition appear show={openGiga} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeGigaModal}>
+        {/* $1cat */}
+        <Transition appear show={open$1cat} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={close$1catModal}>
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -6896,16 +7248,16 @@ async function withdrawXRP() {
                       as="h3"
                       className="text-xl text-left font-bold leading-6 text-gray-600"
                     >
-                      Send $giga
+                      Send $1cat
                     </Dialog.Title>
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
-                      <label className="text-left uppercase text-sm text-gray-600 my-3">$giga Address <span className="text-rose-500">*</span></label>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$1cat Address <span className="text-rose-500">*</span></label>
                       <input 
                         type="text" 
                         className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
-                        value={gigaWalletAddress}
-                        onChange={handleChangeGigaWalletAddress}
+                        value={$1catWalletAddress}
+                        onChange={handleChange$1catWalletAddress}
                         required
                       />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
@@ -6915,8 +7267,8 @@ async function withdrawXRP() {
                         name="withdrawBtc"
                         placeholder="0.03"
                         className="h-8 w-64 rounded-lg"
-                        value={withdraw_giga || inputValue}
-                        onChange={handleChangeGiga}
+                        value={withdraw_$1cat || inputValue}
+                        onChange={handleChange$1cat}
                         required
                       />
 
@@ -6924,7 +7276,7 @@ async function withdrawXRP() {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawGiga()}
+                            onClick={() => withdraw$1cat()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -6933,7 +7285,7 @@ async function withdrawXRP() {
                         <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                            onClick={closeGigaModal}
+                            onClick={close$1catModal}
                         >
                             Close
                         </button>
