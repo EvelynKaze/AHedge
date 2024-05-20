@@ -8741,7 +8741,7 @@ export default function Deposit({ session }){
             </div>
           </Dialog>
         </Transition>
-        {/* PepeCoin */}
+        {/* pepeCoin */}
         <Transition appear show={openPepeCoin} as={Fragment}>
           <Dialog as="div" className="relative z-10" onClose={closePepeCoinModal}>
             <Transition.Child
@@ -8800,7 +8800,7 @@ export default function Deposit({ session }){
                           name="depositBtc"
                           placeholder="0.03"
                           className="h-8 w-64 rounded-lg"
-                          value={deposit_pepecoin || inputValue}
+                          value={deposit_pepeCoin || inputValue}
                           onChange={handleChangePepeCoin}
                           required
                         />
@@ -8812,7 +8812,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositPepeCoin({ deposit_pepecoin })}
+                          onClick={() => depositPepeCoin({ deposit_pepeCoin })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
