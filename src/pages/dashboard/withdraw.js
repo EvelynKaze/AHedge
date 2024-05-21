@@ -2606,6 +2606,50 @@ async function withdrawXRP() {
               setLoading(false)
             }
         };
+
+    //////////////////////////// Kiki ///////////////////////////////
+        const [kikiWalletAddress, setKikiWalletAddress] = useState('');
+        const [withdraw_kiki, setWithdrawKiki] = useState(null)
+        
+        const handleChangeKiki = (event) => {
+          const value = event.target.value;
+          setWithdrawKiki(value);
+          setInputValue(value);
+        };
+
+        const handleChangeKikiWalletAddress = (event) => {
+          setKikiWalletAddress(event.target.value);
+        };
+
+        let [openKiki, setOpenKiki] = useState(false)
+        function openKikiModal(){
+          setOpenKiki(true)
+        }
+        function closeKikiModal(){
+          setOpenKiki(false)
+        }
+
+        async function withdrawKiki() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_kiki,
+              withdraw_kiki_address: kikiWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenKiki(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
     
 ////////////////////////////////////////////////////////////////////
 
@@ -7961,6 +8005,86 @@ async function withdrawXRP() {
                         <button
                             type="submit"
                             onClick={() => withdrawDerp()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeDerpModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+            {/* Kiki */}
+        <Transition appear show={openKiki} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeKikiModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send kiki
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">kiki Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={kikiWalletAddress}
+                        onChange={handleChangeKikiWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_kiki || inputValue}
+                        onChange={handleChangeKiki}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawKiki()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
