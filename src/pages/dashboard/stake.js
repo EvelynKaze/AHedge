@@ -959,7 +959,7 @@ export default function Deposit({ session }){
 
         
         //////////////////////////// brett ///////////////////////////////
-        const brett = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        const brett = "0x46d72B60E83D5dca094C23B9D24f51F87f02fDa6"
         const [deposit_brett, setDepositBrett] = useState(null)
         const clipboardBrett = () => {
           navigator.clipboard.writeText(brett)
@@ -2755,7 +2755,7 @@ export default function Deposit({ session }){
         </div>
         <div onClick={openBrettModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$brett</p>
+          <p className=" font-medium ">$BRETT</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
