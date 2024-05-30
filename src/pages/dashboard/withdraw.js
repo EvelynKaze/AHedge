@@ -2827,6 +2827,94 @@ async function withdrawXRP() {
             }
         };
     
+    //////////////////////////// jenner ///////////////////////////////
+        const [jennerWalletAddress, setJennerWalletAddress] = useState('');
+        const [withdraw_jenner, setWithdrawJenner] = useState(null)
+        
+        const handleChangeJenner = (event) => {
+          const value = event.target.value;
+          setWithdrawJenner(value);
+          setInputValue(value);
+        };
+
+        const handleChangeJennerWalletAddress = (event) => {
+          setJennerWalletAddress(event.target.value);
+        };
+
+        let [openJenner, setOpenJenner] = useState(false)
+        function openJennerModal(){
+          setOpenJenner(true)
+        }
+        function closeJennerModal(){
+          setOpenJenner(false)
+        }
+
+        async function withdrawJenner() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_jenner,
+              withdraw_jenner_address: jennerWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenJenner(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+    //////////////////////////// mother ///////////////////////////////
+        const [motherWalletAddress, setMotherWalletAddress] = useState('');
+        const [withdraw_mother, setWithdrawMother] = useState(null)
+        
+        const handleChangeMother = (event) => {
+          const value = event.target.value;
+          setWithdrawMother(value);
+          setInputValue(value);
+        };
+
+        const handleChangeMotherWalletAddress = (event) => {
+          setMotherWalletAddress(event.target.value);
+        };
+
+        let [openMother, setOpenMother] = useState(false)
+        function openMotherModal(){
+          setOpenMother(true)
+        }
+        function closeMotherModal(){
+          setOpenMother(false)
+        }
+
+        async function withdrawMother() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_mother,
+              withdraw_mother_address: motherWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenMother(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
 ////////////////////////////////////////////////////////////////////
 
    
@@ -3140,6 +3228,20 @@ async function withdrawXRP() {
             <div onClick={openWebModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
               cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
               <p className="font-medium">$web</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openJennerModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className="font-medium">$jenner</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openMotherModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className="font-medium">$mother</p>
               <div className="shrink-0 bg-[#7439b8] rounded-full">
                 <CheckIcon className="h-6 w-6" />
               </div>
@@ -8597,6 +8699,166 @@ async function withdrawXRP() {
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeWebModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* jenner */}
+        <Transition appear show={openJenner} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeJennerModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $jenner
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$jenner Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={jennerWalletAddress}
+                        onChange={handleChangeJennerWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_jenner || inputValue}
+                        onChange={handleChangeJenner}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawJenner()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeJennerModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* mother */}
+        <Transition appear show={openMother} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeMotherModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $mother
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$mother Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={motherWalletAddress}
+                        onChange={handleChangeMotherWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_mother || inputValue}
+                        onChange={handleChangeMother}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawMother()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeMotherModal}
                         >
                             Close
                         </button>
