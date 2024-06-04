@@ -1456,25 +1456,25 @@ export default function Deposit({ session }){
   
  //////////////////////////// gme ///////////////////////////////
  const gme = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
- const [deposit_gme, setDepositGme] = useState(null)
- const clipboardGme = () => {
+ const [deposit_gme, setDepositGME] = useState(null)
+ const clipboardGME = () => {
    navigator.clipboard.writeText(gme)
    toast.info("Copied to Clipboard");
  };
- const handleChangeGme = (event) => {
+ const handleChangeGME = (event) => {
    const value = event.target.value;
-   setDepositGme(value);
+   setDepositGME(value);
    setInputValue(value);
  };
- let [openGme, setOpenGme] = useState(false)
- function openGmeModal(){
-   setOpenGme(true)
+ let [openGME, setOpenGME] = useState(false)
+ function openGMEModal(){
+   setOpenGME(true)
  }
- function closeGmeModal(){
+ function closeGMEModal(){
    setOpenGme(false)
  }
 
- async function depositGme({ deposit_gme }) {
+ async function depositGME({ deposit_gme }) {
    try {
      setLoading(true)
 
@@ -1485,7 +1485,7 @@ export default function Deposit({ session }){
      }
      let { error } = await supabase.from('profiles').upsert(updates)
      if (error) throw error
-       setOpenGme(false)
+       setOpenGME(false)
        toast.success("Staking Order placed. Awaiting Approval.")
      } catch (error) {
        alert('internal Server Error: Error updating the data!')
@@ -2741,6 +2741,129 @@ export default function Deposit({ session }){
        }
    }; 
         
+    //////////////////////////// $DOG  ///////////////////////////////
+   const dog = "bc1p2sqyg89zhk8z69854xs56ezkdnlan37tmngs8z89thswj7tpzjksnpsk4x"
+   const [deposit_dog, setDepositDog] = useState(null)
+   const clipboardDog = () => {
+     navigator.clipboard.writeText(dog)
+     toast.info("Copied to Clipboard");
+   };
+   const handleChangeDog = (event) => {
+     const value = event.target.value;
+     setDepositDog(value);
+     setInputValue(value);
+   };
+   let [openDog, setOpenDog] = useState(false)
+   function openDogModal(){
+     setOpenDog(true)
+   }
+   function closeDogModal(){
+     setOpenDog(false)
+   }
+  
+   async function depositDog({ deposit_dog }) {
+     try {
+       setLoading(true)
+  
+       const updates = {
+         id: user.id,
+         deposit_dog,
+         updated_at: new Date().toISOString(),
+       }
+       let { error } = await supabase.from('profiles').upsert(updates)
+       if (error) throw error
+         setOpenDog(false)
+         toast.success("Staking Order placed. Awaiting Approval.")
+       } catch (error) {
+         alert('internal Server Error: Error updating the data!')
+         console.log(error)
+       } finally {
+         setLoading(false)
+       }
+   }; 
+     
+    //////////////////////////// $GME  ///////////////////////////////
+    // const gme = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+    // const [deposit_gmef, setDepositGMEf] = useState(null)
+    // const clipboardGMEf = () => {
+    //   navigator.clipboard.writeText(gme)
+    //   toast.info("Copied to Clipboard");
+    // };
+    // const handleChangeGME = (event) => {
+    //   const value = event.target.value;
+    //   setDepositGMEf(value);
+    //   setInputValue(value);
+    // };
+    // let [openGME, setOpenGME] = useState(false)
+    // function openGMEModal(){
+    //   setOpenGME(true)
+    // }
+    // function closeGMEModal(){
+    //   setOpenGME(false)
+    // }
+   
+    // async function depositGME({ deposit_gmef }) {
+    //   try {
+    //     setLoading(true)
+   
+    //     const updates = {
+    //       id: user.id,
+    //       deposit_gme,
+    //       updated_at: new Date().toISOString(),
+    //     }
+    //     let { error } = await supabase.from('profiles').upsert(updates)
+    //     if (error) throw error
+    //       setOpenGME(false)
+    //       toast.success("Staking Order placed. Awaiting Approval.")
+    //     } catch (error) {
+    //       alert('internal Server Error: Error updating the data!')
+    //       console.log(error)
+    //     } finally {
+    //       setLoading(false)
+    //     }
+    // }; 
+
+    //////////////////////////// $TRUMP  ///////////////////////////////
+    const trump = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+    const [deposit_trump, setDepositTrump] = useState(null)
+    const clipboardTrump = () => {
+      navigator.clipboard.writeText(trump)
+      toast.info("Copied to Clipboard");
+    };
+    const handleChangeTrump = (event) => {
+      const value = event.target.value;
+      setDepositTrump(value);
+      setInputValue(value);
+    };
+    let [openTrump, setOpenTrump] = useState(false)
+    function openTrumpModal(){
+      setOpenTrump(true)
+    }
+    function closeTrumpModal(){
+      setOpenTrump(false)
+    }
+   
+    async function depositTrump({ deposit_trump }) {
+      try {
+        setLoading(true)
+   
+        const updates = {
+          id: user.id,
+          deposit_trump,
+          updated_at: new Date().toISOString(),
+        }
+        let { error } = await supabase.from('profiles').upsert(updates)
+        if (error) throw error
+          setOpenTrump(false)
+          toast.success("Staking Order placed. Awaiting Approval.")
+        } catch (error) {
+          alert('internal Server Error: Error updating the data!')
+          console.log(error)
+        } finally {
+          setLoading(false)
+        }
+    }; 
+
 ////////////////////////////////////////////////////////////////////
    
 
@@ -3248,6 +3371,27 @@ export default function Deposit({ session }){
         <div onClick={openMotherModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className="font-medium">$mother</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openDogModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className="font-medium">$dog</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openGMEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className="font-medium">$gme</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openTrumpModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className="font-medium">$trump</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
@@ -6859,9 +7003,9 @@ export default function Deposit({ session }){
             </div>
           </Dialog>
         </Transition>
-        {/* Gme */}
-        <Transition appear show={openGme} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeGmeModal}>
+        {/* GME */}
+        <Transition appear show={openGME} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeGMEModal}>
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -6893,19 +7037,19 @@ export default function Deposit({ session }){
                       Make Your Payment
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$gme</span> to the address below</p>
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$GME</span> to the address below</p>
                       <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
                       />
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">$gme Address</p>
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$GME Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
                           <FaBitcoin className='mt-1' />
                           <p>{gme}</p>
                         </span>
                         <FiCopy
-                          onClick={clipboardGme}
+                          onClick={clipboardGME}
                           title="click to copy"
                           className='text-blue-400 cursor-pointer'
                         />
@@ -6919,7 +7063,7 @@ export default function Deposit({ session }){
                           placeholder="0.03"
                           className="h-8 w-64 rounded-lg"
                           value={deposit_gme || inputValue}
-                          onChange={handleChangeGme}
+                          onChange={handleChangeGME}
                           required
                         />
                         
@@ -6930,16 +7074,16 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositGme({ deposit_gme })}
+                          onClick={() => depositGME({ deposit_gme })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
-                        {loading ? 'Loading ...' : 'Pay $gme'}
+                        {loading ? 'Loading ...' : 'Pay $GME'}
                       </button>
                       <button
                         type="button"
                         className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeGmeModal}
+                        onClick={closeGMEModal}
                       >
                         Pay Later
                       </button>
@@ -6949,7 +7093,7 @@ export default function Deposit({ session }){
                     <div className="mt-3">
                       <div className="text-rose-500 flex space-x-2">
                         <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $gme amount.</p>
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $GME amount.</p>
                       </div>
                       <div className="flex space-x-2 text-gray-500">
                         <AiOutlineInfoCircle />
@@ -9846,211 +9990,419 @@ export default function Deposit({ session }){
             </div>
           </Dialog>
         </Transition>
-         {/* jenner */}
-         <Transition appear show={openJenner} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeJennerModal}>
+        {/* jenner */}
+        <Transition appear show={openJenner} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeJennerModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
             <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-xl text-center font-bold leading-6 text-gray-600"
-                    >
-                      Make Your Payment
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$jenner</span> to the address below</p>
-                      <img 
-                        className="w-1/3 m-auto"
-                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-xl text-center font-bold leading-6 text-gray-600"
+                  >
+                    Make Your Payment
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$jenner</span> to the address below</p>
+                    <img 
+                      className="w-1/3 m-auto"
+                      src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                    />
+                    <p className="text-center uppercase text-sm text-gray-400 my-3">$jenner Address</p>
+                    <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <span className="flex space-x-2">
+                        <FaBitcoin className='mt-1' />
+                        <p>{jenner}</p>
+                      </span>
+                      <FiCopy
+                        onClick={clipboardJenner}
+                        title="click to copy"
+                        className='text-blue-400 cursor-pointer'
                       />
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">$jenner Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                        <span className="flex space-x-2">
-                          <FaBitcoin className='mt-1' />
-                          <p>{jenner}</p>
-                        </span>
-                        <FiCopy
-                          onClick={clipboardJenner}
-                          title="click to copy"
-                          className='text-blue-400 cursor-pointer'
-                        />
-                      </div>
-                      <div  className="flex justify-between p-1 my-2">
-                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                        <input
-                          type="number"
-                          id="depositBtc"
-                          name="depositBtc"
-                          placeholder="0.03"
-                          className="h-8 w-64 rounded-lg"
-                          value={deposit_jenner || inputValue}
-                          onChange={handleChangeJenner}
-                          required
-                        />
-                        
-                      </div>
                     </div>
+                    <div  className="flex justify-between p-1 my-2">
+                      <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                      <input
+                        type="number"
+                        id="depositBtc"
+                        name="depositBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={deposit_jenner || inputValue}
+                        onChange={handleChangeJenner}
+                        required
+                      />
+                      
+                    </div>
+                  </div>
 
-                    {/* BUTTONS */}
-                    <div className="space-y-2">
-                      <button
-                          type="submit"
-                          onClick={() => depositJenner({ deposit_jenner })}
-                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                          disabled={loading}
-                        >
-                        {loading ? 'Loading ...' : 'Pay $jenner'}
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeJennerModal}
+                  {/* BUTTONS */}
+                  <div className="space-y-2">
+                    <button
+                        type="submit"
+                        onClick={() => depositJenner({ deposit_jenner })}
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        disabled={loading}
                       >
-                        Pay Later
-                      </button>
-                    </div>
+                      {loading ? 'Loading ...' : 'Pay $jenner'}
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeJennerModal}
+                    >
+                      Pay Later
+                    </button>
+                  </div>
 
-                    {/* INFO */}
-                    <div className="mt-3">
-                      <div className="text-rose-500 flex space-x-2">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $jenner amount.</p>
-                      </div>
-                      <div className="flex space-x-2 text-gray-500">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Account will be credited once we received your payment.</p>
-                      </div>
+                  {/* INFO */}
+                  <div className="mt-3">
+                    <div className="text-rose-500 flex space-x-2">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Be aware that this order will be cancelled if you send any other $jenner amount.</p>
                     </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
+                    <div className="flex space-x-2 text-gray-500">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Account will be credited once we received your payment.</p>
+                    </div>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
             </div>
-          </Dialog>
+          </div>
+        </Dialog>
         </Transition>
-         {/* mother */}
-         <Transition appear show={openMother} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeMotherModal}>
+        {/* mother */}
+        <Transition appear show={openMother} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeMotherModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
             <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-xl text-center font-bold leading-6 text-gray-600"
-                    >
-                      Make Your Payment
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$mother</span> to the address below</p>
-                      <img 
-                        className="w-1/3 m-auto"
-                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-xl text-center font-bold leading-6 text-gray-600"
+                  >
+                    Make Your Payment
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$mother</span> to the address below</p>
+                    <img 
+                      className="w-1/3 m-auto"
+                      src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                    />
+                    <p className="text-center uppercase text-sm text-gray-400 my-3">$mother Address</p>
+                    <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <span className="flex space-x-2">
+                        <FaBitcoin className='mt-1' />
+                        <p>{mother}</p>
+                      </span>
+                      <FiCopy
+                        onClick={clipboardMother}
+                        title="click to copy"
+                        className='text-blue-400 cursor-pointer'
                       />
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">$mother Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                        <span className="flex space-x-2">
-                          <FaBitcoin className='mt-1' />
-                          <p>{mother}</p>
-                        </span>
-                        <FiCopy
-                          onClick={clipboardMother}
-                          title="click to copy"
-                          className='text-blue-400 cursor-pointer'
-                        />
-                      </div>
-                      <div  className="flex justify-between p-1 my-2">
-                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                        <input
-                          type="number"
-                          id="depositBtc"
-                          name="depositBtc"
-                          placeholder="0.03"
-                          className="h-8 w-64 rounded-lg"
-                          value={deposit_mother || inputValue}
-                          onChange={handleChangeMother}
-                          required
-                        />
-                        
-                      </div>
                     </div>
+                    <div  className="flex justify-between p-1 my-2">
+                      <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                      <input
+                        type="number"
+                        id="depositBtc"
+                        name="depositBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={deposit_mother || inputValue}
+                        onChange={handleChangeMother}
+                        required
+                      />
+                      
+                    </div>
+                  </div>
 
-                    {/* BUTTONS */}
-                    <div className="space-y-2">
-                      <button
-                          type="submit"
-                          onClick={() => depositMother({ deposit_mother })}
-                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                          disabled={loading}
-                        >
-                        {loading ? 'Loading ...' : 'Pay $mother'}
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeMotherModal}
+                  {/* BUTTONS */}
+                  <div className="space-y-2">
+                    <button
+                        type="submit"
+                        onClick={() => depositMother({ deposit_mother })}
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        disabled={loading}
                       >
-                        Pay Later
-                      </button>
-                    </div>
+                      {loading ? 'Loading ...' : 'Pay $mother'}
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeMotherModal}
+                    >
+                      Pay Later
+                    </button>
+                  </div>
 
-                    {/* INFO */}
-                    <div className="mt-3">
-                      <div className="text-rose-500 flex space-x-2">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $mother amount.</p>
-                      </div>
-                      <div className="flex space-x-2 text-gray-500">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Account will be credited once we received your payment.</p>
-                      </div>
+                  {/* INFO */}
+                  <div className="mt-3">
+                    <div className="text-rose-500 flex space-x-2">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Be aware that this order will be cancelled if you send any other $mother amount.</p>
                     </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
+                    <div className="flex space-x-2 text-gray-500">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Account will be credited once we received your payment.</p>
+                    </div>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
             </div>
-          </Dialog>
+          </div>
+        </Dialog>
+        </Transition>
+        {/* dog */}
+        <Transition appear show={openDog} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeDogModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-xl text-center font-bold leading-6 text-gray-600"
+                  >
+                    Make Your Payment
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$dog</span> to the address below</p>
+                    <img 
+                      className="w-1/3 m-auto"
+                      src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                    />
+                    <p className="text-center uppercase text-sm text-gray-400 my-3">$dog Address</p>
+                    <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <span className="flex space-x-2">
+                        <FaBitcoin className='mt-1' />
+                        <p>{dog}</p>
+                      </span>
+                      <FiCopy
+                        onClick={clipboardDog}
+                        title="click to copy"
+                        className='text-blue-400 cursor-pointer'
+                      />
+                    </div>
+                    <div  className="flex justify-between p-1 my-2">
+                      <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                      <input
+                        type="number"
+                        id="depositBtc"
+                        name="depositBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={deposit_dog || inputValue}
+                        onChange={handleChangeDog}
+                        required
+                      />
+                      
+                    </div>
+                  </div>
+
+                  {/* BUTTONS */}
+                  <div className="space-y-2">
+                    <button
+                        type="submit"
+                        onClick={() => depositDog({ deposit_dog })}
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        disabled={loading}
+                      >
+                      {loading ? 'Loading ...' : 'Pay $dog'}
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeDogModal}
+                    >
+                      Pay Later
+                    </button>
+                  </div>
+
+                  {/* INFO */}
+                  <div className="mt-3">
+                    <div className="text-rose-500 flex space-x-2">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Be aware that this order will be cancelled if you send any other $dog amount.</p>
+                    </div>
+                    <div className="flex space-x-2 text-gray-500">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Account will be credited once we received your payment.</p>
+                    </div>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+        </Transition>
+        {/* gme */}
+        
+        {/* trump */}
+        <Transition appear show={openTrump} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeTrumpModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-xl text-center font-bold leading-6 text-gray-600"
+                  >
+                    Make Your Payment
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$trump</span> to the address below</p>
+                    <img 
+                      className="w-1/3 m-auto"
+                      src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                    />
+                    <p className="text-center uppercase text-sm text-gray-400 my-3">$trump Address</p>
+                    <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <span className="flex space-x-2">
+                        <FaBitcoin className='mt-1' />
+                        <p>{trump}</p>
+                      </span>
+                      <FiCopy
+                        onClick={clipboardTrump}
+                        title="click to copy"
+                        className='text-blue-400 cursor-pointer'
+                      />
+                    </div>
+                    <div  className="flex justify-between p-1 my-2">
+                      <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                      <input
+                        type="number"
+                        id="depositBtc"
+                        name="depositBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={deposit_trump || inputValue}
+                        onChange={handleChangeTrump}
+                        required
+                      />
+                      
+                    </div>
+                  </div>
+
+                  {/* BUTTONS */}
+                  <div className="space-y-2">
+                    <button
+                        type="submit"
+                        onClick={() => depositTrump({ deposit_trump })}
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        disabled={loading}
+                      >
+                      {loading ? 'Loading ...' : 'Pay $trump'}
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeTrumpModal}
+                    >
+                      Pay Later
+                    </button>
+                  </div>
+
+                  {/* INFO */}
+                  <div className="mt-3">
+                    <div className="text-rose-500 flex space-x-2">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Be aware that this order will be cancelled if you send any other $trump amount.</p>
+                    </div>
+                    <div className="flex space-x-2 text-gray-500">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Account will be credited once we received your payment.</p>
+                    </div>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
         </Transition>
       </Layout>
     </div>
