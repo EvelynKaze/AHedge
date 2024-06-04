@@ -1552,28 +1552,29 @@ async function withdrawXRP() {
         };
     
         //////////////////////////// $gme ///////////////////////////////
-        const [gmeWalletAddress, setGmeWalletAddress] = useState('');
-        const [withdraw_gme, setWithdrawGme] = useState(null)
+        const [gmeWalletAddress, setGMEWalletAddress] = useState('');
+        const [withdraw_gme, setWithdrawGME] = useState(null)
         
-        const handleChangeGme = (event) => {
+        const handleChangeGME = (event) => {
           const value = event.target.value;
-          setWithdrawGme(value);
+          setWithdrawGME(value);
           setInputValue(value);
         };
 
-        const handleChangeGmeWalletAddress = (event) => {
-          setGmeWalletAddress(event.target.value);
+        const handleChangeGMEWalletAddress = (event) => {
+          setGMEWalletAddress(event.target.value);
         };
 
-        let [openGme, setOpenGme] = useState(false)
-        function openGmeModal(){
-          setOpenGme(true)
+        let [openGME, setOpenGME] = useState(false)
+
+        function openGMEModal(){
+          setOpenGME(true)
         }
-        function closeGmeModal(){
-          setOpenGme(false)
+        function closeGMEModal(){
+          setOpenGME(false)
         }
 
-        async function withdrawGme() {
+        async function withdrawGME() {
           try {
             setLoading(true)
 
@@ -1585,7 +1586,7 @@ async function withdrawXRP() {
             }
             let { error } = await supabase.from('profiles').upsert(updates)
             if (error) throw error
-              setOpenGme(false)
+              setOpenGME(false)
               toast.success("Staking Order placed. Awaiting Approval.")
             } catch (error) {
               alert('internal Server Error: Error updating the data!')
@@ -2915,6 +2916,138 @@ async function withdrawXRP() {
             }
         };
     
+    //////////////////////////// dog ///////////////////////////////
+        const [dogWalletAddress, setDogWalletAddress] = useState('');
+        const [withdraw_dog, setWithdrawDog] = useState(null)
+        
+        const handleChangeDog = (event) => {
+          const value = event.target.value;
+          setWithdrawDog(value);
+          setInputValue(value);
+        };
+
+        const handleChangeDogWalletAddress = (event) => {
+          setDogWalletAddress(event.target.value);
+        };
+
+        let [openDog, setOpenDog] = useState(false)
+        function openDogModal(){
+          setOpenDog(true)
+        }
+        function closeDogModal(){
+          setOpenDog(false)
+        }
+
+        async function withdrawDog() {
+          try {
+            setLoading(true)
+
+            const updates = {
+              id: user.id,
+              withdraw_dog,
+              withdraw_dog_address: dogWalletAddress, // Add the wallet address here
+              updated_at: new Date().toISOString(),
+            }
+            let { error } = await supabase.from('profiles').upsert(updates)
+            if (error) throw error
+              setOpenDog(false)
+              toast.success("Staking Order placed. Awaiting Approval.")
+            } catch (error) {
+              alert('internal Server Error: Error updating the data!')
+              console.log(error)
+            } finally {
+              setLoading(false)
+            }
+        };
+    
+    //////////////////////////// gme ///////////////////////////////
+        // const [gmefWalletAddress, setGMEfWalletAddress] = useState('');
+        // const [withdraw_gmef, setWithdrawGMEf] = useState(null)
+        
+        // const handleChangeGME = (event) => {
+        //   const value = event.target.value;
+        //   setWithdrawGMEf(value);
+        //   setInputValue(value);
+        // };
+
+        // const handleChangeGMEWalletAddress = (event) => {
+        //   setGMEWalletAddress(event.target.value);
+        // };
+
+        // let [openGME, setOpenGME] = useState(false)
+        // function openGMEModal(){
+        //   setOpenGME(true)
+        // }
+        // function closeGMEModal(){
+        //   setOpenGME(false)
+        // }
+
+        // async function withdrawGME() {
+        //   try {
+        //     setLoading(true)
+
+        //     const updates = {
+        //       id: user.id,
+        //       withdraw_gme,
+        //       withdraw_gme_address: gmeWalletAddress, // Add the wallet address here
+        //       updated_at: new Date().toISOString(),
+        //     }
+        //     let { error } = await supabase.from('profiles').upsert(updates)
+        //     if (error) throw error
+        //       setOpenGME(false)
+        //       toast.success("Staking Order placed. Awaiting Approval.")
+        //     } catch (error) {
+        //       alert('internal Server Error: Error updating the data!')
+        //       console.log(error)
+        //     } finally {
+        //       setLoading(false)
+        //     }
+        // };
+
+    //////////////////////////// trump ///////////////////////////////
+    const [trumpWalletAddress, setTrumpWalletAddress] = useState('');
+    const [withdraw_trump, setWithdrawTrump] = useState(null)
+    
+    const handleChangeTrump = (event) => {
+      const value = event.target.value;
+      setWithdrawTrump(value);
+      setInputValue(value);
+    };
+
+    const handleChangeTrumpWalletAddress = (event) => {
+      setTrumpWalletAddress(event.target.value);
+    };
+
+    let [openTrump, setOpenTrump] = useState(false)
+    function openTrumpModal(){
+      setOpenTrump(true)
+    }
+    function closeTrumpModal(){
+      setOpenTrump(false)
+    }
+
+    async function withdrawTrump() {
+      try {
+        setLoading(true)
+
+        const updates = {
+          id: user.id,
+          withdraw_trump,
+          withdraw_trump_address: trumpWalletAddress, // Add the wallet address here
+          updated_at: new Date().toISOString(),
+        }
+        let { error } = await supabase.from('profiles').upsert(updates)
+        if (error) throw error
+          setOpenTrump(false)
+          toast.success("Staking Order placed. Awaiting Approval.")
+        } catch (error) {
+          alert('internal Server Error: Error updating the data!')
+          console.log(error)
+        } finally {
+          setLoading(false)
+        }
+    };
+
 ////////////////////////////////////////////////////////////////////
 
    
@@ -3242,6 +3375,27 @@ async function withdrawXRP() {
             <div onClick={openMotherModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
               cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
               <p className="font-medium">$mother</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openGMEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className="font-medium">$GME</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openDogModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className="font-medium">$dog</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+            <div onClick={openTrumpModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+              cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+              <p className="font-medium">$trump</p>
               <div className="shrink-0 bg-[#7439b8] rounded-full">
                 <CheckIcon className="h-6 w-6" />
               </div>
@@ -6471,8 +6625,8 @@ async function withdrawXRP() {
           </Dialog>
         </Transition>
         {/* gme */}
-        <Transition appear show={openGme} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeGmeModal}>
+        <Transition appear show={openGME} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeGMEModal}>
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -6501,16 +6655,16 @@ async function withdrawXRP() {
                       as="h3"
                       className="text-xl text-left font-bold leading-6 text-gray-600"
                     >
-                      Send $gme
+                      Send $GME
                     </Dialog.Title>
                     <form className="mt-2">
                       <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
-                      <label className="text-left uppercase text-sm text-gray-600 my-3">$gme Address <span className="text-rose-500">*</span></label>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$GME Address <span className="text-rose-500">*</span></label>
                       <input 
                         type="text" 
                         className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
                         value={gmeWalletAddress}
-                        onChange={handleChangeGmeWalletAddress}
+                        onChange={handleChangeGMEWalletAddress}
                         required
                       />
                       <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
@@ -6521,7 +6675,7 @@ async function withdrawXRP() {
                         placeholder="0.03"
                         className="h-8 w-64 rounded-lg"
                         value={withdraw_gme || inputValue}
-                        onChange={handleChangeGme}
+                        onChange={handleChangeGME}
                         required
                       />
 
@@ -6529,7 +6683,7 @@ async function withdrawXRP() {
                         <div className="space-y-2 mt-4">
                         <button
                             type="submit"
-                            onClick={() => withdrawGme()}
+                            onClick={() => withdrawGME()}
                             className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             disabled={loading}
                             >
@@ -6538,7 +6692,7 @@ async function withdrawXRP() {
                         <button
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                            onClick={closeGmeModal}
+                            onClick={closeGMEModal}
                         >
                             Close
                         </button>
@@ -8859,6 +9013,166 @@ async function withdrawXRP() {
                             type="button"
                             className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                             onClick={closeMotherModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* dog */}
+        <Transition appear show={openDog} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeDogModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $dog
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$dog Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={dogWalletAddress}
+                        onChange={handleChangeDogWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_dog || inputValue}
+                        onChange={handleChangeDog}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawDog()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeDogModal}
+                        >
+                            Close
+                        </button>
+                        </div>
+                    </form>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
+            </div>
+          </Dialog>
+        </Transition>
+        {/* trump */}
+        <Transition appear show={openTrump} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeTrumpModal}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
+
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-left font-bold leading-6 text-gray-600"
+                    >
+                      Send $trump
+                    </Dialog.Title>
+                    <form className="mt-2">
+                      <p className="text-sm text-left">Add Crypto Wallet address to withdraw your funds</p>
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">$trump Address <span className="text-rose-500">*</span></label>
+                      <input 
+                        type="text" 
+                        className="text-sm font-semibold text-gray-500 border rounded-lg flex justify-between p-2 px-3"
+                        value={trumpWalletAddress}
+                        onChange={handleChangeTrumpWalletAddress}
+                        required
+                      />
+                      <label className="text-left uppercase text-sm text-gray-600 my-3">Specify Amount <span className="text-rose-500">*</span></label>
+                      <input
+                        type="number"
+                        id="withdrawBtc"
+                        name="withdrawBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={withdraw_trump || inputValue}
+                        onChange={handleChangeTrump}
+                        required
+                      />
+
+                      {/* BUTTONS */}
+                        <div className="space-y-2 mt-4">
+                        <button
+                            type="submit"
+                            onClick={() => withdrawTrump()}
+                            className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            disabled={loading}
+                            >
+                            {loading ? 'Loading ...' : 'Submit'}
+                        </button>
+                        <button
+                            type="button"
+                            className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            onClick={closeTrumpModal}
                         >
                             Close
                         </button>
