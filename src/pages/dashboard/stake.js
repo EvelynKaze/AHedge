@@ -1471,7 +1471,7 @@ export default function Deposit({ session }){
    setOpenGME(true)
  }
  function closeGMEModal(){
-   setOpenGme(false)
+   setOpenGME(false)
  }
 
  async function depositGME({ deposit_gme }) {
@@ -3158,7 +3158,7 @@ export default function Deposit({ session }){
             <CheckIcon className="h-6 w-6" />
           </div>
         </div>
-        <div onClick={openGmeModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+        <div onClick={openGMEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className="font-medium">$gme</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
@@ -3382,13 +3382,13 @@ export default function Deposit({ session }){
             <CheckIcon className="h-6 w-6" />
           </div>
         </div>
-        <div onClick={openGMEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+        {/* <div onClick={openGMEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className="font-medium">$gme</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
-        </div>
+        </div> */}
         <div onClick={openTrumpModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className="font-medium">$trump</p>
