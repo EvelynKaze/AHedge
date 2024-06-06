@@ -3433,10 +3433,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}BTC</span> to the address below</p>
-                      <img
+                      {/* <img
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/btc.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2J0Yy5wbmciLCJpYXQiOjE2ODY1MDUwMTUsImV4cCI6MTcxODA0MTAxNX0.94s3OmMWL2nc_AvjaRjto7UmVV3wUm2VJQdzigfa-X4&t=2023-06-11T17%3A36%3A54.349Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">Bitcoin Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -3536,10 +3536,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}XRP</span> to the address below</p>
-                      <img
+                      {/* <img
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/btc.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2J0Yy5wbmciLCJpYXQiOjE2ODY1MDUwMTUsImV4cCI6MTcxODA0MTAxNX0.94s3OmMWL2nc_AvjaRjto7UmVV3wUm2VJQdzigfa-X4&t=2023-06-11T17%3A36%3A54.349Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">Xrp Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -3639,10 +3639,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}ETH</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/eth.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V0aC5wbmciLCJpYXQiOjE2ODY1NzQ5OTYsImV4cCI6MTcxODExMDk5Nn0.0WDT7NmyBmGCzz3DWwdsGbeClV9kAxiJYmnZu2dZU1c&t=2023-06-12T13%3A03%3A15.330Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">ETH Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -3742,10 +3742,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}ADA</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/eth.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V0aC5wbmciLCJpYXQiOjE2ODY1NzQ5OTYsImV4cCI6MTcxODExMDk5Nn0.0WDT7NmyBmGCzz3DWwdsGbeClV9kAxiJYmnZu2dZU1c&t=2023-06-12T13%3A03%3A15.330Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">ADA Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4360,10 +4360,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}TRX</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">TRX Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4463,10 +4463,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}USDC</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">USDC Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4566,10 +4566,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}INJ</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">INJ Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4669,10 +4669,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}SHIB</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">SHIB Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4772,10 +4772,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}MATIC</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">MATIC Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4875,10 +4875,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}BONK</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">BONK Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4978,10 +4978,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}DOGE</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">DOGE Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5081,10 +5081,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}ARBITRUM</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">ARBITRUM Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5184,10 +5184,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}ENJ</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">ENJ Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5287,10 +5287,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}BRC</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">BRC Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5390,10 +5390,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}JUP</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">JUP Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5493,10 +5493,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}WEN</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">WEN Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5596,10 +5596,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$michi</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$michi Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5699,10 +5699,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$wif</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$wif Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5802,10 +5802,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$brett</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$brett Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -5905,10 +5905,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$friend</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$friend Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6008,10 +6008,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$tnsr</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$tnsr Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6111,10 +6111,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$hobbes</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$hobbes Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6214,10 +6214,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$mew</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$mew Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6317,10 +6317,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$popcat</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$popcat Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6420,10 +6420,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$sharkcat</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$sharkcat Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6523,10 +6523,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$crodie</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$crodie Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6626,10 +6626,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$bobo</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$bobo Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6729,10 +6729,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$pork</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$pork Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6832,10 +6832,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$wolf</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$wolf Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -6935,10 +6935,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$andy</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$andy Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7038,10 +7038,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$GME</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$GME Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7141,10 +7141,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$speed</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$speed Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7244,10 +7244,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$lichi</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$lichi Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7347,10 +7347,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$stache</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$stache Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7450,10 +7450,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$halt</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$halt Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7553,10 +7553,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$sec</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$sec Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7656,10 +7656,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$dumb</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$dumb Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7759,10 +7759,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$amc</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$amc Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7862,10 +7862,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$selfie</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$selfie Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -7965,10 +7965,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$mini</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$mini Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8068,10 +8068,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$pepe</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$pepe Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8171,10 +8171,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$reca</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$reca Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8274,10 +8274,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$redo</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$redo Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8377,10 +8377,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$slerf</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$slerf Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8480,10 +8480,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$giga</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$giga Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8583,10 +8583,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$1cat</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$1cat Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8686,10 +8686,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$Dixi</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$Dixi Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8789,10 +8789,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$ape</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$Ape Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8892,10 +8892,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$Djcat</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$Djcat Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -8995,10 +8995,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$Nigi</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$Nigi Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9098,10 +9098,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$tobi</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$tobi Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9201,10 +9201,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$Duko</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$Duko Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9304,10 +9304,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$pepecoin(erc20)</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$pepecoin(erc20) Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9407,10 +9407,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$derp</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$derp Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9510,10 +9510,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$kiki</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$kiki Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9613,10 +9613,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$zack</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$zack Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9716,10 +9716,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$Fagcat</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$Fagcat Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9819,10 +9819,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$Hugh</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$Hugh Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -9922,10 +9922,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$Web</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">$web Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -10025,10 +10025,10 @@ export default function Deposit({ session }){
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$jenner</span> to the address below</p>
-                    <img 
+                    {/* <img 
                       className="w-1/3 m-auto"
                       src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                    />
+                    /> */}
                     <p className="text-center uppercase text-sm text-gray-400 my-3">$jenner Address</p>
                     <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                       <span className="flex space-x-2">
@@ -10128,10 +10128,10 @@ export default function Deposit({ session }){
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$mother</span> to the address below</p>
-                    <img 
+                    {/* <img 
                       className="w-1/3 m-auto"
                       src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                    />
+                    /> */}
                     <p className="text-center uppercase text-sm text-gray-400 my-3">$mother Address</p>
                     <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                       <span className="flex space-x-2">
@@ -10231,10 +10231,10 @@ export default function Deposit({ session }){
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$dog</span> to the address below</p>
-                    <img 
+                    {/* <img 
                       className="w-1/3 m-auto"
                       src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                    />
+                    /> */}
                     <p className="text-center uppercase text-sm text-gray-400 my-3">$dog Address</p>
                     <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                       <span className="flex space-x-2">
@@ -10336,10 +10336,10 @@ export default function Deposit({ session }){
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$trump</span> to the address below</p>
-                    <img 
+                    {/* <img 
                       className="w-1/3 m-auto"
                       src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                    />
+                    /> */}
                     <p className="text-center uppercase text-sm text-gray-400 my-3">$trump Address</p>
                     <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                       <span className="flex space-x-2">

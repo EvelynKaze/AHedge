@@ -10,7 +10,7 @@ const plans = [
   {
       package: "silver package",
       price: "$500 - $5000",
-      roi: "15% daily",
+      roi: "20% daily",
       duration: "30 days",
       icon: GiSilverBullet,
       iconClass: "text-gray-100 mx-2 text-5xl lg:text-xl",
@@ -19,7 +19,7 @@ const plans = [
   {
       package: "gold package",
       price: "$5000 - $50000",
-      roi: "20% daily",
+      roi: "30% daily",
       duration: "30 days",
       icon: GiGoldBar,
       iconClass: "text-yellow-500 mx-2 text-5xl lg:text-xl",
@@ -28,7 +28,7 @@ const plans = [
   {
       package: "diamond package",
       price: "$50000 - $500000",
-      roi: "30% daily",
+      roi: "50% daily",
       duration: "30 days",
       icon: IoDiamondOutline,
       iconClass: "text-white mx-1 text-5xl lg:text-xl",
@@ -37,7 +37,7 @@ const plans = [
   {
       package: "Platinum package",
       price: "$500000 - $1000000",
-      roi: "50% daily",
+      roi: "150% daily",
       duration: "60 days",
       icon: GiMetalPlate,
       iconClass: "text-neutral-800 mx-1 text-5xl lg:text-xl",
