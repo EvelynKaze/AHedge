@@ -2915,7 +2915,7 @@ export default function Deposit({ session }){
             theme='light'
           />
           <div className="space-y-2 mb-4 text-center">
-            <h2 className="font-bold text-2xl">deposit tokens to cold stake</h2>
+            <h2 className="font-bold text-2xl">Deposit tokens to cold stake</h2>
             {/* <h4>via <span className="font-semibold">Crypto Wallet</span></h4> */}
           </div>
         
@@ -3747,7 +3747,7 @@ export default function Deposit({ session }){
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/eth.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V0aC5wbmciLCJpYXQiOjE2ODY1NzQ5OTYsImV4cCI6MTcxODExMDk5Nn0.0WDT7NmyBmGCzz3DWwdsGbeClV9kAxiJYmnZu2dZU1c&t=2023-06-12T13%3A03%3A15.330Z"
                       /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">ADA Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <div onClick={clipboardADA} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
                           <FaBitcoin className='mt-1' />
                           <p>{ada}</p>
@@ -3845,10 +3845,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}USDT</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">USDT Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -3948,12 +3948,12 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}XLM</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">XLM Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <div onClick={clipboardXLM} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
                           <FaBitcoin className='mt-1' />
                           <p>{xlm}</p>
@@ -4051,10 +4051,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}HEX</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">HEX Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4154,10 +4154,10 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}BNB</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">BNB Address</p>
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
@@ -4257,12 +4257,12 @@ export default function Deposit({ session }){
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}SOL</span> to the address below</p>
-                      <img 
+                      {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      />
+                      /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">SOL Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <div onClick={clipboardSOL} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
                           <FaBitcoin className='mt-1' />
                           <p>{sol}</p>
@@ -4880,7 +4880,7 @@ export default function Deposit({ session }){
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
                       /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">BONK Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <div onClick={clipboardBONK} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
                           <FaBitcoin className='mt-1' />
                           <p>{bonk}</p>
@@ -5292,7 +5292,7 @@ export default function Deposit({ session }){
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
                       /> */}
                       <p className="text-center uppercase text-sm text-gray-400 my-3">BRC Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <div onClick={clipboardBRC} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
                           <FaBitcoin className='mt-1' />
                           <p>{brc20}</p>
@@ -10198,106 +10198,106 @@ export default function Deposit({ session }){
         </Transition>
         {/* dog */}
         <Transition appear show={openDog} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeDogModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+          <Dialog as="div" className="relative z-10" onClose={closeDogModal}>
             <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-xl text-center font-bold leading-6 text-gray-600"
-                  >
-                    Make Your Payment
-                  </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$dog</span> to the address below</p>
-                    {/* <img 
-                      className="w-1/3 m-auto"
-                      src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                    /> */}
-                    <p className="text-center uppercase text-sm text-gray-400 my-3">$dog Address</p>
-                    <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                      <span className="flex space-x-2">
-                        <FaBitcoin className='mt-1' />
-                        <p>{dog}</p>
-                      </span>
-                      <FiCopy
-                        onClick={clipboardDog}
-                        title="click to copy"
-                        className='text-blue-400 cursor-pointer'
-                      />
-                    </div>
-                    <div  className="flex justify-between p-1 my-2">
-                      <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                      <input
-                        type="number"
-                        id="depositBtc"
-                        name="depositBtc"
-                        placeholder="0.03"
-                        className="h-8 w-64 rounded-lg"
-                        value={deposit_dog || inputValue}
-                        onChange={handleChangeDog}
-                        required
-                      />
-                      
-                    </div>
-                  </div>
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <div className="fixed inset-0 bg-black bg-opacity-25" />
+            </Transition.Child>
 
-                  {/* BUTTONS */}
-                  <div className="space-y-2">
-                    <button
-                        type="submit"
-                        onClick={() => depositDog({ deposit_dog })}
-                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        disabled={loading}
-                      >
-                      {loading ? 'Loading ...' : 'Pay $dog'}
-                    </button>
-                    <button
-                      type="button"
-                      className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeDogModal}
+            <div className="fixed inset-0 overflow-y-auto">
+              <div className="flex min-h-full items-center justify-center p-4 text-center">
+              <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Dialog.Panel className="w-full max-w-md md:max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-xl text-center font-bold leading-6 text-gray-600"
                     >
-                      Pay Later
-                    </button>
-                  </div>
+                      Make Your Payment
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$dog</span> to the address below</p>
+                      {/* <img 
+                        className="w-1/3 m-auto"
+                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                      /> */}
+                      <p className="text-center uppercase text-sm text-gray-400 my-3">$dog Address</p>
+                      <div onClick={clipboardDog} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                        <span className="flex space-x-2">
+                          <FaBitcoin className='mt-1' />
+                          <p>{dog}</p>
+                        </span>
+                        <FiCopy
+                          onClick={clipboardDog}
+                          title="click to copy"
+                          className='text-blue-400 cursor-pointer'
+                        />
+                      </div>
+                      <div  className="flex justify-between p-1 my-2">
+                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                        <input
+                          type="number"
+                          id="depositBtc"
+                          name="depositBtc"
+                          placeholder="0.03"
+                          className="h-8 w-64 rounded-lg"
+                          value={deposit_dog || inputValue}
+                          onChange={handleChangeDog}
+                          required
+                        />
+                        
+                      </div>
+                    </div>
 
-                  {/* INFO */}
-                  <div className="mt-3">
-                    <div className="text-rose-500 flex space-x-2">
-                      <AiOutlineInfoCircle />
-                      <p className='text-xs'>Be aware that this order will be cancelled if you send any other $dog amount.</p>
+                    {/* BUTTONS */}
+                    <div className="space-y-2">
+                      <button
+                          type="submit"
+                          onClick={() => depositDog({ deposit_dog })}
+                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          disabled={loading}
+                        >
+                        {loading ? 'Loading ...' : 'Pay $dog'}
+                      </button>
+                      <button
+                        type="button"
+                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        onClick={closeDogModal}
+                      >
+                        Pay Later
+                      </button>
                     </div>
-                    <div className="flex space-x-2 text-gray-500">
-                      <AiOutlineInfoCircle />
-                      <p className='text-xs'>Account will be credited once we received your payment.</p>
+
+                    {/* INFO */}
+                    <div className="mt-3">
+                      <div className="text-rose-500 flex space-x-2">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other $dog amount.</p>
+                      </div>
+                      <div className="flex space-x-2 text-gray-500">
+                        <AiOutlineInfoCircle />
+                        <p className='text-xs'>Account will be credited once we received your payment.</p>
+                      </div>
                     </div>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
+                  </Dialog.Panel>
+                </Transition.Child>
+              </div>
             </div>
-          </div>
-        </Dialog>
+          </Dialog>
         </Transition>
         {/* gme */}
         
