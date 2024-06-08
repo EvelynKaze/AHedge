@@ -10,6 +10,95 @@ import { FiCopy } from "react-icons/fi"
 import { AiOutlineInfoCircle } from "react-icons/ai"
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { 
+  eth,
+  bitcoin,
+  amc,
+  ada,
+  xrp,
+  andy,
+  ape, 
+  arbitrum,
+  bobo,
+  bnb,
+  bonk,
+  brc20,
+  brett,
+  crodie, 
+  derp,
+  dixi,
+  djcat,
+  dog,
+  doge,
+  duko,
+  dumb,
+  enj,
+  fagcat,
+  friend,
+  giga,
+  gme,
+  halt,
+  hex,
+  hobbes,
+  hugh,
+  inj,
+  jenner,
+  jup,
+  kiki,
+  lichi,
+  matic,
+  mew, 
+  michi,
+  mini,
+  mother,
+  nigi,
+  pepe,
+  pepecoin,
+  popcat,
+  pork,
+  reca,
+  redo,
+  sec,
+  selfie,
+  sharkcat,
+  shib,
+  slerf,
+  sol,
+  speed,
+  tnsr,
+  tobi, 
+  trump,
+  trx,
+  usdc,
+  usdt, 
+  web,
+  xlm,
+  wen,
+  wif,
+  wolf,
+  zaxk,
+  clipboardETH,
+  clipboardXRP,
+  clipboardZack,
+  clipboardXLM,
+  clipboardUSDT,
+  clipboardADA,
+  clipboardHEX,
+  clipboardBNB,
+  clipboardBTC,
+ } from "../../components/wallet-address"
+ import { 
+  useBTCState,
+  useEthState,
+  useUSDTState,
+
+} from "../../components/states"
+import {
+  depositBTC,
+  depositETH,
+  depositUSDT,
+
+} from "../../components/deposit"
 
 
 export default function Deposit({ session }){
@@ -20,137 +109,49 @@ export default function Deposit({ session }){
     const [avatar_url, setAvatarUrl] = useState(null)
     const [inputValue, setInputValue] = useState('');
 //////////////////////// BTC ///////////////////////////////////
-    const [deposit_btc, setDepositBtc] = useState(null)
-
-    const handleChangeBTC = (event) => {
-      const value = event.target.value;
-      setDepositBtc(value);
-      setInputValue(value);
-    };
-
-    let [openBTC, setOpenBTC] = useState(false)
-    function closeBTCModal() {
-      setOpenBTC(false)
-    }
-    function openBTCModal() {
-      setOpenBTC(true)
-    }
-    const bitcoin = "bc1qcukc3j8qtw65jh0zxt6cqprhjcux4l3049usw4"
+    const {
+      deposit_btc,
+      setDepositBtc,
+      openBTC,
+      setOpenBTC,
+      handleChangeBTC,
+      openBTCModal,
+      closeBTCModal,
+    } = useBTCState();
+        
     
-    const clipboardBTC = () => {
-      navigator.clipboard.writeText(bitcoin)
-      toast.info("Copied to Clipboard");
-    };
+/////////////////////// ETH ////////////////////////////////
+    const {
+      deposit_eth,
+      setDepositEth,
+      openETH,
+      setOpenETH,
+      handleChangeETH,
+      openETHModal,
+      closeETHModal,
+    } = useEthState();
+    
 
-    async function depositBTC({ deposit_btc }) {
-      try {
-        setLoading(true)
-  
-        const updates = {
-          id: user.id,
-          deposit_btc,
-          updated_at: new Date().toISOString(),
-        }
-        let { error } = await supabase.from('profiles').upsert(updates)
-        if (error) throw error
-          setOpenBTC(false)
-          toast.success("Transaction Order placed. Awaiting Approval.")
-        } catch (error) {
-          alert('Error updating the data!')
-          console.log(error)
-        } finally {
-          setLoading(false)
-        }
-    };
-    /////////////////////// ETH ////////////////////////////////
-    const [deposit_eth, setDepositEth] = useState(null)
-    const eth = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
-    const clipboardETH = () => {
-      navigator.clipboard.writeText(eth)
-      toast.info("Copied to Clipboard");
-    };
-    const handleChangeETH = (event) => {
-      const value = event.target.value;
-      setDepositEth(value);
-      setInputValue(value);
-    };
-    let [openETH, setOpenETH] = useState(false)
-    function openETHModal(){
-      setOpenETH(true)
-    }
-    function closeETHModal(){
-      setOpenETH(false)
-    }
-    async function depositETH({ deposit_eth }) {
-      try {
-        setLoading(true)
-  
-        const updates = {
-          id: user.id,
-          deposit_eth,
-          updated_at: new Date().toISOString(),
-        }
-        let { error } = await supabase.from('profiles').upsert(updates)
-        if (error) throw error
-          setOpenETH(false)
-          toast.success("Transaction Order placed. Awaiting Approval.")
-        } catch (error) {
-          alert('Error updating the data!')
-          console.log(error)
-        } finally {
-          setLoading(false)
-        }
-    };
 ////////////////////////// USDT /////////////////////////////////
-    const usdt = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
-    const [deposit_usdt, setDepositUsdt] = useState(null)
-    const clipboardUSDT = () => {
-      navigator.clipboard.writeText(usdt)
-      toast.info("Copied to Clipboard");
-    };
-    const handleChangeUSDT = (event) => {
-      const value = event.target.value;
-      setDepositUsdt(value);
-      setInputValue(value);
-    };
-    let [openUSDT, setOpenUSDT] = useState(false)
-    function openUSDTModal(){
-      setOpenUSDT(true)
-    }
-    function closeUSDTModal(){
-      setOpenUSDT(false)
-    }
-
-    async function depositUSDT({ deposit_usdt }) {
-      try {
-        setLoading(true)
+    const {
+      deposit_usdt,
+      setDepositUsdt,
+      openUSDT,
+      setOpenUSDT,
+      handleChangeUSDT,
+      openUSDTModal,
+      closeUSDTModal,
+    } = useUSDTState();
   
-        const updates = {
-          id: user.id,
-          deposit_usdt,
-          updated_at: new Date().toISOString(),
-        }
-        let { error } = await supabase.from('profiles').upsert(updates)
-        if (error) throw error
-          setOpenUSDT(false)
-          toast.success("Transaction Order placed. Awaiting Approval.")
-        } catch (error) {
-          alert('Error updating the data!')
-          console.log(error)
-        } finally {
-          setLoading(false)
-        }
-    };
+
+    
 ////////////////////////// XRP /////////////////////////////////
-    const xrp = "rG3cdRNzZ1k83uFrzxMmpekkifKBYcv1dv"
+   
     const [deposit_xrp, setDepositXRP] = useState(null)
-    const clipboardXRP = () => {
-      navigator.clipboard.writeText(xrp)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeXRP = (event) => {
       const value = event.target.value;
-      setDepositXrp(value);
+      setDepositXRP(value);
       setInputValue(value);
     };
     let [openXRP, setOpenXRP] = useState(false)
@@ -182,12 +183,9 @@ export default function Deposit({ session }){
         }
     };
 ///////////////////////// ADA //////////////////////////////////
-      const ada = "addr1q98ae09zhyjda27zjkv0mf7mxszkpygxqgl7m5ceyxtrqr8ky7rryg9x5dduzrc9g700hmtl8yw6p60xqgqnhdzhd8psz9tnjn"
+      
       const [deposit_ada, setDepositADA] = useState(null)
-      const clipboardADA = () => {
-        navigator.clipboard.writeText(ada)
-        toast.info("Copied to Clipboard");
-      };
+      
       const handleChangeADA = (event) => {
         const value = event.target.value;
         setDepositADA(value);
@@ -223,12 +221,9 @@ export default function Deposit({ session }){
       };
 
 ////////////////////////// XLM /////////////////////////////////
-        const xlm = "GAAZHEFRKMW6EIU2DB6XZ5Q4GNXPPEIGBQ44HBPJJTJNCRRAZSR5BRHJ"
+        
         const [deposit_xlm, setDepositXLM] = useState(null)
-        const clipboardXLM = () => {
-          navigator.clipboard.writeText(xlm)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeXLM = (event) => {
           const value = event.target.value;
           setDepositXLM(value);
@@ -264,12 +259,9 @@ export default function Deposit({ session }){
         };
 
 ///////////////////////// HEX //////////////////////////////////
-        const hex = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+        
         const [deposit_hex, setDepositHEX] = useState(null)
-        const clipboardHEX = () => {
-          navigator.clipboard.writeText(xlm)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeHEX = (event) => {
           const value = event.target.value;
           setDepositHEX(value);
@@ -305,12 +297,9 @@ export default function Deposit({ session }){
         };
 
 ///////////////////////// BNB //////////////////////////////////
-        const bnb = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+       
         const [deposit_bnb, setDepositBNB] = useState(null)
-        const clipboardBNB = () => {
-          navigator.clipboard.writeText(bnb)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeBNB = (event) => {
           const value = event.target.value;
           setDepositBNB(value);
@@ -346,7 +335,7 @@ export default function Deposit({ session }){
         };
 
 ////////////////////// SOL /////////////////////////////////////
-        const sol = "7rk2qUYSbgHhRCdqEFw7LmAWiPyW1Ws4fYfvYJXDkw6n"
+        
         const [deposit_sol, setDepositSOL] = useState(null)
         const clipboardSOL = () => {
           navigator.clipboard.writeText(sol)
@@ -428,7 +417,6 @@ export default function Deposit({ session }){
         };
 
 ////////////////////////// USDC /////////////////////////////////
-        const usdc = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
         const [deposit_usdc, setDepositUSDC] = useState(null)
         const clipboardUSDC = () => {
           navigator.clipboard.writeText(usdc)
@@ -3469,7 +3457,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositBTC({ deposit_btc })}
+                          onClick={() => depositBTC({supabase, deposit_btc, user, setLoading, setOpenBTC})}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -3638,7 +3626,7 @@ export default function Deposit({ session }){
                       Make Your Payment
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}ETH</span> to the address below</p>
+                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{" "}ETH</span> to the address below</p>
                       {/* <img 
                         className="w-1/3 m-auto"
                         src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/eth.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V0aC5wbmciLCJpYXQiOjE2ODY1NzQ5OTYsImV4cCI6MTcxODExMDk5Nn0.0WDT7NmyBmGCzz3DWwdsGbeClV9kAxiJYmnZu2dZU1c&t=2023-06-12T13%3A03%3A15.330Z"
@@ -3675,7 +3663,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositETH({ deposit_eth })}
+                          onClick={() => depositETH({ supabase, deposit_eth, user, setLoading, setOpenETH })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -3881,7 +3869,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositUSDT({ deposit_usdt })}
+                          onClick={() => depositUSDT({ supabase, deposit_usdt, user, setLoading, setOpenUSDT })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
