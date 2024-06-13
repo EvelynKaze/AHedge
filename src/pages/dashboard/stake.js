@@ -57,12 +57,14 @@ import {
   popcat,
   pork,
   reca,
+  $1cat,
   redo,
   sec,
   selfie,
   sharkcat,
   shib,
   slerf,
+  stache,
   sol,
   speed,
   tnsr,
@@ -76,7 +78,8 @@ import {
   wen,
   wif,
   wolf,
-  zaxk,
+  zack,
+  tremp,
   clipboardETH,
   clipboardXRP,
   clipboardZack,
@@ -86,17 +89,81 @@ import {
   clipboardHEX,
   clipboardBNB,
   clipboardBTC,
+  clipboardTRX,
+  clipboardUSDC,
+  clipboardINJ,
+  clipboardSOL,
+  clipboardBobo,
+  clipboardSHIB,
+  clipboardSharkcat,
+  clipboardPork,
+  clipboardPepe,
+  clipboardGME,
+  clipboardDjcat,
+  clipboardWEN,
+  clipboardMATIC,
+  clipboardBONK,
+  clipboardDOGE,
+  clipboardARBITRUM,
+  clipboardENJ,
+  clipboardBRC,
+  clipboardJUP,
+  clipboardMichi,
+  clipboardWif,
+  clipboardBrett,
+  clipboardFriend,
+  clipboardTnsr,
+  clipboardHobbes,
+  clipboardMew,
+  clipboardPopcat,
+  clipboardCrodie,
+  clipboardWolf,
+  clipboardAndy,
+  clipboardSpeed,
+  clipboardLichi,
+  clipboardStache,
+  clipboardHalt,
+  clipboardSec,
+  clipboardDumb,
+  clipboardAmc,
+  clipboardMini,
+  clipboardSelfie,
+  clipboardRedo,
+  clipboardReca,
+  clipboardSlerf,
+  clipboardGiga,
+  clipboardPepeCoin,
+  clipboardDuko,
+  clipboardTobi,
+  clipboardNigi,
+  clipboardApe,
+  clipboardDixi,
+  clipboard$1cat,
+  clipboardDerp,
+  clipboardKiki,
+  clipboardFagcat,
+  clipboardHugh,
+  clipboardWeb,
+  clipboardJenner,
+  clipboardMother,
+  clipboardDog,
+  clipboardTrump,
+  clipboardTremp,
  } from "../../components/wallet-address"
  import { 
   useBTCState,
   useEthState,
   useUSDTState,
+  useXRPState,
+  useTrempState,
 
 } from "../../components/states"
 import {
   depositBTC,
   depositETH,
   depositUSDT,
+  depositXRP,
+  depositTremp,
 
 } from "../../components/deposit"
 
@@ -146,42 +213,17 @@ export default function Deposit({ session }){
 
     
 ////////////////////////// XRP /////////////////////////////////
-   
-    const [deposit_xrp, setDepositXRP] = useState(null)
-    
-    const handleChangeXRP = (event) => {
-      const value = event.target.value;
-      setDepositXRP(value);
-      setInputValue(value);
-    };
-    let [openXRP, setOpenXRP] = useState(false)
-    function openXRPModal(){
-      setOpenXRP(true)
-    }
-    function closeXRPModal(){
-      setOpenXRP(false)
-    }
-
-    async function depositXRP({ deposit_xrp }) {
-      try {
-        setLoading(true)
   
-        const updates = {
-          id: user.id,
-          deposit_xrp,
-          updated_at: new Date().toISOString(),
-        }
-        let { error } = await supabase.from('profiles').upsert(updates)
-        if (error) throw error
-          setOpenXRP(false)
-          toast.success("Staking Order placed. Awaiting Approval.")
-        } catch (error) {
-          alert('internal Server Error: Error updating the data!')
-          console.log(error)
-        } finally {
-          setLoading(false)
-        }
-    };
+  const {
+    deposit_xrp,
+    setDepositXRP,
+    openXRP,
+    setOpenXRP,
+    handleChangeXRP,
+    openXRPModal,
+    closeXRPModal,
+  } = useXRPState();
+
 ///////////////////////// ADA //////////////////////////////////
       
       const [deposit_ada, setDepositADA] = useState(null)
@@ -337,10 +379,7 @@ export default function Deposit({ session }){
 ////////////////////// SOL /////////////////////////////////////
         
         const [deposit_sol, setDepositSOL] = useState(null)
-        const clipboardSOL = () => {
-          navigator.clipboard.writeText(sol)
-          toast.info("Copied to Clipboard");
-        };
+       
         const handleChangeSOL = (event) => {
           const value = event.target.value;
           setDepositSOL(value);
@@ -376,12 +415,10 @@ export default function Deposit({ session }){
         };
 
 ////////////////////////// TRX /////////////////////////////////
-        const trx = "TNW1zeNt9hMvXPfT6JEBeAhfGAsbqgCNWX"
+
         const [deposit_trx, setDepositTRX] = useState(null)
-        const clipboardTRX = () => {
-          navigator.clipboard.writeText(trx)
-          toast.info("Copied to Clipboard");
-        };
+
+        
         const handleChangeTRX = (event) => {
           const value = event.target.value;
           setDepositTRX(value);
@@ -418,10 +455,7 @@ export default function Deposit({ session }){
 
 ////////////////////////// USDC /////////////////////////////////
         const [deposit_usdc, setDepositUSDC] = useState(null)
-        const clipboardUSDC = () => {
-          navigator.clipboard.writeText(usdc)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeUSDC = (event) => {
           const value = event.target.value;
           setDepositUSDC(value);
@@ -457,12 +491,9 @@ export default function Deposit({ session }){
         };
 
 //////////////////////////// INJ ///////////////////////////////
-        const inj = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
         const [deposit_inj, setDepositINJ] = useState(null)
-        const clipboardINJ = () => {
-          navigator.clipboard.writeText(inj)
-          toast.info("Copied to Clipboard");
-        };
+
+       
         const handleChangeINJ = (event) => {
           const value = event.target.value;
           setDepositINJ(value);
@@ -498,12 +529,9 @@ export default function Deposit({ session }){
         };
 
 //////////////////////////// SHIB ///////////////////////////////
-        const shib = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+        
         const [deposit_shib, setDepositSHIB] = useState(null)
-        const clipboardSHIB = () => {
-          navigator.clipboard.writeText(shib)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeSHIB = (event) => {
           const value = event.target.value;
           setDepositSHIB(value);
@@ -539,12 +567,9 @@ export default function Deposit({ session }){
         };
 
 //////////////////////////// MATIC ///////////////////////////////
-        const matic = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+        
         const [deposit_matic, setDepositMATIC] = useState(null)
-        const clipboardMATIC = () => {
-          navigator.clipboard.writeText(matic)
-          toast.info("Copied to Clipboard");
-        };
+       
         const handleChangeMATIC = (event) => {
           const value = event.target.value;
           setDepositMATIC(value);
@@ -580,12 +605,8 @@ export default function Deposit({ session }){
         };
 
 //////////////////////////// BONK ///////////////////////////////
-        const bonk = "7rk2qUYSbgHhRCdqEFw7LmAWiPyW1Ws4fYfvYJXDkw6n"
         const [deposit_bonk, setDepositBONK] = useState(null)
-        const clipboardBONK = () => {
-          navigator.clipboard.writeText(bonk)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeBONK = (event) => {
           const value = event.target.value;
           setDepositBONK(value);
@@ -621,12 +642,9 @@ export default function Deposit({ session }){
         };
 
         //////////////////////////// DOGE ///////////////////////////////
-        const doge = "DGmRUnfhrAb4bQY8LPFSNYxgqPaT5SbbaN"
+
         const [deposit_doge, setDepositDOGE] = useState(null)
-        const clipboardDOGE = () => {
-          navigator.clipboard.writeText(doge)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeDOGE = (event) => {
           const value = event.target.value;
           setDepositDOGE(value);
@@ -661,12 +679,9 @@ export default function Deposit({ session }){
             }
         };
         //////////////////////////// ARBITRUM ///////////////////////////////
-        const arbitrum = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
+
         const [deposit_arbitrum, setDepositARBITRUM] = useState(null)
-        const clipboardARBITRUM = () => {
-          navigator.clipboard.writeText(arbitrum)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeARBITRUM = (event) => {
           const value = event.target.value;
           setDepositARBITRUM(value);
@@ -701,12 +716,8 @@ export default function Deposit({ session }){
             }
         };
         //////////////////////////// ENJ ///////////////////////////////
-        const enj = "0xD72eF06415D0E523D57a86f787cE93b74A978b62"
         const [deposit_enj, setDepositENJ] = useState(null)
-        const clipboardENJ = () => {
-          navigator.clipboard.writeText(enj)
-          toast.info("Copied to Clipboard");
-        };
+       
         const handleChangeENJ = (event) => {
           const value = event.target.value;
           setDepositENJ(value);
@@ -741,12 +752,8 @@ export default function Deposit({ session }){
             }
         };
         //////////////////////////// BRC20 ///////////////////////////////
-        const brc20 = "bc1p2sqyg89zhk8z69854xs56ezkdnlan37tmngs8z89thswj7tpzjksnpsk4x"
         const [deposit_brc, setDepositBRC] = useState(null)
-        const clipboardBRC = () => {
-          navigator.clipboard.writeText(brc20)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeBRC = (event) => {
           const value = event.target.value;
           setDepositBRC(value);
@@ -781,12 +788,8 @@ export default function Deposit({ session }){
             }
         };
         //////////////////////////// JUP ///////////////////////////////
-        const jup = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
         const [deposit_jup, setDepositJUP] = useState(null)
-        const clipboardJUP = () => {
-          navigator.clipboard.writeText(jup)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeJUP = (event) => {
           const value = event.target.value;
           setDepositJUP(value);
@@ -821,12 +824,8 @@ export default function Deposit({ session }){
             }
         };
         //////////////////////////// WEN ///////////////////////////////
-        const wen = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
         const [deposit_wen, setDepositWEN] = useState(null)
-        const clipboardWEN = () => {
-          navigator.clipboard.writeText(wen)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeWEN = (event) => {
           const value = event.target.value;
           setDepositWEN(value);
@@ -863,12 +862,9 @@ export default function Deposit({ session }){
 
         
         //////////////////////////// michi ///////////////////////////////
-        const michi = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+        
         const [deposit_michi, setDepositMichi] = useState(null)
-        const clipboardMichi = () => {
-          navigator.clipboard.writeText(michi)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeMichi = (event) => {
           const value = event.target.value;
           setDepositMichi(value);
@@ -905,12 +901,8 @@ export default function Deposit({ session }){
 
         
         //////////////////////////// wif ///////////////////////////////
-        const wif = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
         const [deposit_wif, setDepositWif] = useState(null)
-        const clipboardWif = () => {
-          navigator.clipboard.writeText(wif)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeWif = (event) => {
           const value = event.target.value;
           setDepositWif(value);
@@ -947,12 +939,8 @@ export default function Deposit({ session }){
 
         
         //////////////////////////// brett ///////////////////////////////
-        const brett = "0x46d72B60E83D5dca094C23B9D24f51F87f02fDa6"
         const [deposit_brett, setDepositBrett] = useState(null)
-        const clipboardBrett = () => {
-          navigator.clipboard.writeText(brett)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeBrett = (event) => {
           const value = event.target.value;
           setDepositBrett(value);
@@ -989,12 +977,8 @@ export default function Deposit({ session }){
 
         
         //////////////////////////// friend ///////////////////////////////
-        const friend = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
         const [deposit_friend, setDepositFriend] = useState(null)
-        const clipboardFriend = () => {
-          navigator.clipboard.writeText(friend)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeFriend = (event) => {
           const value = event.target.value;
           setDepositFriend(value);
@@ -1030,12 +1014,8 @@ export default function Deposit({ session }){
         };
 
          //////////////////////////// tnsr ///////////////////////////////
-         const tnsr = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
          const [deposit_tnsr, setDepositTnsr] = useState(null)
-         const clipboardTnsr = () => {
-           navigator.clipboard.writeText(tnsr)
-           toast.info("Copied to Clipboard");
-         };
+        
          const handleChangeTnsr = (event) => {
            const value = event.target.value;
            setDepositTnsr(value);
@@ -1071,12 +1051,8 @@ export default function Deposit({ session }){
          };
  
   //////////////////////////// hobbes ///////////////////////////////
-  const hobbes = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
   const [deposit_hobbes, setDepositHobbes] = useState(null)
-  const clipboardHobbes = () => {
-    navigator.clipboard.writeText(hobbes)
-    toast.info("Copied to Clipboard");
-  };
+  
   const handleChangeHobbes = (event) => {
     const value = event.target.value;
     setDepositHobbes(value);
@@ -1112,12 +1088,8 @@ export default function Deposit({ session }){
   };
 
            //////////////////////////// mew ///////////////////////////////
-        const mew = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
         const [deposit_mew, setDepositMew] = useState(null)
-        const clipboardMew = () => {
-          navigator.clipboard.writeText(mew)
-          toast.info("Copied to Clipboard");
-        };
+        
         const handleChangeMew = (event) => {
           const value = event.target.value;
           setDepositMew(value);
@@ -1154,12 +1126,8 @@ export default function Deposit({ session }){
 
         
  //////////////////////////// popcat ///////////////////////////////
- const popcat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
  const [deposit_popcat, setDepositPopcat] = useState(null)
- const clipboardPopcat = () => {
-   navigator.clipboard.writeText(popcat)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangePopcat = (event) => {
    const value = event.target.value;
    setDepositPopcat(value);
@@ -1195,12 +1163,9 @@ export default function Deposit({ session }){
  };
 
  //////////////////////////// sharkcat ///////////////////////////////
- const sharkcat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_sharkcat, setDepositSharkcat] = useState(null)
- const clipboardSharkcat = () => {
-   navigator.clipboard.writeText(sharkcat)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeSharkcat = (event) => {
    const value = event.target.value;
    setDepositSharkcat(value);
@@ -1235,12 +1200,8 @@ export default function Deposit({ session }){
      }
  };
  //////////////////////////// crodie ///////////////////////////////
- const crodie = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
  const [deposit_crodie, setDepositCrodie] = useState(null)
- const clipboardCrodie = () => {
-   navigator.clipboard.writeText(crodie)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeCrodie = (event) => {
    const value = event.target.value;
    setDepositCrodie(value);
@@ -1277,12 +1238,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// bobo ///////////////////////////////
- const bobo = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_bobo, setDepositBobo] = useState(null)
- const clipboardBobo = () => {
-   navigator.clipboard.writeText(bobo)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeBobo = (event) => {
    const value = event.target.value;
    setDepositBobo(value);
@@ -1318,12 +1276,9 @@ export default function Deposit({ session }){
  };
 
  //////////////////////////// pork ///////////////////////////////
- const pork = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_pork, setDepositPork] = useState(null)
- const clipboardPork = () => {
-   navigator.clipboard.writeText(pork)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangePork = (event) => {
    const value = event.target.value;
    setDepositPork(value);
@@ -1360,12 +1315,8 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// wolf ///////////////////////////////
- const wolf = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
  const [deposit_wolf, setDepositWolf] = useState(null)
- const clipboardWolf = () => {
-   navigator.clipboard.writeText(wolf)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeWolf = (event) => {
    const value = event.target.value;
    setDepositWolf(value);
@@ -1401,12 +1352,8 @@ export default function Deposit({ session }){
  };
 
  //////////////////////////// andy ///////////////////////////////
- const andy = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
  const [deposit_andy, setDepositAndy] = useState(null)
- const clipboardAndy = () => {
-   navigator.clipboard.writeText(andy)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeAndy = (event) => {
    const value = event.target.value;
    setDepositAndy(value);
@@ -1443,12 +1390,8 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// gme ///////////////////////////////
- const gme = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
  const [deposit_gme, setDepositGME] = useState(null)
- const clipboardGME = () => {
-   navigator.clipboard.writeText(gme)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeGME = (event) => {
    const value = event.target.value;
    setDepositGME(value);
@@ -1485,12 +1428,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// speed ///////////////////////////////
- const speed = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
  const [deposit_speed, setDepositSpeed] = useState(null)
- const clipboardSpeed = () => {
-   navigator.clipboard.writeText(speed)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeSpeed = (event) => {
    const value = event.target.value;
    setDepositSpeed(value);
@@ -1527,12 +1467,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// lichi ///////////////////////////////
- const lichi = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
  const [deposit_lichi, setDepositLichi] = useState(null)
- const clipboardLichi = () => {
-   navigator.clipboard.writeText(lichi)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeLichi = (event) => {
    const value = event.target.value;
    setDepositLichi(value);
@@ -1569,12 +1506,8 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// stache ///////////////////////////////
- const stache = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
  const [deposit_stache, setDepositStache] = useState(null)
- const clipboardStache = () => {
-   navigator.clipboard.writeText(stache)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeStache = (event) => {
    const value = event.target.value;
    setDepositStache(value);
@@ -1611,12 +1544,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// halt ///////////////////////////////
- const halt = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
  const [deposit_halt, setDepositHalt] = useState(null)
- const clipboardHalt = () => {
-   navigator.clipboard.writeText(halt)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeHalt = (event) => {
    const value = event.target.value;
    setDepositHalt(value);
@@ -1653,12 +1583,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// sec ///////////////////////////////
- const sec = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_sec, setDepositSec] = useState(null)
- const clipboardSec = () => {
-   navigator.clipboard.writeText(sec)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeSec = (event) => {
    const value = event.target.value;
    setDepositSec(value);
@@ -1695,12 +1622,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// dumb ///////////////////////////////
- const dumb = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
  const [deposit_dumb, setDepositDumb] = useState(null)
- const clipboardDumb = () => {
-   navigator.clipboard.writeText(dumb)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeDumb = (event) => {
    const value = event.target.value;
    setDepositDumb(value);
@@ -1737,12 +1661,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// amc ///////////////////////////////
- const amc = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_amc, setDepositAmc] = useState(null)
- const clipboardAmc = () => {
-   navigator.clipboard.writeText(amc)
-   toast.info("Copied to Clipboard");
- };
+
  const handleChangeAmc = (event) => {
    const value = event.target.value;
    setDepositAmc(value);
@@ -1779,12 +1700,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// mini ///////////////////////////////
- const mini = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
  const [deposit_mini, setDepositMini] = useState(null)
- const clipboardMini = () => {
-   navigator.clipboard.writeText(mini)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeMini = (event) => {
    const value = event.target.value;
    setDepositMini(value);
@@ -1821,12 +1739,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// $selfie ///////////////////////////////
- const selfie = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_selfie, setDepositSelfie] = useState(null)
- const clipboardSelfie = () => {
-   navigator.clipboard.writeText(selfie)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeSelfie = (event) => {
    const value = event.target.value;
    setDepositSelfie(value);
@@ -1863,12 +1778,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// $pepe ///////////////////////////////
- const pepe = "0x1F572F9551EdcF475cc5E6F9cd2a3641b625500A"
+ 
  const [deposit_pepe, setDepositPepe] = useState(null)
- const clipboardPepe = () => {
-   navigator.clipboard.writeText(pepe)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangePepe = (event) => {
    const value = event.target.value;
    setDepositPepe(value);
@@ -1905,12 +1817,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// $redo  ///////////////////////////////
- const redo = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_redo, setDepositRedo] = useState(null)
- const clipboardRedo = () => {
-   navigator.clipboard.writeText(redo)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeRedo = (event) => {
    const value = event.target.value;
    setDepositRedo(value);
@@ -1947,12 +1856,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// $reca  ///////////////////////////////
- const reca = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_reca, setDepositReca] = useState(null)
- const clipboardReca = () => {
-   navigator.clipboard.writeText(reca)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeReca = (event) => {
    const value = event.target.value;
    setDepositReca(value);
@@ -1989,12 +1895,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// $slerf  ///////////////////////////////
- const slerf = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_slerf, setDepositSlerf] = useState(null)
- const clipboardSlerf = () => {
-   navigator.clipboard.writeText(slerf)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeSlerf = (event) => {
    const value = event.target.value;
    setDepositSlerf(value);
@@ -2029,12 +1932,9 @@ export default function Deposit({ session }){
      }
  };
  //////////////////////////// $giga  ///////////////////////////////
- const giga = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_giga, setDepositGiga] = useState(null)
- const clipboardGiga = () => {
-   navigator.clipboard.writeText(giga)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeGiga = (event) => {
    const value = event.target.value;
    setDepositGiga(value);
@@ -2071,12 +1971,9 @@ export default function Deposit({ session }){
 
   
  //////////////////////////// $pepeCoin(erc20)  ///////////////////////////////
- const pepecoin = "0x1F572F9551EdcF475cc5E6F9cd2a3641b625500A"
+ 
  const [deposit_pepeCoin, setDepositPepeCoin] = useState(null)
- const clipboardPepeCoin = () => {
-   navigator.clipboard.writeText(pepecoin)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangePepeCoin = (event) => {
    const value = event.target.value;
    setDepositPepeCoin(value);
@@ -2113,12 +2010,9 @@ export default function Deposit({ session }){
 
 
    //////////////////////////// $duko  ///////////////////////////////
- const duko = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+ 
  const [deposit_duko, setDepositDuko] = useState(null)
- const clipboardDuko = () => {
-   navigator.clipboard.writeText(duko)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeDuko = (event) => {
    const value = event.target.value;
    setDepositDuko(value);
@@ -2154,12 +2048,9 @@ export default function Deposit({ session }){
  };
 
     //////////////////////////// $tobi  ///////////////////////////////
- const tobi = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
  const [deposit_tobi, setDepositTobi] = useState(null)
- const clipboardTobi = () => {
-   navigator.clipboard.writeText(tobi)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeTobi = (event) => {
    const value = event.target.value;
    setDepositTobi(value);
@@ -2196,12 +2087,9 @@ export default function Deposit({ session }){
 
   
   //////////////////////////// $nigi  ///////////////////////////////
-  const nigi = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+  
   const [deposit_nigi, setDepositNigi] = useState(null)
-  const clipboardNigi = () => {
-    navigator.clipboard.writeText(nigi)
-    toast.info("Copied to Clipboard");
-  };
+  
   const handleChangeNigi = (event) => {
     const value = event.target.value;
     setDepositNigi(value);
@@ -2237,12 +2125,9 @@ export default function Deposit({ session }){
   };
  
      //////////////////////////// $djcat  ///////////////////////////////
- const djcat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
  const [deposit_djcat, setDepositDjcat] = useState(null)
- const clipboardDjcat = () => {
-   navigator.clipboard.writeText(djcat)
-   toast.info("Copied to Clipboard");
- };
+ 
  const handleChangeDjcat = (event) => {
    const value = event.target.value;
    setDepositDjcat(value);
@@ -2278,12 +2163,9 @@ export default function Deposit({ session }){
  };
 
   //////////////////////////// $ape  ///////////////////////////////
-  const ape = "0x1F572F9551EdcF475cc5E6F9cd2a3641b625500A"
+
   const [deposit_ape, setDepositApe] = useState(null)
-  const clipboardApe = () => {
-    navigator.clipboard.writeText(ape)
-    toast.info("Copied to Clipboard");
-  };
+  
   const handleChangeApe = (event) => {
     const value = event.target.value;
     setDepositApe(value);
@@ -2320,12 +2202,9 @@ export default function Deposit({ session }){
  
      
    //////////////////////////// $dixi  ///////////////////////////////
-   const dixi = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_dixi, setDepositDixi] = useState(null)
-   const clipboardDixi = () => {
-     navigator.clipboard.writeText(dixi)
-     toast.info("Copied to Clipboard");
-   };
+   
    const handleChangeDixi = (event) => {
      const value = event.target.value;
      setDepositDixi(value);
@@ -2361,12 +2240,9 @@ export default function Deposit({ session }){
    }; 
         
    //////////////////////////// $1cat  ///////////////////////////////
-   const $1cat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_$1cat, setDeposit$1cat] = useState(null)
-   const clipboard$1cat = () => {
-     navigator.clipboard.writeText($1cat)
-     toast.info("Copied to Clipboard");
-   };
+   
    const handleChange$1cat = (event) => {
      const value = event.target.value;
      setDeposit$1cat(value);
@@ -2402,12 +2278,9 @@ export default function Deposit({ session }){
    }; 
         
    //////////////////////////// $derp  ///////////////////////////////
-   const derp = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_derp, setDepositDerp] = useState(null)
-   const clipboardDerp = () => {
-     navigator.clipboard.writeText(derp)
-     toast.info("Copied to Clipboard");
-   };
+   
    const handleChangeDerp = (event) => {
      const value = event.target.value;
      setDepositDerp(value);
@@ -2443,12 +2316,9 @@ export default function Deposit({ session }){
    }; 
 
     //////////////////////////// $kiki  ///////////////////////////////
-   const kiki = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_kiki, setDepositKiki] = useState(null)
-   const clipboardKiki = () => {
-     navigator.clipboard.writeText(kiki)
-     toast.info("Copied to Clipboard");
-   };
+  
    const handleChangeKiki = (event) => {
      const value = event.target.value;
      setDepositKiki(value);
@@ -2484,12 +2354,9 @@ export default function Deposit({ session }){
    }; 
         
     //////////////////////////// $zack  ///////////////////////////////
-   const zack = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_zack, setDepositZack] = useState(null)
-   const clipboardZack = () => {
-     navigator.clipboard.writeText(zack)
-     toast.info("Copied to Clipboard");
-   };
+  
    const handleChangeZack = (event) => {
      const value = event.target.value;
      setDepositZack(value);
@@ -2525,12 +2392,9 @@ export default function Deposit({ session }){
    }; 
         
     //////////////////////////// $fagcat  ///////////////////////////////
-   const fagcat = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_fagcat, setDepositFagcat] = useState(null)
-   const clipboardFagcat = () => {
-     navigator.clipboard.writeText(fagcat)
-     toast.info("Copied to Clipboard");
-   };
+  
    const handleChangeFagcat = (event) => {
      const value = event.target.value;
      setDepositFagcat(value);
@@ -2566,12 +2430,9 @@ export default function Deposit({ session }){
    }; 
         
     //////////////////////////// $hugh  ///////////////////////////////
-   const hugh = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_hugh, setDepositHugh] = useState(null)
-   const clipboardHugh = () => {
-     navigator.clipboard.writeText(hugh)
-     toast.info("Copied to Clipboard");
-   };
+  
    const handleChangeHugh = (event) => {
      const value = event.target.value;
      setDepositHugh(value);
@@ -2607,12 +2468,9 @@ export default function Deposit({ session }){
    }; 
         
     //////////////////////////// $web  ///////////////////////////////
-   const web = "0x46d72B60E83D5dca094C23B9D24f51F87f02fDa6"
+   
    const [deposit_web, setDepositWeb] = useState(null)
-   const clipboardWeb = () => {
-     navigator.clipboard.writeText(web)
-     toast.info("Copied to Clipboard");
-   };
+  
    const handleChangeWeb = (event) => {
      const value = event.target.value;
      setDepositWeb(value);
@@ -2648,12 +2506,9 @@ export default function Deposit({ session }){
    }; 
         
     //////////////////////////// $JENNER  ///////////////////////////////
-   const jenner = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
    const [deposit_jenner, setDepositJenner] = useState(null)
-   const clipboardJenner = () => {
-     navigator.clipboard.writeText(jenner)
-     toast.info("Copied to Clipboard");
-   };
+   
    const handleChangeJenner = (event) => {
      const value = event.target.value;
      setDepositJenner(value);
@@ -2689,12 +2544,9 @@ export default function Deposit({ session }){
    }; 
         
     //////////////////////////// $Mother  ///////////////////////////////
-   const mother = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+   
    const [deposit_mother, setDepositMother] = useState(null)
-   const clipboardMother = () => {
-     navigator.clipboard.writeText(mother)
-     toast.info("Copied to Clipboard");
-   };
+  
    const handleChangeMother = (event) => {
      const value = event.target.value;
      setDepositMother(value);
@@ -2730,12 +2582,9 @@ export default function Deposit({ session }){
    }; 
         
     //////////////////////////// $DOG  ///////////////////////////////
-   const dog = "bc1p2sqyg89zhk8z69854xs56ezkdnlan37tmngs8z89thswj7tpzjksnpsk4x"
+   
    const [deposit_dog, setDepositDog] = useState(null)
-   const clipboardDog = () => {
-     navigator.clipboard.writeText(dog)
-     toast.info("Copied to Clipboard");
-   };
+  
    const handleChangeDog = (event) => {
      const value = event.target.value;
      setDepositDog(value);
@@ -2770,54 +2619,11 @@ export default function Deposit({ session }){
        }
    }; 
      
-    //////////////////////////// $GME  ///////////////////////////////
-    // const gme = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
-    // const [deposit_gmef, setDepositGMEf] = useState(null)
-    // const clipboardGMEf = () => {
-    //   navigator.clipboard.writeText(gme)
-    //   toast.info("Copied to Clipboard");
-    // };
-    // const handleChangeGME = (event) => {
-    //   const value = event.target.value;
-    //   setDepositGMEf(value);
-    //   setInputValue(value);
-    // };
-    // let [openGME, setOpenGME] = useState(false)
-    // function openGMEModal(){
-    //   setOpenGME(true)
-    // }
-    // function closeGMEModal(){
-    //   setOpenGME(false)
-    // }
-   
-    // async function depositGME({ deposit_gmef }) {
-    //   try {
-    //     setLoading(true)
-   
-    //     const updates = {
-    //       id: user.id,
-    //       deposit_gme,
-    //       updated_at: new Date().toISOString(),
-    //     }
-    //     let { error } = await supabase.from('profiles').upsert(updates)
-    //     if (error) throw error
-    //       setOpenGME(false)
-    //       toast.success("Staking Order placed. Awaiting Approval.")
-    //     } catch (error) {
-    //       alert('internal Server Error: Error updating the data!')
-    //       console.log(error)
-    //     } finally {
-    //       setLoading(false)
-    //     }
-    // }; 
 
     //////////////////////////// $TRUMP  ///////////////////////////////
-    const trump = "CSDLe7G2E6z49oyTvXSBw8V1f71SYtji25ouGR2kbfTZ"
+
     const [deposit_trump, setDepositTrump] = useState(null)
-    const clipboardTrump = () => {
-      navigator.clipboard.writeText(trump)
-      toast.info("Copied to Clipboard");
-    };
+    
     const handleChangeTrump = (event) => {
       const value = event.target.value;
       setDepositTrump(value);
@@ -2851,6 +2657,17 @@ export default function Deposit({ session }){
           setLoading(false)
         }
     }; 
+////////////////////////// TREMP /////////////////////////////////
+  
+  const {
+    deposit_tremp,
+    setDepositTremp,
+    openTremp,
+    setOpenTremp,
+    handleChangeTremp,
+    openTrempModal,
+    closeTrempModal,
+  } = useTrempState();
 
 ////////////////////////////////////////////////////////////////////
    
@@ -3370,16 +3187,16 @@ export default function Deposit({ session }){
             <CheckIcon className="h-6 w-6" />
           </div>
         </div>
-        {/* <div onClick={openGMEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$gme</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div> */}
         <div onClick={openTrumpModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
           cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
           <p className="font-medium">$trump</p>
+          <div className="shrink-0 bg-[#7439b8] rounded-full">
+            <CheckIcon className="h-6 w-6" />
+          </div>
+        </div>
+        <div onClick={openTrempModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
+          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
+          <p className="font-medium">$tremp</p>
           <div className="shrink-0 bg-[#7439b8] rounded-full">
             <CheckIcon className="h-6 w-6" />
           </div>
@@ -3560,7 +3377,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositXRP({ deposit_xrp })}
+                          onClick={() => depositXRP({ supabase, user, setLoading, setOpenXRP, deposit_xrp })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -3761,7 +3578,7 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-
+{/* supabase, deposit_btc, user, setLoading, setOpenBTC */}
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
@@ -3864,7 +3681,7 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-
+                    
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
@@ -10380,6 +10197,109 @@ export default function Deposit({ session }){
                     <div className="text-rose-500 flex space-x-2">
                       <AiOutlineInfoCircle />
                       <p className='text-xs'>Be aware that this order will be cancelled if you send any other $trump amount.</p>
+                    </div>
+                    <div className="flex space-x-2 text-gray-500">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Account will be credited once we received your payment.</p>
+                    </div>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+        </Transition>
+        {/* tremp */}
+        <Transition appear show={openTremp} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeTrempModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <Dialog.Title
+                    as="h3"
+                    className="text-xl text-center font-bold leading-6 text-gray-600"
+                  >
+                    Make Your Payment
+                  </Dialog.Title>
+                  <div className="mt-2">
+                    <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}$tremp</span> to the address below</p>
+                    {/* <img 
+                      className="w-1/3 m-auto"
+                      src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
+                    /> */}
+                    <p className="text-center uppercase text-sm text-gray-400 my-3">$tremp Address</p>
+                    <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
+                      <span className="flex space-x-2">
+                        <FaBitcoin className='mt-1' />
+                        <p>{tremp}</p>
+                      </span>
+                      <FiCopy
+                        onClick={clipboardTremp}
+                        title="click to copy"
+                        className='text-blue-400 cursor-pointer'
+                      />
+                    </div>
+                    <div  className="flex justify-between p-1 my-2">
+                      <span className='text-base antialiased font-normal'>Enter Amount:</span>
+                      <input
+                        type="number"
+                        id="depositBtc"
+                        name="depositBtc"
+                        placeholder="0.03"
+                        className="h-8 w-64 rounded-lg"
+                        value={deposit_tremp || inputValue}
+                        onChange={handleChangeTremp}
+                        required
+                      />
+                      
+                    </div>
+                  </div>
+                  {/* { supabase, user, setLoading, setOpenXRP, deposit_xrp } */}
+                  {/* BUTTONS */}
+                  <div className="space-y-2">
+                    <button
+                        type="submit"
+                        onClick={() => depositTremp({ supabase, user, setLoading, setOpenTremp, deposit_tremp })}
+                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        disabled={loading}
+                      >
+                      {loading ? 'Loading ...' : 'Pay $tremp'}
+                    </button>
+                    <button
+                      type="button"
+                      className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeTrempModal}
+                    >
+                      Pay Later
+                    </button>
+                  </div>
+
+                  {/* INFO */}
+                  <div className="mt-3">
+                    <div className="text-rose-500 flex space-x-2">
+                      <AiOutlineInfoCircle />
+                      <p className='text-xs'>Be aware that this order will be cancelled if you send any other $tremp amount.</p>
                     </div>
                     <div className="flex space-x-2 text-gray-500">
                       <AiOutlineInfoCircle />

@@ -16,6 +16,8 @@ export *  from './redoAddress';
 export *  from './gigaAddress';
 export *  from './andyAddress';
 export *  from './haltAddress';
+export *  from './hobbesAddress';
+export *  from './hughAddress';
 export *  from './nigiAddress';
 export *  from './boboAddress';
 export *  from './porkAddress';
@@ -58,7 +60,6 @@ export * from './shibAddress'
 export * from './slerfAddress'
 export * from './speedAddress'
 export * from './stacheAddress'
-export * from './stacheAddress'
 export * from './tnsrAddress'
 export * from './tobiAddress'
 export * from './trumpAddress'
@@ -72,3 +73,4 @@ export * from './wolfAddress'
 export * from './xlmAddress'
 export * from './xrpAddress'
 export * from './zackAddress'
+export * from './trempAddress'
