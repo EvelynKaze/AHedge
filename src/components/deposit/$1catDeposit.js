@@ -1,11 +1,11 @@
 import { toast } from 'react-toastify';
 
-export async function deposit$1cat({ 
+export async function depositOnecat({ 
   supabase, 
-  deposit_$1cat, 
+  deposit_Onecat, 
   user, 
   setLoading, 
-  setOpen$1cat,
+  setOpenOnecat,
 }) {
 
   try {
@@ -13,14 +13,14 @@ export async function deposit$1cat({
 
     const updates = {
       id: user.id,
-      deposit_$1cat,
+      deposit_Onecat,
       updated_at: new Date().toISOString(),
     };
 
     let { error } = await supabase.from('profiles').upsert(updates);
     if (error) throw error;
     
-    setOpen$1cat(false);
+    setOpenOnecat(false);
     toast.success("Transaction Order placed. Awaiting Approval.");
   } catch (error) {
     alert('Error updating the data!');
