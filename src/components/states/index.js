@@ -67,3 +67,4 @@ export * from "./trumpState";
 export * from "./trxState";
 export * from "./xrpState";
 export * from "./trempState";
+export * from "./hotState";

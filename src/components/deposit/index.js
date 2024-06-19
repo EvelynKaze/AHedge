@@ -67,3 +67,4 @@ export * from "./motherDeposit"
 export * from "./dogDeposit"
 export * from "./trumpDeposit"
 export * from "./trempDeposit"; 
+export * from "./hotDeposit"; 
