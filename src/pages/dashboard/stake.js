@@ -156,7 +156,70 @@ import {
   useUSDTState,
   useXRPState,
   useTrempState,
-
+  useADAState,
+  useXLMState,
+  useHEXState,
+  useBNBState,
+  useSOLState,
+  useTRXState,
+  useUSDCState,
+  useINJState,
+  useSHIBState,
+  useMATICState,
+  useBONKState,
+  useDOGEState,
+  useARBITRUMState,
+  useENJState,
+  useBRCState,
+  useJUPState,
+  useWENState,
+  useMichiState,
+  useWifState,
+  useBrettState,
+  useFriendState,
+  useTnsrState,
+  useHobbesState,
+  useMewState,
+  usePopcatState,
+  useSharkcatState,
+  useCrodieState,
+  useBoboState,
+  usePorkState,
+  useWolfState,
+  useAndyState,
+  useGMEState,
+  useSpeedState,
+  useLichiState,
+  useStacheState,
+  useHaltState,
+  useSecState,
+  useDumbState,
+  useAmcState,
+  useSelfieState,
+  useMiniState,
+  usePepeState,
+  useRecaState,
+  useRedoState,
+  useSlerfState,
+  useGigaState,
+  use$1catState,
+  useDixiState,
+  useApeState,
+  useDjcatState,
+  useNigiState,
+  useTobiState,
+  useDukoState,
+  usePepeCoinState,
+  useDerpState,
+  useKikiState,
+  useZackState,
+  useFagcatState,
+  useHughState,
+  useWebState,
+  useJennerState,
+  useMotherState,
+  useDogState,
+  useTrumpState
 } from "../../components/states"
 import {
   depositBTC,
@@ -164,8 +227,72 @@ import {
   depositUSDT,
   depositXRP,
   depositTremp,
-
+  depositADA,
+  depositXLM,
+  depositHEX,
+  depositBNB,
+  depositSOL,
+  depositTRX,
+  depositUSDC,
+  depositINJ,
+  depositSHIB,
+  depositMATIC,
+  depositBONK,
+  depositDOGE,
+  depositARBITRUM,
+  depositENJ,
+  depositBRC,
+  depositJUP,
+  depositWEN, 
+  depositMichi,
+  depositWif,
+  depositBrett,
+  depositFriend,
+  depositTnsr,
+  depositHobbes,
+  depositMew,
+  depositPopcat,
+  depositSharkcat,
+  depositCrodie,
+  depositBobo,
+  depositPork,
+  depositWolf,
+  depositAndy,
+  depositGME,
+  depositLichi,
+  depositSpeed,
+  depositStache,
+  depositHalt,
+  depositSec,
+  depositDumb,
+  depositAmc,
+  depositMini,
+  depositSelfie,
+  depositPepe,
+  depositRedo,
+  depositReca,
+  depositSlerf,
+  depositGiga,
+  depositPepeCoin,
+  depositDuko,
+  depositTobi,
+  depositNigi,
+  depositDjcat,
+  depositApe,
+  depositDixi,
+  deposit$1cat,
+  depositDerp,
+  depositKiki,
+  depositZack,
+  depositFagcat,
+  depositHugh,
+  depositWeb,
+  depositJenner,
+  depositMother,
+  depositDog,
+  depositTrump,
 } from "../../components/deposit"
+
 
 
 export default function Deposit({ session }){
@@ -175,6 +302,7 @@ export default function Deposit({ session }){
     const [full_name, setFullName] = useState(null)
     const [avatar_url, setAvatarUrl] = useState(null)
     const [inputValue, setInputValue] = useState('');
+    
 //////////////////////// BTC ///////////////////////////////////
     const {
       deposit_btc,
@@ -226,2437 +354,821 @@ export default function Deposit({ session }){
 
 ///////////////////////// ADA //////////////////////////////////
       
-      const [deposit_ada, setDepositADA] = useState(null)
-      
-      const handleChangeADA = (event) => {
-        const value = event.target.value;
-        setDepositADA(value);
-        setInputValue(value);
-      };
-      let [openADA, setOpenADA] = useState(false)
-      function openADAModal(){
-        setOpenADA(true)
-      }
-      function closeADAModal(){
-        setOpenADA(false)
-      }
+  const {
+    deposit_ada,
+    setDepositADA,
+    openADA,
+    setOpenADA,
+    handleChangeADA,
+    openADAModal,
+    closeADAModal,
+  } = useADAState();
 
-      async function depositADA({ deposit_ada }) {
-        try {
-          setLoading(true)
-
-          const updates = {
-            id: user.id,
-            deposit_ada,
-            updated_at: new Date().toISOString(),
-          }
-          let { error } = await supabase.from('profiles').upsert(updates)
-          if (error) throw error
-            setOpenADA(false)
-            toast.success("Staking Order placed. Awaiting Approval.")
-          } catch (error) {
-            alert('internal Server Error: Error updating the data!')
-            console.log(error)
-          } finally {
-            setLoading(false)
-          }
-      };
-
+     
 ////////////////////////// XLM /////////////////////////////////
         
-        const [deposit_xlm, setDepositXLM] = useState(null)
-        
-        const handleChangeXLM = (event) => {
-          const value = event.target.value;
-          setDepositXLM(value);
-          setInputValue(value);
-        };
-        let [openXLM, setOpenXLM] = useState(false)
-        function openXLMModal(){
-          setOpenXLM(true)
-        }
-        function closeXLMModal(){
-          setOpenXLM(false)
-        }
+  const {
+    deposit_xlm,
+    setDepositXLM,
+    openXLM,
+    setOpenXLM,
+    handleChangeXLM,
+    openXLMModal,
+    closeXLMModal,
+  } = useXLMState();
 
-        async function depositXLM({ deposit_xlm }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_xlm,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenXLM(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-
+      
 ///////////////////////// HEX //////////////////////////////////
         
-        const [deposit_hex, setDepositHEX] = useState(null)
-        
-        const handleChangeHEX = (event) => {
-          const value = event.target.value;
-          setDepositHEX(value);
-          setInputValue(value);
-        };
-        let [openHEX, setOpenHEX] = useState(false)
-        function openHEXModal(){
-          setOpenHEX(true)
-        }
-        function closeHEXModal(){
-          setOpenHEX(false)
-        }
+  const {
+    deposit_hex,
+    setDepositHEX,
+    openHEX,
+    setOpenHEX,
+    handleChangeHEX,
+    openHEXModal,
+    closeHEXModal,
+  } = useHEXState();
 
-        async function depositHEX({ deposit_hex }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_hex,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenHEX(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
+      
 
 ///////////////////////// BNB //////////////////////////////////
        
-        const [deposit_bnb, setDepositBNB] = useState(null)
-        
-        const handleChangeBNB = (event) => {
-          const value = event.target.value;
-          setDepositBNB(value);
-          setInputValue(value);
-        };
-        let [openBNB, setOpenBNB] = useState(false)
-        function openBNBModal(){
-          setOpenBNB(true)
-        }
-        function closeBNBModal(){
-          setOpenBNB(false)
-        }
+  const {
+    deposit_bnb,
+    setDepositBNB,
+    openBNB,
+    setOpenBNB,
+    handleChangeBNB,
+    openBNBModal,
+    closeBNBModal,
+  } = useBNBState();
 
-        async function depositBNB({ deposit_bnb }) {
-          try {
-            setLoading(true)
 
-            const updates = {
-              id: user.id,
-              deposit_bnb,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenBNB(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
+      
 
 ////////////////////// SOL /////////////////////////////////////
         
-        const [deposit_sol, setDepositSOL] = useState(null)
+  const {
+    deposit_sol,
+    setDepositSOL,
+    openSOL,
+    setOpenSOL,
+    handleChangeSOL,
+    openSOLModal,
+    closeSOLModal,
+  } = useSOLState();
+
        
-        const handleChangeSOL = (event) => {
-          const value = event.target.value;
-          setDepositSOL(value);
-          setInputValue(value);
-        };
-        let [openSOL, setOpenSOL] = useState(false)
-        function openSOLModal(){
-          setOpenSOL(true)
-        }
-        function closeSOLModal(){
-          setOpenSOL(false)
-        }
-
-        async function depositSOL({ deposit_sol }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_sol,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenSOL(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-
 ////////////////////////// TRX /////////////////////////////////
 
-        const [deposit_trx, setDepositTRX] = useState(null)
+  const {
+    deposit_trx,
+    setDepositTRX,
+    openTRX,
+    setOpenTRX,
+    handleChangeTRX,
+    openTRXModal,
+    closeTRXModal,
+  } = useTRXState();
+
 
         
-        const handleChangeTRX = (event) => {
-          const value = event.target.value;
-          setDepositTRX(value);
-          setInputValue(value);
-        };
-        let [openTRX, setOpenTRX] = useState(false)
-        function openTRXModal(){
-          setOpenTRX(true)
-        }
-        function closeTRXModal(){
-          setOpenTRX(false)
-        }
-
-        async function depositTRX({ deposit_trx }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_trx,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenTRX(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
 
 ////////////////////////// USDC /////////////////////////////////
-        const [deposit_usdc, setDepositUSDC] = useState(null)
-        
-        const handleChangeUSDC = (event) => {
-          const value = event.target.value;
-          setDepositUSDC(value);
-          setInputValue(value);
-        };
-        let [openUSDC, setOpenUSDC] = useState(false)
-        function openUSDCModal(){
-          setOpenUSDC(true)
-        }
-        function closeUSDCModal(){
-          setOpenUSDC(false)
-        }
-
-        async function depositUSDC({ deposit_usdc }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_usdc,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenUSDC(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-
-//////////////////////////// INJ ///////////////////////////////
-        const [deposit_inj, setDepositINJ] = useState(null)
+  const {
+    deposit_usdc,
+    setDepositUSDC,
+    openUSDC,
+    setOpenUSDC,
+    handleChangeUSDC,
+    openUSDCModal,
+    closeUSDCModal,
+  } = useUSDCState();
 
        
-        const handleChangeINJ = (event) => {
-          const value = event.target.value;
-          setDepositINJ(value);
-          setInputValue(value);
-        };
-        let [openINJ, setOpenINJ] = useState(false)
-        function openINJModal(){
-          setOpenINJ(true)
-        }
-        function closeINJModal(){
-          setOpenINJ(false)
-        }
 
-        async function depositINJ({ deposit_inj }) {
-          try {
-            setLoading(true)
+//////////////////////////// INJ ///////////////////////////////
+const {
+  deposit_inj,
+  setDepositINJ,
+  openINJ,
+  setOpenINJ,
+  handleChangeINJ,
+  openINJModal,
+  closeINJModal,
+} = useINJState();
 
-            const updates = {
-              id: user.id,
-              deposit_inj,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenINJ(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
+        
 
 //////////////////////////// SHIB ///////////////////////////////
         
-        const [deposit_shib, setDepositSHIB] = useState(null)
-        
-        const handleChangeSHIB = (event) => {
-          const value = event.target.value;
-          setDepositSHIB(value);
-          setInputValue(value);
-        };
-        let [openSHIB, setOpenSHIB] = useState(false)
-        function openSHIBModal(){
-          setOpenSHIB(true)
-        }
-        function closeSHIBModal(){
-          setOpenSHIB(false)
-        }
+  const {
+    deposit_shib,
+    setDepositSHIB,
+    openSHIB,
+    setOpenSHIB,
+    handleChangeSHIB,
+    openSHIBModal,
+    closeSHIBModal,
+  } = useSHIBState();
 
-        async function depositSHIB({ deposit_shib }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_shib,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenSHIB(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
 
 //////////////////////////// MATIC ///////////////////////////////
         
-        const [deposit_matic, setDepositMATIC] = useState(null)
-       
-        const handleChangeMATIC = (event) => {
-          const value = event.target.value;
-          setDepositMATIC(value);
-          setInputValue(value);
-        };
-        let [openMATIC, setOpenMATIC] = useState(false)
-        function openMATICModal(){
-          setOpenMATIC(true)
-        }
-        function closeMATICModal(){
-          setOpenMATIC(false)
-        }
+const {
+  deposit_matic,
+  setDepositMATIC,
+  openMATIC,
+  setOpenMATIC,
+  handleChangeMATIC,
+  openMATICModal,
+  closeMATICModal,
+} = useMATICState();
 
-        async function depositMATIC({ deposit_matic }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_matic,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenMATIC(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
 
 //////////////////////////// BONK ///////////////////////////////
-        const [deposit_bonk, setDepositBONK] = useState(null)
-        
-        const handleChangeBONK = (event) => {
-          const value = event.target.value;
-          setDepositBONK(value);
-          setInputValue(value);
-        };
-        let [openBONK, setOpenBONK] = useState(false)
-        function openBONKModal(){
-          setOpenBONK(true)
-        }
-        function closeBONKModal(){
-          setOpenBONK(false)
-        }
+const {
+  deposit_bonk,
+  setDepositBONK,
+  openBONK,
+  setOpenBONK,
+  handleChangeBONK,
+  openBONKModal,
+  closeBONKModal,
+} = useBONKState();
 
-        async function depositBONK({ deposit_bonk }) {
-          try {
-            setLoading(true)
+ 
+//////////////////////////// DOGE ///////////////////////////////
 
-            const updates = {
-              id: user.id,
-              deposit_bonk,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenBONK(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
+  const {
+    deposit_doge,
+    setDepositDOGE,
+    openDOGE,
+    setOpenDOGE,
+    handleChangeDOGE,
+    openDOGEModal,
+    closeDOGEModal,
+  } = useDOGEState();
 
-        //////////////////////////// DOGE ///////////////////////////////
-
-        const [deposit_doge, setDepositDOGE] = useState(null)
-        
-        const handleChangeDOGE = (event) => {
-          const value = event.target.value;
-          setDepositDOGE(value);
-          setInputValue(value);
-        };
-        let [openDOGE, setOpenDOGE] = useState(false)
-        function openDOGEModal(){
-          setOpenDOGE(true)
-        }
-        function closeDOGEModal(){
-          setOpenDOGE(false)
-        }
-
-        async function depositDOGE({ deposit_doge }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_doge,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenDOGE(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-        //////////////////////////// ARBITRUM ///////////////////////////////
-
-        const [deposit_arbitrum, setDepositARBITRUM] = useState(null)
-        
-        const handleChangeARBITRUM = (event) => {
-          const value = event.target.value;
-          setDepositARBITRUM(value);
-          setInputValue(value);
-        };
-        let [openARBITRUM, setOpenARBITRUM] = useState(false)
-        function openARBITRUMModal(){
-          setOpenARBITRUM(true)
-        }
-        function closeARBITRUMModal(){
-          setOpenARBITRUM(false)
-        }
-
-        async function depositARBITRUM({ deposit_arbitrum }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_arbitrum,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenARBITRUM(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-        //////////////////////////// ENJ ///////////////////////////////
-        const [deposit_enj, setDepositENJ] = useState(null)
        
-        const handleChangeENJ = (event) => {
-          const value = event.target.value;
-          setDepositENJ(value);
-          setInputValue(value);
-        };
-        let [openENJ, setOpenENJ] = useState(false)
-        function openENJModal(){
-          setOpenENJ(true)
-        }
-        function closeENJModal(){
-          setOpenENJ(false)
-        }
+//////////////////////////// ARBITRUM ///////////////////////////////
 
-        async function depositENJ({ deposit_enj }) {
-          try {
-            setLoading(true)
+  const {
+    deposit_arbitrum,
+    setDepositARBITRUM,
+    openARBITRUM,
+    setOpenARBITRUM,
+    handleChangeARBITRUM,
+    openARBITRUMModal,
+    closeARBITRUMModal,
+  } = useARBITRUMState();
 
-            const updates = {
-              id: user.id,
-              deposit_enj,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenENJ(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-        //////////////////////////// BRC20 ///////////////////////////////
-        const [deposit_brc, setDepositBRC] = useState(null)
-        
-        const handleChangeBRC = (event) => {
-          const value = event.target.value;
-          setDepositBRC(value);
-          setInputValue(value);
-        };
-        let [openBRC, setOpenBRC] = useState(false)
-        function openBRCModal(){
-          setOpenBRC(true)
-        }
-        function closeBRCModal(){
-          setOpenBRC(false)
-        }
 
-        async function depositBRC({ deposit_brc }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_brc,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenBRC(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-        //////////////////////////// JUP ///////////////////////////////
-        const [deposit_jup, setDepositJUP] = useState(null)
-        
-        const handleChangeJUP = (event) => {
-          const value = event.target.value;
-          setDepositJUP(value);
-          setInputValue(value);
-        };
-        let [openJUP, setOpenJUP] = useState(false)
-        function openJUPModal(){
-          setOpenJUP(true)
-        }
-        function closeJUPModal(){
-          setOpenJUP(false)
-        }
-
-        async function depositJUP({ deposit_jup }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_jup,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenJUP(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-        //////////////////////////// WEN ///////////////////////////////
-        const [deposit_wen, setDepositWEN] = useState(null)
-        
-        const handleChangeWEN = (event) => {
-          const value = event.target.value;
-          setDepositWEN(value);
-          setInputValue(value);
-        };
-        let [openWEN, setOpenWEN] = useState(false)
-        function openWENModal(){
-          setOpenWEN(true)
-        }
-        function closeWENModal(){
-          setOpenWEN(false)
-        }
-
-        async function depositWEN({ deposit_wen }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_wen,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenWEN(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
+       
+//////////////////////////// ENJ ///////////////////////////////
+  const {
+    deposit_enj,
+    setDepositENJ,
+    openENJ,
+    setOpenENJ,
+    handleChangeENJ,
+    openENJModal,
+    closeENJModal,
+  } = useENJState();
 
         
-        //////////////////////////// michi ///////////////////////////////
-        
-        const [deposit_michi, setDepositMichi] = useState(null)
-        
-        const handleChangeMichi = (event) => {
-          const value = event.target.value;
-          setDepositMichi(value);
-          setInputValue(value);
-        };
-        let [openMichi, setOpenMichi] = useState(false)
-        function openMichiModal(){
-          setOpenMichi(true)
-        }
-        function closeMichiModal(){
-          setOpenMichi(false)
-        }
-
-        async function depositMichi({ deposit_michi }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_michi,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenMichi(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
+//////////////////////////// BRC20 ///////////////////////////////
+  const {
+    deposit_brc,
+    setDepositBRC,
+    openBRC,
+    setOpenBRC,
+    handleChangeBRC,
+    openBRCModal,
+    closeBRCModal,
+  } = useBRCState();
 
         
-        //////////////////////////// wif ///////////////////////////////
-        const [deposit_wif, setDepositWif] = useState(null)
+//////////////////////////// JUP ///////////////////////////////
+  const {
+    deposit_jup,
+    setDepositJUP,
+    openJUP,
+    setOpenJUP,
+    handleChangeJUP,
+    openJUPModal,
+    closeJUPModal,
+  } = useJUPState();
+
+//////////////////////////// WEN ///////////////////////////////
+        const {
+          deposit_wen,
+          setDepositWEN,
+          openWEN,
+          setOpenWEN,
+          handleChangeWEN,
+          openWENModal,
+          closeWENModal,
+        } = useWENState();       
         
-        const handleChangeWif = (event) => {
-          const value = event.target.value;
-          setDepositWif(value);
-          setInputValue(value);
-        };
-        let [openWif, setOpenWif] = useState(false)
-        function openWifModal(){
-          setOpenWif(true)
-        }
-        function closeWifModal(){
-          setOpenWif(false)
-        }
-
-        async function depositWif({ deposit_wif }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_wif,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenWif(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-
+//////////////////////////// michi ///////////////////////////////
         
-        //////////////////////////// brett ///////////////////////////////
-        const [deposit_brett, setDepositBrett] = useState(null)
+        const {
+          deposit_michi,
+          setDepositMichi,
+          openMichi,
+          setOpenMichi,
+          handleChangeMichi,
+          openMichiModal,
+          closeMichiModal,
+        } = useMichiState();
+
+       
         
-        const handleChangeBrett = (event) => {
-          const value = event.target.value;
-          setDepositBrett(value);
-          setInputValue(value);
-        };
-        let [openBrett, setOpenBrett] = useState(false)
-        function openBrettModal(){
-          setOpenBrett(true)
-        }
-        function closeBrettModal(){
-          setOpenBrett(false)
-        }
+//////////////////////////// wif ///////////////////////////////
+        const {
+          deposit_wif,
+          setDepositWif,
+          openWif,
+          setOpenWif,
+          handleChangeWif,
+          openWifModal,
+          closeWifModal,
+        } = useWifState();
 
-        async function depositBrett({ deposit_brett }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_brett,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenBrett(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-
+         
         
-        //////////////////////////// friend ///////////////////////////////
-        const [deposit_friend, setDepositFriend] = useState(null)
+//////////////////////////// brett ///////////////////////////////
+        const {
+          deposit_brett,
+          setDepositBrett,
+          openBrett,
+          setOpenBrett,
+          handleChangeBrett,
+          openBrettModal,
+          closeBrettModal,
+        } = useBrettState();
+
+       
         
-        const handleChangeFriend = (event) => {
-          const value = event.target.value;
-          setDepositFriend(value);
-          setInputValue(value);
-        };
-        let [openFriend, setOpenFriend] = useState(false)
-        function openFriendModal(){
-          setOpenFriend(true)
-        }
-        function closeFriendModal(){
-          setOpenFriend(false)
-        }
+//////////////////////////// friend ///////////////////////////////
+        const {
+          deposit_friend,
+          setDepositFriend,
+          openFriend,
+          setOpenFriend,
+          handleChangeFriend,
+          openFriendModal,
+          closeFriendModal,
+        } = useFriendState();
 
-        async function depositFriend({ deposit_friend }) {
-          try {
-            setLoading(true)
+       
 
-            const updates = {
-              id: user.id,
-              deposit_friend,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenFriend(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
-
-         //////////////////////////// tnsr ///////////////////////////////
-         const [deposit_tnsr, setDepositTnsr] = useState(null)
-        
-         const handleChangeTnsr = (event) => {
-           const value = event.target.value;
-           setDepositTnsr(value);
-           setInputValue(value);
-         };
-         let [openTnsr, setOpenTnsr] = useState(false)
-         function openTnsrModal(){
-           setOpenTnsr(true)
-         }
-         function closeTnsrModal(){
-           setOpenTnsr(false)
-         }
+//////////////////////////// tnsr ///////////////////////////////
+         const {
+          deposit_tnsr,
+          setDepositTnsr,
+          openTnsr,
+          setOpenTnsr,
+          handleChangeTnsr,
+          openTnsrModal,
+          closeTnsrModal,
+        } = useTnsrState();
  
-         async function depositTnsr({ deposit_tnsr }) {
-           try {
-             setLoading(true)
+       
+//////////////////////////// hobbes ///////////////////////////////
+  const {
+    deposit_hobbes,
+    setDepositHobbes,
+    openHobbes,
+    setOpenHobbes,
+    handleChangeHobbes,
+    openHobbesModal,
+    closeHobbesModal,
+  } = useHobbesState();
+
  
-             const updates = {
-               id: user.id,
-               deposit_tnsr,
-               updated_at: new Date().toISOString(),
-             }
-             let { error } = await supabase.from('profiles').upsert(updates)
-             if (error) throw error
-               setOpenTnsr(false)
-               toast.success("Staking Order placed. Awaiting Approval.")
-             } catch (error) {
-               alert('internal Server Error: Error updating the data!')
-               console.log(error)
-             } finally {
-               setLoading(false)
-             }
-         };
- 
-  //////////////////////////// hobbes ///////////////////////////////
-  const [deposit_hobbes, setDepositHobbes] = useState(null)
-  
-  const handleChangeHobbes = (event) => {
-    const value = event.target.value;
-    setDepositHobbes(value);
-    setInputValue(value);
-  };
-  let [openHobbes, setOpenHobbes] = useState(false)
-  function openHobbesModal(){
-    setOpenHobbes(true)
-  }
-  function closeHobbesModal(){
-    setOpenHobbes(false)
-  }
+//////////////////////////// mew ///////////////////////////////
+           const {
+            deposit_mew,
+            setDepositMew,
+            openMew,
+            setOpenMew,
+            handleChangeMew,
+            openMewModal,
+            closeMewModal,
+          } = useMewState();
 
-  async function depositHobbes({ deposit_hobbes }) {
-    try {
-      setLoading(true)
-
-      const updates = {
-        id: user.id,
-        deposit_hobbes,
-        updated_at: new Date().toISOString(),
-      }
-      let { error } = await supabase.from('profiles').upsert(updates)
-      if (error) throw error
-        setOpenHobbes(false)
-        toast.success("Staking Order placed. Awaiting Approval.")
-      } catch (error) {
-        alert('internal Server Error: Error updating the data!')
-        console.log(error)
-      } finally {
-        setLoading(false)
-      }
-  };
-
-           //////////////////////////// mew ///////////////////////////////
-        const [deposit_mew, setDepositMew] = useState(null)
-        
-        const handleChangeMew = (event) => {
-          const value = event.target.value;
-          setDepositMew(value);
-          setInputValue(value);
-        };
-        let [openMew, setOpenMew] = useState(false)
-        function openMewModal(){
-          setOpenMew(true)
-        }
-        function closeMewModal(){
-          setOpenMew(false)
-        }
-
-        async function depositMew({ deposit_mew }) {
-          try {
-            setLoading(true)
-
-            const updates = {
-              id: user.id,
-              deposit_mew,
-              updated_at: new Date().toISOString(),
-            }
-            let { error } = await supabase.from('profiles').upsert(updates)
-            if (error) throw error
-              setOpenMew(false)
-              toast.success("Staking Order placed. Awaiting Approval.")
-            } catch (error) {
-              alert('internal Server Error: Error updating the data!')
-              console.log(error)
-            } finally {
-              setLoading(false)
-            }
-        };
 
         
  //////////////////////////// popcat ///////////////////////////////
- const [deposit_popcat, setDepositPopcat] = useState(null)
- 
- const handleChangePopcat = (event) => {
-   const value = event.target.value;
-   setDepositPopcat(value);
-   setInputValue(value);
- };
- let [openPopcat, setOpenPopcat] = useState(false)
- function openPopcatModal(){
-   setOpenPopcat(true)
- }
- function closePopcatModal(){
-   setOpenPopcat(false)
- }
+ const {
+  deposit_popcat,
+  setDepositPopcat,
+  openPopcat,
+  setOpenPopcat,
+  handleChangePopcat,
+  openPopcatModal,
+  closePopcatModal,
+} = usePopcatState();
 
- async function depositPopcat({ deposit_popcat }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_popcat,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenPopcat(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
  //////////////////////////// sharkcat ///////////////////////////////
  
- const [deposit_sharkcat, setDepositSharkcat] = useState(null)
- 
- const handleChangeSharkcat = (event) => {
-   const value = event.target.value;
-   setDepositSharkcat(value);
-   setInputValue(value);
- };
- let [openSharkcat, setOpenSharkcat] = useState(false)
- function openSharkcatModal(){
-   setOpenSharkcat(true)
- }
- function closeSharkcatModal(){
-   setOpenSharkcat(false)
- }
+ const {
+  deposit_sharkcat,
+  setDepositSharkcat,
+  openSharkcat,
+  setOpenSharkcat,
+  handleChangeSharkcat,
+  openSharkcatModal,
+  closeSharkcatModal,
+} = useSharkcatState();
 
- async function depositSharkcat({ deposit_sharkcat }) {
-   try {
-     setLoading(true)
 
-     const updates = {
-       id: user.id,
-       deposit_sharkcat,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenSharkcat(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
- //////////////////////////// crodie ///////////////////////////////
- const [deposit_crodie, setDepositCrodie] = useState(null)
- 
- const handleChangeCrodie = (event) => {
-   const value = event.target.value;
-   setDepositCrodie(value);
-   setInputValue(value);
- };
- let [openCrodie, setOpenCrodie] = useState(false)
- function openCrodieModal(){
-   setOpenCrodie(true)
- }
- function closeCrodieModal(){
-   setOpenCrodie(false)
- }
+//////////////////////////// crodie ///////////////////////////////
+ const {
+  deposit_crodie,
+  setDepositCrodie,
+  openCrodie,
+  setOpenCrodie,
+  handleChangeCrodie,
+  openCrodieModal,
+  closeCrodieModal,
+} = useCrodieState();
 
- async function depositCrodie({ deposit_crodie }) {
-   try {
-     setLoading(true)
 
-     const updates = {
-       id: user.id,
-       deposit_crodie,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenCrodie(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
   
  //////////////////////////// bobo ///////////////////////////////
  
- const [deposit_bobo, setDepositBobo] = useState(null)
+ const {
+  deposit_bobo,
+  setDepositBobo,
+  openBobo,
+  setOpenBobo,
+  handleChangeBobo,
+  openBoboModal,
+  closeBoboModal,
+} = useBoboState();
+
+//////////////////////////// pork ///////////////////////////////
  
- const handleChangeBobo = (event) => {
-   const value = event.target.value;
-   setDepositBobo(value);
-   setInputValue(value);
- };
- let [openBobo, setOpenBobo] = useState(false)
- function openBoboModal(){
-   setOpenBobo(true)
- }
- function closeBoboModal(){
-   setOpenBobo(false)
- }
+ const {
+  deposit_pork,
+  setDepositPork,
+  openPork,
+  setOpenPork,
+  handleChangePork,
+  openPorkModal,
+  closePorkModal,
+} = usePorkState();
 
- async function depositBobo({ deposit_bobo }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_bobo,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenBobo(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
- //////////////////////////// pork ///////////////////////////////
  
- const [deposit_pork, setDepositPork] = useState(null)
- 
- const handleChangePork = (event) => {
-   const value = event.target.value;
-   setDepositPork(value);
-   setInputValue(value);
- };
- let [openPork, setOpenPork] = useState(false)
- function openPorkModal(){
-   setOpenPork(true)
- }
- function closePorkModal(){
-   setOpenPork(false)
- }
-
- async function depositPork({ deposit_pork }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_pork,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenPork(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
   
  //////////////////////////// wolf ///////////////////////////////
- const [deposit_wolf, setDepositWolf] = useState(null)
- 
- const handleChangeWolf = (event) => {
-   const value = event.target.value;
-   setDepositWolf(value);
-   setInputValue(value);
- };
- let [openWolf, setOpenWolf] = useState(false)
- function openWolfModal(){
-   setOpenWolf(true)
- }
- function closeWolfModal(){
-   setOpenWolf(false)
- }
+ const {
+  deposit_wolf,
+  setDepositWolf,
+  openWolf,
+  setOpenWolf,
+  handleChangeWolf,
+  openWolfModal,
+  closeWolfModal,
+} = useWolfState();
 
- async function depositWolf({ deposit_wolf }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_wolf,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenWolf(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
  //////////////////////////// andy ///////////////////////////////
- const [deposit_andy, setDepositAndy] = useState(null)
+ const {
+  deposit_andy,
+  setDepositAndy,
+  openAndy,
+  setOpenAndy,
+  handleChangeAndy,
+  openAndyModal,
+  closeAndyModal,
+} = useAndyState();
+
  
- const handleChangeAndy = (event) => {
-   const value = event.target.value;
-   setDepositAndy(value);
-   setInputValue(value);
- };
- let [openAndy, setOpenAndy] = useState(false)
- function openAndyModal(){
-   setOpenAndy(true)
- }
- function closeAndyModal(){
-   setOpenAndy(false)
- }
-
- async function depositAndy({ deposit_andy }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_andy,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenAndy(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
   
  //////////////////////////// gme ///////////////////////////////
- const [deposit_gme, setDepositGME] = useState(null)
- 
- const handleChangeGME = (event) => {
-   const value = event.target.value;
-   setDepositGME(value);
-   setInputValue(value);
- };
- let [openGME, setOpenGME] = useState(false)
- function openGMEModal(){
-   setOpenGME(true)
- }
- function closeGMEModal(){
-   setOpenGME(false)
- }
+ const {
+  deposit_gme,
+  setDepositGME,
+  openGME,
+  setOpenGME,
+  handleChangeGME,
+  openGMEModal,
+  closeGMEModal,
+} = useGMEState();
 
- async function depositGME({ deposit_gme }) {
-   try {
-     setLoading(true)
 
-     const updates = {
-       id: user.id,
-       deposit_gme,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenGME(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
+//////////////////////////// speed ///////////////////////////////
+
+ const {
+  deposit_speed,
+  setDepositSpeed,
+  openSpeed,
+  setOpenSpeed,
+  handleChangeSpeed,
+  openSpeedModal,
+  closeSpeedModal,
+} = useSpeedState();
+  
+//////////////////////////// lichi ///////////////////////////////
+
+ const {
+  deposit_lichi,
+  setDepositLichi,
+  openLichi,
+  setOpenLichi,
+  handleChangeLichi,
+  openLichiModal,
+  closeLichiModal,
+} = useLichiState();
+
+//////////////////////////// stache ///////////////////////////////
+ const {
+  deposit_stache,
+  setDepositStache,
+  openStache,
+  setOpenStache,
+  handleChangeStache,
+  openStacheModal,
+  closeStacheModal,
+} = useStacheState(); 
+  
+//////////////////////////// halt ///////////////////////////////
+
+ const {
+  deposit_halt,
+  setDepositHalt,
+  openHalt,
+  setOpenHalt,
+  handleChangeHalt,
+  openHaltModal,
+  closeHaltModal,
+} = useHaltState();
 
   
- //////////////////////////// speed ///////////////////////////////
-
- const [deposit_speed, setDepositSpeed] = useState(null)
+//////////////////////////// sec ///////////////////////////////
  
- const handleChangeSpeed = (event) => {
-   const value = event.target.value;
-   setDepositSpeed(value);
-   setInputValue(value);
- };
- let [openSpeed, setOpenSpeed] = useState(false)
- function openSpeedModal(){
-   setOpenSpeed(true)
- }
- function closeSpeedModal(){
-   setOpenSpeed(false)
- }
+ const {
+  deposit_sec,
+  setDepositSec,
+  openSec,
+  setOpenSec,
+  handleChangeSec,
+  openSecModal,
+  closeSecModal,
+} = useSecState();
 
- async function depositSpeed({ deposit_speed }) {
-   try {
-     setLoading(true)
+ 
+//////////////////////////// dumb ///////////////////////////////
 
-     const updates = {
-       id: user.id,
-       deposit_speed,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenSpeed(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
+ const {
+  deposit_dumb,
+  setDepositDumb,
+  openDumb,
+  setOpenDumb,
+  handleChangeDumb,
+  openDumbModal,
+  closeDumbModal,
+} = useDumbState();
   
- //////////////////////////// lichi ///////////////////////////////
-
- const [deposit_lichi, setDepositLichi] = useState(null)
+//////////////////////////// amc ///////////////////////////////
  
- const handleChangeLichi = (event) => {
-   const value = event.target.value;
-   setDepositLichi(value);
-   setInputValue(value);
- };
- let [openLichi, setOpenLichi] = useState(false)
- function openLichiModal(){
-   setOpenLichi(true)
- }
- function closeLichiModal(){
-   setOpenLichi(false)
- }
-
- async function depositLichi({ deposit_lichi }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_lichi,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenLichi(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
+ const {
+  deposit_amc,
+  setDepositAmc,
+  openAmc,
+  setOpenAmc,
+  handleChangeAmc,
+  openAmcModal,
+  closeAmcModal,
+} = useAmcState(); 
   
- //////////////////////////// stache ///////////////////////////////
- const [deposit_stache, setDepositStache] = useState(null)
- 
- const handleChangeStache = (event) => {
-   const value = event.target.value;
-   setDepositStache(value);
-   setInputValue(value);
- };
- let [openStache, setOpenStache] = useState(false)
- function openStacheModal(){
-   setOpenStache(true)
- }
- function closeStacheModal(){
-   setOpenStache(false)
- }
+//////////////////////////// mini ///////////////////////////////
 
- async function depositStache({ deposit_stache }) {
-   try {
-     setLoading(true)
+ const {
+  deposit_mini,
+  setDepositMini,
+  openMini,
+  setOpenMini,
+  handleChangeMini,
+  openMiniModal,
+  closeMiniModal,
+} = useMiniState();
 
-     const updates = {
-       id: user.id,
-       deposit_stache,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenStache(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
-  
- //////////////////////////// halt ///////////////////////////////
-
- const [deposit_halt, setDepositHalt] = useState(null)
- 
- const handleChangeHalt = (event) => {
-   const value = event.target.value;
-   setDepositHalt(value);
-   setInputValue(value);
- };
- let [openHalt, setOpenHalt] = useState(false)
- function openHaltModal(){
-   setOpenHalt(true)
- }
- function closeHaltModal(){
-   setOpenHalt(false)
- }
-
- async function depositHalt({ deposit_halt }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_halt,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenHalt(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
-  
- //////////////////////////// sec ///////////////////////////////
- 
- const [deposit_sec, setDepositSec] = useState(null)
- 
- const handleChangeSec = (event) => {
-   const value = event.target.value;
-   setDepositSec(value);
-   setInputValue(value);
- };
- let [openSec, setOpenSec] = useState(false)
- function openSecModal(){
-   setOpenSec(true)
- }
- function closeSecModal(){
-   setOpenSec(false)
- }
-
- async function depositSec({ deposit_sec }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_sec,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenSec(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
-  
- //////////////////////////// dumb ///////////////////////////////
-
- const [deposit_dumb, setDepositDumb] = useState(null)
- 
- const handleChangeDumb = (event) => {
-   const value = event.target.value;
-   setDepositDumb(value);
-   setInputValue(value);
- };
- let [openDumb, setOpenDumb] = useState(false)
- function openDumbModal(){
-   setOpenDumb(true)
- }
- function closeDumbModal(){
-   setOpenDumb(false)
- }
-
- async function depositDumb({ deposit_dumb }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_dumb,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenDumb(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
-  
- //////////////////////////// amc ///////////////////////////////
- 
- const [deposit_amc, setDepositAmc] = useState(null)
-
- const handleChangeAmc = (event) => {
-   const value = event.target.value;
-   setDepositAmc(value);
-   setInputValue(value);
- };
- let [openAmc, setOpenAmc] = useState(false)
- function openAmcModal(){
-   setOpenAmc(true)
- }
- function closeAmcModal(){
-   setOpenAmc(false)
- }
-
- async function depositAmc({ deposit_amc }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_amc,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenAmc(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
-  
- //////////////////////////// mini ///////////////////////////////
-
- const [deposit_mini, setDepositMini] = useState(null)
- 
- const handleChangeMini = (event) => {
-   const value = event.target.value;
-   setDepositMini(value);
-   setInputValue(value);
- };
- let [openMini, setOpenMini] = useState(false)
- function openMiniModal(){
-   setOpenMini(true)
- }
- function closeMiniModal(){
-   setOpenMini(false)
- }
-
- async function depositMini({ deposit_mini }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_mini,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenMini(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
   
  //////////////////////////// $selfie ///////////////////////////////
  
- const [deposit_selfie, setDepositSelfie] = useState(null)
- 
- const handleChangeSelfie = (event) => {
-   const value = event.target.value;
-   setDepositSelfie(value);
-   setInputValue(value);
- };
- let [openSelfie, setOpenSelfie] = useState(false)
- function openSelfieModal(){
-   setOpenSelfie(true)
- }
- function closeSelfieModal(){
-   setOpenSelfie(false)
- }
-
- async function depositSelfie({ deposit_selfie }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_selfie,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenSelfie(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
+ const {
+  deposit_selfie,
+  setDepositSelfie,
+  openSelfie,
+  setOpenSelfie,
+  handleChangeSelfie,
+  openSelfieModal,
+  closeSelfieModal,
+} = useSelfieState();
   
  //////////////////////////// $pepe ///////////////////////////////
  
- const [deposit_pepe, setDepositPepe] = useState(null)
+ const {
+  deposit_pepe,
+  setDepositPepe,
+  openPepe,
+  setOpenPepe,
+  handleChangePepe,
+  openPepeModal,
+  closePepeModal,
+} = usePepeState();
  
- const handleChangePepe = (event) => {
-   const value = event.target.value;
-   setDepositPepe(value);
-   setInputValue(value);
- };
- let [openPepe, setOpenPepe] = useState(false)
- function openPepeModal(){
-   setOpenPepe(true)
- }
- function closePepeModal(){
-   setOpenPepe(false)
- }
-
- async function depositPepe({ deposit_pepe }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_pepe,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenPepe(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
-  
  //////////////////////////// $redo  ///////////////////////////////
  
- const [deposit_redo, setDepositRedo] = useState(null)
- 
- const handleChangeRedo = (event) => {
-   const value = event.target.value;
-   setDepositRedo(value);
-   setInputValue(value);
- };
- let [openRedo, setOpenRedo] = useState(false)
- function openRedoModal(){
-   setOpenRedo(true)
- }
- function closeRedoModal(){
-   setOpenRedo(false)
- }
+ const {
+  deposit_redo,
+  setDepositRedo,
+  openRedo,
+  setOpenRedo,
+  handleChangeRedo,
+  openRedoModal,
+  closeRedoModal,
+} = useRedoState();
 
- async function depositRedo({ deposit_redo }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_redo,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenRedo(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
 
   
  //////////////////////////// $reca  ///////////////////////////////
  
- const [deposit_reca, setDepositReca] = useState(null)
- 
- const handleChangeReca = (event) => {
-   const value = event.target.value;
-   setDepositReca(value);
-   setInputValue(value);
- };
- let [openReca, setOpenReca] = useState(false)
- function openRecaModal(){
-   setOpenReca(true)
- }
- function closeRecaModal(){
-   setOpenReca(false)
- }
-
- async function depositReca({ deposit_reca }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_reca,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenReca(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
+ const {
+  deposit_reca,
+  setDepositReca,
+  openReca,
+  setOpenReca,
+  handleChangeReca,
+  openRecaModal,
+  closeRecaModal,
+} = useRecaState();
   
  //////////////////////////// $slerf  ///////////////////////////////
  
- const [deposit_slerf, setDepositSlerf] = useState(null)
- 
- const handleChangeSlerf = (event) => {
-   const value = event.target.value;
-   setDepositSlerf(value);
-   setInputValue(value);
- };
- let [openSlerf, setOpenSlerf] = useState(false)
- function openSlerfModal(){
-   setOpenSlerf(true)
- }
- function closeSlerfModal(){
-   setOpenSlerf(false)
- }
+ const {
+  deposit_slerf,
+  setDepositSlerf,
+  openSlerf,
+  setOpenSlerf,
+  handleChangeSlerf,
+  openSlerfModal,
+  closeSlerfModal,
+} = useSlerfState();
 
- async function depositSlerf({ deposit_slerf }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_slerf,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenSlerf(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
  //////////////////////////// $giga  ///////////////////////////////
  
- const [deposit_giga, setDepositGiga] = useState(null)
- 
- const handleChangeGiga = (event) => {
-   const value = event.target.value;
-   setDepositGiga(value);
-   setInputValue(value);
- };
- let [openGiga, setOpenGiga] = useState(false)
- function openGigaModal(){
-   setOpenGiga(true)
- }
- function closeGigaModal(){
-   setOpenGiga(false)
- }
-
- async function depositGiga({ deposit_giga }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_giga,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenGiga(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
+ const {
+  deposit_giga,
+  setDepositGiga,
+  openGiga,
+  setOpenGiga,
+  handleChangeGiga,
+  openGigaModal,
+  closeGigaModal,
+} = useGigaState();
   
  //////////////////////////// $pepeCoin(erc20)  ///////////////////////////////
  
- const [deposit_pepeCoin, setDepositPepeCoin] = useState(null)
+ const {
+  deposit_pepecoin,
+  setDepositPepeCoin,
+  openPepeCoin,
+  setOpenPepeCoin,
+  handleChangePepeCoin,
+  openPepeCoinModal,
+  closePepeCoinModal,
+} = usePepeCoinState();
+
+//////////////////////////// $duko  ///////////////////////////////
  
- const handleChangePepeCoin = (event) => {
-   const value = event.target.value;
-   setDepositPepeCoin(value);
-   setInputValue(value);
- };
- let [openPepeCoin, setOpenPepeCoin] = useState(false)
- function openPepeCoinModal(){
-   setOpenPepeCoin(true)
- }
- function closePepeCoinModal(){
-   setOpenPepeCoin(false)
- }
+   const {
+    deposit_duko,
+    setDepositDuko,
+    openDuko,
+    setOpenDuko,
+    handleChangeDuko,
+    openDukoModal,
+    closeDukoModal,
+  } = useDukoState();
 
- async function depositPepeCoin({ deposit_pepecoin }) {
-   try {
-     setLoading(true)
+//////////////////////////// $tobi  ///////////////////////////////
 
-     const updates = {
-       id: user.id,
-       deposit_pepecoin,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenPepeCoin(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
-
-   //////////////////////////// $duko  ///////////////////////////////
- 
- const [deposit_duko, setDepositDuko] = useState(null)
- 
- const handleChangeDuko = (event) => {
-   const value = event.target.value;
-   setDepositDuko(value);
-   setInputValue(value);
- };
- let [openDuko, setOpenDuko] = useState(false)
- function openDukoModal(){
-   setOpenDuko(true)
- }
- function closeDukoModal(){
-   setOpenDuko(false)
- }
-
- async function depositDuko({ deposit_duko }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_duko,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenDuko(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
-    //////////////////////////// $tobi  ///////////////////////////////
-
- const [deposit_tobi, setDepositTobi] = useState(null)
- 
- const handleChangeTobi = (event) => {
-   const value = event.target.value;
-   setDepositTobi(value);
-   setInputValue(value);
- };
- let [openTobi, setOpenTobi] = useState(false)
- function openTobiModal(){
-   setOpenTobi(true)
- }
- function closeTobiModal(){
-   setOpenTobi(false)
- }
-
- async function depositTobi({ deposit_tobi }) {
-   try {
-     setLoading(true)
-
-     const updates = {
-       id: user.id,
-       deposit_tobi,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenTobi(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
-
+    const {
+      deposit_tobi,
+      setDepositTobi,
+      openTobi,
+      setOpenTobi,
+      handleChangeTobi,
+      openTobiModal,
+      closeTobiModal,
+    } = useTobiState();
   
-  //////////////////////////// $nigi  ///////////////////////////////
+//////////////////////////// $nigi  ///////////////////////////////
   
-  const [deposit_nigi, setDepositNigi] = useState(null)
+  const {
+    deposit_nigi,
+    setDepositNigi,
+    openNigi,
+    setOpenNigi,
+    handleChangeNigi,
+    openNigiModal,
+    closeNigiModal,
+  } = useNigiState();
+ 
   
-  const handleChangeNigi = (event) => {
-    const value = event.target.value;
-    setDepositNigi(value);
-    setInputValue(value);
-  };
-  let [openNigi, setOpenNigi] = useState(false)
-  function openNigiModal(){
-    setOpenNigi(true)
-  }
-  function closeNigiModal(){
-    setOpenNigi(false)
-  }
- 
-  async function depositNigi({ deposit_nigi }) {
-    try {
-      setLoading(true)
- 
-      const updates = {
-        id: user.id,
-        deposit_nigi,
-        updated_at: new Date().toISOString(),
-      }
-      let { error } = await supabase.from('profiles').upsert(updates)
-      if (error) throw error
-        setOpenNigi(false)
-        toast.success("Staking Order placed. Awaiting Approval.")
-      } catch (error) {
-        alert('internal Server Error: Error updating the data!')
-        console.log(error)
-      } finally {
-        setLoading(false)
-      }
-  };
- 
-     //////////////////////////// $djcat  ///////////////////////////////
+//////////////////////////// $djcat  ///////////////////////////////
 
- const [deposit_djcat, setDepositDjcat] = useState(null)
- 
- const handleChangeDjcat = (event) => {
-   const value = event.target.value;
-   setDepositDjcat(value);
-   setInputValue(value);
- };
- let [openDjcat, setOpenDjcat] = useState(false)
- function openDjcatModal(){
-   setOpenDjcat(true)
- }
- function closeDjcatModal(){
-   setOpenDjcat(false)
- }
+     const {
+      deposit_djcat,
+      setDepositDjcat,
+      openDjcat,
+      setOpenDjcat,
+      handleChangeDjcat,
+      openDjcatModal,
+      closeDjcatModal,
+    } = useDjcatState();
 
- async function depositDjcat({ deposit_djcat }) {
-   try {
-     setLoading(true)
 
-     const updates = {
-       id: user.id,
-       deposit_djcat,
-       updated_at: new Date().toISOString(),
-     }
-     let { error } = await supabase.from('profiles').upsert(updates)
-     if (error) throw error
-       setOpenDjcat(false)
-       toast.success("Staking Order placed. Awaiting Approval.")
-     } catch (error) {
-       alert('internal Server Error: Error updating the data!')
-       console.log(error)
-     } finally {
-       setLoading(false)
-     }
- };
+//////////////////////////// $ape  ///////////////////////////////
 
-  //////////////////////////// $ape  ///////////////////////////////
-
-  const [deposit_ape, setDepositApe] = useState(null)
-  
-  const handleChangeApe = (event) => {
-    const value = event.target.value;
-    setDepositApe(value);
-    setInputValue(value);
-  };
-  let [openApe, setOpenApe] = useState(false)
-  function openApeModal(){
-    setOpenApe(true)
-  }
-  function closeApeModal(){
-    setOpenApe(false)
-  }
- 
-  async function depositApe({ deposit_ape }) {
-    try {
-      setLoading(true)
- 
-      const updates = {
-        id: user.id,
-        deposit_ape,
-        updated_at: new Date().toISOString(),
-      }
-      let { error } = await supabase.from('profiles').upsert(updates)
-      if (error) throw error
-        setOpenApe(false)
-        toast.success("Staking Order placed. Awaiting Approval.")
-      } catch (error) {
-        alert('internal Server Error: Error updating the data!')
-        console.log(error)
-      } finally {
-        setLoading(false)
-      }
-  };
- 
+  const {
+    deposit_ape,
+    setDepositApe,
+    openApe,
+    setOpenApe,
+    handleChangeApe,
+    openApeModal,
+    closeApeModal,
+  } = useApeState(); 
      
-   //////////////////////////// $dixi  ///////////////////////////////
+//////////////////////////// $dixi  ///////////////////////////////
    
-   const [deposit_dixi, setDepositDixi] = useState(null)
+   const {
+    deposit_dixi,
+    setDepositDixi,
+    openDixi,
+    setOpenDixi,
+    handleChangeDixi,
+    openDixiModal,
+    closeDixiModal,
+  } = useDixiState();
+  
    
-   const handleChangeDixi = (event) => {
-     const value = event.target.value;
-     setDepositDixi(value);
-     setInputValue(value);
-   };
-   let [openDixi, setOpenDixi] = useState(false)
-   function openDixiModal(){
-     setOpenDixi(true)
-   }
-   function closeDixiModal(){
-     setOpenDixi(false)
-   }
+//////////////////////////// $1cat  ///////////////////////////////
+   
+   const {
+    deposit_$1cat,
+    setDeposit$1cat,
+    open$1cat,
+    setOpen$1cat,
+    handleChange$1cat,
+    open$1catModal,
+    close$1catModal,
+  } = use$1catState();
   
-   async function depositDixi({ deposit_dixi }) {
-     try {
-       setLoading(true)
   
-       const updates = {
-         id: user.id,
-         deposit_dixi,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenDixi(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
         
-   //////////////////////////// $1cat  ///////////////////////////////
+//////////////////////////// $derp  ///////////////////////////////
    
-   const [deposit_$1cat, setDeposit$1cat] = useState(null)
-   
-   const handleChange$1cat = (event) => {
-     const value = event.target.value;
-     setDeposit$1cat(value);
-     setInputValue(value);
-   };
-   let [open$1cat, setOpen$1cat] = useState(false)
-   function open$1catModal(){
-     setOpen$1cat(true)
-   }
-   function close$1catModal(){
-     setOpen$1cat(false)
-   }
+   const {
+    deposit_derp,
+    setDepositDerp,
+    openDerp,
+    setOpenDerp,
+    handleChangeDerp,
+    openDerpModal,
+    closeDerpModal,
+  } = useDerpState();
   
-   async function deposit$1cat({ deposit_$1cat }) {
-     try {
-       setLoading(true)
   
-       const updates = {
-         id: user.id,
-         deposit_$1cat,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpen$1cat(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
-        
-   //////////////////////////// $derp  ///////////////////////////////
-   
-   const [deposit_derp, setDepositDerp] = useState(null)
-   
-   const handleChangeDerp = (event) => {
-     const value = event.target.value;
-     setDepositDerp(value);
-     setInputValue(value);
-   };
-   let [openDerp, setOpenDerp] = useState(false)
-   function openDerpModal(){
-     setOpenDerp(true)
-   }
-   function closeDerpModal(){
-     setOpenDerp(false)
-   }
-  
-   async function depositDerp({ deposit_derp }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_derp,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenDerp(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
 
-    //////////////////////////// $kiki  ///////////////////////////////
+//////////////////////////// $kiki  ///////////////////////////////
    
-   const [deposit_kiki, setDepositKiki] = useState(null)
+    const {
+      deposit_kiki,
+      setDepositKiki,
+      openKiki,
+      setOpenKiki,
+      handleChangeKiki,
+      openKikiModal,
+      closeKikiModal,
+    } = useKikiState();
   
-   const handleChangeKiki = (event) => {
-     const value = event.target.value;
-     setDepositKiki(value);
-     setInputValue(value);
-   };
-   let [openKiki, setOpenKiki] = useState(false)
-   function openKikiModal(){
-     setOpenKiki(true)
-   }
-   function closeKikiModal(){
-     setOpenKiki(false)
-   }
-  
-   async function depositKiki({ deposit_kiki }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_kiki,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenKiki(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
-        
-    //////////////////////////// $zack  ///////////////////////////////
-   
-   const [deposit_zack, setDepositZack] = useState(null)
-  
-   const handleChangeZack = (event) => {
-     const value = event.target.value;
-     setDepositZack(value);
-     setInputValue(value);
-   };
-   let [openZack, setOpenZack] = useState(false)
-   function openZackModal(){
-     setOpenZack(true)
-   }
-   function closeZackModal(){
-     setOpenZack(false)
-   }
-  
-   async function depositZack({ deposit_zack }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_zack,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenZack(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
-        
-    //////////////////////////// $fagcat  ///////////////////////////////
-   
-   const [deposit_fagcat, setDepositFagcat] = useState(null)
-  
-   const handleChangeFagcat = (event) => {
-     const value = event.target.value;
-     setDepositFagcat(value);
-     setInputValue(value);
-   };
-   let [openFagcat, setOpenFagcat] = useState(false)
-   function openFagcatModal(){
-     setOpenFagcat(true)
-   }
-   function closeFagcatModal(){
-     setOpenFagcat(false)
-   }
-  
-   async function depositFagcat({ deposit_fagcat }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_fagcat,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenFagcat(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
-        
-    //////////////////////////// $hugh  ///////////////////////////////
-   
-   const [deposit_hugh, setDepositHugh] = useState(null)
-  
-   const handleChangeHugh = (event) => {
-     const value = event.target.value;
-     setDepositHugh(value);
-     setInputValue(value);
-   };
-   let [openHugh, setOpenHugh] = useState(false)
-   function openHughModal(){
-     setOpenHugh(true)
-   }
-   function closeHughModal(){
-     setOpenHugh(false)
-   }
-  
-   async function depositHugh({ deposit_hugh }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_hugh,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenHugh(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
-        
-    //////////////////////////// $web  ///////////////////////////////
-   
-   const [deposit_web, setDepositWeb] = useState(null)
-  
-   const handleChangeWeb = (event) => {
-     const value = event.target.value;
-     setDepositWeb(value);
-     setInputValue(value);
-   };
-   let [openWeb, setOpenWeb] = useState(false)
-   function openWebModal(){
-     setOpenWeb(true)
-   }
-   function closeWebModal(){
-     setOpenWeb(false)
-   }
-  
-   async function depositWeb({ deposit_web }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_web,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenWeb(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
-        
-    //////////////////////////// $JENNER  ///////////////////////////////
 
-   const [deposit_jenner, setDepositJenner] = useState(null)
-   
-   const handleChangeJenner = (event) => {
-     const value = event.target.value;
-     setDepositJenner(value);
-     setInputValue(value);
-   };
-   let [openJenner, setOpenJenner] = useState(false)
-   function openJennerModal(){
-     setOpenJenner(true)
-   }
-   function closeJennerModal(){
-     setOpenJenner(false)
-   }
-  
-   async function depositJenner({ deposit_jenner }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_jenner,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenJenner(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
         
-    //////////////////////////// $Mother  ///////////////////////////////
+//////////////////////////// $zack  ///////////////////////////////
    
-   const [deposit_mother, setDepositMother] = useState(null)
+    const {
+      deposit_zack,
+      setDepositZack,
+      openZack,
+      setOpenZack,
+      handleChangeZack,
+      openZackModal,
+      closeZackModal,
+    } = useZackState();
   
-   const handleChangeMother = (event) => {
-     const value = event.target.value;
-     setDepositMother(value);
-     setInputValue(value);
-   };
-   let [openMother, setOpenMother] = useState(false)
-   function openMotherModal(){
-     setOpenMother(true)
-   }
-   function closeMotherModal(){
-     setOpenMother(false)
-   }
   
-   async function depositMother({ deposit_mother }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_mother,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenMother(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
         
-    //////////////////////////// $DOG  ///////////////////////////////
+//////////////////////////// $fagcat  ///////////////////////////////
    
-   const [deposit_dog, setDepositDog] = useState(null)
+    const {
+      deposit_fagcat,
+      setDepositFagcat,
+      openFagcat,
+      setOpenFagcat,
+      handleChangeFagcat,
+      openFagcatModal,
+      closeFagcatModal,
+    } = useFagcatState();
   
-   const handleChangeDog = (event) => {
-     const value = event.target.value;
-     setDepositDog(value);
-     setInputValue(value);
-   };
-   let [openDog, setOpenDog] = useState(false)
-   function openDogModal(){
-     setOpenDog(true)
-   }
-   function closeDogModal(){
-     setOpenDog(false)
-   }
-  
-   async function depositDog({ deposit_dog }) {
-     try {
-       setLoading(true)
-  
-       const updates = {
-         id: user.id,
-         deposit_dog,
-         updated_at: new Date().toISOString(),
-       }
-       let { error } = await supabase.from('profiles').upsert(updates)
-       if (error) throw error
-         setOpenDog(false)
-         toast.success("Staking Order placed. Awaiting Approval.")
-       } catch (error) {
-         alert('internal Server Error: Error updating the data!')
-         console.log(error)
-       } finally {
-         setLoading(false)
-       }
-   }; 
+//////////////////////////// $hugh  ///////////////////////////////
+   
+    const {
+      deposit_hugh,
+      setDepositHugh,
+      openHugh,
+      setOpenHugh,
+      handleChangeHugh,
+      openHughModal,
+      closeHughModal,
+    } = useHughState();
+          
+//////////////////////////// $web  ///////////////////////////////
+   
+    const {
+      deposit_web,
+      setDepositWeb,
+      openWeb,
+      setOpenWeb,
+      handleChangeWeb,
+      openWebModal,
+      closeWebModal,
+    } = useWebState();
      
+//////////////////////////// $JENNER  ///////////////////////////////
 
-    //////////////////////////// $TRUMP  ///////////////////////////////
+    const {
+      deposit_jenner,
+      setDepositJenner,
+      openJenner,
+      setOpenJenner,
+      handleChangeJenner,
+      openJennerModal,
+      closeJennerModal,
+    } = useJennerState();
+          
+//////////////////////////// $Mother  ///////////////////////////////
+   
+    const {
+      deposit_mother,
+      setDepositMother,
+      openMother,
+      setOpenMother,
+      handleChangeMother,
+      openMotherModal,
+      closeMotherModal,
+    } = useMotherState();
+  
 
-    const [deposit_trump, setDepositTrump] = useState(null)
-    
-    const handleChangeTrump = (event) => {
-      const value = event.target.value;
-      setDepositTrump(value);
-      setInputValue(value);
-    };
-    let [openTrump, setOpenTrump] = useState(false)
-    function openTrumpModal(){
-      setOpenTrump(true)
-    }
-    function closeTrumpModal(){
-      setOpenTrump(false)
-    }
+//////////////////////////// $DOG  ///////////////////////////////
    
-    async function depositTrump({ deposit_trump }) {
-      try {
-        setLoading(true)
+    const {
+      deposit_dog,
+      setDepositDog,
+      openDog,
+      setOpenDog,
+      handleChangeDog,
+      openDogModal,
+      closeDogModal,
+    } = useDogState();
+  
+ 
+//////////////////////////// $TRUMP  ///////////////////////////////
+
+    const {
+      deposit_trump,
+      setDepositTrump,
+      openTrump,
+      setOpenTrump,
+      handleChangeTrump,
+      openTrumpModal,
+      closeTrumpModal,
+    } = useTrumpState();
    
-        const updates = {
-          id: user.id,
-          deposit_trump,
-          updated_at: new Date().toISOString(),
-        }
-        let { error } = await supabase.from('profiles').upsert(updates)
-        if (error) throw error
-          setOpenTrump(false)
-          toast.success("Staking Order placed. Awaiting Approval.")
-        } catch (error) {
-          alert('internal Server Error: Error updating the data!')
-          console.log(error)
-        } finally {
-          setLoading(false)
-        }
-    }; 
 ////////////////////////// TREMP /////////////////////////////////
   
   const {
@@ -2702,6 +1214,83 @@ export default function Deposit({ session }){
       }
     }
 
+    const tokens = [
+      { name: 'BTC', modal: openBTCModal },
+      { name: 'ETH', modal: openETHModal },
+      { name: 'USDT', modal: openUSDTModal },
+      { name: 'XRP', modal: openXRPModal },
+      { name: 'ADA', modal: openADAModal },
+      { name: 'XLM', modal: openXLMModal },
+      { name: 'HEX', modal: openHEXModal },
+      { name: 'BNB', modal: openBNBModal },
+      { name: 'SOL', modal: openSOLModal },
+      { name: 'TRX', modal: openTRXModal },
+      { name: 'USDC', modal: openUSDCModal },
+      { name: 'INJ', modal: openINJModal },
+      { name: 'SHIB', modal: openSHIBModal },
+      { name: 'MATIC', modal: openMATICModal },
+      { name: 'BONK', modal: openBONKModal },
+      { name: 'DOGE', modal: openDOGEModal },
+      { name: 'ARBITRUM', modal: openARBITRUMModal },
+      { name: 'ENJ', modal: openENJModal },
+      { name: 'BRC20', modal: openBRCModal },
+      { name: 'JUP', modal: openJUPModal },
+      { name: 'WEN', modal: openWENModal },
+      { name: '$Michi', modal: openMichiModal },
+      { name: '$Wif', modal: openWifModal },
+      { name: '$Brett', modal: openBrettModal },
+      { name: '$Friend', modal: openFriendModal },
+      { name: '$Tnsr', modal: openTnsrModal },
+      { name: '$Hobbes', modal: openHobbesModal },
+      { name: '$Mew', modal: openMewModal },
+      { name: '$Popcat', modal: openPopcatModal },
+      { name: '$Sharkcat', modal: openSharkcatModal },
+      { name: '$Crodie', modal: openCrodieModal },
+      { name: '$Bobo', modal: openBoboModal },
+      { name: '$Pork', modal: openPorkModal },
+      { name: '$Wolf', modal: openWolfModal },
+      { name: '$gme', modal: openGMEModal },
+      { name: '$Speed', modal: openSpeedModal },
+      { name: '$Lichi', modal: openLichiModal },
+      { name: '$Stache', modal: openStacheModal },
+      { name: '$Halt', modal: openHaltModal },
+      { name: '$Sec', modal: openSecModal },
+      { name: '$Dumb', modal: openDumbModal },
+      { name: '$Amc', modal: openAmcModal },
+      { name: '$Selfie', modal: openSelfieModal },
+      { name: '$Mini', modal: openMiniModal },
+      { name: '$PEPE(erc20)', modal: openPepeModal },
+      { name: '$Redo', modal: openRedoModal },
+      { name: '$Reca', modal: openRecaModal },
+      { name: '$Slerf', modal: openSlerfModal },
+      { name: '$giga', modal: openGigaModal },
+      { name: '$pepecoin(erc20)', modal: openPepeCoinModal },
+      { name: '$Duko', modal: openDukoModal },
+      { name: '$Tobi', modal: openTobiModal },
+      { name: '$Nigi', modal: openNigiModal },
+      { name: '$Djcat', modal: openDjcatModal },
+      { name: '$Ape', modal: openApeModal },
+      { name: '$Dixi', modal: openDixiModal },
+      { name: '$1cat', modal: open$1catModal },
+      { name: '$Derp', modal: openDerpModal },
+      { name: '$Kiki', modal: openKikiModal },
+      { name: '$Zack', modal: openZackModal },
+      { name: '$Fagcat', modal: openFagcatModal },
+      { name: '$Hugh', modal: openHughModal },
+      { name: '$Web', modal: openWebModal },
+      { name: '$Jenner', modal: openJennerModal },
+      { name: '$Mother', modal: openMotherModal },
+      { name: '$Dog', modal: openDogModal },
+      { name: '$Trump', modal: openTrumpModal },
+      { name: '$Tremp', modal: openTrempModal },
+    ];
+    
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const filteredTokens = tokens.filter(token =>
+      token.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
   return (
     <div className="bg-gray-100 overflow-hidden">
       <Layout>
@@ -2723,484 +1312,34 @@ export default function Deposit({ session }){
             <h2 className="font-bold text-2xl">Deposit tokens to cold stake</h2>
             {/* <h4>via <span className="font-semibold">Crypto Wallet</span></h4> */}
           </div>
-        
+          <div className="mx-auto flex justify-center items-center w-full max-w-2xl p-2">
+            <input
+              type="text"
+              placeholder="Search tokens..."
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              className="mb-4 p-2 border rounded-3xl border-2 border-[#7439b8] ring-[#7439b8] w-96 h-12"
+            />
+          </div>
+          
       <div className="mx-auto w-full max-w-2xl gap-x-4 gap-y-1 grid grid-cols-2">
-        <div onClick={openBTCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300
-        cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BTC</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openETHModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-        cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ETH</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openUSDTModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">USDT</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openXRPModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">XRP</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openADAModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ADA</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openXLMModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">XLM</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openHEXModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">HEX</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBNBModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BNB</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSOLModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">SOL</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openTRXModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">TRX</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openUSDCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">USDC</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openINJModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">INJ</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSHIBModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">SHIB</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openMATICModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">MATIC</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBONKModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BONK</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDOGEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">DOGE</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openARBITRUMModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ARBITRUM</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openENJModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">ENJ</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBRCModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">BRC20</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openJUPModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">JUP</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openWENModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">WEN</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openMichiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$michi</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openWifModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$wif</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBrettModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$BRETT</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openFriendModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$friend</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openTnsrModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$tnsr</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openHobbesModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$hobbes</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openMewModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$mew</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openPopcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$popcat</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSharkcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$sharkcat</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openCrodieModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className=" font-medium ">$crodie</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openBoboModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$bobo</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openPorkModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$pork</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openWolfModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$wolf</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openGMEModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$gme</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSpeedModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$speed</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openLichiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$lichi</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openStacheModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$stache</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openHaltModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$halt</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSecModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$sec</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDumbModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$dumb</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openAmcModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$amc</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSelfieModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$selfie</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openMiniModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$mini</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openPepeModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">PEPE(erc20)</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openRedoModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Redo</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openRecaModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Reca</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openSlerfModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Slerf</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openGigaModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$giga</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openPepeCoinModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$pepeCoin(erc20)</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDukoModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Duko</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openTobiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Tobi</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openNigiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Nigi</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDjcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Djcat</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openApeModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Ape</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDixiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Dixi</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={open$1catModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$1cat</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDerpModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$derp</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openKikiModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$kiki</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openZackModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$zack</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openFagcatModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Fagcat</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openHughModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Hugh</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openWebModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$Web</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openJennerModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$jenner</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openMotherModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$mother</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openDogModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$dog</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openTrumpModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$trump</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
-        <div onClick={openTrempModal} className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300
-          cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none">
-          <p className="font-medium">$tremp</p>
-          <div className="shrink-0 bg-[#7439b8] rounded-full">
-            <CheckIcon className="h-6 w-6" />
-          </div>
-        </div>
+        {filteredTokens.map((token, index) => (
+            <div
+              key={index}
+              onClick={token.modal}
+              className="bg-white active:bg-purple-900 active:bg-opacity-75 active:text-white active:ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-purple-300 cursor-pointer h-14 flex justify-between items-center shadow-md rounded-xl px-8 pt-8 pb-8 relative py-4 focus:outline-none"
+            >
+              <p className="font-medium">{token.name}</p>
+              <div className="shrink-0 bg-[#7439b8] rounded-full">
+                <CheckIcon className="h-6 w-6" />
+              </div>
+            </div>
+          ))}
+        
+        
+        
+        
+        
       </div>
         </div>
         {/* BTC */}
@@ -3578,12 +1717,12 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-{/* supabase, deposit_btc, user, setLoading, setOpenBTC */}
+
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositADA({ deposit_ada })}
+                          onClick={() => depositADA({ supabase, user, setLoading, setOpenADA, deposit_ada })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -3789,7 +1928,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositXLM({ deposit_xlm })}
+                          onClick={() => depositXLM({ supabase, deposit_xlm, user, setLoading, setOpenXLM })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -3892,7 +2031,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositHEX({ deposit_hex })}
+                          onClick={() => depositHEX({ supabase, user, setLoading, setOpenHEX, deposit_hex })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -3995,7 +2134,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositBNB({ deposit_bnb })}
+                          onClick={() => depositBNB({ supabase, user, setLoading, setOpenBNB, deposit_bnb })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4094,11 +2233,12 @@ export default function Deposit({ session }){
                       </div>
                     </div>
 
+
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositSOL({ deposit_sol })}
+                          onClick={() => depositSOL({ supabase, user, setLoading, setOpenSOL, deposit_sol })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4201,7 +2341,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositTRX({ deposit_trx })}
+                          onClick={() => depositTRX({ supabase, user, setLoading, setOpenTRX, deposit_trx })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4304,7 +2444,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositUSDC({ deposit_usdc })}
+                          onClick={() => depositUSDC({ supabase, user, setLoading, setOpenUSDC, deposit_usdc })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4407,7 +2547,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositINJ({ deposit_inj })}
+                          onClick={() => depositINJ({ supabase, user, setLoading, setOpenINJ, deposit_inj })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4510,7 +2650,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositSHIB({ deposit_shib })}
+                          onClick={() => depositSHIB({ supabase, user, setLoading, setOpenSHIB, deposit_shib })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4613,7 +2753,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositMATIC({ deposit_matic })}
+                          onClick={() => depositMATIC({ supabase, user, setLoading, setOpenMATIC, deposit_matic })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4716,7 +2856,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositBONK({ deposit_bonk })}
+                          onClick={() => depositBONK({ supabase, user, setLoading, setOpenBONK, deposit_bonk })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4819,7 +2959,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositDOGE({ deposit_doge })}
+                          onClick={() => depositDOGE({ supabase, user, setLoading, setOpenDOGE, deposit_doge })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -4922,7 +3062,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositARBITRUM({ deposit_arbitrum })}
+                          onClick={() => depositARBITRUM({ supabase, user, setLoading, setOpenARBITRUM, deposit_arbitrum })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5025,7 +3165,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositENJ({ deposit_enj })}
+                          onClick={() => depositENJ({ supabase, user, setLoading, setOpenENJ, deposit_enj })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5128,7 +3268,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositBRC({ deposit_brc })}
+                          onClick={() => depositBRC({ supabase, user, setLoading, setOpenBRC, deposit_brc })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5227,11 +3367,12 @@ export default function Deposit({ session }){
                       </div>
                     </div>
 
+
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositJUP({ deposit_jup })}
+                          onClick={() => depositJUP({ supabase, user, setLoading, setOpenJUP, deposit_jup })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5334,7 +3475,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositWEN({ deposit_wen })}
+                          onClick={() => depositWEN({ supabase, user, setLoading, setOpenWEN, deposit_wen })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5437,7 +3578,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositMichi({ deposit_michi })}
+                          onClick={() => depositMichi({ supabase, user, setLoading, setOpenMichi, deposit_michi })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5540,7 +3681,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositWif({ deposit_wif })}
+                          onClick={() => depositWif({ supabase, user, setLoading, setOpenWif, deposit_wif })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5643,7 +3784,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositBrett({ deposit_brett })}
+                          onClick={() => depositBrett({ supabase, user, setLoading, setOpenBrett, deposit_brett })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5746,7 +3887,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositFriend({ deposit_friend })}
+                          onClick={() => depositFriend({ supabase, user, setLoading, setOpenFriend, deposit_friend })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5849,7 +3990,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositTnsr({ deposit_tnsr })}
+                          onClick={() => depositTnsr({ supabase, user, setLoading, setOpenTnsr, deposit_tnsr })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -5952,7 +4093,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositHobbes({ deposit_hobbes })}
+                          onClick={() => depositHobbes({ supabase, user, setLoading, setOpenHobbes, deposit_hobbes })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6055,7 +4196,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositMew({ deposit_mew })}
+                          onClick={() => depositMew({ supabase, user, setLoading, setOpenMew, deposit_mew })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6158,7 +4299,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositPopcat({ deposit_popcat })}
+                          onClick={() => depositPopcat({ supabase, user, setLoading, setOpenPopcat, deposit_popcat })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6261,7 +4402,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositSharkcat({ deposit_sharkcat })}
+                          onClick={() => depositSharkcat({ supabase, user, setLoading, setOpenSharkcat, deposit_sharkcat })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6364,7 +4505,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositCrodie({ deposit_crodie })}
+                          onClick={() => depositCrodie({ supabase, user, setLoading, setOpenCrodie, deposit_crodie })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6467,7 +4608,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositBobo({ deposit_bobo })}
+                          onClick={() => depositBobo({ supabase, user, setLoading, setOpenBobo, deposit_bobo })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6570,7 +4711,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositPork({ deposit_pork })}
+                          onClick={() => depositPork({ supabase, user, setLoading, setOpenPork, deposit_pork })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6673,7 +4814,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositWolf({ deposit_wolf })}
+                          onClick={() => depositWolf({ supabase, user, setLoading, setOpenWolf, deposit_wolf })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6776,7 +4917,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositAndy({ deposit_andy })}
+                          onClick={() => depositAndy({ supabase, user, setLoading, setOpenAndy, deposit_andy })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6879,7 +5020,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositGME({ deposit_gme })}
+                          onClick={() => depositGME({ supabase, user, setLoading, setOpenGME, deposit_gme })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6977,12 +5118,12 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-
+{/* supabase, user, setLoading, setOpenBTC */}
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositSpeed({ deposit_speed })}
+                          onClick={() => depositSpeed({ supabase, user, setLoading, setOpenSpeed, deposit_speed })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7080,12 +5221,12 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-
+{/* supabase, user, setLoading, setOpenBTC */}
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositLichi({ deposit_lichi })}
+                          onClick={() => depositLichi({ supabase, user, setLoading, setOpenLichi, deposit_lichi })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7188,7 +5329,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositStache({ deposit_stache })}
+                          onClick={() => depositStache({ supabase, user, setLoading, setOpenStache, deposit_stache })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7291,7 +5432,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositHalt({ deposit_halt })}
+                          onClick={() => depositHalt({ supabase, user, setLoading, setOpenHalt, deposit_halt })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7389,12 +5530,12 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-
+{/* supabase, user, setLoading, setOpenBTC */}
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositSec({ deposit_sec })}
+                          onClick={() => depositSec({ supabase, user, setLoading, setOpenSec, deposit_sec })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7492,12 +5633,12 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-
+{/* supabase, user, setLoading, setOpenBTC */}
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositDumb({ deposit_dumb })}
+                          onClick={() => depositDumb({ supabase, user, setLoading, setOpenDumb, deposit_dumb })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7600,7 +5741,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositAmc({ deposit_amc })}
+                          onClick={() => depositAmc({ supabase, user, setLoading, setOpenAmc, deposit_amc })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7703,7 +5844,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositSelfie({ deposit_selfie })}
+                          onClick={() => depositSelfie({ supabase, user, setLoading, setOpenSelfie, deposit_selfie })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7806,7 +5947,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositMini({ deposit_mini })}
+                          onClick={() => depositMini({ supabase, user, setLoading, setOpenMini, deposit_mini })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -7909,7 +6050,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositMini({ deposit_pepe })}
+                          onClick={() => depositPepe({ supabase, user, setLoading, setOpenPepe, deposit_pepe })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8012,7 +6153,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositReca({ deposit_reca })}
+                          onClick={() => depositReca({ supabase, user, setLoading, setOpenReca, deposit_reca })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8110,12 +6251,12 @@ export default function Deposit({ session }){
                         
                       </div>
                     </div>
-
+                    {/* supabase, user, setLoading, setOpenPepe,  */}
                     {/* BUTTONS */}
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositRedo({ deposit_redo })}
+                          onClick={() => depositRedo({ supabase, user, setLoading, setOpenRedo, deposit_redo })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8218,7 +6359,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositSlerf({ deposit_slerf })}
+                          onClick={() => depositSlerf({ supabase, user, setLoading, setOpenSlerf, deposit_slerf })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8321,7 +6462,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositGiga({ deposit_giga })}
+                          onClick={() => depositGiga({ supabase, user, setLoading, setOpenGiga, deposit_giga })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8424,7 +6565,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => deposit$1cat({ deposit_$1cat })}
+                          onClick={() => deposit$1cat({ supabase, user, setLoading, setOpen$1cat, deposit_$1cat })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8527,7 +6668,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositDixi({ deposit_dixi })}
+                          onClick={() => depositDixi({ supabase, user, setLoading, setOpenDixi, deposit_dixi })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8630,7 +6771,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositApe({ deposit_ape })}
+                          onClick={() => depositApe({ supabase, user, setLoading, setOpenApe, deposit_ape })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8733,7 +6874,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositDjcat({ deposit_djcat })}
+                          onClick={() => depositDjcat({ supabase, user, setLoading, setOpenDjcat, deposit_djcat })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8836,7 +6977,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositNigi({ deposit_nigi })}
+                          onClick={() => depositNigi({ supabase, user, setLoading, setOpenNigi, deposit_nigi })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -8939,7 +7080,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositTobi({ deposit_tobi })}
+                          onClick={() => depositTobi({ supabase, user, setLoading, setOpenTobi, deposit_tobi })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9042,7 +7183,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositDuko({ deposit_duko })}
+                          onClick={() => depositDuko({ supabase, user, setLoading, setOpenDuko, deposit_duko })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9133,7 +7274,7 @@ export default function Deposit({ session }){
                           name="depositBtc"
                           placeholder="0.03"
                           className="h-8 w-64 rounded-lg"
-                          value={deposit_pepeCoin || inputValue}
+                          value={deposit_pepecoin || inputValue}
                           onChange={handleChangePepeCoin}
                           required
                         />
@@ -9145,7 +7286,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositPepeCoin({ deposit_pepeCoin })}
+                          onClick={() => depositPepeCoin({ supabase, user, setLoading, setOpenPepeCoin, deposit_pepecoin })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9248,7 +7389,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositDerp({ deposit_derp })}
+                          onClick={() => depositDerp({ supabase, user, setLoading, setOpenDerp, deposit_derp })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9351,7 +7492,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositKiki({ deposit_kiki })}
+                          onClick={() => depositKiki({ supabase, user, setLoading, setOpenKiki, deposit_kiki })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9454,7 +7595,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositZack({ deposit_zack })}
+                          onClick={() => depositZack({ supabase, user, setLoading, setOpenZack, deposit_zack })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9557,7 +7698,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositFagcat({ deposit_fagcat })}
+                          onClick={() => depositFagcat({ supabase, user, setLoading, setOpenFagcat, deposit_fagcat })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9660,7 +7801,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositHugh({ deposit_hugh })}
+                          onClick={() => depositHugh({ supabase, user, setLoading, setOpenHugh, deposit_hugh })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9763,7 +7904,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositWeb({ deposit_web })}
+                          onClick={() => depositWeb({ supabase, user, setLoading, setOpenWeb, deposit_web })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -9866,7 +8007,7 @@ export default function Deposit({ session }){
                   <div className="space-y-2">
                     <button
                         type="submit"
-                        onClick={() => depositJenner({ deposit_jenner })}
+                        onClick={() => depositJenner({ supabase, user, setLoading, setOpenJenner, deposit_jenner })}
                         className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         disabled={loading}
                       >
@@ -9969,7 +8110,7 @@ export default function Deposit({ session }){
                   <div className="space-y-2">
                     <button
                         type="submit"
-                        onClick={() => depositMother({ deposit_mother })}
+                        onClick={() => depositMother({ supabase, user, setLoading, setOpenMother, deposit_mother })}
                         className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         disabled={loading}
                       >
@@ -10072,7 +8213,7 @@ export default function Deposit({ session }){
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => depositDog({ deposit_dog })}
+                          onClick={() => depositDog({ supabase, user, setLoading, setOpenDog, deposit_dog })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -10177,7 +8318,7 @@ export default function Deposit({ session }){
                   <div className="space-y-2">
                     <button
                         type="submit"
-                        onClick={() => depositTrump({ deposit_trump })}
+                        onClick={() => depositTrump({ supabase, user, setLoading, setOpenTrump, deposit_trump })}
                         className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         disabled={loading}
                       >
