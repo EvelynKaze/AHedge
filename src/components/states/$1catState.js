@@ -1,30 +1,30 @@
 import { useState } from 'react';
 
-export function use$1catState() {
-  const [deposit_$1cat, setDeposit$1cat] = useState(null);
-  const [open$1cat, setOpen$1cat] = useState(false)
+export function useOnecatState() {
+  const [deposit_onecat, setDepositOnecat] = useState(null);
+  const [openOnecat, setOpenOnecat] = useState(false)
   // const [inputValue, setInputValue] = useState('');
 
 
-  const handleChange$1cat = (event) => {
+  const handleChangeOnecat = (event) => {
     const value = event.target.value;
-    setDeposit$1cat(value);
+    setDepositOnecat(value);
   };
 
-  function open$1catModal(){
-    setOpen$1cat(true)
+  function openOnecatModal(){
+    setOpenOnecat(true)
   }
-  function close$1catModal(){
-    setOpen$1cat(false)
+  function closeOnecatModal(){
+    setOpenOnecat(false)
   }
 
   return {
-    deposit_$1cat,
-    setDeposit$1cat,
-    open$1cat,
-    setOpen$1cat,
-    handleChange$1cat,
-    open$1catModal,
-    close$1catModal,
+    deposit_onecat,
+    setDepositOnecat,
+    openOnecat,
+    setOpenOnecat,
+    handleChangeOnecat,
+    openOnecatModal,
+    closeOnecatModal,
   };
 }

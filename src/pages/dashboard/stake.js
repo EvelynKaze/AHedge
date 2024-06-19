@@ -57,7 +57,7 @@ import {
   popcat,
   pork,
   reca,
-  $1cat,
+  Onecat,
   redo,
   sec,
   selfie,
@@ -138,7 +138,7 @@ import {
   clipboardNigi,
   clipboardApe,
   clipboardDixi,
-  clipboard$1cat,
+  clipboardOnecat,
   clipboardDerp,
   clipboardKiki,
   clipboardFagcat,
@@ -202,7 +202,7 @@ import {
   useRedoState,
   useSlerfState,
   useGigaState,
-  use$1catState,
+  useOnecatState,
   useDixiState,
   useApeState,
   useDjcatState,
@@ -280,7 +280,7 @@ import {
   depositDjcat,
   depositApe,
   depositDixi,
-  deposit$1cat,
+  depositOnecat,
   depositDerp,
   depositKiki,
   depositZack,
@@ -1030,14 +1030,14 @@ const {
 //////////////////////////// $1cat  ///////////////////////////////
    
    const {
-    deposit_$1cat,
-    setDeposit$1cat,
-    open$1cat,
-    setOpen$1cat,
-    handleChange$1cat,
-    open$1catModal,
-    close$1catModal,
-  } = use$1catState();
+    deposit_onecat,
+    setDepositOnecat,
+    openOnecat,
+    setOpenOnecat,
+    handleChangeOnecat,
+    openOnecatModal,
+    closeOnecatModal,
+  } = useOnecatState();
   
   
         
@@ -1271,7 +1271,7 @@ const {
       { name: '$Djcat', modal: openDjcatModal },
       { name: '$Ape', modal: openApeModal },
       { name: '$Dixi', modal: openDixiModal },
-      { name: '$1cat', modal: open$1catModal },
+      { name: '$1cat', modal: openOnecatModal },
       { name: '$Derp', modal: openDerpModal },
       { name: '$Kiki', modal: openKikiModal },
       { name: '$Zack', modal: openZackModal },
@@ -1318,7 +1318,7 @@ const {
               placeholder="Search tokens..."
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              className="mb-4 p-2 border rounded-3xl border-2 border-[#7439b8] ring-[#7439b8] w-96 h-12"
+              className="mb-4 p-2 rounded-3xl border-2 border-[#7439b8] ring-[#7439b8] w-96 h-12"
             />
           </div>
           
@@ -6495,8 +6495,8 @@ const {
           </Dialog>
         </Transition>
          {/* $1cat */}
-         <Transition appear show={open$1cat} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={close$1catModal}>
+         <Transition appear show={openOnecat} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeOnecatModal}>
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -6537,10 +6537,10 @@ const {
                       <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
                         <span className="flex space-x-2">
                           <FaBitcoin className='mt-1' />
-                          <p>{$1cat}</p>
+                          <p>{Onecat}</p>
                         </span>
                         <FiCopy
-                          onClick={clipboard$1cat}
+                          onClick={clipboardOnecat}
                           title="click to copy"
                           className='text-blue-400 cursor-pointer'
                         />
@@ -6553,8 +6553,8 @@ const {
                           name="depositBtc"
                           placeholder="0.03"
                           className="h-8 w-64 rounded-lg"
-                          value={deposit_$1cat || inputValue}
-                          onChange={handleChange$1cat}
+                          value={deposit_onecat || inputValue}
+                          onChange={handleChangeOnecat}
                           required
                         />
                         
@@ -6565,7 +6565,7 @@ const {
                     <div className="space-y-2">
                       <button
                           type="submit"
-                          onClick={() => deposit$1cat({ supabase, user, setLoading, setOpen$1cat, deposit_$1cat })}
+                          onClick={() => depositOnecat({ supabase, user, setLoading, setOpenOnecat, deposit_onecat })}
                           className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           disabled={loading}
                         >
@@ -6574,7 +6574,7 @@ const {
                       <button
                         type="button"
                         className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={close$1catModal}
+                        onClick={closeOnecatModal}
                       >
                         Pay Later
                       </button>
