@@ -81,6 +81,7 @@ import {
   zack,
   tremp,
   hot,
+  dot,
   clipboardETH,
   clipboardXRP,
   clipboardZack,
@@ -151,6 +152,7 @@ import {
   clipboardTrump,
   clipboardTremp,
   clipboardHot,
+  clipboardDot,
  } from "../../components/wallet-address"
  import { 
   useBTCState,
@@ -222,7 +224,8 @@ import {
   useMotherState,
   useDogState,
   useTrumpState,
-  useHotState
+  useHotState,
+  useDotState,
 } from "../../components/states"
 import {
   depositBTC,
@@ -295,6 +298,7 @@ import {
   depositDog,
   depositTrump,
   depositHot,
+  depositDot,
 } from "../../components/deposit"
 import CryptoPaymentModal from '../../components/depositModal';
 
@@ -1199,6 +1203,19 @@ const {
 } = useHotState();
 
 
+////////////////////////// DOT /////////////////////////////////
+  
+const {
+  deposit_dot,
+  setDepositDot,
+  openDot,
+  setOpenDot,
+  handleChangeDot,
+  openDotModal,
+  closeDotModal,
+} = useDotState();
+
+
 ////////////////////////////////////////////////////////////////////
    
 
@@ -1302,6 +1319,7 @@ const {
       { name: '$Trump', modal: openTrumpModal },
       { name: '$Tremp', modal: openTrempModal },
       { name: '$Hot', modal: openHotModal },
+      { name: '$Dot', modal: openDotModal },
     ];
     
     const [searchTerm, setSearchTerm] = useState('');
@@ -1391,521 +1409,110 @@ const {
           loading={loading}
         />
         {/* ETH */}
-        <Transition appear show={openETH} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeETHModal}>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-xl text-center font-bold leading-6 text-gray-600"
-                    >
-                      Make Your Payment
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{" "}ETH</span> to the address below</p>
-                      {/* <img 
-                        className="w-1/3 m-auto"
-                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/eth.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V0aC5wbmciLCJpYXQiOjE2ODY1NzQ5OTYsImV4cCI6MTcxODExMDk5Nn0.0WDT7NmyBmGCzz3DWwdsGbeClV9kAxiJYmnZu2dZU1c&t=2023-06-12T13%3A03%3A15.330Z"
-                      /> */}
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">ETH Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                        <span className="flex space-x-2">
-                          <FaBitcoin className='mt-1' />
-                          <p>{eth}</p>
-                        </span>
-                        <FiCopy
-                          onClick={clipboardETH}
-                          title="click to copy"
-                          className='text-blue-400 cursor-pointer'
-                        />
-                      </div>
-                      <div  className="flex justify-between p-1 my-2">
-                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                        <input
-                          type="number"
-                          id="depositBtc"
-                          name="depositBtc"
-                          placeholder="0.03"
-                          className="h-8 w-64 rounded-lg"
-                          value={deposit_eth || inputValue}
-                          onChange={handleChangeETH}
-                          required
-                        />
-                        
-                      </div>
-                    </div>
-
-                    {/* BUTTONS */}
-                    <div className="space-y-2">
-                      <button
-                          type="submit"
-                          onClick={() => depositETH({ supabase, deposit_eth, user, setLoading, setOpenETH })}
-                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                          disabled={loading}
-                        >
-                        {loading ? 'Loading ...' : 'Pay ETH'}
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeETHModal}
-                      >
-                        Pay Later
-                      </button>
-                    </div>
-
-                    {/* INFO */}
-                    <div className="mt-3">
-                      <div className="text-rose-500 flex space-x-2">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other ETH amount.</p>
-                      </div>
-                      <div className="flex space-x-2 text-gray-500">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Account will be credited once we received your payment.</p>
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
+        <CryptoPaymentModal
+          isOpen={openETH}
+          onClose={closeETHModal}
+          cryptocurrency="ETH"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={eth}
+          clipboardHandler={clipboardETH}
+          handleChange={handleChangeETH}
+          depositAmount={deposit_eth}
+          depositHandler={() => depositETH({ supabase, user, setLoading, setOpenETH, deposit_eth })}
+          loading={loading}
+        />
         {/* ADA */}
-        <Transition appear show={openADA} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeADAModal}>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-xl text-center font-bold leading-6 text-gray-600"
-                    >
-                      Make Your Payment
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}ADA</span> to the address below</p>
-                      {/* <img 
-                        className="w-1/3 m-auto"
-                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/eth.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL2V0aC5wbmciLCJpYXQiOjE2ODY1NzQ5OTYsImV4cCI6MTcxODExMDk5Nn0.0WDT7NmyBmGCzz3DWwdsGbeClV9kAxiJYmnZu2dZU1c&t=2023-06-12T13%3A03%3A15.330Z"
-                      /> */}
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">ADA Address</p>
-                      <div onClick={clipboardADA} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                        <span className="flex space-x-2">
-                          <FaBitcoin className='mt-1' />
-                          <p>{ada}</p>
-                        </span>
-                        <FiCopy
-                          onClick={clipboardADA}
-                          title="click to copy"
-                          className='text-blue-400 cursor-pointer'
-                        />
-                      </div>
-                      <div  className="flex justify-between p-1 my-2">
-                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                        <input
-                          type="number"
-                          id="depositBtc"
-                          name="depositBtc"
-                          placeholder="0.03"
-                          className="h-8 w-64 rounded-lg"
-                          value={deposit_ada || inputValue}
-                          onChange={handleChangeADA}
-                          required
-                        />
-                        
-                      </div>
-                    </div>
-
-                    {/* BUTTONS */}
-                    <div className="space-y-2">
-                      <button
-                          type="submit"
-                          onClick={() => depositADA({ supabase, user, setLoading, setOpenADA, deposit_ada })}
-                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                          disabled={loading}
-                        >
-                        {loading ? 'Loading ...' : 'Pay ADA'}
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeADAModal}
-                      >
-                        Pay Later
-                      </button>
-                    </div>
-
-                    {/* INFO */}
-                    <div className="mt-3">
-                      <div className="text-rose-500 flex space-x-2">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other ADA amount.</p>
-                      </div>
-                      <div className="flex space-x-2 text-gray-500">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Account will be credited once we received your payment.</p>
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
+        <CryptoPaymentModal
+          isOpen={openADA}
+          onClose={closeADAModal}
+          cryptocurrency="ADA"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={ada}
+          clipboardHandler={clipboardADA}
+          handleChange={handleChangeADA}
+          depositAmount={deposit_ada}
+          depositHandler={() => depositADA({ supabase, user, setLoading, setOpenADA, deposit_ada })}
+          loading={loading}
+        />
+       
         {/* USDT */}
-        <Transition appear show={openUSDT} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeUSDTModal}>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
+        <CryptoPaymentModal
+          isOpen={openUSDT}
+          onClose={closeUSDTModal}
+          cryptocurrency="USDT"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={usdt}
+          clipboardHandler={clipboardUSDT}
+          handleChange={handleChangeUSDT}
+          depositAmount={deposit_usdt}
+          depositHandler={() => depositUSDT({ supabase, user, setLoading, setOpenUSDT, deposit_usdt })}
+          loading={loading}
+        />
 
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-xl text-center font-bold leading-6 text-gray-600"
-                    >
-                      Make Your Payment
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}USDT</span> to the address below</p>
-                      {/* <img 
-                        className="w-1/3 m-auto"
-                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      /> */}
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">USDT Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                        <span className="flex space-x-2">
-                          <FaBitcoin className='mt-1' />
-                          <p>{usdt}</p>
-                        </span>
-                        <FiCopy
-                          onClick={clipboardUSDT}
-                          title="click to copy"
-                          className='text-blue-400 cursor-pointer'
-                        />
-                      </div>
-                      <div  className="flex justify-between p-1 my-2">
-                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                        <input
-                          type="number"
-                          id="depositBtc"
-                          name="depositBtc"
-                          placeholder="0.03"
-                          className="h-8 w-64 rounded-lg"
-                          value={deposit_usdt || inputValue}
-                          onChange={handleChangeUSDT}
-                          required
-                        />
-                        
-                      </div>
-                    </div>
-                    
-                    {/* BUTTONS */}
-                    <div className="space-y-2">
-                      <button
-                          type="submit"
-                          onClick={() => depositUSDT({ supabase, deposit_usdt, user, setLoading, setOpenUSDT })}
-                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                          disabled={loading}
-                        >
-                        {loading ? 'Loading ...' : 'Pay USDT'}
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeUSDTModal}
-                      >
-                        Pay Later
-                      </button>
-                    </div>
-
-                    {/* INFO */}
-                    <div className="mt-3">
-                      <div className="text-rose-500 flex space-x-2">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other USDT amount.</p>
-                      </div>
-                      <div className="flex space-x-2 text-gray-500">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Account will be credited once we received your payment.</p>
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
         {/* XLM */}
-        <Transition appear show={openXLM} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeXLMModal}>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
+        <CryptoPaymentModal
+          isOpen={openXLM}
+          onClose={closeXLMModal}
+          cryptocurrency="XLM"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={xlm}
+          clipboardHandler={clipboardXLM}
+          handleChange={handleChangeXLM}
+          depositAmount={deposit_xlm}
+          depositHandler={() => depositXLM({ supabase, user, setLoading, setOpenXLM, deposit_xlm })}
+          loading={loading}
+        />
 
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-xl text-center font-bold leading-6 text-gray-600"
-                    >
-                      Make Your Payment
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}XLM</span> to the address below</p>
-                      {/* <img 
-                        className="w-1/3 m-auto"
-                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      /> */}
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">XLM Address</p>
-                      <div onClick={clipboardXLM} className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                        <span className="flex space-x-2">
-                          <FaBitcoin className='mt-1' />
-                          <p>{xlm}</p>
-                        </span>
-                        <FiCopy
-                          onClick={clipboardXLM}
-                          title="click to copy"
-                          className='text-blue-400 cursor-pointer'
-                        />
-                      </div>
-                      <div  className="flex justify-between p-1 my-2">
-                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                        <input
-                          type="number"
-                          id="depositBtc"
-                          name="depositBtc"
-                          placeholder="0.03"
-                          className="h-8 w-64 rounded-lg"
-                          value={deposit_xlm || inputValue}
-                          onChange={handleChangeXLM}
-                          required
-                        />
-                        
-                      </div>
-                    </div>
-
-                    {/* BUTTONS */}
-                    <div className="space-y-2">
-                      <button
-                          type="submit"
-                          onClick={() => depositXLM({ supabase, deposit_xlm, user, setLoading, setOpenXLM })}
-                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                          disabled={loading}
-                        >
-                        {loading ? 'Loading ...' : 'Pay XLM'}
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeXLMModal}
-                      >
-                        Pay Later
-                      </button>
-                    </div>
-
-                    {/* INFO */}
-                    <div className="mt-3">
-                      <div className="text-rose-500 flex space-x-2">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other XLM amount.</p>
-                      </div>
-                      <div className="flex space-x-2 text-gray-500">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Account will be credited once we received your payment.</p>
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
         {/* HEX */}
-        <Transition appear show={openHEX} as={Fragment}>
-          <Dialog as="div" className="relative z-10" onClose={closeHEXModal}>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <div className="fixed inset-0 bg-black bg-opacity-25" />
-            </Transition.Child>
-
-            <div className="fixed inset-0 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0 scale-95"
-                  enterTo="opacity-100 scale-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100 scale-100"
-                  leaveTo="opacity-0 scale-95"
-                >
-                  <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-xl text-center font-bold leading-6 text-gray-600"
-                    >
-                      Make Your Payment
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-center">Complete transaction by sending the exact amount of <span className="font-bold">{inputValue}{" "}HEX</span> to the address below</p>
-                      {/* <img 
-                        className="w-1/3 m-auto"
-                        src="https://bpvsklhytoplnehaskcs.supabase.co/storage/v1/object/sign/avatars/usdt.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJhdmF0YXJzL3VzZHQucG5nIiwiaWF0IjoxNjg2NTc2NzQ2LCJleHAiOjE3MTgxMTI3NDZ9.Wb2-YuO351IVf8XQGa-FCz7lrMWrSanD-g6ZESJCm94&t=2023-06-12T13%3A32%3A25.710Z"
-                      /> */}
-                      <p className="text-center uppercase text-sm text-gray-400 my-3">HEX Address</p>
-                      <div className="text-sm font-medium text-gray-500 border rounded-lg flex justify-between p-2 px-3">
-                        <span className="flex space-x-2">
-                          <FaBitcoin className='mt-1' />
-                          <p>{hex}</p>
-                        </span>
-                        <FiCopy
-                          onClick={clipboardHEX}
-                          title="click to copy"
-                          className='text-blue-400 cursor-pointer'
-                        />
-                      </div>
-                      <div  className="flex justify-between p-1 my-2">
-                        <span className='text-base antialiased font-normal'>Enter Amount:</span>
-                        <input
-                          type="number"
-                          id="depositBtc"
-                          name="depositBtc"
-                          placeholder="0.03"
-                          className="h-8 w-64 rounded-lg"
-                          value={deposit_hex || inputValue}
-                          onChange={handleChangeHEX}
-                          required
-                        />
-                        
-                      </div>
-                    </div>
-
-                    {/* BUTTONS */}
-                    <div className="space-y-2">
-                      <button
-                          type="submit"
-                          onClick={() => depositHEX({ supabase, user, setLoading, setOpenHEX, deposit_hex })}
-                          className="inline-flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                          disabled={loading}
-                        >
-                        {loading ? 'Loading ...' : 'Pay HEX'}
-                      </button>
-                      <button
-                        type="button"
-                        className="inline-flex w-full justify-center rounded-md border-2 border-blue-500 px-4 py-2 text-sm font-medium text-blue-500 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={closeHEXModal}
-                      >
-                        Pay Later
-                      </button>
-                    </div>
-
-                    {/* INFO */}
-                    <div className="mt-3">
-                      <div className="text-rose-500 flex space-x-2">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Be aware that this order will be cancelled if you send any other HEX amount.</p>
-                      </div>
-                      <div className="flex space-x-2 text-gray-500">
-                        <AiOutlineInfoCircle />
-                        <p className='text-xs'>Account will be credited once we received your payment.</p>
-                      </div>
-                    </div>
-                  </Dialog.Panel>
-                </Transition.Child>
-              </div>
-            </div>
-          </Dialog>
-        </Transition>
+        <CryptoPaymentModal
+          isOpen={openHEX}
+          onClose={closeHEXModal}
+          cryptocurrency="HEX"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={hex}
+          clipboardHandler={clipboardHEX}
+          handleChange={handleChangeHEX}
+          depositAmount={deposit_hex}
+          depositHandler={() => depositHEX({ supabase, user, setLoading, setOpenHEX, deposit_hex })}
+          loading={loading}
+        />
+        
         {/* BNB */}
+        <CryptoPaymentModal
+          isOpen={openHEX}
+          onClose={closeHEXModal}
+          cryptocurrency="HEX"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={hex}
+          clipboardHandler={clipboardHEX}
+          handleChange={handleChangeHEX}
+          depositAmount={deposit_hex}
+          depositHandler={() => depositHEX({ supabase, user, setLoading, setOpenHEX, deposit_hex })}
+          loading={loading}
+        />
+
+
+        {/* DOT */}
+        <CryptoPaymentModal
+          isOpen={openDot}
+          onClose={closeDotModal}
+          cryptocurrency="DOT"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={dot}
+          clipboardHandler={clipboardDot}
+          handleChange={handleChangeDot}
+          depositAmount={deposit_dot}
+          depositHandler={() => depositDot({ supabase, user, setLoading, setOpenDot, deposit_dot })}
+          loading={loading}
+        />
+        
         <Transition appear show={openBNB} as={Fragment}>
           <Dialog as="div" className="relative z-10" onClose={closeBNBModal}>
             <Transition.Child
