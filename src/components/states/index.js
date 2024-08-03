@@ -69,3 +69,5 @@ export * from "./xrpState";
 export * from "./trempState";
 export * from "./hotState";
 export * from "./dotState";
+export * from "./solMemesState";
+export * from "./baseMemesState";

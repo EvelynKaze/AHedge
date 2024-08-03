@@ -82,6 +82,8 @@ import {
   tremp,
   hot,
   dot,
+  baseMemes,
+  solMemes,
   clipboardETH,
   clipboardXRP,
   clipboardZack,
@@ -153,6 +155,8 @@ import {
   clipboardTremp,
   clipboardHot,
   clipboardDot,
+  clipboardBaseMemes,
+  clipboardSolMemes,
  } from "../../components/wallet-address"
  import { 
   useBTCState,
@@ -226,6 +230,8 @@ import {
   useTrumpState,
   useHotState,
   useDotState,
+  useBaseMemesState,
+  useSolMemesState,
 } from "../../components/states"
 import {
   depositBTC,
@@ -299,6 +305,8 @@ import {
   depositTrump,
   depositHot,
   depositDot,
+  depositBaseMemes,
+  depositSolMemes,
 } from "../../components/deposit"
 import CryptoPaymentModal from '../../components/depositModal';
 
@@ -1216,6 +1224,31 @@ const {
 } = useDotState();
 
 
+////////////////////////// BaseMemes /////////////////////////////////
+  
+const {
+  deposit_baseMemes,
+  setDepositBaseMemes,
+  openBaseMemes,
+  setOpenBaseMemes,
+  handleChangeBaseMemes,
+  openBaseMemesModal,
+  closeBaseMemesModal,
+} = useBaseMemesState();
+
+////////////////////////// SolMemes /////////////////////////////////
+  
+const {
+  deposit_solMemes,
+  setDepositSolMemes,
+  openSolMemes,
+  setOpenSolMemes,
+  handleChangeSolMemes,
+  openSolMemesModal,
+  closeSolMemesModal,
+} = useSolMemesState();
+
+
 ////////////////////////////////////////////////////////////////////
    
 
@@ -1320,6 +1353,8 @@ const {
       { name: '$Tremp', modal: openTrempModal },
       { name: '$Hot', modal: openHotModal },
       { name: '$Dot', modal: openDotModal },
+      { name: '$BaseMemes', modal: openBaseMemesModal },
+      { name: '$SolMemes', modal: openSolMemesModal },
     ];
     
     const [searchTerm, setSearchTerm] = useState('');
@@ -1510,6 +1545,36 @@ const {
           handleChange={handleChangeDot}
           depositAmount={deposit_dot}
           depositHandler={() => depositDot({ supabase, user, setLoading, setOpenDot, deposit_dot })}
+          loading={loading}
+        />
+
+        BaseMemes
+        <CryptoPaymentModal
+          isOpen={openBaseMemes}
+          onClose={closeBaseMemesModal}
+          cryptocurrency="BaseMemes"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={baseMemes}
+          clipboardHandler={clipboardBaseMemes}
+          handleChange={handleChangeBaseMemes}
+          depositAmount={deposit_baseMemes}
+          depositHandler={() => depositBaseMemes({ supabase, user, setLoading, setOpenBaseMemes, deposit_baseMemes })}
+          loading={loading}
+        />
+
+        {/* SolMemes */}
+        <CryptoPaymentModal
+          isOpen={openSolMemes}
+          onClose={closeSolMemesModal}
+          cryptocurrency="SolMemes"
+          cryptoIcon={<FaBitcoin className="mt-1" />}
+          inputValue={inputValue}
+          address={solMemes}
+          clipboardHandler={clipboardSolMemes}
+          handleChange={handleChangeSolMemes}
+          depositAmount={deposit_solMemes}
+          depositHandler={() => depositSolMemes({ supabase, user, setLoading, setOpenSolMemes, deposit_solMemes })}
           loading={loading}
         />
         

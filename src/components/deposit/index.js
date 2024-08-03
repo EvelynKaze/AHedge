@@ -69,3 +69,5 @@ export * from "./trumpDeposit"
 export * from "./trempDeposit"; 
 export * from "./hotDeposit"; 
 export * from "./dotDeposit";
+export * from "./baseMemesDeposit";
+export * from "./solMemesDeposit";
